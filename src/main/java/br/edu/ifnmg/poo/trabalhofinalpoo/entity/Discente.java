@@ -12,16 +12,16 @@ import java.time.LocalDate;
  *
  * @author felipe
  */
-public class Discente extends Entidade{
-    
+public class Discente extends Entidade {
+
     private int cpf;
-    
+
     private String nome;
-    
+
     private LocalDate nascimento;
-    
+
     //<editor-fold defaultstate="collapsed" desc="Construtores">
-    public Discente(){
+    public Discente() {
     }
 
     public Discente(Long id, int cpf, String nome, LocalDate nascimento) {
@@ -30,9 +30,7 @@ public class Discente extends Entidade{
         this.nome = nome;
         this.nascimento = nascimento;
     }
-    
-    
-    
+
 //</editor-fold>
     
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
@@ -60,7 +58,7 @@ public class Discente extends Entidade{
         this.nascimento = nascimento;
     }
 //</editor-fold>
-    
+
     //<editor-fold defaultstate="collapsed" desc="Equals/HashCode">
     @Override
     public int hashCode() {
@@ -98,9 +96,9 @@ public class Discente extends Entidade{
 
     @Override
     public String toString() {
-        return "Aluno{" + "cpf=" + cpf 
-                + ", nome=" + nome 
+        return "Aluno{" + "cpf=" + cpf
+                + ", nome=" + nome
                 + ", nascimento=" + nascimento + '}';
     }
-    
+
 }
