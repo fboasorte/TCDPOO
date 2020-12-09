@@ -12,7 +12,7 @@ import java.time.LocalDate;
  *
  * @author felipe
  */
-public class Aluno extends Entidade{
+public class Discente extends Entidade{
     
     private int cpf;
     
@@ -21,10 +21,10 @@ public class Aluno extends Entidade{
     private LocalDate nascimento;
     
     //<editor-fold defaultstate="collapsed" desc="Construtores">
-    public Aluno(){
+    public Discente(){
     }
 
-    public Aluno(Long id, int cpf, String nome, LocalDate nascimento) {
+    public Discente(Long id, int cpf, String nome, LocalDate nascimento) {
         super(id);
         this.cpf = cpf;
         this.nome = nome;
@@ -82,7 +82,7 @@ public class Aluno extends Entidade{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Aluno other = (Aluno) obj;
+        final Discente other = (Discente) obj;
         if (this.cpf != other.cpf) {
             return false;
         }
