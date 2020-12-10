@@ -12,27 +12,25 @@ import java.time.LocalDate;
  *
  * @author felipe
  */
-public class Aluno extends Entidade{
-    
+public class Discente extends Entidade {
+
     private int cpf;
-    
+
     private String nome;
-    
+
     private LocalDate nascimento;
-    
+
     //<editor-fold defaultstate="collapsed" desc="Construtores">
-    public Aluno(){
+    public Discente() {
     }
 
-    public Aluno(Long id, int cpf, String nome, LocalDate nascimento) {
+    public Discente(Long id, int cpf, String nome, LocalDate nascimento) {
         super(id);
         this.cpf = cpf;
         this.nome = nome;
         this.nascimento = nascimento;
     }
-    
-    
-    
+
 //</editor-fold>
     
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
@@ -60,7 +58,7 @@ public class Aluno extends Entidade{
         this.nascimento = nascimento;
     }
 //</editor-fold>
-    
+
     //<editor-fold defaultstate="collapsed" desc="Equals/HashCode">
     @Override
     public int hashCode() {
@@ -82,7 +80,7 @@ public class Aluno extends Entidade{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Aluno other = (Aluno) obj;
+        final Discente other = (Discente) obj;
         if (this.cpf != other.cpf) {
             return false;
         }
@@ -98,9 +96,9 @@ public class Aluno extends Entidade{
 
     @Override
     public String toString() {
-        return "Aluno{" + "cpf=" + cpf 
-                + ", nome=" + nome 
+        return "Aluno{" + "cpf=" + cpf
+                + ", nome=" + nome
                 + ", nascimento=" + nascimento + '}';
     }
-    
+
 }
