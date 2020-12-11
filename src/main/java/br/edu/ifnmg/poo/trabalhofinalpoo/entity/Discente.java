@@ -6,17 +6,22 @@
 package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 
 import java.util.Objects;
-import java.time.LocalDate;
 
 /**
  *
  * @author felipe
  */
+<<<<<<< HEAD:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Discente.java
 public class Discente extends Entidade {
 
+=======
+public class Discente extends Entidade{
+    
+>>>>>>> feature/discente:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Aluno.java
     private int cpf;
 
     private String nome;
+<<<<<<< HEAD:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Discente.java
 
     private LocalDate nascimento;
 
@@ -25,6 +30,16 @@ public class Discente extends Entidade {
     }
 
     public Discente(Long id, int cpf, String nome, LocalDate nascimento) {
+=======
+    
+    private String nascimento;
+    
+    //<editor-fold defaultstate="collapsed" desc="Construtores">
+    public Discente(){
+    }
+
+    public Discente(Long id, int cpf, String nome, String nascimento) {
+>>>>>>> feature/discente:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Aluno.java
         super(id);
         this.cpf = cpf;
         this.nome = nome;
@@ -50,11 +65,11 @@ public class Discente extends Entidade {
         this.nome = nome;
     }
 
-    public LocalDate getNascimento() {
+    public String getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(LocalDate nascimento) {
+    public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
 //</editor-fold>
@@ -96,9 +111,19 @@ public class Discente extends Entidade {
 
     @Override
     public String toString() {
+<<<<<<< HEAD:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Discente.java
         return "Aluno{" + "cpf=" + cpf
                 + ", nome=" + nome
+=======
+        return cpf 
+                + ", " + nome 
+                + ", " + nascimento;
+        /*
+        return "Aluno{" + "cpf=" + cpf 
+                + ", nome=" + nome 
+>>>>>>> feature/discente:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Aluno.java
                 + ", nascimento=" + nascimento + '}';
+*/
     }
 
 }
