@@ -44,9 +44,9 @@ public class ConexaoBd {
      * Inicialização de valores estáticos.
      */
     static {
-        URL = "jdbc:mysql://127.0.0.1:3306/tarefas?useUnicode=true&useJDBCCompliantTimezoneShift=true&serverTimezone=UTC";
+        URL = "jdbc:mysql://127.0.0.1:3306/tcdpoo?useUnicode=true&useJDBCCompliantTimezoneShift=true&serverTimezone=UTC";
         usuario = "root";
-        senha = "Felipe@31600177";
+        senha = "123456";
     }
 
     //<editor-fold defaultstate="collapsed" desc="Construtor privado">
