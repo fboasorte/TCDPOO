@@ -1,12 +1,11 @@
-/* 
- * Material didático destinado ao curso
- * de Programação Orientada a Objetos do 
- * Bacharelado em Ciência da Computação 
- * do IFNMG - Câmpus Montes Claros
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.dao;
 
-import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Professor;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,13 +15,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Operações de persistência com a entidade Tarefa.
  *
  * @author Andre Vinicius
- * @version 0.0.1, 30/11/2020
  */
-public class DiscenteDao extends AbstractDao<Discente, Long> {
-
+public class ProfessorDao {
     /**
      * Recupera a sentença SQL específica para a inserção da entidade no banco
      * de dados.
@@ -31,7 +27,7 @@ public class DiscenteDao extends AbstractDao<Discente, Long> {
      */
     @Override
     public String getDeclaracaoInsert() {
-        return "INSERT INTO discente(id,cpf,nome,nascimento) VALUES (default, ?, ?, ?);";
+        return "INSERT INTO professor(id,cpf,nome,nascimento) VALUES (default, ?, ?, ?);";
     }
 
     /**
@@ -42,7 +38,7 @@ public class DiscenteDao extends AbstractDao<Discente, Long> {
      */
     @Override
     public String getDeclaracaoSelectPorId() {
-        return "SELECT * FROM discente WHERE id = ?";
+        return "SELECT * FROM professor WHERE id = ?";
     }
 
     /**
@@ -53,7 +49,7 @@ public class DiscenteDao extends AbstractDao<Discente, Long> {
      */
     @Override
     public String getDeclaracaoSelectTodos() {
-        return "SELECT * FROM discente";
+        return "SELECT * FROM professor";
     }
 
     /**
@@ -64,7 +60,7 @@ public class DiscenteDao extends AbstractDao<Discente, Long> {
      */
     @Override
     public String getDeclaracaoUpdate() {
-        return "UPDATE discente SET cpf = ?, nome = ?, nascimento = ? WHERE id = ?;";
+        return "UPDATE professor SET cpf = ?, nome = ?, nascimento = ? WHERE id = ?;";
     }
 
     /**
@@ -75,7 +71,7 @@ public class DiscenteDao extends AbstractDao<Discente, Long> {
      */
     @Override
     public String getDeclaracaoDelete() {
-        return "DELETE FROM discente WHERE id = ?";
+        return "DELETE FROM professor WHERE id = ?";
     }
 
     /**
@@ -102,22 +98,22 @@ public class DiscenteDao extends AbstractDao<Discente, Long> {
      * @param id Chave primária a ser inserida na sentença SQL.
      */
     @Override
-    public void montarDeclaracao(PreparedStatement pstmt, Discente discente) {
+    public void montarDeclaracao(PreparedStatement pstmt, Professor professor) {
         // Tenta definir valores junto à sentença SQL preparada para execução 
         // no banco de dados.
         try {
-            if (discente.getId() == null || discente.getId() == 0) {
-                pstmt.setInt(1, discente.getCpf());
-                pstmt.setString(2, discente.getNome());
-                pstmt.setString(3, discente.getNascimento());
+            if (professor.getId() == null || professor.getId() == 0) {
+                pstmt.setInt(1, professor.getCpf());
+                pstmt.setString(2, professor.getNome());
+                pstmt.setString(3, professor.getNascimento());
             } else {
-                pstmt.setInt(1, discente.getCpf());
-                pstmt.setString(2, discente.getNome());
-                pstmt.setString(3, discente.getNascimento());
-                pstmt.setLong(4, discente.getId());
+                pstmt.setInt(1, professor.getCpf());
+                pstmt.setString(2, professor.getNome());
+                pstmt.setString(3, professor.getNascimento());
+                pstmt.setLong(4, professor.getId());
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DiscenteDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProfessorDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -128,23 +124,23 @@ public class DiscenteDao extends AbstractDao<Discente, Long> {
      * @return Objeto constituído.
      */
     @Override
-    public Discente extrairObjeto(ResultSet resultSet) {
+    public Professor extrairObjeto(ResultSet resultSet) {
         // Cria referência para montagem da tarefa
-        Discente discente = new Discente();
+        Professor professor = new Professor();
 
         // Tenta recuperar dados do registro retornado pelo banco de dados
         // e ajustar o estado da tarefa a ser mapeada
         try {
-            discente.setId(resultSet.getLong("id"));
-            discente.setCpf(resultSet.getInt("cpf"));
-            discente.setNome(resultSet.getString("nome"));
-            discente.setNascimento(resultSet.getString("nascimento"));
+            professor.setId(resultSet.getLong("id"));
+            professor.setCpf(resultSet.getInt("cpf"));
+            professor.setNome(resultSet.getString("nome"));
+            professor.setNascimento(resultSet.getString("nascimento"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         // Devolve a tarefa mapeada
-        return discente;
+        return professor;
     }
 
     /**
@@ -156,34 +152,34 @@ public class DiscenteDao extends AbstractDao<Discente, Long> {
      * @return Lista de objeto(s) constituído(s).
      */
     @Override
-    public List<Discente> extrairObjetos(ResultSet resultSet) {
+    public List<Professor> extrairObjetos(ResultSet resultSet) {
 
         // Cria referência para inserção das tarefas a serem mapeadas
-        ArrayList<Discente> discentes = new ArrayList<>();
+        ArrayList<Professor> professores = new ArrayList<>();
         
         // Tenta...
         try {
             // ... entquanto houver registros a serem processados
             while (resultSet.next()) {
                 // Cria referência para montagem da tarefa
-                Discente discente = new Discente();
+                Professor professor = new Professor();
 
                 // Tenta recuperar dados do registro retornado pelo banco 
                 // de dados e ajustar o estado da tarefa a ser mapeada
-                discente.setId(resultSet.getLong("id"));
-                discente.setCpf(resultSet.getInt("cpf"));
-                discente.setNome(resultSet.getString("nome"));
-                discente.setNascimento(resultSet.getString("nascimento"));
+                professor.setId(resultSet.getLong("id"));
+                professor.setCpf(resultSet.getInt("cpf"));
+                professor.setNome(resultSet.getString("nome"));
+                professor.setNascimento(resultSet.getString("nascimento"));
                 
                 // Insere a tarefa na lista de tarefas recuperadas
-                discentes.add(discente);
+                professores.add(professor);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DiscenteDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProfessorDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         // Devolve a lista de tarefas reconstituídas dos registros do banco 
         // de dados
-        return discentes;
+        return professores;
     }
 }
