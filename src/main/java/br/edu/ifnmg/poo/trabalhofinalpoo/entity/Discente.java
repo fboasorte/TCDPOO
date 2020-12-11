@@ -6,25 +6,25 @@
 package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 
 import java.util.Objects;
-import java.time.LocalDate;
 
 /**
  *
  * @author felipe
  */
+
 public class Discente extends Entidade {
 
     private int cpf;
 
     private String nome;
-
-    private LocalDate nascimento;
-
+    
+    private String nascimento;
+    
     //<editor-fold defaultstate="collapsed" desc="Construtores">
-    public Discente() {
+    public Discente(){
     }
 
-    public Discente(Long id, int cpf, String nome, LocalDate nascimento) {
+    public Discente(Long id, int cpf, String nome, String nascimento) {
         super(id);
         this.cpf = cpf;
         this.nome = nome;
@@ -50,11 +50,11 @@ public class Discente extends Entidade {
         this.nome = nome;
     }
 
-    public LocalDate getNascimento() {
+    public String getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(LocalDate nascimento) {
+    public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
 //</editor-fold>
@@ -96,9 +96,10 @@ public class Discente extends Entidade {
 
     @Override
     public String toString() {
-        return "Aluno{" + "cpf=" + cpf
-                + ", nome=" + nome
-                + ", nascimento=" + nascimento + '}';
+        return cpf 
+                + ", " + nome 
+                + ", " + nascimento;
+
     }
 
 }

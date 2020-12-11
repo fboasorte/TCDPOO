@@ -5,7 +5,6 @@
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -18,13 +17,13 @@ public class Professor extends Entidade {
 
     private String nome;
 
-    private LocalDate nascimento;
+    private String nascimento;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
     public Professor() {
     }
 
-    public Professor(Long id, int cpf, String nome, LocalDate nascimento) {
+    public Professor(Long id, int cpf, String nome, String nascimento) {
         super(id);
         this.cpf = cpf;
         this.nome = nome;
@@ -50,11 +49,11 @@ public class Professor extends Entidade {
         this.nome = nome;
     }
 
-    public LocalDate getNascimento() {
+    public String getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(LocalDate nascimento) {
+    public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
 //</editor-fold>
