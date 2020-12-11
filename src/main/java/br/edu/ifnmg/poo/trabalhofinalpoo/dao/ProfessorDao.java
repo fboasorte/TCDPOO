@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  *
  * @author Andre Vinicius
  */
-public class ProfessorDao {
+public class ProfessorDao extends AbstractDao<Professor, Long> {
     /**
      * Recupera a sentença SQL específica para a inserção da entidade no banco
      * de dados.

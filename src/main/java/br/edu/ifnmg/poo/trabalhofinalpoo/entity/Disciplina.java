@@ -11,37 +11,25 @@ import java.util.Objects;
  *
  * @author felipe
  */
-
-public class Discente extends Entidade {
-
-    private int cpf;
+public class Disciplina extends Entidade {
 
     private String nome;
-    
-    private String nascimento;
-    
+
+    private String conteudo;
+
     //<editor-fold defaultstate="collapsed" desc="Construtores">
-    public Discente(){
+    public Disciplina() {
     }
 
-    public Discente(Long id, int cpf, String nome, String nascimento) {
+    public Disciplina(Long id, String nome, String conteudo) {
         super(id);
-        this.cpf = cpf;
         this.nome = nome;
-        this.nascimento = nascimento;
+        this.conteudo = conteudo;
     }
 
 //</editor-fold>
     
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
-    public int getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -50,22 +38,22 @@ public class Discente extends Entidade {
         this.nome = nome;
     }
 
-    public String getNascimento() {
-        return nascimento;
+    public String getConteudo() {
+        return conteudo;
     }
 
-    public void setNascimento(String nascimento) {
-        this.nascimento = nascimento;
+    public void setConteudo(String conteudo) {
+        this.conteudo = conteudo;
     }
+
 //</editor-fold>
-
+    
     //<editor-fold defaultstate="collapsed" desc="Equals/HashCode">
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 29 * hash + this.cpf;
-        hash = 29 * hash + Objects.hashCode(this.nome);
-        hash = 29 * hash + Objects.hashCode(this.nascimento);
+        hash = 79 * hash + Objects.hashCode(this.nome);
+        hash = 79 * hash + Objects.hashCode(this.conteudo);
         return hash;
     }
 
@@ -80,14 +68,11 @@ public class Discente extends Entidade {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Discente other = (Discente) obj;
-        if (this.cpf != other.cpf) {
-            return false;
-        }
+        final Disciplina other = (Disciplina) obj;
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
-        if (!Objects.equals(this.nascimento, other.nascimento)) {
+        if (!Objects.equals(this.conteudo, other.conteudo)) {
             return false;
         }
         return true;
@@ -96,10 +81,8 @@ public class Discente extends Entidade {
 
     @Override
     public String toString() {
-        return cpf 
-                + ", " + nome 
-                + ", " + nascimento;
-
+        return "Disciplina{" + "nome=" + nome 
+                + ", conteudo=" + conteudo + '}';
     }
 
 }

@@ -11,20 +11,19 @@ import java.util.Objects;
  *
  * @author felipe
  */
-
-public class Discente extends Entidade {
+public class Professor extends Entidade {
 
     private int cpf;
 
     private String nome;
-    
+
     private String nascimento;
-    
+
     //<editor-fold defaultstate="collapsed" desc="Construtores">
-    public Discente(){
+    public Professor() {
     }
 
-    public Discente(Long id, int cpf, String nome, String nascimento) {
+    public Professor(Long id, int cpf, String nome, String nascimento) {
         super(id);
         this.cpf = cpf;
         this.nome = nome;
@@ -62,10 +61,10 @@ public class Discente extends Entidade {
     //<editor-fold defaultstate="collapsed" desc="Equals/HashCode">
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + this.cpf;
-        hash = 29 * hash + Objects.hashCode(this.nome);
-        hash = 29 * hash + Objects.hashCode(this.nascimento);
+        int hash = 3;
+        hash = 89 * hash + this.cpf;
+        hash = 89 * hash + Objects.hashCode(this.nome);
+        hash = 89 * hash + Objects.hashCode(this.nascimento);
         return hash;
     }
 
@@ -80,7 +79,7 @@ public class Discente extends Entidade {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Discente other = (Discente) obj;
+        final Professor other = (Professor) obj;
         if (this.cpf != other.cpf) {
             return false;
         }
@@ -96,10 +95,9 @@ public class Discente extends Entidade {
 
     @Override
     public String toString() {
-        return cpf 
-                + ", " + nome 
-                + ", " + nascimento;
-
+        return "Professor{" + "cpf=" + cpf 
+                + ", nome=" + nome 
+                + ", nascimento=" + nascimento + '}';
     }
 
 }

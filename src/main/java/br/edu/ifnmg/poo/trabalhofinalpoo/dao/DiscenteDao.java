@@ -99,7 +99,7 @@ public class DiscenteDao extends AbstractDao<Discente, Long> {
      * atualização de registros no banco de dados.
      *
      * @param pstmt Declaração previamente preparada.
-     * @param id Chave primária a ser inserida na sentença SQL.
+     * @param discente
      */
     @Override
     public void montarDeclaracao(PreparedStatement pstmt, Discente discente) {
