@@ -11,6 +11,7 @@ import java.util.Objects;
  *
  * @author felipe
  */
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Discente.java
 public class Discente extends Entidade {
 
@@ -31,6 +32,14 @@ public class Discente extends Entidade{
 
     public Discente(Long id, int cpf, String nome, LocalDate nascimento) {
 =======
+=======
+
+public class Discente extends Entidade {
+
+    private int cpf;
+
+    private String nome;
+>>>>>>> feature/professorDao
     
     private String nascimento;
     
@@ -39,7 +48,10 @@ public class Discente extends Entidade{
     }
 
     public Discente(Long id, int cpf, String nome, String nascimento) {
+<<<<<<< HEAD
 >>>>>>> feature/discente:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Aluno.java
+=======
+>>>>>>> feature/professorDao
         super(id);
         this.cpf = cpf;
         this.nome = nome;
@@ -111,6 +123,7 @@ public class Discente extends Entidade{
 
     @Override
     public String toString() {
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Discente.java
         return "Aluno{" + "cpf=" + cpf
                 + ", nome=" + nome
@@ -124,6 +137,12 @@ public class Discente extends Entidade{
 >>>>>>> feature/discente:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Aluno.java
                 + ", nascimento=" + nascimento + '}';
 */
+=======
+        return cpf 
+                + ", " + nome 
+                + ", " + nascimento;
+
+>>>>>>> feature/professorDao
     }
 
 }
