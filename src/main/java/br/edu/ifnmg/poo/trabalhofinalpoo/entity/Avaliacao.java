@@ -61,9 +61,9 @@ public class Avaliacao extends Entidade {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 79 * hash + this.notaParteEscrita;
-        hash = 79 * hash + Objects.hashCode(this.notaParteOral);
-        hash = 79 * hash + Objects.hashCode(this.comentario);
+        hash = 97 * hash + this.notaParteEscrita;
+        hash = 97 * hash + this.notaParteOral;
+        hash = 97 * hash + Objects.hashCode(this.comentario);
         return hash;
     }
 
@@ -82,7 +82,7 @@ public class Avaliacao extends Entidade {
         if (this.notaParteEscrita != other.notaParteEscrita) {
             return false;
         }
-        if (!Objects.equals(this.notaParteOral, other.notaParteOral)) {
+        if (this.notaParteOral != other.notaParteOral) {
             return false;
         }
         if (!Objects.equals(this.comentario, other.comentario)) {
