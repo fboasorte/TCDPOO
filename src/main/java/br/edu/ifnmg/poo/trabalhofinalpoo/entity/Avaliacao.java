@@ -62,7 +62,7 @@ public class Avaliacao extends Entidade {
     public int hashCode() {
         int hash = 3;
         hash = 97 * hash + this.notaParteEscrita;
-        hash = 97 * hash + this.notaParteOral;
+        hash = 97 * hash + Objects.hashCode(this.notaParteOral);
         hash = 97 * hash + Objects.hashCode(this.comentario);
         return hash;
     }
