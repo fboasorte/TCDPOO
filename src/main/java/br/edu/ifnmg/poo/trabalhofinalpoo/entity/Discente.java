@@ -5,41 +5,19 @@
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
  *
  * @author felipe
  */
-<<<<<<< HEAD
-<<<<<<< HEAD:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Discente.java
-public class Discente extends Entidade {
-
-=======
-public class Discente extends Entidade{
-    
->>>>>>> feature/discente:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Aluno.java
-    private int cpf;
-
-    private String nome;
-<<<<<<< HEAD:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Discente.java
-
-    private LocalDate nascimento;
-
-    //<editor-fold defaultstate="collapsed" desc="Construtores">
-    public Discente() {
-    }
-
-    public Discente(Long id, int cpf, String nome, LocalDate nascimento) {
-=======
-=======
 
 public class Discente extends Entidade {
 
     private int cpf;
 
     private String nome;
->>>>>>> feature/professorDao
     
     private String nascimento;
     
@@ -48,10 +26,6 @@ public class Discente extends Entidade {
     }
 
     public Discente(Long id, int cpf, String nome, String nascimento) {
-<<<<<<< HEAD
->>>>>>> feature/discente:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Aluno.java
-=======
->>>>>>> feature/professorDao
         super(id);
         this.cpf = cpf;
         this.nome = nome;
@@ -123,26 +97,9 @@ public class Discente extends Entidade {
 
     @Override
     public String toString() {
-<<<<<<< HEAD
-<<<<<<< HEAD:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Discente.java
-        return "Aluno{" + "cpf=" + cpf
-                + ", nome=" + nome
-=======
-        return cpf 
-                + ", " + nome 
-                + ", " + nascimento;
-        /*
-        return "Aluno{" + "cpf=" + cpf 
+        return "Discente{" + "cpf=" + cpf 
                 + ", nome=" + nome 
->>>>>>> feature/discente:src/main/java/br/edu/ifnmg/poo/trabalhofinalpoo/entity/Aluno.java
                 + ", nascimento=" + nascimento + '}';
-*/
-=======
-        return cpf 
-                + ", " + nome 
-                + ", " + nascimento;
-
->>>>>>> feature/professorDao
     }
 
 }
