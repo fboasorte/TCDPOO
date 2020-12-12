@@ -46,15 +46,7 @@ public class ConexaoBd {
     static {
         URL = "jdbc:mysql://127.0.0.1:3306/tcdpoo?useUnicode=true&useJDBCCompliantTimezoneShift=true&serverTimezone=UTC";
         usuario = "root";
-<<<<<<< HEAD
-<<<<<<< HEAD
-        senha = "";
-=======
         senha = "123456";
->>>>>>> feature/discente
-=======
-        senha = "123456";
->>>>>>> feature/professorDao
     }
 
     //<editor-fold defaultstate="collapsed" desc="Construtor privado">
