@@ -2,24 +2,18 @@ create database tcd;
 use tcd;
 
 create table Professor (
-<<<<<<< HEAD
 id int primary key,
 cpf int,
-=======
 cpf int primary key,
->>>>>>> master
 nome varchar(50),
-nascimento date);
+nascimento varchar(10));
 
 create table Discente (
-<<<<<<< HEAD
 id int primary key,
 cpf int,
-=======
 cpf int primary key,
->>>>>>> master
 nome varchar(50),
-nascimento date);
+nascimento varchar(10));
 
 create table Disciplina (
 id int primary key,
@@ -34,7 +28,7 @@ comentario varchar(100));
 
 create table DisponibilidadeHorario (
 id int primary key,
-data date,
+data varchar(10),
 hora varchar(5));
 
 create table Matricula (
@@ -42,11 +36,7 @@ id int primary key,
 notaParteEscrita int,
 notaParteOral char,
 comentario varchar(100),
-cpfDiscente int,
+idDiscente int,
 idDisciplina int,
-foreign key (cpfDiscente) references Discente(cpf),
-<<<<<<< HEAD
+foreign key (idDiscente) references Discente(id));
 foreign key (idDisciplina) references Disciplina(id));
-=======
-foreign key (idDisciplina) references Disciplina(id));
->>>>>>> master
