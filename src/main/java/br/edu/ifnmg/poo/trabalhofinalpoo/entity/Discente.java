@@ -5,6 +5,7 @@
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -98,7 +99,4 @@ public class Discente extends Entidade {
         return cpf
                 + ", " + nome
                 + ", " + nascimento;
-
-    }
-
 }

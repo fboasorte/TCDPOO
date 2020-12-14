@@ -19,7 +19,6 @@ import java.util.logging.Logger;
  * @author devin
  */
 public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
-
     /**
      * Recupera a sentença SQL específica para a inserção da entidade no banco
      * de dados.
