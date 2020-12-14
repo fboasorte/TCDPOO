@@ -98,7 +98,5 @@ public class Discente extends Entidade {
         return cpf
                 + ", " + nome
                 + ", " + nascimento;
-
     }
-
 }
