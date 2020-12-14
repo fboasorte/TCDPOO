@@ -5,8 +5,6 @@
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Objects;
 
 /**
@@ -15,15 +13,15 @@ import java.util.Objects;
  */
 public class DisponibilidadeHorario extends Entidade {
 
-    private LocalDate data;
+    private String data;
 
-    private LocalTime hora;
+    private String hora;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
     public DisponibilidadeHorario() {
     }
 
-    public DisponibilidadeHorario(Long id, LocalDate data, LocalTime hora) {
+    public DisponibilidadeHorario(Long id, String data, String hora) {
         super(id);
         this.data = data;
         this.hora = hora;
@@ -32,19 +30,19 @@ public class DisponibilidadeHorario extends Entidade {
 //</editor-fold>
     
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
-    public LocalDate getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(String data) {
         this.data = data;
     }
 
-    public LocalTime getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(LocalTime hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 //</editor-fold>

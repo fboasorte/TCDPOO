@@ -5,7 +5,7 @@
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.dao;
 
-import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Disciplina;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Matricula;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,9 +16,9 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Andre Vinicius
+ * @author devin
  */
-public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
+public class MatriculaDao extends AbstractDao<Matricula, Long> {
     /**
      * Recupera a sentença SQL específica para a inserção da entidade no banco
      * de dados.
@@ -27,7 +27,7 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      */
     @Override
     public String getDeclaracaoInsert() {
-        return "INSERT INTO disciplina(id,nome,conteudo) VALUES (default, ?, ?);";
+        return "INSERT INTO matricula(id,notaParteEscrita,notaParteOral,comentario) VALUES (default, ?, ?,?);";
     }
 
     /**
@@ -38,7 +38,7 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      */
     @Override
     public String getDeclaracaoSelectPorId() {
-        return "SELECT * FROM disciplina WHERE id = ?";
+        return "SELECT * FROM matricula WHERE id = ?";
     }
 
     /**
@@ -49,7 +49,7 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      */
     @Override
     public String getDeclaracaoSelectTodos() {
-        return "SELECT * FROM disciplina";
+        return "SELECT * FROM matricula";
     }
 
     /**
@@ -60,7 +60,7 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      */
     @Override
     public String getDeclaracaoUpdate() {
-        return "UPDATE disciplina SET nome = ?, conteudo = ? WHERE id = ?;";
+        return "UPDATE matricula SET notaParteEscrita = ?, notaParteOral = ?, comentario = ? WHERE id = ?;";
     }
 
     /**
@@ -71,7 +71,7 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      */
     @Override
     public String getDeclaracaoDelete() {
-        return "DELETE FROM disciplina WHERE id = ?";
+        return "DELETE FROM matricula WHERE id = ?";
     }
 
     /**
@@ -95,22 +95,25 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      * atualização de registros no banco de dados.
      *
      * @param pstmt Declaração previamente preparada.
-     * @param disciplina
+     * @param matricula
      */
     @Override
-    public void montarDeclaracao(PreparedStatement pstmt, Disciplina disciplina) {
+    public void montarDeclaracao(PreparedStatement pstmt, Matricula matricula) {
         // Tenta definir valores junto à sentença SQL preparada para execução 
         // no banco de dados.
         try {
-            if (disciplina.getId() == null || disciplina.getId() == 0) {
-                pstmt.setString(1, disciplina.getNome());
-                pstmt.setString(2, disciplina.getConteudo());
+            if (matricula.getId() == null || matricula.getId() == 0) {
+                pstmt.setInt(1, matricula.getNotaParteEscrita());
+                pstmt.setString(2, matricula.getNotaParteOral());
+                pstmt.setString(3, matricula.getComentario());
             } else {
-                pstmt.setString(1, disciplina.getNome());
-                pstmt.setString(2, disciplina.getConteudo());
+                pstmt.setInt(1, matricula.getNotaParteEscrita());
+                pstmt.setString(2, matricula.getNotaParteOral());
+                pstmt.setString(3, matricula.getComentario());
+                pstmt.setLong(4, matricula.getId());
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DisciplinaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MatriculaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -121,22 +124,23 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      * @return Objeto constituído.
      */
     @Override
-    public Disciplina extrairObjeto(ResultSet resultSet) {
+    public Matricula extrairObjeto(ResultSet resultSet) {
         // Cria referência para montagem da tarefa
-        Disciplina disciplina = new Disciplina();
+        Matricula matricula = new Matricula();
 
         // Tenta recuperar dados do registro retornado pelo banco de dados
         // e ajustar o estado da tarefa a ser mapeada
         try {
-            disciplina.setId(resultSet.getLong("id"));
-            disciplina.setNome(resultSet.getString("nome"));
-            disciplina.setConteudo(resultSet.getString("conteudo"));
+            matricula.setId(resultSet.getLong("id"));
+            matricula.setNotaParteEscrita(resultSet.getInt("notaParteEscrita"));
+            matricula.setNotaParteOral(resultSet.getString("notaParteOral"));
+            matricula.setComentario(resultSet.getString("comentario"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         // Devolve a tarefa mapeada
-        return disciplina;
+        return matricula;
     }
 
     /**
@@ -148,33 +152,34 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      * @return Lista de objeto(s) constituído(s).
      */
     @Override
-    public List<Disciplina> extrairObjetos(ResultSet resultSet) {
+    public List<Matricula> extrairObjetos(ResultSet resultSet) {
 
         // Cria referência para inserção das tarefas a serem mapeadas
-        ArrayList<Disciplina> disciplinas = new ArrayList<>();
-        
+        ArrayList<Matricula> matriculas = new ArrayList<>();
+
         // Tenta...
         try {
             // ... entquanto houver registros a serem processados
             while (resultSet.next()) {
                 // Cria referência para montagem da tarefa
-                Disciplina disciplina = new Disciplina();
+                Matricula matricula = new Matricula();
 
                 // Tenta recuperar dados do registro retornado pelo banco 
                 // de dados e ajustar o estado da tarefa a ser mapeada
-                disciplina.setId(resultSet.getLong("id"));
-                disciplina.setNome(resultSet.getString("nome"));
-                disciplina.setConteudo(resultSet.getString("conteudo"));
-                
+                matricula.setId(resultSet.getLong("id"));
+                matricula.setNotaParteEscrita(resultSet.getInt("notaParteEscrita"));
+                matricula.setNotaParteOral(resultSet.getString("notaParteOral"));
+                matricula.setComentario(resultSet.getString("comentario"));
+
                 // Insere a tarefa na lista de tarefas recuperadas
-                disciplinas.add(disciplina);
+                matriculas.add(matricula);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DisciplinaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MatriculaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         // Devolve a lista de tarefas reconstituídas dos registros do banco 
         // de dados
-        return disciplinas;
+        return matriculas;
     }
 }

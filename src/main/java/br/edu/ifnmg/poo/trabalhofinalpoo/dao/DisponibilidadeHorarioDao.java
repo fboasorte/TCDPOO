@@ -5,7 +5,7 @@
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.dao;
 
-import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Disciplina;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.DisponibilidadeHorario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,9 +16,9 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Andre Vinicius
+ * @author devin
  */
-public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
+public class DisponibilidadeHorarioDao extends AbstractDao<DisponibilidadeHorario, Long>  {
     /**
      * Recupera a sentença SQL específica para a inserção da entidade no banco
      * de dados.
@@ -27,7 +27,7 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      */
     @Override
     public String getDeclaracaoInsert() {
-        return "INSERT INTO disciplina(id,nome,conteudo) VALUES (default, ?, ?);";
+        return "INSERT INTO disponibilidadeHorario(id,data,hora) VALUES (default, ?, ?);";
     }
 
     /**
@@ -38,7 +38,7 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      */
     @Override
     public String getDeclaracaoSelectPorId() {
-        return "SELECT * FROM disciplina WHERE id = ?";
+        return "SELECT * FROM disponibilidadeHorario WHERE id = ?";
     }
 
     /**
@@ -49,7 +49,7 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      */
     @Override
     public String getDeclaracaoSelectTodos() {
-        return "SELECT * FROM disciplina";
+        return "SELECT * FROM disponibilidadeHorario";
     }
 
     /**
@@ -60,7 +60,7 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      */
     @Override
     public String getDeclaracaoUpdate() {
-        return "UPDATE disciplina SET nome = ?, conteudo = ? WHERE id = ?;";
+        return "UPDATE disponibilidadeHorario SET data = ?, hora = ? WHERE id = ?;";
     }
 
     /**
@@ -71,7 +71,7 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      */
     @Override
     public String getDeclaracaoDelete() {
-        return "DELETE FROM disciplina WHERE id = ?";
+        return "DELETE FROM disponibilidadeHorario WHERE id = ?";
     }
 
     /**
@@ -95,22 +95,23 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      * atualização de registros no banco de dados.
      *
      * @param pstmt Declaração previamente preparada.
-     * @param disciplina
+     * @param disponibilidadeHorario
      */
     @Override
-    public void montarDeclaracao(PreparedStatement pstmt, Disciplina disciplina) {
+    public void montarDeclaracao(PreparedStatement pstmt, DisponibilidadeHorario disponibilidadeHorario) {
         // Tenta definir valores junto à sentença SQL preparada para execução 
         // no banco de dados.
         try {
-            if (disciplina.getId() == null || disciplina.getId() == 0) {
-                pstmt.setString(1, disciplina.getNome());
-                pstmt.setString(2, disciplina.getConteudo());
+            if (disponibilidadeHorario.getId() == null || disponibilidadeHorario.getId() == 0) {
+                pstmt.setString(1, String.valueOf(disponibilidadeHorario.getData()));
+                pstmt.setString(2, String.valueOf(disponibilidadeHorario.getHora()));
             } else {
-                pstmt.setString(1, disciplina.getNome());
-                pstmt.setString(2, disciplina.getConteudo());
+                pstmt.setString(1, String.valueOf(disponibilidadeHorario.getData()));
+                pstmt.setString(2, String.valueOf(disponibilidadeHorario.getHora()));
+                pstmt.setLong(3, disponibilidadeHorario.getId());
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DisciplinaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DisponibilidadeHorarioDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -121,22 +122,22 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      * @return Objeto constituído.
      */
     @Override
-    public Disciplina extrairObjeto(ResultSet resultSet) {
+    public DisponibilidadeHorario extrairObjeto(ResultSet resultSet) {
         // Cria referência para montagem da tarefa
-        Disciplina disciplina = new Disciplina();
+        DisponibilidadeHorario disponibilidadeHorario = new DisponibilidadeHorario();
 
         // Tenta recuperar dados do registro retornado pelo banco de dados
         // e ajustar o estado da tarefa a ser mapeada
         try {
-            disciplina.setId(resultSet.getLong("id"));
-            disciplina.setNome(resultSet.getString("nome"));
-            disciplina.setConteudo(resultSet.getString("conteudo"));
+            disponibilidadeHorario.setId(resultSet.getLong("id"));
+            disponibilidadeHorario.setData(resultSet.getString("data"));
+            disponibilidadeHorario.setHora(resultSet.getString("hora"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         // Devolve a tarefa mapeada
-        return disciplina;
+        return disponibilidadeHorario;
     }
 
     /**
@@ -148,33 +149,33 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      * @return Lista de objeto(s) constituído(s).
      */
     @Override
-    public List<Disciplina> extrairObjetos(ResultSet resultSet) {
+    public List<DisponibilidadeHorario> extrairObjetos(ResultSet resultSet) {
 
         // Cria referência para inserção das tarefas a serem mapeadas
-        ArrayList<Disciplina> disciplinas = new ArrayList<>();
+        ArrayList<DisponibilidadeHorario> disponibilidadeHorarios = new ArrayList<>();
         
         // Tenta...
         try {
             // ... entquanto houver registros a serem processados
             while (resultSet.next()) {
                 // Cria referência para montagem da tarefa
-                Disciplina disciplina = new Disciplina();
+                DisponibilidadeHorario disponibilidadeHorario = new DisponibilidadeHorario();
 
                 // Tenta recuperar dados do registro retornado pelo banco 
                 // de dados e ajustar o estado da tarefa a ser mapeada
-                disciplina.setId(resultSet.getLong("id"));
-                disciplina.setNome(resultSet.getString("nome"));
-                disciplina.setConteudo(resultSet.getString("conteudo"));
+                disponibilidadeHorario.setId(resultSet.getLong("id"));
+                disponibilidadeHorario.setHora(resultSet.getString("hora"));
+                disponibilidadeHorario.setData(resultSet.getString("data"));
                 
                 // Insere a tarefa na lista de tarefas recuperadas
-                disciplinas.add(disciplina);
+                disponibilidadeHorarios.add(disponibilidadeHorario);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DisciplinaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DisponibilidadeHorarioDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         // Devolve a lista de tarefas reconstituídas dos registros do banco 
         // de dados
-        return disciplinas;
+        return disponibilidadeHorarios;
     }
 }
