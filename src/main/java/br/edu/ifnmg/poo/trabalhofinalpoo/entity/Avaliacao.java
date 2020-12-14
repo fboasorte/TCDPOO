@@ -15,7 +15,7 @@ public class Avaliacao extends Entidade {
 
     private int notaParteEscrita;
 
-    private char notaParteOral;
+    private String notaParteOral;
 
     private String comentario;
 
@@ -23,7 +23,7 @@ public class Avaliacao extends Entidade {
     public Avaliacao() {
     }
 
-    public Avaliacao(Long id, int notaParteEscrita, char notaParteOral, String comentario) {
+    public Avaliacao(Long id, int notaParteEscrita, String notaParteOral, String comentario) {
         super(id);
         this.notaParteEscrita = notaParteEscrita;
         this.notaParteOral = notaParteOral;
@@ -40,11 +40,11 @@ public class Avaliacao extends Entidade {
         this.notaParteEscrita = notaParteEscrita;
     }
 
-    public char getNotaParteOral() {
+    public String getNotaParteOral() {
         return notaParteOral;
     }
 
-    public void setNotaParteOral(char notaParteOral) {
+    public void setNotaParteOral(String notaParteOral) {
         this.notaParteOral = notaParteOral;
     }
 
@@ -62,7 +62,7 @@ public class Avaliacao extends Entidade {
     public int hashCode() {
         int hash = 3;
         hash = 97 * hash + this.notaParteEscrita;
-        hash = 97 * hash + this.notaParteOral;
+        hash = 97 * hash + Objects.hashCode(this.notaParteOral);
         hash = 97 * hash + Objects.hashCode(this.comentario);
         return hash;
     }
