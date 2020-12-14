@@ -18,7 +18,8 @@ import java.util.logging.Logger;
  *
  * @author devin
  */
-public class AvaliacaoDao  extends AbstractDao<Avaliacao, Long> {
+public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
+
     /**
      * Recupera a sentença SQL específica para a inserção da entidade no banco
      * de dados.
@@ -156,7 +157,7 @@ public class AvaliacaoDao  extends AbstractDao<Avaliacao, Long> {
 
         // Cria referência para inserção das tarefas a serem mapeadas
         ArrayList<Avaliacao> avaliacoes = new ArrayList<>();
-        
+
         // Tenta...
         try {
             // ... entquanto houver registros a serem processados
@@ -170,7 +171,7 @@ public class AvaliacaoDao  extends AbstractDao<Avaliacao, Long> {
                 avaliacao.setNotaParteEscrita(resultSet.getInt("notaParteEscrita"));
                 avaliacao.setNotaParteOral(resultSet.getString("notaParteOral"));
                 avaliacao.setComentario(resultSet.getString("comentario"));
-                
+
                 // Insere a tarefa na lista de tarefas recuperadas
                 avaliacoes.add(avaliacao);
             }
