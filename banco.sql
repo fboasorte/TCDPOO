@@ -1,52 +1,40 @@
 create database tcd;
 use tcd;
 
-create table Professor (
-<<<<<<< HEAD
-id int primary key,
+create table professor (
+id int primary key auto_increment NOT NULL,
 cpf int,
-=======
-cpf int primary key,
->>>>>>> master
 nome varchar(50),
 nascimento date);
 
-create table Discente (
-<<<<<<< HEAD
-id int primary key,
+create table discente (
+id int primary key auto_increment NOT NULL,
 cpf int,
-=======
-cpf int primary key,
->>>>>>> master
 nome varchar(50),
-nascimento date);
+nascimento varchar(15));
 
-create table Disciplina (
-id int primary key,
+create table disciplina (
+id int primary key auto_increment NOT NULL,
 nome varchar(20),
 conteudo varchar(100));
 
-create table Avaliacao (
-id int primary key,
+create table avaliacao (
+id int primary key auto_increment NOT NULL,
 notaParteEscrita int,
 notaParteOral char,
 comentario varchar(100));
 
-create table DisponibilidadeHorario (
-id int primary key,
+create table disponibilidadeHorario (
+id int primary key auto_increment NOT NULL,
 data date,
 hora varchar(5));
 
-create table Matricula (
-id int primary key,
+create table matricula (
+id int primary key auto_increment NOT NULL,
 notaParteEscrita int,
 notaParteOral char,
 comentario varchar(100),
-cpfDiscente int,
+idDiscente int,
 idDisciplina int,
-foreign key (cpfDiscente) references Discente(cpf),
-<<<<<<< HEAD
-foreign key (idDisciplina) references Disciplina(id));
-=======
-foreign key (idDisciplina) references Disciplina(id));
->>>>>>> master
+foreign key (idDiscente) references discente(id),
+foreign key (idDisciplina) references disciplina(id));
