@@ -11,17 +11,16 @@ import java.util.Objects;
  *
  * @author felipe
  */
-
 public class Discente extends Entidade {
 
     private int cpf;
 
     private String nome;
-    
+
     private String nascimento;
-    
+
     //<editor-fold defaultstate="collapsed" desc="Construtores">
-    public Discente(){
+    public Discente() {
     }
 
     public Discente(Long id, int cpf, String nome, String nascimento) {
@@ -96,8 +95,8 @@ public class Discente extends Entidade {
 
     @Override
     public String toString() {
-        return cpf 
-                + ", " + nome 
+        return cpf
+                + ", " + nome
                 + ", " + nascimento;
 
     }

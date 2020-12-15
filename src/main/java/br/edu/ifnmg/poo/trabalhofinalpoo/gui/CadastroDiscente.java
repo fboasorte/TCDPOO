@@ -18,18 +18,18 @@ import javax.swing.DefaultListModel;
 public class CadastroDiscente extends javax.swing.JFrame {
 
     private DefaultListModel<Discente> lstDiscentesModel;
-    
+
     private int indiceDiscenteSelecionado;
-    
+
     /**
      * Creates new form CadastroDiscenteNovo
      */
     public CadastroDiscente() {
         lstDiscentesModel = new DefaultListModel<>();
-        
+
         List<Discente> discentes = new DiscenteDao().localizarTodos();
         lstDiscentesModel.addAll(discentes);
-        
+
         initComponents();
     }
 
@@ -173,46 +173,46 @@ public class CadastroDiscente extends javax.swing.JFrame {
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         // TODO add your handling code here:
         Discente discente = new Discente();
-        
+
         discente.setCpf(Integer.parseInt(txtCpf.getText()));
         discente.setNome(txtNome.getText());
         discente.setNascimento(txtNascimento.getText());
-        
+
         Long id = new DiscenteDao().salvar(discente);
         discente.setId(id);
-        
+
         lstDiscentesModel.addElement(discente);
-        
+
         limparCampos();
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void lstDiscentesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstDiscentesMouseReleased
         // TODO add your handling code here:
-        
+
         // Button3 = botao direito
-        if(evt.getButton() == MouseEvent.BUTTON3
-                && lstDiscentes.getModel().getSize() > 0){
+        if (evt.getButton() == MouseEvent.BUTTON3
+                && lstDiscentes.getModel().getSize() > 0) {
             indiceDiscenteSelecionado = lstDiscentes.locationToIndex(evt.getPoint());
             lstDiscentes.setSelectedIndex(indiceDiscenteSelecionado);
-            popUpMenu.show(lstDiscentes,evt.getX(),evt.getY());
+            popUpMenu.show(lstDiscentes, evt.getX(), evt.getY());
         }
     }//GEN-LAST:event_lstDiscentesMouseReleased
 
     private void mnuExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExcluirActionPerformed
         // TODO add your handling code here:
-        
+
         // COm base no indice, devolve a tarefa
         new DiscenteDao().excluir(lstDiscentesModel.get(indiceDiscenteSelecionado));
-        
+
         // Exclui graficamente 
         lstDiscentesModel.remove(lstDiscentes.getSelectedIndex());
     }//GEN-LAST:event_mnuExcluirActionPerformed
 
     private void mnuEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEditarActionPerformed
         // TODO add your handling code here:
-        
-        EditarDiscente editarDiscente = 
-                new EditarDiscente(lstDiscentes.getSelectedValue(),this,true);
+
+        EditarDiscente editarDiscente
+                = new EditarDiscente(lstDiscentes.getSelectedValue(), this, true);
         // this -> referencia a janela principal
         editarDiscente.setLocationRelativeTo(this);
         editarDiscente.setVisible(true);
@@ -253,17 +253,17 @@ public class CadastroDiscente extends javax.swing.JFrame {
             }
         });
     }
-    
-    private void limparCampos(){
+
+    private void limparCampos() {
         txtCpf.setText(null);
         txtNome.setText(null);
         txtNascimento.setText(null);
-        
+
         txtCpf.requestFocus();
     }
-    
-    void atualizarModelo(Discente discente){
-        lstDiscentesModel.set(indiceDiscenteSelecionado,discente);
+
+    void atualizarModelo(Discente discente) {
+        lstDiscentesModel.set(indiceDiscenteSelecionado, discente);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
