@@ -17,7 +17,7 @@ public class Matricula extends Entidade {
 
     private String notaParteOral;
 
-    private String comentarios;
+    private String comentario;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
     public Matricula() {
@@ -27,7 +27,7 @@ public class Matricula extends Entidade {
         super(id);
         this.notaParteEscrita = notaParteEscrita;
         this.notaParteOral = notaParteOral;
-        this.comentarios = comentarios;
+        this.comentario = comentarios;
     }
 //</editor-fold>
 
@@ -48,12 +48,12 @@ public class Matricula extends Entidade {
         this.notaParteOral = notaParteOral;
     }
 
-    public String getComentarios() {
-        return comentarios;
+    public String getComentario() {
+        return comentario;
     }
 
-    public void setComentarios(String comentarios) {
-        this.comentarios = comentarios;
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 //</editor-fold>
 
@@ -63,7 +63,7 @@ public class Matricula extends Entidade {
         int hash = 3;
         hash = 79 * hash + Objects.hashCode(this.notaParteEscrita);
         hash = 79 * hash + Objects.hashCode(this.notaParteOral);
-        hash = 79 * hash + Objects.hashCode(this.comentarios);
+        hash = 79 * hash + Objects.hashCode(this.comentario);
         return hash;
     }
 
@@ -82,7 +82,7 @@ public class Matricula extends Entidade {
         if (this.notaParteOral != other.notaParteOral) {
             return false;
         }
-        if (!Objects.equals(this.comentarios, other.comentarios)) {
+        if (!Objects.equals(this.comentario, other.comentario)) {
             return false;
         }
         if (!Objects.equals(this.notaParteEscrita, other.notaParteEscrita)) {
@@ -96,7 +96,7 @@ public class Matricula extends Entidade {
     public String toString() {
         return "Matricula{" + "notaParteEscrita=" + notaParteEscrita 
                 + ", notaParteOral=" + notaParteOral 
-                + ", comentarios=" + comentarios + '}';
+                + ", comentarios=" + comentario + '}';
     }
     
 }
