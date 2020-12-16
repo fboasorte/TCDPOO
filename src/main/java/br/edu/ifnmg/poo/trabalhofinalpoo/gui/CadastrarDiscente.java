@@ -7,6 +7,8 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
+import java.awt.PopupMenu;
+import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.DefaultListModel;
 
@@ -21,6 +23,8 @@ public class CadastrarDiscente extends javax.swing.JFrame {
      */
     
     private DefaultListModel<Discente> lstAlunosModel;
+    
+    private int indiceDiscenteSelecionado;
     
     
     public CadastrarDiscente() {
@@ -47,13 +51,11 @@ public class CadastrarDiscente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popUpMenu = new javax.swing.JPopupMenu();
+        mnuEditar = new javax.swing.JMenuItem();
+        mnuExcluir = new javax.swing.JMenuItem();
         pnlCadastroDiscente = new javax.swing.JPanel();
         pnlPesquisa = new javax.swing.JPanel();
-        lblPesquisa = new javax.swing.JLabel();
-        btnBuscar = new javax.swing.JButton();
-        txtPesquisa = new javax.swing.JTextField();
-        btnNovo = new javax.swing.JButton();
-        btnEditar = new javax.swing.JButton();
         scrListaAlunos = new javax.swing.JScrollPane();
         lstAlunos = new javax.swing.JList<>();
         lblListaDiscentes = new javax.swing.JLabel();
@@ -72,6 +74,22 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         txtNome = new javax.swing.JTextField();
         lblDadosCadastrais = new javax.swing.JLabel();
 
+        mnuEditar.setText("Editar");
+        mnuEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuEditarActionPerformed(evt);
+            }
+        });
+        popUpMenu.add(mnuEditar);
+
+        mnuExcluir.setText("Excluir");
+        mnuExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuExcluirActionPerformed(evt);
+            }
+        });
+        popUpMenu.add(mnuExcluir);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Alunos");
         setResizable(false);
@@ -79,43 +97,6 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         pnlCadastroDiscente.setBackground(new java.awt.Color(255, 255, 255));
 
         pnlPesquisa.setBackground(new java.awt.Color(255, 255, 255));
-
-        lblPesquisa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblPesquisa.setForeground(new java.awt.Color(0, 0, 0));
-        lblPesquisa.setText("Pesquisa");
-
-        btnBuscar.setBackground(new java.awt.Color(255, 255, 255));
-        btnBuscar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnBuscar.setForeground(new java.awt.Color(0, 0, 0));
-        btnBuscar.setText("Buscar");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
-            }
-        });
-
-        txtPesquisa.setBackground(new java.awt.Color(255, 255, 255));
-        txtPesquisa.setForeground(new java.awt.Color(0, 0, 0));
-
-        btnNovo.setBackground(new java.awt.Color(255, 255, 255));
-        btnNovo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnNovo.setForeground(new java.awt.Color(0, 0, 0));
-        btnNovo.setText("Novo");
-        btnNovo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNovoActionPerformed(evt);
-            }
-        });
-
-        btnEditar.setBackground(new java.awt.Color(255, 255, 255));
-        btnEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnEditar.setForeground(new java.awt.Color(0, 0, 0));
-        btnEditar.setText("Editar");
-        btnEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarActionPerformed(evt);
-            }
-        });
 
         scrListaAlunos.setBackground(new java.awt.Color(255, 255, 255));
         scrListaAlunos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
@@ -125,6 +106,14 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         lstAlunos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lstAlunos.setForeground(new java.awt.Color(0, 0, 0));
         lstAlunos.setModel(lstAlunosModel);
+        lstAlunos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lstAlunosMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lstAlunosMouseReleased(evt);
+            }
+        });
         scrListaAlunos.setViewportView(lstAlunos);
 
         lblListaDiscentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -139,19 +128,8 @@ public class CadastrarDiscente extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblListaDiscentes)
-                    .addGroup(pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(pnlPesquisaLayout.createSequentialGroup()
-                            .addComponent(lblPesquisa)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnBuscar)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(scrListaAlunos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         pnlPesquisaLayout.setVerticalGroup(
             pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,19 +138,8 @@ public class CadastrarDiscente extends javax.swing.JFrame {
                 .addComponent(lblListaDiscentes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnNovo, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                        .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblPesquisa)
-                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                .addGap(45, 45, 45))
         );
-
-        pnlPesquisaLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnEditar, btnNovo});
 
         pnlAreaDados.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -236,6 +203,7 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         txtCPF.setBackground(new java.awt.Color(255, 255, 255));
         txtCPF.setForeground(new java.awt.Color(0, 0, 0));
 
+        txtContrato.setEditable(false);
         txtContrato.setBackground(new java.awt.Color(204, 204, 204));
         txtContrato.setForeground(new java.awt.Color(0, 0, 0));
 
@@ -388,21 +356,41 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHistoricoActionPerformed
 
-    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNovoActionPerformed
-
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditarActionPerformed
-
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuscarActionPerformed
-
     private void txtDataNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataNascimentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDataNascimentoActionPerformed
+
+    private void mnuExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExcluirActionPerformed
+         // TODO add your handling code here:
+
+        // COm base no indice, devolve a tarefa
+        new DiscenteDao().excluir(lstAlunosModel.get(indiceDiscenteSelecionado));
+
+        // Exclui graficamente 
+        lstAlunosModel.remove(lstAlunos.getSelectedIndex());
+    }//GEN-LAST:event_mnuExcluirActionPerformed
+
+    private void mnuEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEditarActionPerformed
+        EditarDiscente editarDiscente
+                = new EditarDiscente(lstAlunos.getSelectedValue(), this, true);
+        // this -> referencia a janela principal
+        editarDiscente.setLocationRelativeTo(this);
+        editarDiscente.setVisible(true); 
+    }//GEN-LAST:event_mnuEditarActionPerformed
+
+    private void lstAlunosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstAlunosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lstAlunosMouseClicked
+
+    private void lstAlunosMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstAlunosMouseReleased
+         // Button3 = botao direito
+        if (evt.getButton() == MouseEvent.BUTTON3
+                && lstAlunos.getModel().getSize() > 0) {
+            indiceDiscenteSelecionado = lstAlunos.locationToIndex(evt.getPoint());
+            lstAlunos.setSelectedIndex(indiceDiscenteSelecionado);
+            popUpMenu.show(lstAlunos, evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_lstAlunosMouseReleased
 
     /**
      * @param args the command line arguments
@@ -452,11 +440,8 @@ public class CadastrarDiscente extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnHistorico;
-    private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel lblCPF;
     private javax.swing.JLabel lblContrato;
@@ -464,17 +449,18 @@ public class CadastrarDiscente extends javax.swing.JFrame {
     private javax.swing.JLabel lblListaDiscentes;
     private javax.swing.JLabel lblNascimento;
     private javax.swing.JLabel lblNome;
-    private javax.swing.JLabel lblPesquisa;
     private javax.swing.JList<Discente> lstAlunos;
+    private javax.swing.JMenuItem mnuEditar;
+    private javax.swing.JMenuItem mnuExcluir;
     private javax.swing.JPanel pnlAreaDados;
     private javax.swing.JPanel pnlCadastroDiscente;
     private javax.swing.JPanel pnlDados;
     private javax.swing.JPanel pnlPesquisa;
+    private javax.swing.JPopupMenu popUpMenu;
     private javax.swing.JScrollPane scrListaAlunos;
     private javax.swing.JTextField txtCPF;
     private javax.swing.JTextField txtContrato;
     private javax.swing.JTextField txtDataNascimento;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtPesquisa;
     // End of variables declaration//GEN-END:variables
 }
