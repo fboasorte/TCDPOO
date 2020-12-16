@@ -221,7 +221,6 @@ public class CadastrarProva extends javax.swing.JFrame {
         txpAprovado.setBackground(new java.awt.Color(0, 204, 102));
         txpAprovado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txpAprovado.setForeground(new java.awt.Color(0, 0, 0));
-        txpAprovado.setText("APROVADO");
         scrAprovado.setViewportView(txpAprovado);
 
         javax.swing.GroupLayout pnlNotasLayout = new javax.swing.GroupLayout(pnlNotas);
@@ -492,11 +491,23 @@ public class CadastrarProva extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void txtParteEscritaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteEscritaActionPerformed
-        // TODO add your handling code here:
+        if(estaAprovadoEscrita(Integer.parseInt(txtParteEscrita.getText())) && 
+                estaAprovadoOral(txtParteOral.getText())){
+            txpAprovado.setText("APROVADO");
+        }
+        else {
+            txpAprovado.setText("REPROVADO");
+        }
     }//GEN-LAST:event_txtParteEscritaActionPerformed
 
     private void txtParteOralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteOralActionPerformed
-        // TODO add your handling code here:
+        if(estaAprovadoEscrita(Integer.parseInt(txtParteEscrita.getText())) && 
+                estaAprovadoOral(txtParteOral.getText())){
+            txpAprovado.setText("APROVADO");
+        }
+        else {
+            txpAprovado.setText("REPROVADO");
+        }
     }//GEN-LAST:event_txtParteOralActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
@@ -588,14 +599,17 @@ public class CadastrarProva extends javax.swing.JFrame {
         txtParteEscrita.requestFocus();
     }
     
-    private boolean estaAprovado(){
-        if(Integer.parseInt(txtParteOral.getText())  >= 98 && 
-                ("D".equals(txtParteEscrita.getText()) ||
-                "DT".equals(txtParteEscrita.getText()) ||
-                "YD".equals(txtParteEscrita.getText()))){
+    private boolean estaAprovadoEscrita(int parteEscrita){
+        if(parteEscrita >= 98 && parteEscrita <= 100){
                 return true;
         }
         return false;
+    }
+    
+    private boolean estaAprovadoOral(String parteOral){
+        return ("D".equals(parteOral) 
+                || "YD".equals(parteOral)
+                || "T".equals(parteOral));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
