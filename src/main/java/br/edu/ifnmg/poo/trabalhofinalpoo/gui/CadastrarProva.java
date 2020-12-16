@@ -31,13 +31,8 @@ public class CadastrarProva extends javax.swing.JFrame {
         pnlPesquisaAluno = new javax.swing.JPanel();
         lblPesquisa = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
-        cmbFiltro = new javax.swing.JComboBox<>();
         txtPesquisa = new javax.swing.JTextField();
-        pnlTabelaAlunos = new javax.swing.JScrollPane();
-        tblAlunos = new javax.swing.JTable();
         pnlProva = new javax.swing.JPanel();
-        pnlTabelaProvas = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
         pnlDetalhesProva = new javax.swing.JPanel();
         lblID = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
@@ -49,7 +44,7 @@ public class CadastrarProva extends javax.swing.JFrame {
         lblNotas = new javax.swing.JLabel();
         btnSalvar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        pnlNotas = new javax.swing.JPanel();
         scrComentario = new javax.swing.JScrollPane();
         txtComentario = new javax.swing.JTextPane();
         lblComentarios = new javax.swing.JLabel();
@@ -57,8 +52,18 @@ public class CadastrarProva extends javax.swing.JFrame {
         txtParteEscrita = new javax.swing.JTextField();
         txtParteOral = new javax.swing.JTextField();
         lblParteOral = new javax.swing.JLabel();
-        txtParteOral1 = new javax.swing.JTextField();
-        lblTituloDetalhes = new javax.swing.JLabel();
+        scrAprovado = new javax.swing.JScrollPane();
+        txpAprovado = new javax.swing.JTextPane();
+        lblDetalhesProva = new javax.swing.JLabel();
+        btnNovo = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
+        scrListaProvas = new javax.swing.JScrollPane();
+        lstProvas = new javax.swing.JList<>();
+        lblProvasAplicadas = new javax.swing.JLabel();
+        scrListaAlunos = new javax.swing.JScrollPane();
+        lstAlunos = new javax.swing.JList<>();
+        lblListaAlunos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Provas");
@@ -82,11 +87,6 @@ public class CadastrarProva extends javax.swing.JFrame {
             }
         });
 
-        cmbFiltro.setBackground(new java.awt.Color(255, 255, 255));
-        cmbFiltro.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbFiltro.setForeground(new java.awt.Color(0, 0, 0));
-        cmbFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Contrato", "Nome", "CPF" }));
-
         txtPesquisa.setBackground(new java.awt.Color(255, 255, 255));
         txtPesquisa.setForeground(new java.awt.Color(0, 0, 0));
         txtPesquisa.setToolTipText("");
@@ -97,57 +97,7 @@ public class CadastrarProva extends javax.swing.JFrame {
             }
         });
 
-        tblAlunos.setBackground(new java.awt.Color(255, 255, 255));
-        tblAlunos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Contrato", "Nome", "CPF", "Nascimento"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        tblAlunos.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        tblAlunos.setShowGrid(false);
-        tblAlunos.getTableHeader().setResizingAllowed(false);
-        pnlTabelaAlunos.setViewportView(tblAlunos);
-
         pnlProva.setBackground(new java.awt.Color(255, 255, 255));
-
-        jTable3.setBackground(new java.awt.Color(255, 255, 255));
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "ID", "Prova", "Data"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jTable3.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        jTable3.setShowGrid(false);
-        jTable3.getTableHeader().setResizingAllowed(false);
-        pnlTabelaProvas.setViewportView(jTable3);
 
         pnlDetalhesProva.setBackground(new java.awt.Color(255, 255, 255));
         pnlDetalhesProva.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
@@ -214,8 +164,8 @@ public class CadastrarProva extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(245, 245, 245));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+        pnlNotas.setBackground(new java.awt.Color(245, 245, 245));
+        pnlNotas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
 
         txtComentario.setBackground(new java.awt.Color(255, 255, 255));
         txtComentario.setForeground(new java.awt.Color(0, 0, 0));
@@ -250,55 +200,56 @@ public class CadastrarProva extends javax.swing.JFrame {
         lblParteOral.setForeground(new java.awt.Color(0, 0, 0));
         lblParteOral.setText("Parte oral");
 
-        txtParteOral1.setBackground(new java.awt.Color(255, 255, 255));
-        txtParteOral1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtParteOral1.setForeground(new java.awt.Color(0, 0, 0));
-        txtParteOral1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtParteOral1.setText("APROVADO");
-        txtParteOral1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-        txtParteOral1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtParteOral1ActionPerformed(evt);
-            }
-        });
+        scrAprovado.setHorizontalScrollBar(null);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        txpAprovado.setEditable(false);
+        txpAprovado.setBackground(new java.awt.Color(0, 204, 102));
+        txpAprovado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txpAprovado.setForeground(new java.awt.Color(0, 0, 0));
+        txpAprovado.setText("APROVADO");
+        scrAprovado.setViewportView(txpAprovado);
+
+        javax.swing.GroupLayout pnlNotasLayout = new javax.swing.GroupLayout(pnlNotas);
+        pnlNotas.setLayout(pnlNotasLayout);
+        pnlNotasLayout.setHorizontalGroup(
+            pnlNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlNotasLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblComentarios)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(lblParteEscrita)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtParteEscrita, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(lblParteOral)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtParteOral, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtParteOral1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(scrComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlNotasLayout.createSequentialGroup()
+                            .addComponent(lblParteEscrita)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtParteEscrita, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(12, 12, 12)
+                            .addComponent(lblParteOral)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtParteOral, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(scrAprovado, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(scrComentario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        pnlNotasLayout.setVerticalGroup(
+            pnlNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlNotasLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblParteEscrita)
-                    .addComponent(txtParteEscrita, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblParteOral)
-                    .addComponent(txtParteOral, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtParteOral1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblParteEscrita)
+                        .addComponent(txtParteEscrita, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblParteOral)
+                        .addComponent(txtParteOral, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(scrAprovado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblComentarios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
+
+        pnlNotasLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {scrAprovado, txtParteOral});
 
         javax.swing.GroupLayout pnlDetalhesProvaLayout = new javax.swing.GroupLayout(pnlDetalhesProva);
         pnlDetalhesProva.setLayout(pnlDetalhesProvaLayout);
@@ -324,7 +275,7 @@ public class CadastrarProva extends javax.swing.JFrame {
                                 .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(pnlNotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnlDetalhesProvaLayout.createSequentialGroup()
                         .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -350,7 +301,7 @@ public class CadastrarProva extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlDetalhesProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblNotas)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlNotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlDetalhesProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalvar)
@@ -358,9 +309,49 @@ public class CadastrarProva extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        lblTituloDetalhes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblTituloDetalhes.setForeground(new java.awt.Color(0, 0, 0));
-        lblTituloDetalhes.setText("Detalhes da prova");
+        lblDetalhesProva.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDetalhesProva.setForeground(new java.awt.Color(0, 0, 0));
+        lblDetalhesProva.setText("Detalhes da prova");
+
+        btnNovo.setBackground(new java.awt.Color(255, 255, 255));
+        btnNovo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnNovo.setForeground(new java.awt.Color(0, 0, 0));
+        btnNovo.setText("Novo");
+        btnNovo.setToolTipText("");
+        btnNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoActionPerformed(evt);
+            }
+        });
+
+        btnEditar.setBackground(new java.awt.Color(255, 255, 255));
+        btnEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnEditar.setForeground(new java.awt.Color(0, 0, 0));
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+
+        btnExcluir.setBackground(new java.awt.Color(255, 255, 255));
+        btnExcluir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnExcluir.setForeground(new java.awt.Color(0, 0, 0));
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+
+        lstProvas.setBackground(new java.awt.Color(255, 255, 255));
+        lstProvas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstProvas.setForeground(new java.awt.Color(0, 0, 0));
+        scrListaProvas.setViewportView(lstProvas);
+
+        lblProvasAplicadas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblProvasAplicadas.setForeground(new java.awt.Color(0, 0, 0));
+        lblProvasAplicadas.setText("Provas aplicadas");
 
         javax.swing.GroupLayout pnlProvaLayout = new javax.swing.GroupLayout(pnlProva);
         pnlProva.setLayout(pnlProvaLayout);
@@ -368,25 +359,53 @@ public class CadastrarProva extends javax.swing.JFrame {
             pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlProvaLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(pnlTabelaProvas, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(pnlProvaLayout.createSequentialGroup()
+                            .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(scrListaProvas))
+                    .addComponent(lblProvasAplicadas))
                 .addGap(18, 18, 18)
                 .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTituloDetalhes)
+                    .addComponent(lblDetalhesProva)
                     .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
+
+        pnlProvaLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnEditar, btnExcluir, btnNovo});
+
         pnlProvaLayout.setVerticalGroup(
             pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProvaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(pnlTabelaProvas, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(pnlProvaLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDetalhesProva)
+                    .addComponent(lblProvasAplicadas))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(pnlProvaLayout.createSequentialGroup()
-                        .addComponent(lblTituloDetalhes)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(scrListaProvas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnNovo)
+                            .addComponent(btnEditar)
+                            .addComponent(btnExcluir)))
+                    .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15))
         );
+
+        lstAlunos.setBackground(new java.awt.Color(255, 255, 255));
+        lstAlunos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstAlunos.setForeground(new java.awt.Color(0, 0, 0));
+        scrListaAlunos.setViewportView(lstAlunos);
+
+        lblListaAlunos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblListaAlunos.setForeground(new java.awt.Color(0, 0, 0));
+        lblListaAlunos.setText("Lista de alunos");
 
         javax.swing.GroupLayout pnlPesquisaAlunoLayout = new javax.swing.GroupLayout(pnlPesquisaAluno);
         pnlPesquisaAluno.setLayout(pnlPesquisaAlunoLayout);
@@ -395,31 +414,30 @@ public class CadastrarProva extends javax.swing.JFrame {
             .addComponent(pnlProva, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblListaAlunos)
+                    .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 915, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
                         .addComponent(lblPesquisa)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
                         .addComponent(btnBuscar)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
-                        .addComponent(pnlTabelaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 915, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(19, Short.MAX_VALUE))))
+                        .addGap(528, 528, 528)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlPesquisaAlunoLayout.setVerticalGroup(
             pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addComponent(lblListaAlunos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPesquisa)
-                    .addComponent(cmbFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
-                .addGap(20, 20, 20)
-                .addComponent(pnlTabelaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -479,9 +497,17 @@ public class CadastrarProva extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtParteOralActionPerformed
 
-    private void txtParteOral1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteOral1ActionPerformed
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtParteOral1ActionPerformed
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNovoActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -521,27 +547,33 @@ public class CadastrarProva extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JComboBox<String> cmbFiltro;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JLabel lblAula;
     private javax.swing.JLabel lblComentarios;
     private javax.swing.JLabel lblDataHora;
+    private javax.swing.JLabel lblDetalhesProva;
     private javax.swing.JLabel lblID;
+    private javax.swing.JLabel lblListaAlunos;
     private javax.swing.JLabel lblNotas;
     private javax.swing.JLabel lblParteEscrita;
     private javax.swing.JLabel lblParteOral;
     private javax.swing.JLabel lblPesquisa;
-    private javax.swing.JLabel lblTituloDetalhes;
+    private javax.swing.JLabel lblProvasAplicadas;
+    private javax.swing.JList<String> lstAlunos;
+    private javax.swing.JList<String> lstProvas;
     private javax.swing.JPanel pnlCadastroProva;
     private javax.swing.JPanel pnlDetalhesProva;
+    private javax.swing.JPanel pnlNotas;
     private javax.swing.JPanel pnlPesquisaAluno;
     private javax.swing.JPanel pnlProva;
-    private javax.swing.JScrollPane pnlTabelaAlunos;
-    private javax.swing.JScrollPane pnlTabelaProvas;
+    private javax.swing.JScrollPane scrAprovado;
     private javax.swing.JScrollPane scrComentario;
-    private javax.swing.JTable tblAlunos;
+    private javax.swing.JScrollPane scrListaAlunos;
+    private javax.swing.JScrollPane scrListaProvas;
+    private javax.swing.JTextPane txpAprovado;
     private javax.swing.JTextField txtAula;
     private javax.swing.JTextPane txtComentario;
     private javax.swing.JTextField txtData;
@@ -549,7 +581,6 @@ public class CadastrarProva extends javax.swing.JFrame {
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtParteEscrita;
     private javax.swing.JTextField txtParteOral;
-    private javax.swing.JTextField txtParteOral1;
     private javax.swing.JTextField txtPesquisa;
     // End of variables declaration//GEN-END:variables
 }

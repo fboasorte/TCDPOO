@@ -31,10 +31,12 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         pnlPesquiusa = new javax.swing.JPanel();
         lblPesquisa = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
-        cmbFiltro = new javax.swing.JComboBox<>();
         txtPesquisa = new javax.swing.JTextField();
-        pnlTabelaAlunos = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        btnNovo = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        scrListaAlunos = new javax.swing.JScrollPane();
+        lstAlunos = new javax.swing.JList<>();
+        lblListaDiscentes = new javax.swing.JLabel();
         pnlAreaDados = new javax.swing.JPanel();
         btnSalvar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
@@ -43,11 +45,12 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         lblNome = new javax.swing.JLabel();
         lblCPF = new javax.swing.JLabel();
         lblNascimento = new javax.swing.JLabel();
-        txtContrato = new javax.swing.JTextField();
-        txtNome = new javax.swing.JTextField();
-        txtCPF = new javax.swing.JTextField();
-        txtNascimento = new javax.swing.JTextField();
         btnHistorico = new javax.swing.JButton();
+        txtContrato = new javax.swing.JTextField();
+        txtContrato1 = new javax.swing.JTextField();
+        txtContrato2 = new javax.swing.JTextField();
+        txtContrato3 = new javax.swing.JTextField();
+        lblDadosCadastrais = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Alunos");
@@ -71,79 +74,84 @@ public class CadastrarDiscente extends javax.swing.JFrame {
             }
         });
 
-        cmbFiltro.setBackground(new java.awt.Color(255, 255, 255));
-        cmbFiltro.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbFiltro.setForeground(new java.awt.Color(0, 0, 0));
-        cmbFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Contrato", "Nome", "CPF" }));
-
         txtPesquisa.setBackground(new java.awt.Color(255, 255, 255));
         txtPesquisa.setForeground(new java.awt.Color(0, 0, 0));
-        txtPesquisa.setToolTipText("");
-        txtPesquisa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-        txtPesquisa.addActionListener(new java.awt.event.ActionListener() {
+
+        btnNovo.setBackground(new java.awt.Color(255, 255, 255));
+        btnNovo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnNovo.setForeground(new java.awt.Color(0, 0, 0));
+        btnNovo.setText("Novo");
+        btnNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPesquisaActionPerformed(evt);
+                btnNovoActionPerformed(evt);
             }
         });
 
-        jTable2.setBackground(new java.awt.Color(255, 255, 255));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Contrato", "Nome", "CPF", "Nascimento"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+        btnEditar.setBackground(new java.awt.Color(255, 255, 255));
+        btnEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnEditar.setForeground(new java.awt.Color(0, 0, 0));
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
             }
         });
-        jTable2.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        jTable2.setShowGrid(false);
-        jTable2.getTableHeader().setResizingAllowed(false);
-        pnlTabelaAlunos.setViewportView(jTable2);
+
+        scrListaAlunos.setBackground(new java.awt.Color(255, 255, 255));
+        scrListaAlunos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+        scrListaAlunos.setForeground(new java.awt.Color(0, 0, 0));
+
+        lstAlunos.setBackground(new java.awt.Color(255, 255, 255));
+        lstAlunos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstAlunos.setForeground(new java.awt.Color(0, 0, 0));
+        scrListaAlunos.setViewportView(lstAlunos);
+
+        lblListaDiscentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblListaDiscentes.setForeground(new java.awt.Color(0, 0, 0));
+        lblListaDiscentes.setText("Lista de discentes");
 
         javax.swing.GroupLayout pnlPesquiusaLayout = new javax.swing.GroupLayout(pnlPesquiusa);
         pnlPesquiusa.setLayout(pnlPesquiusaLayout);
         pnlPesquiusaLayout.setHorizontalGroup(
             pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPesquiusaLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(pnlPesquiusaLayout.createSequentialGroup()
-                        .addComponent(lblPesquisa)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPesquisa)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBuscar))
-                    .addComponent(pnlTabelaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(25, 25, 25)
+                .addGroup(pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblListaDiscentes)
+                    .addGroup(pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(pnlPesquiusaLayout.createSequentialGroup()
+                            .addComponent(lblPesquisa)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnBuscar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(scrListaAlunos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlPesquiusaLayout.setVerticalGroup(
             pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPesquiusaLayout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(lblListaDiscentes)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblPesquisa))
-                    .addGroup(pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(cmbFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnBuscar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pnlTabelaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnNovo, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                        .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblPesquisa)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
+
+        pnlPesquiusaLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnEditar, btnNovo});
 
         pnlAreaDados.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -186,29 +194,6 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         lblNascimento.setForeground(new java.awt.Color(0, 0, 0));
         lblNascimento.setText("Data de nasc.");
 
-        txtContrato.setEditable(false);
-        txtContrato.setBackground(new java.awt.Color(204, 204, 204));
-        txtContrato.setForeground(new java.awt.Color(0, 0, 0));
-        txtContrato.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-
-        txtNome.setBackground(new java.awt.Color(255, 255, 255));
-        txtNome.setForeground(new java.awt.Color(0, 0, 0));
-        txtNome.setToolTipText("");
-        txtNome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-        txtNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeActionPerformed(evt);
-            }
-        });
-
-        txtCPF.setBackground(new java.awt.Color(255, 255, 255));
-        txtCPF.setForeground(new java.awt.Color(0, 0, 0));
-        txtCPF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-
-        txtNascimento.setBackground(new java.awt.Color(255, 255, 255));
-        txtNascimento.setForeground(new java.awt.Color(0, 0, 0));
-        txtNascimento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-
         btnHistorico.setBackground(new java.awt.Color(255, 255, 255));
         btnHistorico.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnHistorico.setForeground(new java.awt.Color(0, 0, 0));
@@ -219,28 +204,48 @@ public class CadastrarDiscente extends javax.swing.JFrame {
             }
         });
 
+        txtContrato.setEditable(false);
+        txtContrato.setBackground(new java.awt.Color(204, 204, 204));
+        txtContrato.setForeground(new java.awt.Color(0, 0, 0));
+        txtContrato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtContratoActionPerformed(evt);
+            }
+        });
+
+        txtContrato1.setEditable(false);
+        txtContrato1.setBackground(new java.awt.Color(204, 204, 204));
+        txtContrato1.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtContrato2.setBackground(new java.awt.Color(204, 204, 204));
+        txtContrato2.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtContrato3.setEditable(false);
+        txtContrato3.setBackground(new java.awt.Color(204, 204, 204));
+        txtContrato3.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout pnlDadosLayout = new javax.swing.GroupLayout(pnlDados);
         pnlDados.setLayout(pnlDadosLayout);
         pnlDadosLayout.setHorizontalGroup(
             pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDadosLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblNascimento)
-                    .addComponent(lblNome, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblCPF, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblContrato, javax.swing.GroupLayout.Alignment.LEADING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(58, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDadosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnHistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                    .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(lblNascimento)
+                        .addComponent(lblNome, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblCPF, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(lblContrato))
+                .addGap(12, 12, 12)
+                .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtContrato2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtContrato1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlDadosLayout.createSequentialGroup()
+                        .addComponent(txtContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnHistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtContrato3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(288, Short.MAX_VALUE))
         );
         pnlDadosLayout.setVerticalGroup(
             pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,37 +253,41 @@ public class CadastrarDiscente extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblContrato)
-                    .addComponent(txtContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtContrato2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNome)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtContrato3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCPF)
-                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtContrato1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNascimento)
-                    .addComponent(txtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnHistorico)
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addComponent(txtContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHistorico))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
+
+        lblDadosCadastrais.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDadosCadastrais.setForeground(new java.awt.Color(0, 0, 0));
+        lblDadosCadastrais.setText("Dados cadastrais");
 
         javax.swing.GroupLayout pnlAreaDadosLayout = new javax.swing.GroupLayout(pnlAreaDados);
         pnlAreaDados.setLayout(pnlAreaDadosLayout);
         pnlAreaDadosLayout.setHorizontalGroup(
             pnlAreaDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAreaDadosLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(25, 25, 25)
                 .addGroup(pnlAreaDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDadosCadastrais)
                     .addGroup(pnlAreaDadosLayout.createSequentialGroup()
                         .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pnlAreaDadosLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCancelar, btnSalvar});
@@ -287,12 +296,14 @@ public class CadastrarDiscente extends javax.swing.JFrame {
             pnlAreaDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAreaDadosLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(lblDadosCadastrais)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlAreaDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancelar))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pnlAreaDadosLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCancelar, btnSalvar});
@@ -335,21 +346,25 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeActionPerformed
-
     private void btnHistoricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoricoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHistoricoActionPerformed
+
+    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNovoActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void txtPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesquisaActionPerformed
+    private void txtContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContratoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPesquisaActionPerformed
+    }//GEN-LAST:event_txtContratoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -390,24 +405,27 @@ public class CadastrarDiscente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnHistorico;
+    private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JComboBox<String> cmbFiltro;
-    private javax.swing.JTable jTable2;
     private javax.swing.JLabel lblCPF;
     private javax.swing.JLabel lblContrato;
+    private javax.swing.JLabel lblDadosCadastrais;
+    private javax.swing.JLabel lblListaDiscentes;
     private javax.swing.JLabel lblNascimento;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblPesquisa;
+    private javax.swing.JList<String> lstAlunos;
     private javax.swing.JPanel pnlAreaDados;
     private javax.swing.JPanel pnlCadastroDiscente;
     private javax.swing.JPanel pnlDados;
     private javax.swing.JPanel pnlPesquiusa;
-    private javax.swing.JScrollPane pnlTabelaAlunos;
-    private javax.swing.JTextField txtCPF;
+    private javax.swing.JScrollPane scrListaAlunos;
     private javax.swing.JTextField txtContrato;
-    private javax.swing.JTextField txtNascimento;
-    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtContrato1;
+    private javax.swing.JTextField txtContrato2;
+    private javax.swing.JTextField txtContrato3;
     private javax.swing.JTextField txtPesquisa;
     // End of variables declaration//GEN-END:variables
 }
