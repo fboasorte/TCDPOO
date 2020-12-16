@@ -437,6 +437,10 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         // Seleção da "Descrição" para nova digitação
         txtNome.requestFocus();
     }
+    
+    void atualizarModelo(Discente discente) {
+        lstAlunosModel.set(indiceDiscenteSelecionado, discente);
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
