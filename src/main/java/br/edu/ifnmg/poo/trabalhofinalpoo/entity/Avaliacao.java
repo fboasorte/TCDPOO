@@ -18,17 +18,27 @@ public class Avaliacao extends Entidade {
     private String notaParteOral;
 
     private String comentario;
+    
+    private int idDiscente;
+    
+    private int idDisponibilidadeHorario;
+    
+    private int idDisciplina;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
     public Avaliacao() {
     }
 
-    public Avaliacao(Long id, int notaParteEscrita, String notaParteOral, String comentario) {
+    public Avaliacao(Long id, int notaParteEscrita, String notaParteOral, String comentario, int idDiscente, int idDisponibilidadeHorario, int idDisciplina) {
         super(id);
         this.notaParteEscrita = notaParteEscrita;
         this.notaParteOral = notaParteOral;
         this.comentario = comentario;
+        this.idDiscente = idDiscente;
+        this.idDisponibilidadeHorario = idDisponibilidadeHorario;
+        this.idDisciplina = idDisciplina;
     }
+
 //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
@@ -55,15 +65,42 @@ public class Avaliacao extends Entidade {
     public void setComentario(String comentario) {
         this.comentario = comentario;
     }
+
+    public int getIdDiscente() {
+        return idDiscente;
+    }
+
+    public void setIdDiscente(int idDiscente) {
+        this.idDiscente = idDiscente;
+    }
+
+    public int getIdDisponibilidadeHorario() {
+        return idDisponibilidadeHorario;
+    }
+
+    public void setIdDisponibilidadeHorario(int idDisponibilidadeHorario) {
+        this.idDisponibilidadeHorario = idDisponibilidadeHorario;
+    }
+
+    public int getIdDisciplina() {
+        return idDisciplina;
+    }
+
+    public void setIdDisciplina(int idDisciplina) {
+        this.idDisciplina = idDisciplina;
+    }
+    
 //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="Equals/HashCode">
+
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 97 * hash + this.notaParteEscrita;
-        hash = 97 * hash + Objects.hashCode(this.notaParteOral);
-        hash = 97 * hash + Objects.hashCode(this.comentario);
+        hash = 53 * hash + this.notaParteEscrita;
+        hash = 53 * hash + Objects.hashCode(this.notaParteOral);
+        hash = 53 * hash + Objects.hashCode(this.comentario);
+        hash = 53 * hash + this.idDiscente;
         return hash;
     }
 
@@ -82,7 +119,10 @@ public class Avaliacao extends Entidade {
         if (this.notaParteEscrita != other.notaParteEscrita) {
             return false;
         }
-        if (this.notaParteOral != other.notaParteOral) {
+        if (this.idDiscente != other.idDiscente) {
+            return false;
+        }
+        if (!Objects.equals(this.notaParteOral, other.notaParteOral)) {
             return false;
         }
         if (!Objects.equals(this.comentario, other.comentario)) {
@@ -90,13 +130,22 @@ public class Avaliacao extends Entidade {
         }
         return true;
     }
+ 
+    
+    
+    
+    
+    
+    
 //</editor-fold>
 
     @Override
     public String toString() {
-        return "Avaliacao{" + "notaParteEscrita=" + notaParteEscrita
-                + ", notaParteOral=" + notaParteOral
-                + ", comentario=" + comentario + '}';
+        return "Avaliacao{" + "notaParteEscrita=" + notaParteEscrita 
+                + ", notaParteOral=" + notaParteOral 
+                + ", comentario=" + comentario 
+                + ", idDiscente=" + idDiscente 
+                + ", idDisponibilidadeHorario=" + idDisponibilidadeHorario 
+                + ", idDisciplina=" + idDisciplina + '}';
     }
-
 }
