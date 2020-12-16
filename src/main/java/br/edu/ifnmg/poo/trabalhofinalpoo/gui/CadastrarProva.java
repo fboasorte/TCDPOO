@@ -5,6 +5,9 @@
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AvaliacaoDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Avaliacao;
+
 /**
  *
  * @author Fellipe
@@ -29,9 +32,6 @@ public class CadastrarProva extends javax.swing.JFrame {
 
         pnlCadastroProva = new javax.swing.JPanel();
         pnlPesquisaAluno = new javax.swing.JPanel();
-        lblPesquisa = new javax.swing.JLabel();
-        btnBuscar = new javax.swing.JButton();
-        txtPesquisa = new javax.swing.JTextField();
         pnlProva = new javax.swing.JPanel();
         pnlDetalhesProva = new javax.swing.JPanel();
         lblID = new javax.swing.JLabel();
@@ -72,30 +72,6 @@ public class CadastrarProva extends javax.swing.JFrame {
         pnlCadastroProva.setBackground(new java.awt.Color(255, 255, 255));
 
         pnlPesquisaAluno.setBackground(new java.awt.Color(255, 255, 255));
-
-        lblPesquisa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblPesquisa.setForeground(new java.awt.Color(0, 0, 0));
-        lblPesquisa.setText("Pesquisa");
-
-        btnBuscar.setBackground(new java.awt.Color(255, 255, 255));
-        btnBuscar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnBuscar.setForeground(new java.awt.Color(0, 0, 0));
-        btnBuscar.setText("Buscar");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
-            }
-        });
-
-        txtPesquisa.setBackground(new java.awt.Color(255, 255, 255));
-        txtPesquisa.setForeground(new java.awt.Color(0, 0, 0));
-        txtPesquisa.setToolTipText("");
-        txtPesquisa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-        txtPesquisa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPesquisaActionPerformed(evt);
-            }
-        });
 
         pnlProva.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -153,6 +129,11 @@ public class CadastrarProva extends javax.swing.JFrame {
         btnSalvar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnSalvar.setForeground(new java.awt.Color(0, 0, 0));
         btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setBackground(new java.awt.Color(255, 255, 255));
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -414,17 +395,10 @@ public class CadastrarProva extends javax.swing.JFrame {
             .addComponent(pnlProva, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblListaAlunos)
-                    .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 915, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
-                        .addComponent(lblPesquisa)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBuscar)
-                        .addGap(528, 528, 528)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 915, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         pnlPesquisaAlunoLayout.setVerticalGroup(
             pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -433,12 +407,7 @@ public class CadastrarProva extends javax.swing.JFrame {
                 .addComponent(lblListaAlunos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPesquisa)
-                    .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(43, 43, 43)
                 .addComponent(pnlProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -468,14 +437,6 @@ public class CadastrarProva extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuscarActionPerformed
-
-    private void txtPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesquisaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPesquisaActionPerformed
 
     private void txtDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataActionPerformed
         // TODO add your handling code here:
@@ -508,6 +469,22 @@ public class CadastrarProva extends javax.swing.JFrame {
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        Avaliacao avaliacao = new Avaliacao();
+        avaliacao.setNotaParteEscrita(Integer.parseInt(txtParteEscrita.getText()));
+        avaliacao.setNotaParteOral(txtParteOral.getText());
+        avaliacao.setComentario(txtComentario.getText());
+        
+        Long id = new AvaliacaoDao().salvar(avaliacao);
+        
+        avaliacao.setId(id);
+        
+        
+        
+        limparCampos();
+        
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -543,9 +520,18 @@ public class CadastrarProva extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void limparCampos() {
+        // "Descrição" vazia
+        txtParteEscrita.setText(null);
+        txtParteOral.setText(null);
+        txtComentario.setText(null);
+        
+        // Seleção da "Descrição" para nova digitação
+        txtParteEscrita.requestFocus();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
@@ -560,7 +546,6 @@ public class CadastrarProva extends javax.swing.JFrame {
     private javax.swing.JLabel lblNotas;
     private javax.swing.JLabel lblParteEscrita;
     private javax.swing.JLabel lblParteOral;
-    private javax.swing.JLabel lblPesquisa;
     private javax.swing.JLabel lblProvasAplicadas;
     private javax.swing.JList<String> lstAlunos;
     private javax.swing.JList<String> lstProvas;
@@ -581,6 +566,5 @@ public class CadastrarProva extends javax.swing.JFrame {
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtParteEscrita;
     private javax.swing.JTextField txtParteOral;
-    private javax.swing.JTextField txtPesquisa;
     // End of variables declaration//GEN-END:variables
 }
