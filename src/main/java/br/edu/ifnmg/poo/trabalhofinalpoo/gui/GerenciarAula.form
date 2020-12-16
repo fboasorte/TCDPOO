@@ -60,7 +60,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="486" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="483" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Component id="pnlMarcacaoAula" alignment="0" max="32767" attributes="0"/>
                   </Group>
@@ -84,15 +84,15 @@
                               <Component id="lblHorariosDisponiveis" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="btnMarcarAula" min="-2" pref="124" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnDesmarcarAula" min="-2" pref="140" max="-2" attributes="0"/>
                               </Group>
                               <Component id="pnlDadosMarcacao" alignment="1" max="32767" attributes="0"/>
                               <Component id="lblDadosMarcacao" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="scrHorarios" max="32767" attributes="0"/>
+                              <Component id="scrHorariosMarcacao" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="pnlDetalhes" min="-2" max="-2" attributes="0"/>
+                          <Component id="pnlDetalhesMarcacao" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="12" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -102,21 +102,21 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                   <Component id="lblDadosMarcacao" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="pnlDadosMarcacao" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="lblHorariosDisponiveis" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="scrHorarios" min="-2" pref="292" max="-2" attributes="0"/>
+                                  <Component id="scrHorariosMarcacao" min="-2" pref="268" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="btnDesmarcarAula" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnMarcarAula" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="btnMarcarAula" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnDesmarcarAula" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="pnlDetalhes" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="pnlDetalhesMarcacao" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -399,7 +399,7 @@
                     <Property name="text" type="java.lang.String" value="Desmarcar aula"/>
                   </Properties>
                 </Component>
-                <Container class="javax.swing.JPanel" name="pnlDetalhes">
+                <Container class="javax.swing.JPanel" name="pnlDetalhesMarcacao">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="fc" green="fc" red="fc" type="rgb"/>
@@ -412,8 +412,8 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace pref="25" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblDetalhesAula" min="-2" max="-2" attributes="0"/>
-                                  <Component id="pnlDadosDetalhes" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblDetalhesAulaMarcacao" min="-2" max="-2" attributes="0"/>
+                                  <Component id="pnlMarcacaoDetalhes" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           </Group>
@@ -422,17 +422,17 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                              <Component id="lblDetalhesAula" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="lblDetalhesAulaMarcacao" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="pnlDadosDetalhes" min="-2" max="-2" attributes="0"/>
+                              <Component id="pnlMarcacaoDetalhes" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="23" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="pnlDadosDetalhes">
+                    <Container class="javax.swing.JPanel" name="pnlMarcacaoDetalhes">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -460,29 +460,29 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="lblID" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lblIDMarcacao" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                   </Group>
-                                                  <Component id="lblAula" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblAulaMarcacao" alignment="1" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="lblConteudo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblProfessor" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblDataHora" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblConteudoMarcacao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblProfessorMarcacao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblDataHoraMarcacao" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
-                                                  <Component id="txtData" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <Component id="txtDataMarcacao" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="txtHora" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <Component id="txtHoraMarcacao" min="-2" pref="80" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="txtProfessor" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                              <Component id="txtConteudo" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
-                                              <Component id="txtAula" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                              <Component id="txtID" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <Component id="txtProfessorMarcacao" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                              <Component id="txtConteudoMarcacao" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                                              <Component id="txtAulaMarcacao" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                              <Component id="txtIDMarcacao" min="-2" pref="80" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Component id="scrlListaAlunos" alignment="0" min="-2" pref="440" max="-2" attributes="0"/>
+                                      <Component id="scrlListaAlunosMarcacao" alignment="0" min="-2" pref="440" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="17" max="32767" attributes="0"/>
                               </Group>
@@ -493,41 +493,41 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblID" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtID" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="lblIDMarcacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtIDMarcacao" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblAula" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtAula" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="lblAulaMarcacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtAulaMarcacao" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblConteudo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtConteudo" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="lblConteudoMarcacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtConteudoMarcacao" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtProfessor" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="lblProfessorMarcacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtProfessorMarcacao" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblDataHora" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtData" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Component id="txtHora" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="lblDataHoraMarcacao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtDataMarcacao" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="txtHoraMarcacao" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="lblAlunosMatriculados" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="scrlListaAlunos" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="21" max="32767" attributes="0"/>
+                                  <Component id="scrlListaAlunosMarcacao" min="-2" pref="169" max="-2" attributes="0"/>
+                                  <EmptySpace pref="15" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="lblID">
+                        <Component class="javax.swing.JLabel" name="lblIDMarcacao">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="14" style="0"/>
@@ -538,7 +538,7 @@
                             <Property name="text" type="java.lang.String" value="ID"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="lblAula">
+                        <Component class="javax.swing.JLabel" name="lblAulaMarcacao">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="14" style="0"/>
@@ -549,7 +549,7 @@
                             <Property name="text" type="java.lang.String" value="Aula"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="lblConteudo">
+                        <Component class="javax.swing.JLabel" name="lblConteudoMarcacao">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="14" style="0"/>
@@ -560,7 +560,7 @@
                             <Property name="text" type="java.lang.String" value="Conte&#xfa;do"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="lblProfessor">
+                        <Component class="javax.swing.JLabel" name="lblProfessorMarcacao">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="14" style="0"/>
@@ -571,7 +571,7 @@
                             <Property name="text" type="java.lang.String" value="Professor"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="lblDataHora">
+                        <Component class="javax.swing.JLabel" name="lblDataHoraMarcacao">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="14" style="0"/>
@@ -593,14 +593,14 @@
                             <Property name="text" type="java.lang.String" value="Alunos matriculados"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JScrollPane" name="scrlListaAlunos">
+                        <Container class="javax.swing.JScrollPane" name="scrlListaAlunosMarcacao">
                           <AuxValues>
                             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                           </AuxValues>
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JList" name="lstAlunos">
+                            <Component class="javax.swing.JList" name="lstAlunosMarcacao">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -627,7 +627,7 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JTextField" name="txtData">
+                        <Component class="javax.swing.JTextField" name="txtDataMarcacao">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -640,7 +640,7 @@
                             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
                           </AccessibilityProperties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="txtHora">
+                        <Component class="javax.swing.JTextField" name="txtHoraMarcacao">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -650,7 +650,7 @@
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="txtProfessor">
+                        <Component class="javax.swing.JTextField" name="txtProfessorMarcacao">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -660,7 +660,7 @@
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="txtConteudo">
+                        <Component class="javax.swing.JTextField" name="txtConteudoMarcacao">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -670,10 +670,10 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtConteudoActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtConteudoMarcacaoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="txtAula">
+                        <Component class="javax.swing.JTextField" name="txtAulaMarcacao">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -683,10 +683,10 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAulaActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAulaMarcacaoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="txtID">
+                        <Component class="javax.swing.JTextField" name="txtIDMarcacao">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -696,12 +696,12 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIDActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIDMarcacaoActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="lblDetalhesAula">
+                    <Component class="javax.swing.JLabel" name="lblDetalhesAulaMarcacao">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
@@ -714,14 +714,14 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="scrHorarios">
+                <Container class="javax.swing.JScrollPane" name="scrHorariosMarcacao">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JList" name="lstHorarios">
+                    <Component class="javax.swing.JList" name="lstHorariosMarcacao">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -752,7 +752,7 @@
             </Container>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel5">
+        <Container class="javax.swing.JPanel" name="pnlTabPresenca">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Presen&#xe7;a e notas">
@@ -764,17 +764,17 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+                  <Component id="pnlPresencaNotas" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel2" alignment="1" max="32767" attributes="0"/>
+                  <Component id="pnlPresencaNotas" alignment="1" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPanel2">
+            <Container class="javax.swing.JPanel" name="pnlPresencaNotas">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -786,25 +786,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="303" max="-2" attributes="0"/>
-                                  <Component id="btnNovo1" min="-2" pref="105" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnEditar1" min="-2" pref="90" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnExcluir1" min="-2" pref="90" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lblTituloDetalhes2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCalendar11" alignment="0" pref="600" max="32767" attributes="0"/>
+                                  <Component id="scrListaAulasPresenca" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lblSelecionarData" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jCalendarPresenca" alignment="0" pref="600" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="btnEditarPresenca" min="-2" pref="90" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="pnlDadosDetalhes1" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblDetalhesAula1" min="-2" max="-2" attributes="0"/>
+                              <Component id="pnlPresencaDetalhes" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblDetalhesAulaPresenca" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
@@ -815,23 +808,19 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblTituloDetalhes2" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblDetalhesAula1" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblSelecionarData" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblDetalhesAulaPresenca" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jCalendar11" min="-2" pref="201" max="-2" attributes="0"/>
+                                  <Component id="jCalendarPresenca" min="-2" pref="201" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane2" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="scrListaAulasPresenca" min="-2" pref="150" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnExcluir1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnEditar1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnNovo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="btnEditarPresenca" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="pnlDadosDetalhes1" max="32767" attributes="0"/>
+                              <Component id="pnlPresencaDetalhes" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace pref="41" max="32767" attributes="0"/>
                       </Group>
@@ -839,7 +828,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="lblTituloDetalhes2">
+                <Component class="javax.swing.JLabel" name="lblSelecionarData">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -850,7 +839,7 @@
                     <Property name="text" type="java.lang.String" value="Selecionar data"/>
                   </Properties>
                 </Component>
-                <Component class="com.toedter.calendar.JCalendar" name="jCalendar11">
+                <Component class="com.toedter.calendar.JCalendar" name="jCalendarPresenca">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -873,14 +862,14 @@
                     <Property name="weekOfYearVisible" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                <Container class="javax.swing.JScrollPane" name="scrListaAulasPresenca">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JList" name="jList2">
+                    <Component class="javax.swing.JList" name="lstAulasPresenca">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -901,25 +890,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="btnNovo1">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Novo"/>
-                    <Property name="toolTipText" type="java.lang.String" value=""/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovo1ActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnEditar1">
+                <Component class="javax.swing.JButton" name="btnEditarPresenca">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -933,27 +904,10 @@
                     <Property name="text" type="java.lang.String" value="Editar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditar1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarPresencaActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnExcluir1">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Excluir"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluir1ActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblDetalhesAula1">
+                <Component class="javax.swing.JLabel" name="lblDetalhesAulaPresenca">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -964,7 +918,7 @@
                     <Property name="text" type="java.lang.String" value="Detalhes da aula"/>
                   </Properties>
                 </Component>
-                <Container class="javax.swing.JPanel" name="pnlDadosDetalhes1">
+                <Container class="javax.swing.JPanel" name="pnlPresencaDetalhes">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -988,38 +942,38 @@
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="btnSalvar1" min="-2" pref="95" max="-2" attributes="0"/>
+                                      <Component id="btnSalvarPresenca" min="-2" pref="95" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="btnCancelar1" min="-2" pref="95" max="-2" attributes="0"/>
+                                      <Component id="btnCancelarPresenca" min="-2" pref="95" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="lblAlunosMatriculados1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblAlunosMatriculadosPresenca" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="lblID2" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblIDPresenca" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               </Group>
-                                              <Component id="lblAula2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblAulaPresenca" alignment="1" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="lblConteudo2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblProfessor2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblDataHora2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblConteudoPresenca" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblProfessorPresenca" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblDataHoraPresenca" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="txtData2" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <Component id="txtDataPresenca" min="-2" pref="80" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="txtHora2" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <Component id="txtHoraPresenca" min="-2" pref="80" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="txtProfessor1" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                          <Component id="txtConteudo2" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
-                                          <Component id="txtAula2" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                          <Component id="txtID2" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <Component id="txtProfessorPresenca" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                          <Component id="txtConteudoPresenca" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                                          <Component id="txtAulaPresenca" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                          <Component id="txtIDPresenca" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="scrlListaAlunos1" alignment="0" min="-2" pref="450" max="-2" attributes="0"/>
+                                  <Component id="scrlListaAlunosPresenca" alignment="0" min="-2" pref="450" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="24" max="32767" attributes="0"/>
                           </Group>
@@ -1030,38 +984,38 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblID2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtID2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="lblIDPresenca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtIDPresenca" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblAula2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtAula2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="lblAulaPresenca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtAulaPresenca" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblConteudo2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtConteudo2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="lblConteudoPresenca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtConteudoPresenca" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblProfessor2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtProfessor1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="lblProfessorPresenca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtProfessorPresenca" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblDataHora2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtData2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                  <Component id="txtHora2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="lblDataHoraPresenca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtDataPresenca" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="txtHoraPresenca" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="lblAlunosMatriculados1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAlunosMatriculadosPresenca" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="scrlListaAlunos1" min="-2" pref="125" max="-2" attributes="0"/>
+                              <Component id="scrlListaAlunosPresenca" min="-2" pref="125" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="btnSalvar1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnCancelar1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnSalvarPresenca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnCancelarPresenca" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -1069,7 +1023,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="lblID2">
+                    <Component class="javax.swing.JLabel" name="lblIDPresenca">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
@@ -1080,7 +1034,7 @@
                         <Property name="text" type="java.lang.String" value="ID"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lblAula2">
+                    <Component class="javax.swing.JLabel" name="lblAulaPresenca">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
@@ -1091,7 +1045,7 @@
                         <Property name="text" type="java.lang.String" value="Aula"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lblConteudo2">
+                    <Component class="javax.swing.JLabel" name="lblConteudoPresenca">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
@@ -1102,7 +1056,7 @@
                         <Property name="text" type="java.lang.String" value="Conte&#xfa;do"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lblProfessor2">
+                    <Component class="javax.swing.JLabel" name="lblProfessorPresenca">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
@@ -1113,7 +1067,7 @@
                         <Property name="text" type="java.lang.String" value="Professor"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lblDataHora2">
+                    <Component class="javax.swing.JLabel" name="lblDataHoraPresenca">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
@@ -1124,7 +1078,7 @@
                         <Property name="text" type="java.lang.String" value="Data/Hora"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lblAlunosMatriculados1">
+                    <Component class="javax.swing.JLabel" name="lblAlunosMatriculadosPresenca">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
@@ -1135,14 +1089,14 @@
                         <Property name="text" type="java.lang.String" value="Alunos matriculados"/>
                       </Properties>
                     </Component>
-                    <Container class="javax.swing.JScrollPane" name="scrlListaAlunos1">
+                    <Container class="javax.swing.JScrollPane" name="scrlListaAlunosPresenca">
                       <AuxValues>
                         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                       </AuxValues>
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JList" name="lstAlunos1">
+                        <Component class="javax.swing.JList" name="lstAlunosPresenca">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1169,7 +1123,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JTextField" name="txtData2">
+                    <Component class="javax.swing.JTextField" name="txtDataPresenca">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -1179,7 +1133,7 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtHora2">
+                    <Component class="javax.swing.JTextField" name="txtHoraPresenca">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -1189,7 +1143,7 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtProfessor1">
+                    <Component class="javax.swing.JTextField" name="txtProfessorPresenca">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -1199,20 +1153,7 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtConteudo2">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="0" green="0" red="0" type="rgb"/>
-                        </Property>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtConteudo2ActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="txtAula2">
+                    <Component class="javax.swing.JTextField" name="txtConteudoPresenca">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -1222,10 +1163,10 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAula2ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtConteudoPresencaActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtID2">
+                    <Component class="javax.swing.JTextField" name="txtAulaPresenca">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -1235,10 +1176,23 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtID2ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAulaPresencaActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="btnSalvar1">
+                    <Component class="javax.swing.JTextField" name="txtIDPresenca">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIDPresencaActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnSalvarPresenca">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1252,7 +1206,7 @@
                         <Property name="text" type="java.lang.String" value="Salvar"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="btnCancelar1">
+                    <Component class="javax.swing.JButton" name="btnCancelarPresenca">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1272,7 +1226,7 @@
             </Container>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel18">
+        <Container class="javax.swing.JPanel" name="pnlTabEditar">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Editar aulas">
@@ -1284,17 +1238,17 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="pnlEditarAulas" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="pnlEditarAulas" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPanel1">
+            <Container class="javax.swing.JPanel" name="pnlEditarAulas">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1308,25 +1262,25 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnNovo" min="-2" pref="105" max="-2" attributes="0"/>
+                                  <Component id="btnNovoAula" min="-2" pref="105" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnEditar" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="btnEditarAula" min="-2" pref="90" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnExcluir" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="btnExcluirAula" min="-2" pref="90" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jScrollPane1" max="32767" attributes="0"/>
-                                      <Component id="lblTituloDetalhes1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jCalendar10" alignment="1" pref="600" max="32767" attributes="0"/>
+                                      <Component id="scrListaAulas" max="32767" attributes="0"/>
+                                      <Component id="lblSelecionarDataEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jCalendarEditar" alignment="1" pref="600" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <EmptySpace pref="32" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblTituloDetalhes" min="-2" max="-2" attributes="0"/>
-                              <Component id="pnlDetalhes1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAulaDetalhes" min="-2" max="-2" attributes="0"/>
+                              <Component id="pnlDetalhesAula" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       </Group>
@@ -1337,23 +1291,23 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblTituloDetalhes" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblTituloDetalhes1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAulaDetalhes" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblSelecionarDataEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jCalendar10" min="-2" pref="201" max="-2" attributes="0"/>
+                                  <Component id="jCalendarEditar" min="-2" pref="201" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane1" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="scrListaAulas" min="-2" pref="150" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnNovo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnExcluirAula" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnEditarAula" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnNovoAula" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="pnlDetalhes1" max="32767" attributes="0"/>
+                              <Component id="pnlDetalhesAula" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace pref="41" max="32767" attributes="0"/>
                       </Group>
@@ -1361,14 +1315,14 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+                <Container class="javax.swing.JScrollPane" name="scrListaAulas">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JList" name="jList1">
+                    <Component class="javax.swing.JList" name="lstAulas">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1389,7 +1343,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="btnNovo">
+                <Component class="javax.swing.JButton" name="btnNovoAula">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1404,10 +1358,10 @@
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoAulaActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnEditar">
+                <Component class="javax.swing.JButton" name="btnEditarAula">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1421,10 +1375,10 @@
                     <Property name="text" type="java.lang.String" value="Editar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarAulaActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnExcluir">
+                <Component class="javax.swing.JButton" name="btnExcluirAula">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1438,10 +1392,10 @@
                     <Property name="text" type="java.lang.String" value="Excluir"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirAulaActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="lblTituloDetalhes">
+                <Component class="javax.swing.JLabel" name="lblAulaDetalhes">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -1452,7 +1406,7 @@
                     <Property name="text" type="java.lang.String" value="Detalhes da aula"/>
                   </Properties>
                 </Component>
-                <Container class="javax.swing.JPanel" name="pnlDetalhes1">
+                <Container class="javax.swing.JPanel" name="pnlDetalhesAula">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1474,28 +1428,28 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="btnSalvar" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="btnSalvarAula" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btnCancelar" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="btnCancelarAula" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblAula1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblID1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblConteudo1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblProfessor1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblDataHora1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblAulaEditar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblIDEditar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblConteudoEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblProfessorEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblDataHoraEditar" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                              <Component id="txtData1" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <Component id="txtDataEditar" min="-2" pref="80" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="txtHora1" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <Component id="txtHoraEditar" min="-2" pref="80" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1507,9 +1461,9 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtAula1" min="-2" pref="175" max="-2" attributes="0"/>
-                                          <Component id="txtConteudo1" min="-2" pref="375" max="-2" attributes="0"/>
-                                          <Component id="txtID1" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <Component id="txtAulaEditar" min="-2" pref="175" max="-2" attributes="0"/>
+                                          <Component id="txtConteudoEditar" min="-2" pref="375" max="-2" attributes="0"/>
+                                          <Component id="txtIDEditar" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="0" pref="47" max="32767" attributes="0"/>
                                   </Group>
@@ -1522,34 +1476,34 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblID1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtID1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="lblIDEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtIDEditar" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblAula1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtAula1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="lblAulaEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtAulaEditar" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblConteudo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtConteudo1" alignment="3" min="-2" pref="113" max="-2" attributes="0"/>
+                                  <Component id="lblConteudoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtConteudoEditar" alignment="3" min="-2" pref="113" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblProfessor1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblProfessorEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="cbxProfessor" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblDataHora1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtData1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                  <Component id="txtHora1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="lblDataHoraEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtDataEditar" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="txtHoraEditar" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="btnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnSalvarAula" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnCancelarAula" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -1557,7 +1511,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="lblID1">
+                    <Component class="javax.swing.JLabel" name="lblIDEditar">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
@@ -1568,7 +1522,7 @@
                         <Property name="text" type="java.lang.String" value="ID"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtID1">
+                    <Component class="javax.swing.JTextField" name="txtIDEditar">
                       <Properties>
                         <Property name="editable" type="boolean" value="false"/>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1586,7 +1540,7 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lblAula1">
+                    <Component class="javax.swing.JLabel" name="lblAulaEditar">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
@@ -1597,7 +1551,7 @@
                         <Property name="text" type="java.lang.String" value="Aula"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtAula1">
+                    <Component class="javax.swing.JTextField" name="txtAulaEditar">
                       <Properties>
                         <Property name="editable" type="boolean" value="false"/>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1615,7 +1569,7 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lblConteudo1">
+                    <Component class="javax.swing.JLabel" name="lblConteudoEditar">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
@@ -1626,7 +1580,7 @@
                         <Property name="text" type="java.lang.String" value="Conte&#xfa;do"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtConteudo1">
+                    <Component class="javax.swing.JTextField" name="txtConteudoEditar">
                       <Properties>
                         <Property name="editable" type="boolean" value="false"/>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1644,7 +1598,7 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lblProfessor1">
+                    <Component class="javax.swing.JLabel" name="lblProfessorEditar">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
@@ -1655,7 +1609,7 @@
                         <Property name="text" type="java.lang.String" value="Professor"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lblDataHora1">
+                    <Component class="javax.swing.JLabel" name="lblDataHoraEditar">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
@@ -1666,7 +1620,7 @@
                         <Property name="text" type="java.lang.String" value="Data/Hora"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtData1">
+                    <Component class="javax.swing.JTextField" name="txtDataEditar">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1683,10 +1637,10 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtData1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDataEditarActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtHora1">
+                    <Component class="javax.swing.JTextField" name="txtHoraEditar">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1703,10 +1657,10 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtHora1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtHoraEditarActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="btnSalvar">
+                    <Component class="javax.swing.JButton" name="btnSalvarAula">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1720,7 +1674,7 @@
                         <Property name="text" type="java.lang.String" value="Salvar"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="btnCancelar">
+                    <Component class="javax.swing.JButton" name="btnCancelarAula">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1734,7 +1688,7 @@
                         <Property name="text" type="java.lang.String" value="Cancelar"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarAulaActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="cbxProfessor">
@@ -1760,7 +1714,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JLabel" name="lblTituloDetalhes1">
+                <Component class="javax.swing.JLabel" name="lblSelecionarDataEditar">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -1771,7 +1725,7 @@
                     <Property name="text" type="java.lang.String" value="Selecionar data"/>
                   </Properties>
                 </Component>
-                <Component class="com.toedter.calendar.JCalendar" name="jCalendar10">
+                <Component class="com.toedter.calendar.JCalendar" name="jCalendarEditar">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>

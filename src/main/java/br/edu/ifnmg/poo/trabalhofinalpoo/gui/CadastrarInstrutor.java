@@ -49,9 +49,9 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
         btnCancelarDados = new javax.swing.JButton();
         btnNovo = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
-        lblListaDiscentes = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        lblListaProfessores = new javax.swing.JLabel();
+        scrListaProfessores = new javax.swing.JScrollPane();
+        lstProfessores = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Instrutores");
@@ -263,14 +263,14 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
             }
         });
 
-        lblListaDiscentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblListaDiscentes.setForeground(new java.awt.Color(0, 0, 0));
-        lblListaDiscentes.setText("Lista de discentes");
+        lblListaProfessores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblListaProfessores.setForeground(new java.awt.Color(0, 0, 0));
+        lblListaProfessores.setText("Lista de professores");
 
-        jList1.setBackground(new java.awt.Color(255, 255, 255));
-        jList1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jList1.setForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setViewportView(jList1);
+        lstProfessores.setBackground(new java.awt.Color(255, 255, 255));
+        lstProfessores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstProfessores.setForeground(new java.awt.Color(0, 0, 0));
+        scrListaProfessores.setViewportView(lstProfessores);
 
         javax.swing.GroupLayout pnlListaProfessoresLayout = new javax.swing.GroupLayout(pnlListaProfessores);
         pnlListaProfessores.setLayout(pnlListaProfessoresLayout);
@@ -281,9 +281,6 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
                 .addComponent(pnlAreaDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlListaProfessoresLayout.createSequentialGroup()
                 .addGroup(pnlListaProfessoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnlListaProfessoresLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlListaProfessoresLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(lblPesquisa)
@@ -296,18 +293,19 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlListaProfessoresLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblListaDiscentes)
-                        .addGap(693, 693, 693)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pnlListaProfessoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblListaProfessores)
+                            .addComponent(scrListaProfessores, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(26, 26, 26))
         );
         pnlListaProfessoresLayout.setVerticalGroup(
             pnlListaProfessoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlListaProfessoresLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(lblListaDiscentes)
+                .addComponent(lblListaProfessores)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(scrListaProfessores, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlListaProfessoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlListaProfessoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -424,19 +422,19 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvarDados;
     private javax.swing.JCheckBox chkAtivo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCPF;
     private javax.swing.JLabel lblContrato;
     private javax.swing.JLabel lblDadosProfessor;
-    private javax.swing.JLabel lblListaDiscentes;
+    private javax.swing.JLabel lblListaProfessores;
     private javax.swing.JLabel lblNascimento;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblPesquisa;
+    private javax.swing.JList<String> lstProfessores;
     private javax.swing.JPanel pnlAreaDados;
     private javax.swing.JPanel pnlCadastroProfessor;
     private javax.swing.JPanel pnlDados;
     private javax.swing.JPanel pnlListaProfessores;
+    private javax.swing.JScrollPane scrListaProfessores;
     private javax.swing.JTextField txtCPF;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtDataNascimento;

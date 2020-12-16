@@ -45,14 +45,14 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="pnlPesquiusa" max="32767" attributes="0"/>
+              <Component id="pnlPesquisa" max="32767" attributes="0"/>
               <Component id="pnlAreaDados" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <Component id="pnlPesquiusa" min="-2" max="-2" attributes="0"/>
+                  <Component id="pnlPesquisa" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="pnlAreaDados" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -61,7 +61,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="pnlPesquiusa">
+        <Container class="javax.swing.JPanel" name="pnlPesquisa">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -353,14 +353,14 @@
                           </Group>
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtContrato2" min="-2" pref="70" max="-2" attributes="0"/>
-                              <Component id="txtContrato1" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="txtContrato" min="-2" pref="70" max="-2" attributes="0"/>
+                              <Component id="txtCPF" min="-2" pref="150" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Component id="txtContrato" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="txtDataNascimento" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btnHistorico" min="-2" pref="156" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="txtContrato3" alignment="0" min="-2" pref="400" max="-2" attributes="0"/>
+                              <Component id="txtNome" alignment="0" min="-2" pref="400" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="288" max="32767" attributes="0"/>
                       </Group>
@@ -372,22 +372,22 @@
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblContrato" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtContrato2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="txtContrato" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblNome" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtContrato3" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="txtNome" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblCPF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtContrato1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="txtCPF" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtContrato" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="txtDataNascimento" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               <Component id="btnHistorico" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="29" max="32767" attributes="0"/>
@@ -457,23 +457,31 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHistoricoActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtContrato">
+                <Component class="javax.swing.JTextField" name="txtDataNascimento">
                   <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtContratoActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDataNascimentoActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtContrato1">
+                <Component class="javax.swing.JTextField" name="txtCPF">
                   <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="0" type="rgb"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtContrato">
+                  <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="cc" red="cc" type="rgb"/>
                     </Property>
@@ -482,21 +490,10 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtContrato2">
+                <Component class="javax.swing.JTextField" name="txtNome">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtContrato3">
-                  <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>

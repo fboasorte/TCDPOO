@@ -28,7 +28,7 @@ public class CadastrarDiscente extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlCadastroDiscente = new javax.swing.JPanel();
-        pnlPesquiusa = new javax.swing.JPanel();
+        pnlPesquisa = new javax.swing.JPanel();
         lblPesquisa = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
         txtPesquisa = new javax.swing.JTextField();
@@ -46,10 +46,10 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         lblCPF = new javax.swing.JLabel();
         lblNascimento = new javax.swing.JLabel();
         btnHistorico = new javax.swing.JButton();
+        txtDataNascimento = new javax.swing.JTextField();
+        txtCPF = new javax.swing.JTextField();
         txtContrato = new javax.swing.JTextField();
-        txtContrato1 = new javax.swing.JTextField();
-        txtContrato2 = new javax.swing.JTextField();
-        txtContrato3 = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
         lblDadosCadastrais = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -58,7 +58,7 @@ public class CadastrarDiscente extends javax.swing.JFrame {
 
         pnlCadastroDiscente.setBackground(new java.awt.Color(255, 255, 255));
 
-        pnlPesquiusa.setBackground(new java.awt.Color(255, 255, 255));
+        pnlPesquisa.setBackground(new java.awt.Color(255, 255, 255));
 
         lblPesquisa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblPesquisa.setForeground(new java.awt.Color(0, 0, 0));
@@ -110,16 +110,16 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         lblListaDiscentes.setForeground(new java.awt.Color(0, 0, 0));
         lblListaDiscentes.setText("Lista de discentes");
 
-        javax.swing.GroupLayout pnlPesquiusaLayout = new javax.swing.GroupLayout(pnlPesquiusa);
-        pnlPesquiusa.setLayout(pnlPesquiusaLayout);
-        pnlPesquiusaLayout.setHorizontalGroup(
-            pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPesquiusaLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlPesquisaLayout = new javax.swing.GroupLayout(pnlPesquisa);
+        pnlPesquisa.setLayout(pnlPesquisaLayout);
+        pnlPesquisaLayout.setHorizontalGroup(
+            pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPesquisaLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblListaDiscentes)
-                    .addGroup(pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(pnlPesquiusaLayout.createSequentialGroup()
+                    .addGroup(pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(pnlPesquisaLayout.createSequentialGroup()
                             .addComponent(lblPesquisa)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -132,26 +132,26 @@ public class CadastrarDiscente extends javax.swing.JFrame {
                         .addComponent(scrListaAlunos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        pnlPesquiusaLayout.setVerticalGroup(
-            pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPesquiusaLayout.createSequentialGroup()
+        pnlPesquisaLayout.setVerticalGroup(
+            pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPesquisaLayout.createSequentialGroup()
                 .addContainerGap(17, Short.MAX_VALUE)
                 .addComponent(lblListaDiscentes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnNovo, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
                         .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPesquiusaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblPesquisa)
                         .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
-        pnlPesquiusaLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnEditar, btnNovo});
+        pnlPesquisaLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnEditar, btnNovo});
 
         pnlAreaDados.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -204,25 +204,22 @@ public class CadastrarDiscente extends javax.swing.JFrame {
             }
         });
 
-        txtContrato.setEditable(false);
-        txtContrato.setBackground(new java.awt.Color(204, 204, 204));
-        txtContrato.setForeground(new java.awt.Color(0, 0, 0));
-        txtContrato.addActionListener(new java.awt.event.ActionListener() {
+        txtDataNascimento.setBackground(new java.awt.Color(255, 255, 255));
+        txtDataNascimento.setForeground(new java.awt.Color(0, 0, 0));
+        txtDataNascimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtContratoActionPerformed(evt);
+                txtDataNascimentoActionPerformed(evt);
             }
         });
 
-        txtContrato1.setEditable(false);
-        txtContrato1.setBackground(new java.awt.Color(204, 204, 204));
-        txtContrato1.setForeground(new java.awt.Color(0, 0, 0));
+        txtCPF.setBackground(new java.awt.Color(255, 255, 255));
+        txtCPF.setForeground(new java.awt.Color(0, 0, 0));
 
-        txtContrato2.setBackground(new java.awt.Color(204, 204, 204));
-        txtContrato2.setForeground(new java.awt.Color(0, 0, 0));
+        txtContrato.setBackground(new java.awt.Color(204, 204, 204));
+        txtContrato.setForeground(new java.awt.Color(0, 0, 0));
 
-        txtContrato3.setEditable(false);
-        txtContrato3.setBackground(new java.awt.Color(204, 204, 204));
-        txtContrato3.setForeground(new java.awt.Color(0, 0, 0));
+        txtNome.setBackground(new java.awt.Color(255, 255, 255));
+        txtNome.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout pnlDadosLayout = new javax.swing.GroupLayout(pnlDados);
         pnlDados.setLayout(pnlDadosLayout);
@@ -238,13 +235,13 @@ public class CadastrarDiscente extends javax.swing.JFrame {
                     .addComponent(lblContrato))
                 .addGap(12, 12, 12)
                 .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtContrato2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtContrato1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlDadosLayout.createSequentialGroup()
-                        .addComponent(txtContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnHistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtContrato3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(288, Short.MAX_VALUE))
         );
         pnlDadosLayout.setVerticalGroup(
@@ -253,19 +250,19 @@ public class CadastrarDiscente extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblContrato)
-                    .addComponent(txtContrato2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNome)
-                    .addComponent(txtContrato3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCPF)
-                    .addComponent(txtContrato1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNascimento)
-                    .addComponent(txtContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHistorico))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
@@ -312,13 +309,13 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         pnlCadastroDiscente.setLayout(pnlCadastroDiscenteLayout);
         pnlCadastroDiscenteLayout.setHorizontalGroup(
             pnlCadastroDiscenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlPesquiusa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlPesquisa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnlAreaDados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnlCadastroDiscenteLayout.setVerticalGroup(
             pnlCadastroDiscenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCadastroDiscenteLayout.createSequentialGroup()
-                .addComponent(pnlPesquiusa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlAreaDados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -362,9 +359,9 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void txtContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContratoActionPerformed
+    private void txtDataNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataNascimentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtContratoActionPerformed
+    }//GEN-LAST:event_txtDataNascimentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -420,12 +417,12 @@ public class CadastrarDiscente extends javax.swing.JFrame {
     private javax.swing.JPanel pnlAreaDados;
     private javax.swing.JPanel pnlCadastroDiscente;
     private javax.swing.JPanel pnlDados;
-    private javax.swing.JPanel pnlPesquiusa;
+    private javax.swing.JPanel pnlPesquisa;
     private javax.swing.JScrollPane scrListaAlunos;
+    private javax.swing.JTextField txtCPF;
     private javax.swing.JTextField txtContrato;
-    private javax.swing.JTextField txtContrato1;
-    private javax.swing.JTextField txtContrato2;
-    private javax.swing.JTextField txtContrato3;
+    private javax.swing.JTextField txtDataNascimento;
+    private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtPesquisa;
     // End of variables declaration//GEN-END:variables
 }
