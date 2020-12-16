@@ -9,6 +9,7 @@ import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AvaliacaoDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Avaliacao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
+import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.DefaultListModel;
 
@@ -49,6 +50,9 @@ public class CadastrarProva extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popUpMenu = new javax.swing.JPopupMenu();
+        mnuEditar = new javax.swing.JMenuItem();
+        mnuExcluir = new javax.swing.JMenuItem();
         pnlCadastroProva = new javax.swing.JPanel();
         pnlPesquisaAluno = new javax.swing.JPanel();
         pnlProva = new javax.swing.JPanel();
@@ -83,6 +87,17 @@ public class CadastrarProva extends javax.swing.JFrame {
         scrListaAlunos = new javax.swing.JScrollPane();
         lstDiscentes = new javax.swing.JList<>();
         lblListaAlunos = new javax.swing.JLabel();
+
+        mnuEditar.setText("Editar");
+        popUpMenu.add(mnuEditar);
+
+        mnuExcluir.setText("Excluir");
+        mnuExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuExcluirActionPerformed(evt);
+            }
+        });
+        popUpMenu.add(mnuExcluir);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Provas");
@@ -348,6 +363,11 @@ public class CadastrarProva extends javax.swing.JFrame {
         lstAvaliacoes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lstAvaliacoes.setForeground(new java.awt.Color(0, 0, 0));
         lstAvaliacoes.setModel(lstAvaliacaoModel);
+        lstAvaliacoes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lstAvaliacoesMouseReleased(evt);
+            }
+        });
         scrListaProvas.setViewportView(lstAvaliacoes);
 
         lblProvasAplicadas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -507,6 +527,22 @@ public class CadastrarProva extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnSalvarActionPerformed
 
+    private void lstAvaliacoesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstAvaliacoesMouseReleased
+        if (evt.getButton() == MouseEvent.BUTTON3
+                && lstAvaliacoes.getModel().getSize() > 0) {
+            indiceAvaliacaoSelecionada = lstAvaliacoes.locationToIndex(evt.getPoint());
+            lstAvaliacoes.setSelectedIndex(indiceAvaliacaoSelecionada);
+            popUpMenu.show(lstAvaliacoes, evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_lstAvaliacoesMouseReleased
+
+    private void mnuExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExcluirActionPerformed
+        new AvaliacaoDao().excluir(lstAvaliacaoModel.get(indiceAvaliacaoSelecionada));
+
+        // Exclui graficamente 
+        lstAvaliacaoModel.remove(lstAvaliacoes.getSelectedIndex());
+    }//GEN-LAST:event_mnuExcluirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -570,11 +606,14 @@ public class CadastrarProva extends javax.swing.JFrame {
     private javax.swing.JLabel lblProvasAplicadas;
     private javax.swing.JList<Avaliacao> lstAvaliacoes;
     private javax.swing.JList<Discente> lstDiscentes;
+    private javax.swing.JMenuItem mnuEditar;
+    private javax.swing.JMenuItem mnuExcluir;
     private javax.swing.JPanel pnlCadastroProva;
     private javax.swing.JPanel pnlDetalhesProva;
     private javax.swing.JPanel pnlNotas;
     private javax.swing.JPanel pnlPesquisaAluno;
     private javax.swing.JPanel pnlProva;
+    private javax.swing.JPopupMenu popUpMenu;
     private javax.swing.JScrollPane scrAprovado;
     private javax.swing.JScrollPane scrComentario;
     private javax.swing.JScrollPane scrListaAlunos;
