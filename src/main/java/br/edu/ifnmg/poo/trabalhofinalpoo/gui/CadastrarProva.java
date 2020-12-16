@@ -6,7 +6,9 @@
 package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AvaliacaoDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Avaliacao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
 import java.util.List;
 import javax.swing.DefaultListModel;
 
@@ -18,6 +20,8 @@ public class CadastrarProva extends javax.swing.JFrame {
     
     private DefaultListModel<Avaliacao> lstAvaliacaoModel;
     
+    private DefaultListModel<Discente> lstDiscentesModel;
+    
     private int indiceAvaliacaoSelecionada;
 
     /**
@@ -27,6 +31,11 @@ public class CadastrarProva extends javax.swing.JFrame {
         lstAvaliacaoModel = new DefaultListModel<>();
         List<Avaliacao> avaliacoes = new AvaliacaoDao().localizarTodos();
         lstAvaliacaoModel.addAll(avaliacoes);
+        
+        // exibindo os alunos
+        lstDiscentesModel = new DefaultListModel<>();
+        List<Discente> discentes = new DiscenteDao().localizarTodos();
+        lstDiscentesModel.addAll(discentes);
         
         initComponents();
     }
@@ -393,7 +402,7 @@ public class CadastrarProva extends javax.swing.JFrame {
         lstDiscentes.setBackground(new java.awt.Color(255, 255, 255));
         lstDiscentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lstDiscentes.setForeground(new java.awt.Color(0, 0, 0));
-        lstDiscentes.setModel(lstAvaliacaoModel);
+        lstDiscentes.setModel(lstDiscentesModel);
         scrListaAlunos.setViewportView(lstDiscentes);
 
         lblListaAlunos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -560,7 +569,7 @@ public class CadastrarProva extends javax.swing.JFrame {
     private javax.swing.JLabel lblParteOral;
     private javax.swing.JLabel lblProvasAplicadas;
     private javax.swing.JList<Avaliacao> lstAvaliacoes;
-    private javax.swing.JList<Avaliacao> lstDiscentes;
+    private javax.swing.JList<Discente> lstDiscentes;
     private javax.swing.JPanel pnlCadastroProva;
     private javax.swing.JPanel pnlDetalhesProva;
     private javax.swing.JPanel pnlNotas;
