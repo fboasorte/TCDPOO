@@ -5,6 +5,11 @@
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
+import java.util.List;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Fellipe
@@ -14,7 +19,22 @@ public class CadastrarDiscente extends javax.swing.JFrame {
     /**
      * Creates new form CadastrarAluno
      */
+    
+    private DefaultListModel<Discente> lstAlunosModel;
+    
+    
     public CadastrarDiscente() {
+        
+        lstAlunosModel = new DefaultListModel<>();
+
+        // Recupera todos os registros do banco de dados
+        List<Discente> discentes = new DiscenteDao().localizarTodos();
+
+        // Acrescente objetos do tipo Tarefa recuperados do banco de dados
+        // ao elemento de listagem. Aqui são incluídas as referências completas
+        // aos estados de cada objeto (id, descrição e concluída)
+        lstAlunosModel.addAll(discentes);
+        
         initComponents();
     }
 
@@ -104,6 +124,7 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         lstAlunos.setBackground(new java.awt.Color(255, 255, 255));
         lstAlunos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lstAlunos.setForeground(new java.awt.Color(0, 0, 0));
+        lstAlunos.setModel(lstAlunosModel);
         scrListaAlunos.setViewportView(lstAlunos);
 
         lblListaDiscentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -336,7 +357,27 @@ public class CadastrarDiscente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        // TODO add your handling code here:
+        Discente discente = new Discente();
+        discente.setNome(txtNome.getText());
+        discente.setCpf(Integer.parseInt(txtCPF.getText()));
+        discente.setNascimento(txtDataNascimento.getText());
+
+        // Executa o salvamento do estado do objeto no banco de dados
+        Long id = new DiscenteDao().salvar(discente);
+
+        // Importante! Se o objeto criado não for atrelado a seu id no banco
+        // de dados, o objeto fica desconexo e as futuras alterações de seu
+        // estado gerarão um novo registro
+        discente.setId(id);
+
+        // Atualiza a listagem por meio da inserção direta do elemento recém-criado.
+        // Poderia ser uma nova consulta ao banco de dados para recuperar todos
+        // os registros. (!!!) Isto seria útil em um sistema multiusuário.
+        lstAlunosModel.addElement(discente);
+
+        // Restaura o estado inicial dos componentes da janela.
+        limparCampos();
+
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -398,6 +439,17 @@ public class CadastrarDiscente extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void limparCampos() {
+        // "Descrição" vazia
+        txtCPF.setText(null);
+        txtDataNascimento.setText(null);
+        txtNome.setText(null);
+        
+        // Seleção da "Descrição" para nova digitação
+        txtNome.requestFocus();
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
@@ -413,7 +465,7 @@ public class CadastrarDiscente extends javax.swing.JFrame {
     private javax.swing.JLabel lblNascimento;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblPesquisa;
-    private javax.swing.JList<String> lstAlunos;
+    private javax.swing.JList<Discente> lstAlunos;
     private javax.swing.JPanel pnlAreaDados;
     private javax.swing.JPanel pnlCadastroDiscente;
     private javax.swing.JPanel pnlDados;
