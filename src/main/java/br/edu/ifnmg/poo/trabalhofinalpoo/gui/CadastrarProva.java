@@ -78,9 +78,6 @@ public class CadastrarProva extends javax.swing.JFrame {
         scrAprovado = new javax.swing.JScrollPane();
         txpAprovado = new javax.swing.JTextPane();
         lblDetalhesProva = new javax.swing.JLabel();
-        btnNovo = new javax.swing.JButton();
-        btnEditar = new javax.swing.JButton();
-        btnExcluir = new javax.swing.JButton();
         scrListaProvas = new javax.swing.JScrollPane();
         lstAvaliacoes = new javax.swing.JList<>();
         lblProvasAplicadas = new javax.swing.JLabel();
@@ -327,37 +324,6 @@ public class CadastrarProva extends javax.swing.JFrame {
         lblDetalhesProva.setForeground(new java.awt.Color(0, 0, 0));
         lblDetalhesProva.setText("Detalhes da prova");
 
-        btnNovo.setBackground(new java.awt.Color(255, 255, 255));
-        btnNovo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnNovo.setForeground(new java.awt.Color(0, 0, 0));
-        btnNovo.setText("Novo");
-        btnNovo.setToolTipText("");
-        btnNovo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNovoActionPerformed(evt);
-            }
-        });
-
-        btnEditar.setBackground(new java.awt.Color(255, 255, 255));
-        btnEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnEditar.setForeground(new java.awt.Color(0, 0, 0));
-        btnEditar.setText("Editar");
-        btnEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarActionPerformed(evt);
-            }
-        });
-
-        btnExcluir.setBackground(new java.awt.Color(255, 255, 255));
-        btnExcluir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnExcluir.setForeground(new java.awt.Color(0, 0, 0));
-        btnExcluir.setText("Excluir");
-        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluirActionPerformed(evt);
-            }
-        });
-
         lstAvaliacoes.setBackground(new java.awt.Color(255, 255, 255));
         lstAvaliacoes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lstAvaliacoes.setForeground(new java.awt.Color(0, 0, 0));
@@ -380,24 +346,14 @@ public class CadastrarProva extends javax.swing.JFrame {
             .addGroup(pnlProvaLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(pnlProvaLayout.createSequentialGroup()
-                            .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(scrListaProvas))
+                    .addComponent(scrListaProvas, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblProvasAplicadas))
                 .addGap(18, 18, 18)
                 .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblDetalhesProva)
                     .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
-
-        pnlProvaLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnEditar, btnExcluir, btnNovo});
-
         pnlProvaLayout.setVerticalGroup(
             pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlProvaLayout.createSequentialGroup()
@@ -406,16 +362,13 @@ public class CadastrarProva extends javax.swing.JFrame {
                     .addComponent(lblDetalhesProva)
                     .addComponent(lblProvasAplicadas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlProvaLayout.createSequentialGroup()
                         .addComponent(scrListaProvas)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnNovo)
-                            .addComponent(btnEditar)
-                            .addComponent(btnExcluir)))
-                    .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15))
+                        .addGap(50, 50, 50))
+                    .addGroup(pnlProvaLayout.createSequentialGroup()
+                        .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15))))
         );
 
         lstDiscentes.setBackground(new java.awt.Color(255, 255, 255));
@@ -510,18 +463,6 @@ public class CadastrarProva extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtParteOralActionPerformed
 
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditarActionPerformed
-
-    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNovoActionPerformed
-
-    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnExcluirActionPerformed
-
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         Avaliacao avaliacao = new Avaliacao();
         avaliacao.setNotaParteEscrita(Integer.parseInt(txtParteEscrita.getText()));
@@ -614,9 +555,6 @@ public class CadastrarProva extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnEditar;
-    private javax.swing.JButton btnExcluir;
-    private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel lblAula;
     private javax.swing.JLabel lblComentarios;
