@@ -25,15 +25,8 @@ public class CadastrarProva extends javax.swing.JFrame {
      */
     public CadastrarProva() {
         lstAvaliacaoModel = new DefaultListModel<>();
-
-        // Recupera todos os registros do banco de dados
         List<Avaliacao> avaliacoes = new AvaliacaoDao().localizarTodos();
-
-        // Acrescente objetos do tipo Tarefa recuperados do banco de dados
-        // ao elemento de listagem. Aqui são incluídas as referências completas
-        // aos estados de cada objeto (id, descrição e concluída)
         lstAvaliacaoModel.addAll(avaliacoes);
-        
         
         initComponents();
     }
@@ -76,10 +69,10 @@ public class CadastrarProva extends javax.swing.JFrame {
         btnEditar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         scrListaProvas = new javax.swing.JScrollPane();
-        lstProvas = new javax.swing.JList<>();
+        lstAvaliacoes = new javax.swing.JList<>();
         lblProvasAplicadas = new javax.swing.JLabel();
         scrListaAlunos = new javax.swing.JScrollPane();
-        lstAlunos = new javax.swing.JList<>();
+        lstDiscentes = new javax.swing.JList<>();
         lblListaAlunos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -342,10 +335,11 @@ public class CadastrarProva extends javax.swing.JFrame {
             }
         });
 
-        lstProvas.setBackground(new java.awt.Color(255, 255, 255));
-        lstProvas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lstProvas.setForeground(new java.awt.Color(0, 0, 0));
-        scrListaProvas.setViewportView(lstProvas);
+        lstAvaliacoes.setBackground(new java.awt.Color(255, 255, 255));
+        lstAvaliacoes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstAvaliacoes.setForeground(new java.awt.Color(0, 0, 0));
+        lstAvaliacoes.setModel(lstAvaliacaoModel);
+        scrListaProvas.setViewportView(lstAvaliacoes);
 
         lblProvasAplicadas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblProvasAplicadas.setForeground(new java.awt.Color(0, 0, 0));
@@ -396,11 +390,11 @@ public class CadastrarProva extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
-        lstAlunos.setBackground(new java.awt.Color(255, 255, 255));
-        lstAlunos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lstAlunos.setForeground(new java.awt.Color(0, 0, 0));
-        lstAlunos.setModel(lstAvaliacaoModel);
-        scrListaAlunos.setViewportView(lstAlunos);
+        lstDiscentes.setBackground(new java.awt.Color(255, 255, 255));
+        lstDiscentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstDiscentes.setForeground(new java.awt.Color(0, 0, 0));
+        lstDiscentes.setModel(lstAvaliacaoModel);
+        scrListaAlunos.setViewportView(lstDiscentes);
 
         lblListaAlunos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblListaAlunos.setForeground(new java.awt.Color(0, 0, 0));
@@ -565,8 +559,8 @@ public class CadastrarProva extends javax.swing.JFrame {
     private javax.swing.JLabel lblParteEscrita;
     private javax.swing.JLabel lblParteOral;
     private javax.swing.JLabel lblProvasAplicadas;
-    private javax.swing.JList<Avaliacao> lstAlunos;
-    private javax.swing.JList<String> lstProvas;
+    private javax.swing.JList<Avaliacao> lstAvaliacoes;
+    private javax.swing.JList<Avaliacao> lstDiscentes;
     private javax.swing.JPanel pnlCadastroProva;
     private javax.swing.JPanel pnlDetalhesProva;
     private javax.swing.JPanel pnlNotas;
