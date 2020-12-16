@@ -22,14 +22,14 @@ public class CadastrarDiscente extends javax.swing.JFrame {
      * Creates new form CadastrarAluno
      */
     
-    private DefaultListModel<Discente> lstAlunosModel;
+    private DefaultListModel<Discente> lstDiscentesModel;
     
     private int indiceDiscenteSelecionado;
     
     
     public CadastrarDiscente() {
         
-        lstAlunosModel = new DefaultListModel<>();
+        lstDiscentesModel = new DefaultListModel<>();
 
         // Recupera todos os registros do banco de dados
         List<Discente> discentes = new DiscenteDao().localizarTodos();
@@ -37,7 +37,7 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         // Acrescente objetos do tipo Tarefa recuperados do banco de dados
         // ao elemento de listagem. Aqui são incluídas as referências completas
         // aos estados de cada objeto (id, descrição e concluída)
-        lstAlunosModel.addAll(discentes);
+        lstDiscentesModel.addAll(discentes);
         
         initComponents();
     }
@@ -57,7 +57,7 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         pnlCadastroDiscente = new javax.swing.JPanel();
         pnlPesquisa = new javax.swing.JPanel();
         scrListaAlunos = new javax.swing.JScrollPane();
-        lstAlunos = new javax.swing.JList<>();
+        lstDiscentes = new javax.swing.JList<>();
         lblListaDiscentes = new javax.swing.JLabel();
         pnlAreaDados = new javax.swing.JPanel();
         btnSalvar = new javax.swing.JButton();
@@ -102,19 +102,19 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         scrListaAlunos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
         scrListaAlunos.setForeground(new java.awt.Color(0, 0, 0));
 
-        lstAlunos.setBackground(new java.awt.Color(255, 255, 255));
-        lstAlunos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lstAlunos.setForeground(new java.awt.Color(0, 0, 0));
-        lstAlunos.setModel(lstAlunosModel);
-        lstAlunos.addMouseListener(new java.awt.event.MouseAdapter() {
+        lstDiscentes.setBackground(new java.awt.Color(255, 255, 255));
+        lstDiscentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstDiscentes.setForeground(new java.awt.Color(0, 0, 0));
+        lstDiscentes.setModel(lstDiscentesModel);
+        lstDiscentes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lstAlunosMouseClicked(evt);
+                lstDiscentesMouseClicked(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                lstAlunosMouseReleased(evt);
+                lstDiscentesMouseReleased(evt);
             }
         });
-        scrListaAlunos.setViewportView(lstAlunos);
+        scrListaAlunos.setViewportView(lstDiscentes);
 
         lblListaDiscentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblListaDiscentes.setForeground(new java.awt.Color(0, 0, 0));
@@ -341,7 +341,7 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         // Atualiza a listagem por meio da inserção direta do elemento recém-criado.
         // Poderia ser uma nova consulta ao banco de dados para recuperar todos
         // os registros. (!!!) Isto seria útil em um sistema multiusuário.
-        lstAlunosModel.addElement(discente);
+        lstDiscentesModel.addElement(discente);
 
         // Restaura o estado inicial dos componentes da janela.
         limparCampos();
@@ -364,33 +364,33 @@ public class CadastrarDiscente extends javax.swing.JFrame {
          // TODO add your handling code here:
 
         // COm base no indice, devolve a tarefa
-        new DiscenteDao().excluir(lstAlunosModel.get(indiceDiscenteSelecionado));
+        new DiscenteDao().excluir(lstDiscentesModel.get(indiceDiscenteSelecionado));
 
         // Exclui graficamente 
-        lstAlunosModel.remove(lstAlunos.getSelectedIndex());
+        lstDiscentesModel.remove(lstDiscentes.getSelectedIndex());
     }//GEN-LAST:event_mnuExcluirActionPerformed
 
     private void mnuEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEditarActionPerformed
         EditarDiscente editarDiscente
-                = new EditarDiscente(lstAlunos.getSelectedValue(), this, true);
+                = new EditarDiscente(lstDiscentes.getSelectedValue(), this, true);
         // this -> referencia a janela principal
         editarDiscente.setLocationRelativeTo(this);
         editarDiscente.setVisible(true); 
     }//GEN-LAST:event_mnuEditarActionPerformed
 
-    private void lstAlunosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstAlunosMouseClicked
+    private void lstDiscentesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstDiscentesMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_lstAlunosMouseClicked
+    }//GEN-LAST:event_lstDiscentesMouseClicked
 
-    private void lstAlunosMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstAlunosMouseReleased
+    private void lstDiscentesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstDiscentesMouseReleased
          // Button3 = botao direito
         if (evt.getButton() == MouseEvent.BUTTON3
-                && lstAlunos.getModel().getSize() > 0) {
-            indiceDiscenteSelecionado = lstAlunos.locationToIndex(evt.getPoint());
-            lstAlunos.setSelectedIndex(indiceDiscenteSelecionado);
-            popUpMenu.show(lstAlunos, evt.getX(), evt.getY());
+                && lstDiscentes.getModel().getSize() > 0) {
+            indiceDiscenteSelecionado = lstDiscentes.locationToIndex(evt.getPoint());
+            lstDiscentes.setSelectedIndex(indiceDiscenteSelecionado);
+            popUpMenu.show(lstDiscentes, evt.getX(), evt.getY());
         }
-    }//GEN-LAST:event_lstAlunosMouseReleased
+    }//GEN-LAST:event_lstDiscentesMouseReleased
 
     /**
      * @param args the command line arguments
@@ -439,7 +439,7 @@ public class CadastrarDiscente extends javax.swing.JFrame {
     }
     
     void atualizarModelo(Discente discente) {
-        lstAlunosModel.set(indiceDiscenteSelecionado, discente);
+        lstDiscentesModel.set(indiceDiscenteSelecionado, discente);
     }
 
 
@@ -453,7 +453,7 @@ public class CadastrarDiscente extends javax.swing.JFrame {
     private javax.swing.JLabel lblListaDiscentes;
     private javax.swing.JLabel lblNascimento;
     private javax.swing.JLabel lblNome;
-    private javax.swing.JList<Discente> lstAlunos;
+    private javax.swing.JList<Discente> lstDiscentes;
     private javax.swing.JMenuItem mnuEditar;
     private javax.swing.JMenuItem mnuExcluir;
     private javax.swing.JPanel pnlAreaDados;
