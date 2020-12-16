@@ -362,13 +362,10 @@ public class CadastrarProva extends javax.swing.JFrame {
                     .addComponent(lblDetalhesProva)
                     .addComponent(lblProvasAplicadas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlProvaLayout.createSequentialGroup()
-                        .addComponent(scrListaProvas)
-                        .addGap(50, 50, 50))
-                    .addGroup(pnlProvaLayout.createSequentialGroup()
-                        .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15))))
+                .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scrListaProvas))
+                .addGap(15, 15, 15))
         );
 
         lstDiscentes.setBackground(new java.awt.Color(255, 255, 255));
