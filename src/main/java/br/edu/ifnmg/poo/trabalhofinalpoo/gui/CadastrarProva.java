@@ -587,6 +587,16 @@ public class CadastrarProva extends javax.swing.JFrame {
         // Seleção da "Descrição" para nova digitação
         txtParteEscrita.requestFocus();
     }
+    
+    private boolean estaAprovado(){
+        if(Integer.parseInt(txtParteOral.getText())  >= 98 && 
+                ("D".equals(txtParteEscrita.getText()) ||
+                "DT".equals(txtParteEscrita.getText()) ||
+                "YD".equals(txtParteEscrita.getText()))){
+                return true;
+        }
+        return false;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
