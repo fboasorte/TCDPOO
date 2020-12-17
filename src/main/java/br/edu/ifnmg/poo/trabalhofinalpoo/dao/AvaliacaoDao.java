@@ -28,7 +28,7 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
      */
     @Override
     public String getDeclaracaoInsert() {
-        return "INSERT INTO avaliacao(id,notaParteEscrita,notaParteOral,comentario, idDisponibilidadeHorario, idDiscente, idDisciplina) VALUES (default, ?, ?,?, ?, ?, ?);";
+        return "INSERT INTO avaliacao(id,notaParteEscrita,notaParteOral,comentario, idDiscente, idDisciplina) VALUES (default,?,?, ?, ?, ?);";
     }
 
     /**
@@ -61,7 +61,7 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
      */
     @Override
     public String getDeclaracaoUpdate() {
-        return "UPDATE avaliacao SET notaParteEscrita = ?, notaParteOral = ?, comentario = ?, idDisponibilidadeHorario = ?, idDiscente = ?, idDisciplina = ? WHERE id = ?;";
+        return "UPDATE avaliacao SET notaParteEscrita = ?, notaParteOral = ?, comentario = ?, idDiscente = ?, idDisciplina = ? WHERE id = ?;";
     }
 
     /**
@@ -107,17 +107,15 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
                 pstmt.setInt(1, avaliacao.getNotaParteEscrita());
                 pstmt.setString(2, avaliacao.getNotaParteOral());
                 pstmt.setString(3, avaliacao.getComentario());
-                pstmt.setInt(4, avaliacao.getIdDisponibilidadeHorario());
-                pstmt.setInt(5, avaliacao.getIdDiscente());
-                pstmt.setInt(6, avaliacao.getIdDisciplina());
+                pstmt.setInt(4, avaliacao.getIdDiscente());
+                pstmt.setInt(5, avaliacao.getIdDisciplina());
             } else {
                 pstmt.setInt(1, avaliacao.getNotaParteEscrita());
                 pstmt.setString(2, avaliacao.getNotaParteOral());
                 pstmt.setString(3, avaliacao.getComentario());
-                pstmt.setInt(4, avaliacao.getIdDisponibilidadeHorario());
-                pstmt.setInt(5, avaliacao.getIdDiscente());
-                pstmt.setInt(6, avaliacao.getIdDisciplina());
-                pstmt.setLong(7, avaliacao.getId());
+                pstmt.setInt(4, avaliacao.getIdDiscente());
+                pstmt.setInt(5, avaliacao.getIdDisciplina());
+                pstmt.setLong(6, avaliacao.getId());
             }
         } catch (SQLException ex) {
             Logger.getLogger(AvaliacaoDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -142,7 +140,6 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
             avaliacao.setNotaParteEscrita(resultSet.getInt("notaParteEscrita"));
             avaliacao.setNotaParteOral(resultSet.getString("notaParteOral"));
             avaliacao.setComentario(resultSet.getString("comentario"));
-            avaliacao.setIdDisponibilidadeHorario(resultSet.getInt("idDisponibilidadeHorario"));
             avaliacao.setIdDiscente(resultSet.getInt("idDiscente"));
             avaliacao.setIdDisciplina(resultSet.getInt("idDisciplina"));
         } catch (SQLException e) {
@@ -180,7 +177,6 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
                 avaliacao.setNotaParteEscrita(resultSet.getInt("notaParteEscrita"));
                 avaliacao.setNotaParteOral(resultSet.getString("notaParteOral"));
                 avaliacao.setComentario(resultSet.getString("comentario"));
-                avaliacao.setIdDisponibilidadeHorario(resultSet.getInt("idDisponibilidadeHorario"));
                 avaliacao.setIdDiscente(resultSet.getInt("idDiscente"));
                 avaliacao.setIdDisciplina(resultSet.getInt("idDisciplina"));
 
