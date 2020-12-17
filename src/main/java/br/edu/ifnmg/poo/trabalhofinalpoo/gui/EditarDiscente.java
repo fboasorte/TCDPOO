@@ -9,28 +9,33 @@ import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
 
 /**
+ * Dialogo modal para a edição de tarefa
  *
  * @author felipe
  */
 public class EditarDiscente extends javax.swing.JDialog {
 
+    /**
+     * Referência à janela de cadastro que invocou esta janela de edição.
+     */
     private final CadastrarDiscente cadastroDiscente;
-    
-    private Discente discenteEmEdicao;
-    
-    
 
     /**
-     * Creates new form EditarDiscente
+     * Discente recebido para edicao.
+     */
+    private Discente discenteEmEdicao;
+
+    /**
+     * Inicializa elementos na nova janela
      */
     public EditarDiscente(Discente discente,
-        CadastrarDiscente cadastroDiscente, boolean modal) {
+            CadastrarDiscente cadastroDiscente, boolean modal) {
         super(cadastroDiscente, modal);
         initComponents();
-        
+
         this.cadastroDiscente = cadastroDiscente;
         this.discenteEmEdicao = discente;
-        
+
         preencherDiscente(discente);
     }
 
@@ -214,24 +219,39 @@ public class EditarDiscente extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDataNascimentoEditarActionPerformed
 
+    /**
+     * Resposta ao clique no botão "Salvar".
+     *
+     * @param evt Evento capturado
+     */
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         // TODO add your handling code here:
         discenteEmEdicao.setCpf(Integer.parseInt(txtCPFEditar.getText()));
         discenteEmEdicao.setNome(txtNomeEditar.getText());
         discenteEmEdicao.setNascimento(txtDataNascimentoEditar.getText());
-        
+
         new DiscenteDao().salvar(discenteEmEdicao);
         cadastroDiscente.atualizarModelo(discenteEmEdicao);
         // fecha janela
         dispose();
     }//GEN-LAST:event_btnSalvarActionPerformed
 
+    /**
+     * Fecha a janela ao clicar no botão "Cancelar"
+     *
+     * @param evt Evento capturado
+     */
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    
-    public void preencherDiscente(Discente discente){
+    /**
+     * Extrai dados do discente recebido e popula os componentes da janela com
+     * seus respectivos valores.
+     *
+     * @param discente Objeto "Discente" recebido
+     */
+    public void preencherDiscente(Discente discente) {
         txtCPFEditar.setText(Integer.toString(discente.getCpf()));
         txtNomeEditar.setText(discente.getNome());
         txtDataNascimentoEditar.setText(discente.getNascimento());
