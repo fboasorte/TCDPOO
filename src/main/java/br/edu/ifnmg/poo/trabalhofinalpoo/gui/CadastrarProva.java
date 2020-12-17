@@ -7,9 +7,11 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AvaliacaoDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DisciplinaDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DisponibilidadeHorarioDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Avaliacao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Disciplina;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.DisponibilidadeHorario;
 import java.awt.event.MouseEvent;
 import java.util.List;
@@ -26,6 +28,8 @@ public class CadastrarProva extends javax.swing.JFrame {
     private DefaultListModel<Discente> lstDiscentesModel;
     
     private DefaultListModel<DisponibilidadeHorario> lstDisponibilidadeHorarioModel;
+    
+    private DefaultListModel<Disciplina> lstDisciplinasModel;
     
     private int indiceAvaliacaoSelecionada;
 
@@ -45,6 +49,10 @@ public class CadastrarProva extends javax.swing.JFrame {
         lstDisponibilidadeHorarioModel = new DefaultListModel<>();
         List<DisponibilidadeHorario> disponibilidadeHorarios = new DisponibilidadeHorarioDao().localizarTodos();
         lstDisponibilidadeHorarioModel.addAll(disponibilidadeHorarios);
+        
+        lstDisciplinasModel = new DefaultListModel<>();
+        List<Disciplina> disciplinas = new DisciplinaDao().localizarTodos();
+        lstDisciplinasModel.addAll(disciplinas);
         
         initComponents();
     }
@@ -90,10 +98,10 @@ public class CadastrarProva extends javax.swing.JFrame {
         lstAvaliacoes = new javax.swing.JList<>();
         lblProvasAplicadas = new javax.swing.JLabel();
         scrListaAlunos = new javax.swing.JScrollPane();
-        lstDiscentes = new javax.swing.JList<>();
+        lstDisponibilidadeHorarios = new javax.swing.JList<>();
         lblListaAlunos = new javax.swing.JLabel();
         scrListaAlunos1 = new javax.swing.JScrollPane();
-        lstDiscentes1 = new javax.swing.JList<>();
+        lstDiscentes = new javax.swing.JList<>();
 
         mnuEditar.setText("Editar");
         popUpMenu.add(mnuEditar);
@@ -378,21 +386,21 @@ public class CadastrarProva extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
-        lstDiscentes.setBackground(new java.awt.Color(255, 255, 255));
-        lstDiscentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lstDiscentes.setForeground(new java.awt.Color(0, 0, 0));
-        lstDiscentes.setModel(lstDisponibilidadeHorarioModel);
-        scrListaAlunos.setViewportView(lstDiscentes);
+        lstDisponibilidadeHorarios.setBackground(new java.awt.Color(255, 255, 255));
+        lstDisponibilidadeHorarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstDisponibilidadeHorarios.setForeground(new java.awt.Color(0, 0, 0));
+        lstDisponibilidadeHorarios.setModel(lstDisponibilidadeHorarioModel);
+        scrListaAlunos.setViewportView(lstDisponibilidadeHorarios);
 
         lblListaAlunos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblListaAlunos.setForeground(new java.awt.Color(0, 0, 0));
         lblListaAlunos.setText("Lista de alunos");
 
-        lstDiscentes1.setBackground(new java.awt.Color(255, 255, 255));
-        lstDiscentes1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lstDiscentes1.setForeground(new java.awt.Color(0, 0, 0));
-        lstDiscentes1.setModel(lstDiscentesModel);
-        scrListaAlunos1.setViewportView(lstDiscentes1);
+        lstDiscentes.setBackground(new java.awt.Color(255, 255, 255));
+        lstDiscentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstDiscentes.setForeground(new java.awt.Color(0, 0, 0));
+        lstDiscentes.setModel(lstDiscentesModel);
+        scrListaAlunos1.setViewportView(lstDiscentes);
 
         javax.swing.GroupLayout pnlPesquisaAlunoLayout = new javax.swing.GroupLayout(pnlPesquisaAluno);
         pnlPesquisaAluno.setLayout(pnlPesquisaAlunoLayout);
@@ -493,6 +501,9 @@ public class CadastrarProva extends javax.swing.JFrame {
         avaliacao.setNotaParteEscrita(Integer.parseInt(txtParteEscrita.getText()));
         avaliacao.setNotaParteOral(txtParteOral.getText());
         avaliacao.setComentario(txtComentario.getText());
+        avaliacao.setIdDiscente(lstDiscentes.getSelectedValue().getId().intValue());
+        avaliacao.setIdDisciplina(1);
+        avaliacao.setIdDisponibilidadeHorario(lstDisponibilidadeHorarios.getSelectedValue().getId().intValue());
         
         Long id = new AvaliacaoDao().salvar(avaliacao);
         
@@ -592,8 +603,8 @@ public class CadastrarProva extends javax.swing.JFrame {
     private javax.swing.JLabel lblParteOral;
     private javax.swing.JLabel lblProvasAplicadas;
     private javax.swing.JList<Avaliacao> lstAvaliacoes;
-    private javax.swing.JList<DisponibilidadeHorario> lstDiscentes;
-    private javax.swing.JList<Discente> lstDiscentes1;
+    private javax.swing.JList<Discente> lstDiscentes;
+    private javax.swing.JList<DisponibilidadeHorario> lstDisponibilidadeHorarios;
     private javax.swing.JMenuItem mnuEditar;
     private javax.swing.JMenuItem mnuExcluir;
     private javax.swing.JPanel pnlCadastroProva;
