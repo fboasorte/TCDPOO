@@ -8,11 +8,9 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AvaliacaoDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DisciplinaDao;
-import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DisponibilidadeHorarioDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Avaliacao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Disciplina;
-import br.edu.ifnmg.poo.trabalhofinalpoo.entity.DisponibilidadeHorario;
 import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -26,8 +24,6 @@ public class CadastrarProva extends javax.swing.JFrame {
     private DefaultListModel<Avaliacao> lstAvaliacaoModel;
     
     private DefaultListModel<Discente> lstDiscentesModel;
-    
-    private DefaultListModel<DisponibilidadeHorario> lstDisponibilidadeHorarioModel;
     
     private DefaultListModel<Disciplina> lstDisciplinasModel;
     
@@ -45,10 +41,6 @@ public class CadastrarProva extends javax.swing.JFrame {
         lstDiscentesModel = new DefaultListModel<>();
         List<Discente> discentes = new DiscenteDao().localizarTodos();
         lstDiscentesModel.addAll(discentes);
-        
-        lstDisponibilidadeHorarioModel = new DefaultListModel<>();
-        List<DisponibilidadeHorario> disponibilidadeHorarios = new DisponibilidadeHorarioDao().localizarTodos();
-        lstDisponibilidadeHorarioModel.addAll(disponibilidadeHorarios);
         
         lstDisciplinasModel = new DefaultListModel<>();
         List<Disciplina> disciplinas = new DisciplinaDao().localizarTodos();
@@ -93,17 +85,15 @@ public class CadastrarProva extends javax.swing.JFrame {
         lblParteOral = new javax.swing.JLabel();
         scrAprovado = new javax.swing.JScrollPane();
         txpAprovado = new javax.swing.JTextPane();
-        lblDetalhesProva = new javax.swing.JLabel();
         scrListaProvas = new javax.swing.JScrollPane();
         lstAvaliacoes = new javax.swing.JList<>();
-        lblProvasAplicadas = new javax.swing.JLabel();
-        scrListaAlunos = new javax.swing.JScrollPane();
-        lstDisponibilidadeHorarios = new javax.swing.JList<>();
         lblListaAlunos = new javax.swing.JLabel();
         scrListaAlunos1 = new javax.swing.JScrollPane();
         lstDiscentes = new javax.swing.JList<>();
         scrListaAlunos2 = new javax.swing.JScrollPane();
         lstDisciplinas = new javax.swing.JList<>();
+        lblProvasAplicadas = new javax.swing.JLabel();
+        lblDetalhesProva = new javax.swing.JLabel();
 
         mnuEditar.setText("Editar");
         mnuEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -345,10 +335,6 @@ public class CadastrarProva extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        lblDetalhesProva.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblDetalhesProva.setForeground(new java.awt.Color(0, 0, 0));
-        lblDetalhesProva.setText("Detalhes da prova");
-
         lstAvaliacoes.setBackground(new java.awt.Color(255, 255, 255));
         lstAvaliacoes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lstAvaliacoes.setForeground(new java.awt.Color(0, 0, 0));
@@ -360,44 +346,25 @@ public class CadastrarProva extends javax.swing.JFrame {
         });
         scrListaProvas.setViewportView(lstAvaliacoes);
 
-        lblProvasAplicadas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblProvasAplicadas.setForeground(new java.awt.Color(0, 0, 0));
-        lblProvasAplicadas.setText("Provas aplicadas");
-
         javax.swing.GroupLayout pnlProvaLayout = new javax.swing.GroupLayout(pnlProva);
         pnlProva.setLayout(pnlProvaLayout);
         pnlProvaLayout.setHorizontalGroup(
             pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlProvaLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrListaProvas, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblProvasAplicadas))
+                .addGap(26, 26, 26)
+                .addComponent(scrListaProvas, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDetalhesProva)
-                    .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlProvaLayout.setVerticalGroup(
             pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlProvaLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDetalhesProva)
-                    .addComponent(lblProvasAplicadas))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrListaProvas))
-                .addGap(15, 15, 15))
+                .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scrListaProvas, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 6, Short.MAX_VALUE))
         );
-
-        lstDisponibilidadeHorarios.setBackground(new java.awt.Color(255, 255, 255));
-        lstDisponibilidadeHorarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lstDisponibilidadeHorarios.setForeground(new java.awt.Color(0, 0, 0));
-        lstDisponibilidadeHorarios.setModel(lstDisponibilidadeHorarioModel);
-        scrListaAlunos.setViewportView(lstDisponibilidadeHorarios);
 
         lblListaAlunos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblListaAlunos.setForeground(new java.awt.Color(0, 0, 0));
@@ -415,43 +382,51 @@ public class CadastrarProva extends javax.swing.JFrame {
         lstDisciplinas.setModel(lstDisciplinasModel);
         scrListaAlunos2.setViewportView(lstDisciplinas);
 
+        lblProvasAplicadas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblProvasAplicadas.setForeground(new java.awt.Color(0, 0, 0));
+        lblProvasAplicadas.setText("Provas aplicadas");
+
+        lblDetalhesProva.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDetalhesProva.setForeground(new java.awt.Color(0, 0, 0));
+        lblDetalhesProva.setText("Detalhes da prova");
+
         javax.swing.GroupLayout pnlPesquisaAlunoLayout = new javax.swing.GroupLayout(pnlPesquisaAluno);
         pnlPesquisaAluno.setLayout(pnlPesquisaAlunoLayout);
         pnlPesquisaAlunoLayout.setHorizontalGroup(
             pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlProva, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(lblListaAlunos)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPesquisaAlunoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 21, Short.MAX_VALUE)
                 .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrListaAlunos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(scrListaAlunos2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17))
-            .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
-                    .addGap(29, 29, 29)
-                    .addComponent(scrListaAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(480, Short.MAX_VALUE)))
+                    .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
+                        .addComponent(scrListaAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(scrListaAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
+                        .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(lblListaAlunos))
+                            .addComponent(lblProvasAplicadas))
+                        .addGap(217, 217, 217)
+                        .addComponent(lblDetalhesProva)))
+                .addGap(23, 26, Short.MAX_VALUE))
         );
         pnlPesquisaAlunoLayout.setVerticalGroup(
             pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addGap(16, 16, 16)
                 .addComponent(lblListaAlunos)
-                .addGap(16, 16, 16)
-                .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
-                .addComponent(scrListaAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(pnlProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
-                    .addGap(45, 45, 45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scrListaAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(454, Short.MAX_VALUE)))
+                    .addComponent(scrListaAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDetalhesProva, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblProvasAplicadas, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout pnlCadastroProvaLayout = new javax.swing.GroupLayout(pnlCadastroProva);
@@ -464,7 +439,7 @@ public class CadastrarProva extends javax.swing.JFrame {
             pnlCadastroProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCadastroProvaLayout.createSequentialGroup()
                 .addComponent(pnlPesquisaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -520,8 +495,7 @@ public class CadastrarProva extends javax.swing.JFrame {
         avaliacao.setComentario(txtComentario.getText());
         avaliacao.setIdDiscente(lstDiscentes.getSelectedValue().getId().intValue());
         avaliacao.setIdDisciplina(lstDisciplinas.getSelectedValue().getId().intValue());
-        avaliacao.setIdDisponibilidadeHorario(lstDisponibilidadeHorarios.getSelectedValue().getId().intValue());
-        
+                
         Long id = new AvaliacaoDao().salvar(avaliacao);
         
         avaliacao.setId(id);
@@ -556,41 +530,6 @@ public class CadastrarProva extends javax.swing.JFrame {
         editarProva.setVisible(true);
     }//GEN-LAST:event_mnuEditarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastrarProva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastrarProva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastrarProva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastrarProva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CadastrarProva().setVisible(true);
-            }
-        });
-    }
-    
     private void limparCampos() {
         // "Descrição" vazia
         txtParteEscrita.setText(null);
@@ -634,7 +573,6 @@ public class CadastrarProva extends javax.swing.JFrame {
     private javax.swing.JList<Avaliacao> lstAvaliacoes;
     private javax.swing.JList<Discente> lstDiscentes;
     private javax.swing.JList<Disciplina> lstDisciplinas;
-    private javax.swing.JList<DisponibilidadeHorario> lstDisponibilidadeHorarios;
     private javax.swing.JMenuItem mnuEditar;
     private javax.swing.JMenuItem mnuExcluir;
     private javax.swing.JPanel pnlCadastroProva;
@@ -645,7 +583,6 @@ public class CadastrarProva extends javax.swing.JFrame {
     private javax.swing.JPopupMenu popUpMenu;
     private javax.swing.JScrollPane scrAprovado;
     private javax.swing.JScrollPane scrComentario;
-    private javax.swing.JScrollPane scrListaAlunos;
     private javax.swing.JScrollPane scrListaAlunos1;
     private javax.swing.JScrollPane scrListaAlunos2;
     private javax.swing.JScrollPane scrListaProvas;

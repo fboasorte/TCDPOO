@@ -8,11 +8,9 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AvaliacaoDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DisciplinaDao;
-import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DisponibilidadeHorarioDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Avaliacao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Disciplina;
-import br.edu.ifnmg.poo.trabalhofinalpoo.entity.DisponibilidadeHorario;
 import java.util.List;
 import javax.swing.DefaultListModel;
 
@@ -28,8 +26,6 @@ public class EditarProva extends javax.swing.JDialog {
     
     private DefaultListModel<Discente> lstDiscentesModel;
     
-    private DefaultListModel<DisponibilidadeHorario> lstDisponibilidadeHorarioModel;
-    
     private DefaultListModel<Disciplina> lstDisciplinasModel;
 
     /**
@@ -42,10 +38,6 @@ public class EditarProva extends javax.swing.JDialog {
         lstDiscentesModel = new DefaultListModel<>();
         List<Discente> discentes = new DiscenteDao().localizarTodos();
         lstDiscentesModel.addAll(discentes);
-        
-        lstDisponibilidadeHorarioModel = new DefaultListModel<>();
-        List<DisponibilidadeHorario> disponibilidadeHorarios = new DisponibilidadeHorarioDao().localizarTodos();
-        lstDisponibilidadeHorarioModel.addAll(disponibilidadeHorarios);
         
         lstDisciplinasModel = new DefaultListModel<>();
         List<Disciplina> disciplinas = new DisciplinaDao().localizarTodos();
@@ -73,8 +65,6 @@ public class EditarProva extends javax.swing.JDialog {
         lblDetalhesProva = new javax.swing.JLabel();
         scrListaAlunos1 = new javax.swing.JScrollPane();
         lstDiscentes = new javax.swing.JList<>();
-        scrListaAlunos = new javax.swing.JScrollPane();
-        lstDisponibilidadeHorarios = new javax.swing.JList<>();
         scrListaAlunos2 = new javax.swing.JScrollPane();
         lstDisciplinas = new javax.swing.JList<>();
         pnlDetalhesProva = new javax.swing.JPanel();
@@ -112,12 +102,6 @@ public class EditarProva extends javax.swing.JDialog {
         lstDiscentes.setForeground(new java.awt.Color(0, 0, 0));
         lstDiscentes.setModel(lstDiscentesModel);
         scrListaAlunos1.setViewportView(lstDiscentes);
-
-        lstDisponibilidadeHorarios.setBackground(new java.awt.Color(255, 255, 255));
-        lstDisponibilidadeHorarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lstDisponibilidadeHorarios.setForeground(new java.awt.Color(0, 0, 0));
-        lstDisponibilidadeHorarios.setModel(lstDisponibilidadeHorarioModel);
-        scrListaAlunos.setViewportView(lstDisponibilidadeHorarios);
 
         lstDisciplinas.setBackground(new java.awt.Color(255, 255, 255));
         lstDisciplinas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -346,27 +330,26 @@ public class EditarProva extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scrListaAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(scrListaAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(69, 69, 69)
+                .addGap(60, 60, 60)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblDetalhesProva)
-                    .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrListaAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
-                .addComponent(lblDetalhesProva)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrListaAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(scrListaAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82)
+                        .addComponent(scrListaAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblDetalhesProva)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -379,9 +362,7 @@ public class EditarProva extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 78, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -401,8 +382,7 @@ public class EditarProva extends javax.swing.JDialog {
         provaEmEdicao.setComentario(txtComentario.getText());
         provaEmEdicao.setIdDiscente(lstDiscentes.getSelectedValue().getId().intValue());
         provaEmEdicao.setIdDisciplina(lstDisciplinas.getSelectedValue().getId().intValue());
-        provaEmEdicao.setIdDisponibilidadeHorario(lstDisponibilidadeHorarios.getSelectedValue().getId().intValue());
-        
+                
         new AvaliacaoDao().salvar(provaEmEdicao);
         cadastroProva.atualizarModelo(provaEmEdicao);
 
@@ -430,7 +410,6 @@ public class EditarProva extends javax.swing.JDialog {
         txtComentario.setText(avaliacao.getComentario());
         lstDiscentes.setSelectedIndex(avaliacao.getIdDiscente());
         lstDisciplinas.setSelectedIndex(avaliacao.getIdDisciplina());
-        lstDisponibilidadeHorarios.setSelectedIndex(avaliacao.getIdDisponibilidadeHorario());
     }
 
 
@@ -448,12 +427,10 @@ public class EditarProva extends javax.swing.JDialog {
     private javax.swing.JLabel lblParteOral;
     private javax.swing.JList<Discente> lstDiscentes;
     private javax.swing.JList<Disciplina> lstDisciplinas;
-    private javax.swing.JList<DisponibilidadeHorario> lstDisponibilidadeHorarios;
     private javax.swing.JPanel pnlDetalhesProva;
     private javax.swing.JPanel pnlNotas;
     private javax.swing.JScrollPane scrAprovado;
     private javax.swing.JScrollPane scrComentario;
-    private javax.swing.JScrollPane scrListaAlunos;
     private javax.swing.JScrollPane scrListaAlunos1;
     private javax.swing.JScrollPane scrListaAlunos2;
     private javax.swing.JTextPane txpAprovado;
