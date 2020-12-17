@@ -7,7 +7,6 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
-import java.awt.PopupMenu;
 import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -345,7 +344,6 @@ public class CadastrarDiscente extends javax.swing.JFrame {
 
         // Restaura o estado inicial dos componentes da janela.
         limparCampos();
-
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed

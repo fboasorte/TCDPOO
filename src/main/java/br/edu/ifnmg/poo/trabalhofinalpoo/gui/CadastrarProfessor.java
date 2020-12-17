@@ -5,16 +5,35 @@
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.ProfessorDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Professor;
+import java.awt.event.MouseEvent;
+import java.util.List;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Fellipe
  */
-public class CadastrarInstrutor extends javax.swing.JFrame {
+public class CadastrarProfessor extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadastrarInstrutor
-     */
-    public CadastrarInstrutor() {
+    private DefaultListModel<Professor> lstProfessoresModel;
+    
+    private int indiceProfessorSelecionado;
+    
+    
+    public CadastrarProfessor() {
+        
+        lstProfessoresModel = new DefaultListModel<>();
+
+        // Recupera todos os registros do banco de dados
+        List<Professor> professores = new ProfessorDao().localizarTodos();
+
+        // Acrescente objetos do tipo Tarefa recuperados do banco de dados
+        // ao elemento de listagem. Aqui são incluídas as referências completas
+        // aos estados de cada objeto (id, descrição e concluída)
+        lstProfessoresModel.addAll(professores);
+        
         initComponents();
     }
 
@@ -27,6 +46,9 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popUpMenu = new javax.swing.JPopupMenu();
+        mnuEditar = new javax.swing.JMenuItem();
+        mnuExcluir = new javax.swing.JMenuItem();
         pnlCadastroProfessor = new javax.swing.JPanel();
         pnlListaProfessores = new javax.swing.JPanel();
         lblPesquisa = new javax.swing.JLabel();
@@ -48,10 +70,25 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
         btnSalvarDados = new javax.swing.JButton();
         btnCancelarDados = new javax.swing.JButton();
         btnNovo = new javax.swing.JButton();
-        btnEditar = new javax.swing.JButton();
         lblListaProfessores = new javax.swing.JLabel();
         scrListaProfessores = new javax.swing.JScrollPane();
         lstProfessores = new javax.swing.JList<>();
+
+        mnuEditar.setText("jMenuItem1");
+        mnuEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuEditarActionPerformed(evt);
+            }
+        });
+        popUpMenu.add(mnuEditar);
+
+        mnuExcluir.setText("jMenuItem2");
+        mnuExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuExcluirActionPerformed(evt);
+            }
+        });
+        popUpMenu.add(mnuExcluir);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Instrutores");
@@ -127,16 +164,18 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
         txtCodigo.setBackground(new java.awt.Color(204, 204, 204));
         txtCodigo.setForeground(new java.awt.Color(0, 0, 0));
 
-        txtNome.setEditable(false);
-        txtNome.setBackground(new java.awt.Color(204, 204, 204));
+        txtNome.setBackground(new java.awt.Color(255, 255, 255));
         txtNome.setForeground(new java.awt.Color(0, 0, 0));
 
-        txtCPF.setEditable(false);
-        txtCPF.setBackground(new java.awt.Color(204, 204, 204));
+        txtCPF.setBackground(new java.awt.Color(255, 255, 255));
         txtCPF.setForeground(new java.awt.Color(0, 0, 0));
+        txtCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCPFActionPerformed(evt);
+            }
+        });
 
-        txtDataNascimento.setEditable(false);
-        txtDataNascimento.setBackground(new java.awt.Color(204, 204, 204));
+        txtDataNascimento.setBackground(new java.awt.Color(255, 255, 255));
         txtDataNascimento.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout pnlDadosLayout = new javax.swing.GroupLayout(pnlDados);
@@ -253,16 +292,6 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
             }
         });
 
-        btnEditar.setBackground(new java.awt.Color(255, 255, 255));
-        btnEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnEditar.setForeground(new java.awt.Color(0, 0, 0));
-        btnEditar.setText("Editar");
-        btnEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarActionPerformed(evt);
-            }
-        });
-
         lblListaProfessores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblListaProfessores.setForeground(new java.awt.Color(0, 0, 0));
         lblListaProfessores.setText("Lista de professores");
@@ -270,6 +299,7 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
         lstProfessores.setBackground(new java.awt.Color(255, 255, 255));
         lstProfessores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lstProfessores.setForeground(new java.awt.Color(0, 0, 0));
+        lstProfessores.setModel(lstProfessoresModel);
         scrListaProfessores.setViewportView(lstProfessores);
 
         javax.swing.GroupLayout pnlListaProfessoresLayout = new javax.swing.GroupLayout(pnlListaProfessores);
@@ -289,9 +319,7 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnBuscar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlListaProfessoresLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(pnlListaProfessoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,20 +335,15 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrListaProfessores, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlListaProfessoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlListaProfessoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnNovo))
-                    .addGroup(pnlListaProfessoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblPesquisa)
-                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(pnlListaProfessoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPesquisa)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNovo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnlAreaDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
         );
-
-        pnlListaProfessoresLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnEditar, btnNovo});
 
         javax.swing.GroupLayout pnlCadastroProfessorLayout = new javax.swing.GroupLayout(pnlCadastroProfessor);
         pnlCadastroProfessor.setLayout(pnlCadastroProfessorLayout);
@@ -360,7 +383,26 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPesquisaActionPerformed
 
     private void btnSalvarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarDadosActionPerformed
-        // TODO add your handling code here:
+        Professor professor = new Professor();
+        professor.setNome(txtNome.getText());
+        professor.setCpf(Integer.parseInt(txtCPF.getText()));
+        professor.setNascimento(txtDataNascimento.getText());
+
+        // Executa o salvamento do estado do objeto no banco de dados
+        Long id = new ProfessorDao().salvar(professor);
+
+        // Importante! Se o objeto criado não for atrelado a seu id no banco
+        // de dados, o objeto fica desconexo e as futuras alterações de seu
+        // estado gerarão um novo registro
+        professor.setId(id);
+
+        // Atualiza a listagem por meio da inserção direta do elemento recém-criado.
+        // Poderia ser uma nova consulta ao banco de dados para recuperar todos
+        // os registros. (!!!) Isto seria útil em um sistema multiusuário.
+        lstProfessoresModel.addElement(professor);
+
+        // Restaura o estado inicial dos componentes da janela.
+        limparCampos();
     }//GEN-LAST:event_btnSalvarDadosActionPerformed
 
     private void btnCancelarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarDadosActionPerformed
@@ -375,9 +417,24 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNovoActionPerformed
 
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+    private void txtCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditarActionPerformed
+    }//GEN-LAST:event_txtCPFActionPerformed
+
+    private void mnuEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEditarActionPerformed
+        EditarProfessor editarProfessor
+                = new EditarProfessor(lstProfessores.getSelectedValue(), this, true);
+        // this -> referencia a janela principal
+        editarProfessor.setLocationRelativeTo(this);
+        editarProfessor.setVisible(true);
+    }//GEN-LAST:event_mnuEditarActionPerformed
+
+    private void mnuExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExcluirActionPerformed
+        new ProfessorDao().excluir(lstProfessoresModel.get(indiceProfessorSelecionado));
+
+        // Exclui graficamente 
+        lstProfessoresModel.remove(lstProfessores.getSelectedIndex());
+    }//GEN-LAST:event_mnuExcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -396,28 +453,42 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastrarInstrutor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastrarProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastrarInstrutor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastrarProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastrarInstrutor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastrarProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastrarInstrutor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastrarProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastrarInstrutor().setVisible(true);
+                new CadastrarProfessor().setVisible(true);
             }
         });
+    }
+    
+    private void limparCampos() {
+        // "Descrição" vazia
+        txtCPF.setText(null);
+        txtDataNascimento.setText(null);
+        txtNome.setText(null);
+        
+        // Seleção da "Descrição" para nova digitação
+        txtNome.requestFocus();
+    }
+    
+    void atualizarModelo(Professor professor) {
+        lstProfessoresModel.set(indiceProfessorSelecionado, professor);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelarDados;
-    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnSalvarDados;
     private javax.swing.JCheckBox chkAtivo;
@@ -429,11 +500,14 @@ public class CadastrarInstrutor extends javax.swing.JFrame {
     private javax.swing.JLabel lblNascimento;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblPesquisa;
-    private javax.swing.JList<String> lstProfessores;
+    private javax.swing.JList<Professor> lstProfessores;
+    private javax.swing.JMenuItem mnuEditar;
+    private javax.swing.JMenuItem mnuExcluir;
     private javax.swing.JPanel pnlAreaDados;
     private javax.swing.JPanel pnlCadastroProfessor;
     private javax.swing.JPanel pnlDados;
     private javax.swing.JPanel pnlListaProfessores;
+    private javax.swing.JPopupMenu popUpMenu;
     private javax.swing.JScrollPane scrListaProfessores;
     private javax.swing.JTextField txtCPF;
     private javax.swing.JTextField txtCodigo;

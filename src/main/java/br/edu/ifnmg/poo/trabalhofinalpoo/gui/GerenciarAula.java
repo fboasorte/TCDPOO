@@ -138,8 +138,7 @@ public class GerenciarAula extends javax.swing.JFrame {
         lblNomeAluno.setForeground(new java.awt.Color(0, 0, 0));
         lblNomeAluno.setText("Nome");
 
-        txtNomeAluno.setEditable(false);
-        txtNomeAluno.setBackground(new java.awt.Color(204, 204, 204));
+        txtNomeAluno.setBackground(new java.awt.Color(255, 255, 255));
         txtNomeAluno.setForeground(new java.awt.Color(0, 0, 0));
         txtNomeAluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,8 +146,7 @@ public class GerenciarAula extends javax.swing.JFrame {
             }
         });
 
-        txtUltimaAula.setEditable(false);
-        txtUltimaAula.setBackground(new java.awt.Color(204, 204, 204));
+        txtUltimaAula.setBackground(new java.awt.Color(255, 255, 255));
         txtUltimaAula.setForeground(new java.awt.Color(0, 0, 0));
         txtUltimaAula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,8 +174,7 @@ public class GerenciarAula extends javax.swing.JFrame {
         lblNomeAula.setForeground(new java.awt.Color(0, 0, 0));
         lblNomeAula.setText("Descrição");
 
-        txtNomeAula.setEditable(false);
-        txtNomeAula.setBackground(new java.awt.Color(204, 204, 204));
+        txtNomeAula.setBackground(new java.awt.Color(255, 255, 255));
         txtNomeAula.setForeground(new java.awt.Color(0, 0, 0));
         txtNomeAula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -260,6 +257,11 @@ public class GerenciarAula extends javax.swing.JFrame {
         btnMarcarAula.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnMarcarAula.setForeground(new java.awt.Color(0, 0, 0));
         btnMarcarAula.setText("Marcar aula");
+        btnMarcarAula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMarcarAulaActionPerformed(evt);
+            }
+        });
 
         btnDesmarcarAula.setBackground(new java.awt.Color(255, 255, 255));
         btnDesmarcarAula.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -431,11 +433,6 @@ public class GerenciarAula extends javax.swing.JFrame {
         lstHorariosMarcacao.setBackground(new java.awt.Color(255, 255, 255));
         lstHorariosMarcacao.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lstHorariosMarcacao.setForeground(new java.awt.Color(0, 0, 0));
-        lstHorariosMarcacao.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         scrHorariosMarcacao.setViewportView(lstHorariosMarcacao);
 
         javax.swing.GroupLayout pnlMarcacaoAulaLayout = new javax.swing.GroupLayout(pnlMarcacaoAula);
@@ -1076,6 +1073,23 @@ public class GerenciarAula extends javax.swing.JFrame {
     private void txtIDPresencaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDPresencaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIDPresencaActionPerformed
+
+    private void btnMarcarAulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarcarAulaActionPerformed
+        Avaliacao avaliacao = new Avaliacao();
+        avaliacao.setNotaParteEscrita(Integer.parseInt(txtParteEscrita.getText()));
+        avaliacao.setNotaParteOral(txtParteOral.getText());
+        avaliacao.setComentario(txtComentario.getText());
+        avaliacao.setIdDiscente(lstDiscentes.getSelectedValue().getId().intValue());
+        avaliacao.setIdDisciplina(lstDisciplinas.getSelectedValue().getId().intValue());
+                
+        Long id = new AvaliacaoDao().salvar(avaliacao);
+        
+        avaliacao.setId(id);
+        
+        lstAvaliacaoModel.addElement(avaliacao);
+        
+        limparCampos();
+    }//GEN-LAST:event_btnMarcarAulaActionPerformed
 
     /**
      * @param args the command line arguments
