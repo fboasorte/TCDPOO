@@ -92,6 +92,8 @@ public class CadastrarProva extends javax.swing.JFrame {
         scrListaAlunos = new javax.swing.JScrollPane();
         lstDiscentes = new javax.swing.JList<>();
         lblListaAlunos = new javax.swing.JLabel();
+        scrListaAlunos1 = new javax.swing.JScrollPane();
+        lstDiscentes1 = new javax.swing.JList<>();
 
         mnuEditar.setText("Editar");
         popUpMenu.add(mnuEditar);
@@ -379,12 +381,18 @@ public class CadastrarProva extends javax.swing.JFrame {
         lstDiscentes.setBackground(new java.awt.Color(255, 255, 255));
         lstDiscentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lstDiscentes.setForeground(new java.awt.Color(0, 0, 0));
-        lstDiscentes.setModel(lstDiscentesModel);
+        lstDiscentes.setModel(lstDisponibilidadeHorarioModel);
         scrListaAlunos.setViewportView(lstDiscentes);
 
         lblListaAlunos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblListaAlunos.setForeground(new java.awt.Color(0, 0, 0));
         lblListaAlunos.setText("Lista de alunos");
+
+        lstDiscentes1.setBackground(new java.awt.Color(255, 255, 255));
+        lstDiscentes1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstDiscentes1.setForeground(new java.awt.Color(0, 0, 0));
+        lstDiscentes1.setModel(lstDiscentesModel);
+        scrListaAlunos1.setViewportView(lstDiscentes1);
 
         javax.swing.GroupLayout pnlPesquisaAlunoLayout = new javax.swing.GroupLayout(pnlPesquisaAluno);
         pnlPesquisaAluno.setLayout(pnlPesquisaAlunoLayout);
@@ -393,20 +401,32 @@ public class CadastrarProva extends javax.swing.JFrame {
             .addComponent(pnlProva, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblListaAlunos)
-                    .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 915, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(lblListaAlunos)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPesquisaAlunoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
+            .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
+                    .addGap(29, 29, 29)
+                    .addComponent(scrListaAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(480, Short.MAX_VALUE)))
         );
         pnlPesquisaAlunoLayout.setVerticalGroup(
             pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
                 .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(lblListaAlunos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(16, 16, 16)
                 .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(33, 33, 33)
                 .addComponent(pnlProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
+                    .addGap(45, 45, 45)
+                    .addComponent(scrListaAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(454, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout pnlCadastroProvaLayout = new javax.swing.GroupLayout(pnlCadastroProva);
@@ -572,7 +592,8 @@ public class CadastrarProva extends javax.swing.JFrame {
     private javax.swing.JLabel lblParteOral;
     private javax.swing.JLabel lblProvasAplicadas;
     private javax.swing.JList<Avaliacao> lstAvaliacoes;
-    private javax.swing.JList<Discente> lstDiscentes;
+    private javax.swing.JList<DisponibilidadeHorario> lstDiscentes;
+    private javax.swing.JList<Discente> lstDiscentes1;
     private javax.swing.JMenuItem mnuEditar;
     private javax.swing.JMenuItem mnuExcluir;
     private javax.swing.JPanel pnlCadastroProva;
@@ -584,6 +605,7 @@ public class CadastrarProva extends javax.swing.JFrame {
     private javax.swing.JScrollPane scrAprovado;
     private javax.swing.JScrollPane scrComentario;
     private javax.swing.JScrollPane scrListaAlunos;
+    private javax.swing.JScrollPane scrListaAlunos1;
     private javax.swing.JScrollPane scrListaProvas;
     private javax.swing.JTextPane txpAprovado;
     private javax.swing.JTextField txtAula;
