@@ -97,7 +97,7 @@ public class Professor extends Entidade {
     public String toString() {
         return cpf 
                 + ", " + nome 
-                + ", " + nascimento + '}';
+                + ", " + nascimento;
     }
 
 }
