@@ -103,7 +103,7 @@ public class CadastrarProva extends javax.swing.JFrame {
         scrListaAlunos1 = new javax.swing.JScrollPane();
         lstDiscentes = new javax.swing.JList<>();
         scrListaAlunos2 = new javax.swing.JScrollPane();
-        lstDisponibilidadeHorarios1 = new javax.swing.JList<>();
+        lstDisciplinas = new javax.swing.JList<>();
 
         mnuEditar.setText("Editar");
         popUpMenu.add(mnuEditar);
@@ -404,11 +404,11 @@ public class CadastrarProva extends javax.swing.JFrame {
         lstDiscentes.setModel(lstDiscentesModel);
         scrListaAlunos1.setViewportView(lstDiscentes);
 
-        lstDisponibilidadeHorarios1.setBackground(new java.awt.Color(255, 255, 255));
-        lstDisponibilidadeHorarios1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lstDisponibilidadeHorarios1.setForeground(new java.awt.Color(0, 0, 0));
-        lstDisponibilidadeHorarios1.setModel(lstDisciplinasModel);
-        scrListaAlunos2.setViewportView(lstDisponibilidadeHorarios1);
+        lstDisciplinas.setBackground(new java.awt.Color(255, 255, 255));
+        lstDisciplinas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstDisciplinas.setForeground(new java.awt.Color(0, 0, 0));
+        lstDisciplinas.setModel(lstDisciplinasModel);
+        scrListaAlunos2.setViewportView(lstDisciplinas);
 
         javax.swing.GroupLayout pnlPesquisaAlunoLayout = new javax.swing.GroupLayout(pnlPesquisaAluno);
         pnlPesquisaAluno.setLayout(pnlPesquisaAlunoLayout);
@@ -514,7 +514,7 @@ public class CadastrarProva extends javax.swing.JFrame {
         avaliacao.setNotaParteOral(txtParteOral.getText());
         avaliacao.setComentario(txtComentario.getText());
         avaliacao.setIdDiscente(lstDiscentes.getSelectedValue().getId().intValue());
-        avaliacao.setIdDisciplina(1);
+        avaliacao.setIdDisciplina(lstDisciplinas.getSelectedValue().getId().intValue());
         avaliacao.setIdDisponibilidadeHorario(lstDisponibilidadeHorarios.getSelectedValue().getId().intValue());
         
         Long id = new AvaliacaoDao().salvar(avaliacao);
@@ -616,8 +616,8 @@ public class CadastrarProva extends javax.swing.JFrame {
     private javax.swing.JLabel lblProvasAplicadas;
     private javax.swing.JList<Avaliacao> lstAvaliacoes;
     private javax.swing.JList<Discente> lstDiscentes;
+    private javax.swing.JList<Disciplina> lstDisciplinas;
     private javax.swing.JList<DisponibilidadeHorario> lstDisponibilidadeHorarios;
-    private javax.swing.JList<Disciplina> lstDisponibilidadeHorarios1;
     private javax.swing.JMenuItem mnuEditar;
     private javax.swing.JMenuItem mnuExcluir;
     private javax.swing.JPanel pnlCadastroProva;
