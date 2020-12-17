@@ -74,7 +74,7 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         scrListaProfessores = new javax.swing.JScrollPane();
         lstProfessores = new javax.swing.JList<>();
 
-        mnuEditar.setText("jMenuItem1");
+        mnuEditar.setText("Editar");
         mnuEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuEditarActionPerformed(evt);
@@ -82,7 +82,7 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         });
         popUpMenu.add(mnuEditar);
 
-        mnuExcluir.setText("jMenuItem2");
+        mnuExcluir.setText("Excluir");
         mnuExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuExcluirActionPerformed(evt);
