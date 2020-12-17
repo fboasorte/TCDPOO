@@ -16,6 +16,8 @@ public class Disciplina extends Entidade {
     private String nome;
 
     private String conteudo;
+    
+    private int idDisponibilidadeHorario;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
     public Disciplina() {
