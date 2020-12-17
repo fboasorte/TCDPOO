@@ -102,6 +102,8 @@ public class CadastrarProva extends javax.swing.JFrame {
         lblListaAlunos = new javax.swing.JLabel();
         scrListaAlunos1 = new javax.swing.JScrollPane();
         lstDiscentes = new javax.swing.JList<>();
+        scrListaAlunos2 = new javax.swing.JScrollPane();
+        lstDisponibilidadeHorarios1 = new javax.swing.JList<>();
 
         mnuEditar.setText("Editar");
         popUpMenu.add(mnuEditar);
@@ -402,6 +404,12 @@ public class CadastrarProva extends javax.swing.JFrame {
         lstDiscentes.setModel(lstDiscentesModel);
         scrListaAlunos1.setViewportView(lstDiscentes);
 
+        lstDisponibilidadeHorarios1.setBackground(new java.awt.Color(255, 255, 255));
+        lstDisponibilidadeHorarios1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstDisponibilidadeHorarios1.setForeground(new java.awt.Color(0, 0, 0));
+        lstDisponibilidadeHorarios1.setModel(lstDisciplinasModel);
+        scrListaAlunos2.setViewportView(lstDisponibilidadeHorarios1);
+
         javax.swing.GroupLayout pnlPesquisaAlunoLayout = new javax.swing.GroupLayout(pnlPesquisaAluno);
         pnlPesquisaAluno.setLayout(pnlPesquisaAlunoLayout);
         pnlPesquisaAlunoLayout.setHorizontalGroup(
@@ -413,7 +421,9 @@ public class CadastrarProva extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPesquisaAlunoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrListaAlunos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scrListaAlunos2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
             .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
@@ -428,6 +438,8 @@ public class CadastrarProva extends javax.swing.JFrame {
                 .addComponent(lblListaAlunos)
                 .addGap(16, 16, 16)
                 .addComponent(scrListaAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(scrListaAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(pnlProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -605,6 +617,7 @@ public class CadastrarProva extends javax.swing.JFrame {
     private javax.swing.JList<Avaliacao> lstAvaliacoes;
     private javax.swing.JList<Discente> lstDiscentes;
     private javax.swing.JList<DisponibilidadeHorario> lstDisponibilidadeHorarios;
+    private javax.swing.JList<Disciplina> lstDisponibilidadeHorarios1;
     private javax.swing.JMenuItem mnuEditar;
     private javax.swing.JMenuItem mnuExcluir;
     private javax.swing.JPanel pnlCadastroProva;
@@ -617,6 +630,7 @@ public class CadastrarProva extends javax.swing.JFrame {
     private javax.swing.JScrollPane scrComentario;
     private javax.swing.JScrollPane scrListaAlunos;
     private javax.swing.JScrollPane scrListaAlunos1;
+    private javax.swing.JScrollPane scrListaAlunos2;
     private javax.swing.JScrollPane scrListaProvas;
     private javax.swing.JTextPane txpAprovado;
     private javax.swing.JTextField txtAula;
