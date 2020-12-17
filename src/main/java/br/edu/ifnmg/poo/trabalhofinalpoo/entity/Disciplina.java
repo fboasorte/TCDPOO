@@ -83,8 +83,8 @@ public class Disciplina extends Entidade {
 
     @Override
     public String toString() {
-        return "Disciplina{" + "nome=" + nome 
-                + ", conteudo=" + conteudo + '}';
+        return nome 
+                + ", " + conteudo;
     }
 
 }
