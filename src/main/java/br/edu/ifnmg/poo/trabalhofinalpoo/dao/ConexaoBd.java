@@ -46,7 +46,7 @@ public class ConexaoBd {
     static {
         URL = "jdbc:mysql://127.0.0.1:3306/tcd?useUnicode=true&useJDBCCompliantTimezoneShift=true&serverTimezone=UTC";
         usuario = "root";
-        senha = "123456";
+        senha = "root123456";
     }
 
     //<editor-fold defaultstate="collapsed" desc="Construtor privado">
