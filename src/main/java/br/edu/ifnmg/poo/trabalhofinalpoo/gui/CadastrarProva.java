@@ -7,8 +7,10 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AvaliacaoDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DisponibilidadeHorarioDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Avaliacao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.DisponibilidadeHorario;
 import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -22,6 +24,8 @@ public class CadastrarProva extends javax.swing.JFrame {
     private DefaultListModel<Avaliacao> lstAvaliacaoModel;
     
     private DefaultListModel<Discente> lstDiscentesModel;
+    
+    private DefaultListModel<DisponibilidadeHorario> lstDisponibilidadeHorarioModel;
     
     private int indiceAvaliacaoSelecionada;
 
@@ -37,6 +41,10 @@ public class CadastrarProva extends javax.swing.JFrame {
         lstDiscentesModel = new DefaultListModel<>();
         List<Discente> discentes = new DiscenteDao().localizarTodos();
         lstDiscentesModel.addAll(discentes);
+        
+        lstDisponibilidadeHorarioModel = new DefaultListModel<>();
+        List<DisponibilidadeHorario> disponibilidadeHorarios = new DisponibilidadeHorarioDao().localizarTodos();
+        lstDisponibilidadeHorarioModel.addAll(disponibilidadeHorarios);
         
         initComponents();
     }
