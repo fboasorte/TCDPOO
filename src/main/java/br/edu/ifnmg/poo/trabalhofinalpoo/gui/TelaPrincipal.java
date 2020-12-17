@@ -229,6 +229,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btnAlunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlunosActionPerformed
         // TODO add your handling code here:
+        new CadastrarDiscente().setVisible(true);
     }//GEN-LAST:event_btnAlunosActionPerformed
 
     private void btnMarcacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarcacaoActionPerformed

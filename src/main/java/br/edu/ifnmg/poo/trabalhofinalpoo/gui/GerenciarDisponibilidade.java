@@ -29,14 +29,15 @@ public class GerenciarDisponibilidade extends javax.swing.JDialog {
     private void initComponents() {
 
         pnlDisponibilidade = new javax.swing.JPanel();
-        jCalendar10 = new com.toedter.calendar.JCalendar();
-        pnlTabelaHorarios = new javax.swing.JScrollPane();
-        tblHorarios = new javax.swing.JTable();
-        btnSalvar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
-        btnSalvar1 = new javax.swing.JButton();
-        btnSalvar2 = new javax.swing.JButton();
-        btnSalvar3 = new javax.swing.JButton();
+        btnFechar = new javax.swing.JButton();
+        pnlGerenciar = new javax.swing.JPanel();
+        jCalendarDisponibilidade = new com.toedter.calendar.JCalendar();
+        scrHorario = new javax.swing.JScrollPane();
+        lstHorario = new javax.swing.JList<>();
+        btnEditarHorario = new javax.swing.JButton();
+        btnExcluirHorario = new javax.swing.JButton();
+        ftxtHorario = new javax.swing.JFormattedTextField();
+        btnInserirHorario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Gerenciar disponibilidade");
@@ -46,98 +47,110 @@ public class GerenciarDisponibilidade extends javax.swing.JDialog {
         pnlDisponibilidade.setBackground(new java.awt.Color(255, 255, 255));
         pnlDisponibilidade.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
 
-        jCalendar10.setBackground(new java.awt.Color(255, 255, 255));
-        jCalendar10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        jCalendar10.setDecorationBackgroundColor(new java.awt.Color(255, 255, 255));
-        jCalendar10.setDecorationBackgroundVisible(false);
-        jCalendar10.setMinSelectableDate(new java.util.Date(1608001259000L));
-        jCalendar10.setTodayButtonVisible(true);
-        jCalendar10.setWeekOfYearVisible(false);
+        btnFechar.setBackground(new java.awt.Color(255, 255, 255));
+        btnFechar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnFechar.setForeground(new java.awt.Color(0, 0, 0));
+        btnFechar.setText("Fechar");
 
-        tblHorarios.setBackground(new java.awt.Color(255, 255, 255));
-        tblHorarios.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
-            },
-            new String [] {
-                "Horário"
-            }
-        ));
-        tblHorarios.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        tblHorarios.setShowGrid(false);
-        tblHorarios.getTableHeader().setResizingAllowed(false);
-        pnlTabelaHorarios.setViewportView(tblHorarios);
+        pnlGerenciar.setBackground(new java.awt.Color(255, 255, 255));
+        pnlGerenciar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
 
-        btnSalvar.setBackground(new java.awt.Color(255, 255, 255));
-        btnSalvar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnSalvar.setForeground(new java.awt.Color(0, 0, 0));
-        btnSalvar.setText("Salvar");
+        jCalendarDisponibilidade.setBackground(new java.awt.Color(255, 255, 255));
+        jCalendarDisponibilidade.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jCalendarDisponibilidade.setDecorationBackgroundColor(new java.awt.Color(255, 255, 255));
+        jCalendarDisponibilidade.setDecorationBackgroundVisible(false);
+        jCalendarDisponibilidade.setMinSelectableDate(new java.util.Date(1608001259000L));
+        jCalendarDisponibilidade.setTodayButtonVisible(true);
+        jCalendarDisponibilidade.setWeekOfYearVisible(false);
 
-        btnCancelar.setBackground(new java.awt.Color(255, 255, 255));
-        btnCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnCancelar.setForeground(new java.awt.Color(0, 0, 0));
-        btnCancelar.setText("Cancelar");
+        lstHorario.setBackground(new java.awt.Color(255, 255, 255));
+        lstHorario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstHorario.setForeground(new java.awt.Color(0, 0, 0));
+        scrHorario.setViewportView(lstHorario);
 
-        btnSalvar1.setBackground(new java.awt.Color(255, 255, 255));
-        btnSalvar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnSalvar1.setForeground(new java.awt.Color(0, 0, 0));
-        btnSalvar1.setText("Criar");
+        btnEditarHorario.setBackground(new java.awt.Color(255, 255, 255));
+        btnEditarHorario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnEditarHorario.setForeground(new java.awt.Color(0, 0, 0));
+        btnEditarHorario.setText("Editar");
 
-        btnSalvar2.setBackground(new java.awt.Color(255, 255, 255));
-        btnSalvar2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnSalvar2.setForeground(new java.awt.Color(0, 0, 0));
-        btnSalvar2.setText("Editar");
+        btnExcluirHorario.setBackground(new java.awt.Color(255, 255, 255));
+        btnExcluirHorario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnExcluirHorario.setForeground(new java.awt.Color(0, 0, 0));
+        btnExcluirHorario.setText("Excluir");
 
-        btnSalvar3.setBackground(new java.awt.Color(255, 255, 255));
-        btnSalvar3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnSalvar3.setForeground(new java.awt.Color(0, 0, 0));
-        btnSalvar3.setText("Excluir");
+        ftxtHorario.setBackground(new java.awt.Color(255, 255, 255));
+        ftxtHorario.setForeground(new java.awt.Color(0, 0, 0));
+        ftxtHorario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
+        ftxtHorario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        btnInserirHorario.setBackground(new java.awt.Color(255, 255, 255));
+        btnInserirHorario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnInserirHorario.setForeground(new java.awt.Color(0, 0, 0));
+        btnInserirHorario.setText("Inserir horário");
+
+        javax.swing.GroupLayout pnlGerenciarLayout = new javax.swing.GroupLayout(pnlGerenciar);
+        pnlGerenciar.setLayout(pnlGerenciarLayout);
+        pnlGerenciarLayout.setHorizontalGroup(
+            pnlGerenciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGerenciarLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jCalendarDisponibilidade, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addGroup(pnlGerenciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlGerenciarLayout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(btnEditarHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnExcluirHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlGerenciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlGerenciarLayout.createSequentialGroup()
+                            .addComponent(ftxtHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnInserirHorario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(scrHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        pnlGerenciarLayout.setVerticalGroup(
+            pnlGerenciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGerenciarLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(pnlGerenciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlGerenciarLayout.createSequentialGroup()
+                        .addGroup(pnlGerenciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ftxtHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnInserirHorario))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(scrHorario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlGerenciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnEditarHorario)
+                            .addComponent(btnExcluirHorario)))
+                    .addComponent(jCalendarDisponibilidade, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout pnlDisponibilidadeLayout = new javax.swing.GroupLayout(pnlDisponibilidade);
         pnlDisponibilidade.setLayout(pnlDisponibilidadeLayout);
         pnlDisponibilidadeLayout.setHorizontalGroup(
             pnlDisponibilidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDisponibilidadeLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(25, 25, 25)
                 .addGroup(pnlDisponibilidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlDisponibilidadeLayout.createSequentialGroup()
-                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(pnlGerenciar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(25, Short.MAX_VALUE))
                     .addGroup(pnlDisponibilidadeLayout.createSequentialGroup()
-                        .addComponent(jCalendar10, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addGroup(pnlDisponibilidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(pnlDisponibilidadeLayout.createSequentialGroup()
-                                .addComponent(btnSalvar1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnSalvar2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnSalvar3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(pnlTabelaHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addComponent(btnFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         pnlDisponibilidadeLayout.setVerticalGroup(
             pnlDisponibilidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDisponibilidadeLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(pnlDisponibilidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jCalendar10, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlDisponibilidadeLayout.createSequentialGroup()
-                        .addComponent(pnlTabelaHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(pnlDisponibilidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnSalvar1)
-                            .addComponent(btnSalvar2)
-                            .addComponent(btnSalvar3))))
+                .addGap(25, 25, 25)
+                .addComponent(pnlGerenciar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlDisponibilidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelar)
-                    .addComponent(btnSalvar))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addComponent(btnFechar)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -197,14 +210,15 @@ public class GerenciarDisponibilidade extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnSalvar;
-    private javax.swing.JButton btnSalvar1;
-    private javax.swing.JButton btnSalvar2;
-    private javax.swing.JButton btnSalvar3;
-    private com.toedter.calendar.JCalendar jCalendar10;
+    private javax.swing.JButton btnEditarHorario;
+    private javax.swing.JButton btnExcluirHorario;
+    private javax.swing.JButton btnFechar;
+    private javax.swing.JButton btnInserirHorario;
+    private javax.swing.JFormattedTextField ftxtHorario;
+    private com.toedter.calendar.JCalendar jCalendarDisponibilidade;
+    private javax.swing.JList<String> lstHorario;
     private javax.swing.JPanel pnlDisponibilidade;
-    private javax.swing.JScrollPane pnlTabelaHorarios;
-    private javax.swing.JTable tblHorarios;
+    private javax.swing.JPanel pnlGerenciar;
+    private javax.swing.JScrollPane scrHorario;
     // End of variables declaration//GEN-END:variables
 }

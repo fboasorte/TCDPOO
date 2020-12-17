@@ -27,38 +27,1069 @@ public class GerenciarAula extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        tbpGerenciarAula = new javax.swing.JTabbedPane();
+        pnlTabMarcacao = new javax.swing.JPanel();
+        pnlMarcacaoAula = new javax.swing.JPanel();
+        pnlDadosMarcacao = new javax.swing.JPanel();
+        lblContrato = new javax.swing.JLabel();
+        txtContrato = new javax.swing.JTextField();
+        lblNomeAluno = new javax.swing.JLabel();
+        txtNomeAluno = new javax.swing.JTextField();
+        txtUltimaAula = new javax.swing.JTextField();
+        lblUltimaAula = new javax.swing.JLabel();
+        lblIDAula = new javax.swing.JLabel();
+        txtIDAula = new javax.swing.JTextField();
+        lblNomeAula = new javax.swing.JLabel();
+        txtNomeAula = new javax.swing.JTextField();
+        jSeparator9 = new javax.swing.JSeparator();
+        lblDadosMarcacao = new javax.swing.JLabel();
+        lblHorariosDisponiveis = new javax.swing.JLabel();
+        btnMarcarAula = new javax.swing.JButton();
+        btnDesmarcarAula = new javax.swing.JButton();
+        pnlDetalhesMarcacao = new javax.swing.JPanel();
+        pnlMarcacaoDetalhes = new javax.swing.JPanel();
+        lblIDMarcacao = new javax.swing.JLabel();
+        lblAulaMarcacao = new javax.swing.JLabel();
+        lblConteudoMarcacao = new javax.swing.JLabel();
+        lblProfessorMarcacao = new javax.swing.JLabel();
+        lblDataHoraMarcacao = new javax.swing.JLabel();
+        lblAlunosMatriculados = new javax.swing.JLabel();
+        scrlListaAlunosMarcacao = new javax.swing.JScrollPane();
+        lstAlunosMarcacao = new javax.swing.JList<>();
+        txtDataMarcacao = new javax.swing.JTextField();
+        txtHoraMarcacao = new javax.swing.JTextField();
+        txtProfessorMarcacao = new javax.swing.JTextField();
+        txtConteudoMarcacao = new javax.swing.JTextField();
+        txtAulaMarcacao = new javax.swing.JTextField();
+        txtIDMarcacao = new javax.swing.JTextField();
+        lblDetalhesAulaMarcacao = new javax.swing.JLabel();
+        scrHorariosMarcacao = new javax.swing.JScrollPane();
+        lstHorariosMarcacao = new javax.swing.JList<>();
+        pnlTabPresenca = new javax.swing.JPanel();
+        pnlPresencaNotas = new javax.swing.JPanel();
+        lblSelecionarData = new javax.swing.JLabel();
+        jCalendarPresenca = new com.toedter.calendar.JCalendar();
+        scrListaAulasPresenca = new javax.swing.JScrollPane();
+        lstAulasPresenca = new javax.swing.JList<>();
+        btnEditarPresenca = new javax.swing.JButton();
+        lblDetalhesAulaPresenca = new javax.swing.JLabel();
+        pnlPresencaDetalhes = new javax.swing.JPanel();
+        lblIDPresenca = new javax.swing.JLabel();
+        lblAulaPresenca = new javax.swing.JLabel();
+        lblConteudoPresenca = new javax.swing.JLabel();
+        lblProfessorPresenca = new javax.swing.JLabel();
+        lblDataHoraPresenca = new javax.swing.JLabel();
+        lblAlunosMatriculadosPresenca = new javax.swing.JLabel();
+        scrlListaAlunosPresenca = new javax.swing.JScrollPane();
+        lstAlunosPresenca = new javax.swing.JList<>();
+        txtDataPresenca = new javax.swing.JTextField();
+        txtHoraPresenca = new javax.swing.JTextField();
+        txtProfessorPresenca = new javax.swing.JTextField();
+        txtConteudoPresenca = new javax.swing.JTextField();
+        txtAulaPresenca = new javax.swing.JTextField();
+        txtIDPresenca = new javax.swing.JTextField();
+        btnSalvarPresenca = new javax.swing.JButton();
+        btnCancelarPresenca = new javax.swing.JButton();
+        pnlTabEditar = new javax.swing.JPanel();
+        pnlEditarAulas = new javax.swing.JPanel();
+        scrListaAulas = new javax.swing.JScrollPane();
+        lstAulas = new javax.swing.JList<>();
+        btnNovoAula = new javax.swing.JButton();
+        btnEditarAula = new javax.swing.JButton();
+        btnExcluirAula = new javax.swing.JButton();
+        lblAulaDetalhes = new javax.swing.JLabel();
+        pnlDetalhesAula = new javax.swing.JPanel();
+        lblIDEditar = new javax.swing.JLabel();
+        txtIDEditar = new javax.swing.JTextField();
+        lblAulaEditar = new javax.swing.JLabel();
+        txtAulaEditar = new javax.swing.JTextField();
+        lblConteudoEditar = new javax.swing.JLabel();
+        txtConteudoEditar = new javax.swing.JTextField();
+        lblProfessorEditar = new javax.swing.JLabel();
+        lblDataHoraEditar = new javax.swing.JLabel();
+        txtDataEditar = new javax.swing.JTextField();
+        txtHoraEditar = new javax.swing.JTextField();
+        btnSalvarAula = new javax.swing.JButton();
+        btnCancelarAula = new javax.swing.JButton();
+        cbxProfessor = new javax.swing.JComboBox<>();
+        lblSelecionarDataEditar = new javax.swing.JLabel();
+        jCalendarEditar = new com.toedter.calendar.JCalendar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        pnlMarcacaoAula.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
+        pnlDadosMarcacao.setBackground(new java.awt.Color(255, 255, 255));
+        pnlDadosMarcacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+
+        lblContrato.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblContrato.setForeground(new java.awt.Color(0, 0, 0));
+        lblContrato.setText("Contrato");
+
+        txtContrato.setBackground(new java.awt.Color(255, 255, 255));
+        txtContrato.setForeground(new java.awt.Color(0, 0, 0));
+        txtContrato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtContratojTextField1ActionPerformed(evt);
+            }
+        });
+
+        lblNomeAluno.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblNomeAluno.setForeground(new java.awt.Color(0, 0, 0));
+        lblNomeAluno.setText("Nome");
+
+        txtNomeAluno.setBackground(new java.awt.Color(255, 255, 255));
+        txtNomeAluno.setForeground(new java.awt.Color(0, 0, 0));
+        txtNomeAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeAlunojTextField2ActionPerformed(evt);
+            }
+        });
+
+        txtUltimaAula.setBackground(new java.awt.Color(255, 255, 255));
+        txtUltimaAula.setForeground(new java.awt.Color(0, 0, 0));
+        txtUltimaAula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUltimaAulajTextField3ActionPerformed(evt);
+            }
+        });
+
+        lblUltimaAula.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblUltimaAula.setForeground(new java.awt.Color(0, 0, 0));
+        lblUltimaAula.setText("Última aula");
+
+        lblIDAula.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblIDAula.setForeground(new java.awt.Color(0, 0, 0));
+        lblIDAula.setText("ID da Aula");
+
+        txtIDAula.setBackground(new java.awt.Color(255, 255, 255));
+        txtIDAula.setForeground(new java.awt.Color(0, 0, 0));
+        txtIDAula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIDAulajTextField4ActionPerformed(evt);
+            }
+        });
+
+        lblNomeAula.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblNomeAula.setForeground(new java.awt.Color(0, 0, 0));
+        lblNomeAula.setText("Descrição");
+
+        txtNomeAula.setBackground(new java.awt.Color(255, 255, 255));
+        txtNomeAula.setForeground(new java.awt.Color(0, 0, 0));
+        txtNomeAula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeAulajTextField6ActionPerformed(evt);
+            }
+        });
+
+        jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        javax.swing.GroupLayout pnlDadosMarcacaoLayout = new javax.swing.GroupLayout(pnlDadosMarcacao);
+        pnlDadosMarcacao.setLayout(pnlDadosMarcacaoLayout);
+        pnlDadosMarcacaoLayout.setHorizontalGroup(
+            pnlDadosMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDadosMarcacaoLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(pnlDadosMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblContrato))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlDadosMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNomeAluno)
+                    .addComponent(txtNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlDadosMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDadosMarcacaoLayout.createSequentialGroup()
+                        .addComponent(txtUltimaAula, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblUltimaAula))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addGroup(pnlDadosMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtIDAula, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIDAula))
+                .addGroup(pnlDadosMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDadosMarcacaoLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(lblNomeAula))
+                    .addGroup(pnlDadosMarcacaoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNomeAula, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 548, Short.MAX_VALUE)
+        pnlDadosMarcacaoLayout.setVerticalGroup(
+            pnlDadosMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDadosMarcacaoLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(pnlDadosMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlDadosMarcacaoLayout.createSequentialGroup()
+                        .addGroup(pnlDadosMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblIDAula)
+                            .addComponent(lblNomeAula))
+                        .addGap(2, 2, 2)
+                        .addGroup(pnlDadosMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNomeAula, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtIDAula, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlDadosMarcacaoLayout.createSequentialGroup()
+                        .addGroup(pnlDadosMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblContrato)
+                            .addComponent(lblNomeAluno)
+                            .addComponent(lblUltimaAula))
+                        .addGap(2, 2, 2)
+                        .addGroup(pnlDadosMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlDadosMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtUltimaAula, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
+
+        lblDadosMarcacao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDadosMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+        lblDadosMarcacao.setText("Dados para marcação");
+
+        lblHorariosDisponiveis.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblHorariosDisponiveis.setForeground(new java.awt.Color(0, 0, 0));
+        lblHorariosDisponiveis.setText("Horários disponíveis");
+
+        btnMarcarAula.setBackground(new java.awt.Color(255, 255, 255));
+        btnMarcarAula.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnMarcarAula.setForeground(new java.awt.Color(0, 0, 0));
+        btnMarcarAula.setText("Marcar aula");
+        btnMarcarAula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMarcarAulaActionPerformed(evt);
+            }
+        });
+
+        btnDesmarcarAula.setBackground(new java.awt.Color(255, 255, 255));
+        btnDesmarcarAula.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnDesmarcarAula.setForeground(new java.awt.Color(0, 0, 0));
+        btnDesmarcarAula.setText("Desmarcar aula");
+
+        pnlDetalhesMarcacao.setBackground(new java.awt.Color(252, 252, 252));
+
+        pnlMarcacaoDetalhes.setBackground(new java.awt.Color(255, 255, 255));
+        pnlMarcacaoDetalhes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+        pnlMarcacaoDetalhes.setForeground(new java.awt.Color(112, 112, 112));
+
+        lblIDMarcacao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblIDMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+        lblIDMarcacao.setText("ID");
+
+        lblAulaMarcacao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblAulaMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+        lblAulaMarcacao.setText("Aula");
+
+        lblConteudoMarcacao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblConteudoMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+        lblConteudoMarcacao.setText("Conteúdo");
+
+        lblProfessorMarcacao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblProfessorMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+        lblProfessorMarcacao.setText("Professor");
+
+        lblDataHoraMarcacao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDataHoraMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+        lblDataHoraMarcacao.setText("Data/Hora");
+
+        lblAlunosMatriculados.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblAlunosMatriculados.setForeground(new java.awt.Color(0, 0, 0));
+        lblAlunosMatriculados.setText("Alunos matriculados");
+
+        lstAlunosMarcacao.setBackground(new java.awt.Color(255, 255, 255));
+        lstAlunosMarcacao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstAlunosMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+        lstAlunosMarcacao.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        scrlListaAlunosMarcacao.setViewportView(lstAlunosMarcacao);
+
+        txtDataMarcacao.setBackground(new java.awt.Color(204, 204, 204));
+        txtDataMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtHoraMarcacao.setBackground(new java.awt.Color(204, 204, 204));
+        txtHoraMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtProfessorMarcacao.setBackground(new java.awt.Color(204, 204, 204));
+        txtProfessorMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtConteudoMarcacao.setBackground(new java.awt.Color(204, 204, 204));
+        txtConteudoMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+        txtConteudoMarcacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtConteudoMarcacaoActionPerformed(evt);
+            }
+        });
+
+        txtAulaMarcacao.setBackground(new java.awt.Color(204, 204, 204));
+        txtAulaMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+        txtAulaMarcacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAulaMarcacaoActionPerformed(evt);
+            }
+        });
+
+        txtIDMarcacao.setBackground(new java.awt.Color(204, 204, 204));
+        txtIDMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+        txtIDMarcacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIDMarcacaoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlMarcacaoDetalhesLayout = new javax.swing.GroupLayout(pnlMarcacaoDetalhes);
+        pnlMarcacaoDetalhes.setLayout(pnlMarcacaoDetalhesLayout);
+        pnlMarcacaoDetalhesLayout.setHorizontalGroup(
+            pnlMarcacaoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlMarcacaoDetalhesLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(pnlMarcacaoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblAlunosMatriculados)
+                    .addGroup(pnlMarcacaoDetalhesLayout.createSequentialGroup()
+                        .addGroup(pnlMarcacaoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlMarcacaoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlMarcacaoDetalhesLayout.createSequentialGroup()
+                                    .addComponent(lblIDMarcacao)
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(lblAulaMarcacao))
+                            .addComponent(lblConteudoMarcacao)
+                            .addComponent(lblProfessorMarcacao)
+                            .addComponent(lblDataHoraMarcacao))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlMarcacaoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlMarcacaoDetalhesLayout.createSequentialGroup()
+                                .addComponent(txtDataMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtHoraMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtProfessorMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtConteudoMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAulaMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtIDMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(scrlListaAlunosMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        pnlMarcacaoDetalhesLayout.setVerticalGroup(
+            pnlMarcacaoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlMarcacaoDetalhesLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(pnlMarcacaoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblIDMarcacao)
+                    .addComponent(txtIDMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlMarcacaoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAulaMarcacao)
+                    .addComponent(txtAulaMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(pnlMarcacaoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblConteudoMarcacao)
+                    .addComponent(txtConteudoMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlMarcacaoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProfessorMarcacao)
+                    .addComponent(txtProfessorMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addGroup(pnlMarcacaoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDataHoraMarcacao)
+                    .addComponent(txtDataMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtHoraMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblAlunosMatriculados)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrlListaAlunosMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        txtDataMarcacao.getAccessibleContext().setAccessibleName("");
+
+        lblDetalhesAulaMarcacao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDetalhesAulaMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+        lblDetalhesAulaMarcacao.setText("Detalhes da aula");
+
+        javax.swing.GroupLayout pnlDetalhesMarcacaoLayout = new javax.swing.GroupLayout(pnlDetalhesMarcacao);
+        pnlDetalhesMarcacao.setLayout(pnlDetalhesMarcacaoLayout);
+        pnlDetalhesMarcacaoLayout.setHorizontalGroup(
+            pnlDetalhesMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDetalhesMarcacaoLayout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addGroup(pnlDetalhesMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDetalhesAulaMarcacao)
+                    .addComponent(pnlMarcacaoDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10))
+        );
+        pnlDetalhesMarcacaoLayout.setVerticalGroup(
+            pnlDetalhesMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDetalhesMarcacaoLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(lblDetalhesAulaMarcacao)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlMarcacaoDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
+        lstHorariosMarcacao.setBackground(new java.awt.Color(255, 255, 255));
+        lstHorariosMarcacao.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lstHorariosMarcacao.setForeground(new java.awt.Color(0, 0, 0));
+        scrHorariosMarcacao.setViewportView(lstHorariosMarcacao);
+
+        javax.swing.GroupLayout pnlMarcacaoAulaLayout = new javax.swing.GroupLayout(pnlMarcacaoAula);
+        pnlMarcacaoAula.setLayout(pnlMarcacaoAulaLayout);
+        pnlMarcacaoAulaLayout.setHorizontalGroup(
+            pnlMarcacaoAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlMarcacaoAulaLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(pnlMarcacaoAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblHorariosDisponiveis)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMarcacaoAulaLayout.createSequentialGroup()
+                        .addComponent(btnMarcarAula, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDesmarcarAula, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlDadosMarcacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblDadosMarcacao)
+                    .addComponent(scrHorariosMarcacao))
+                .addGap(18, 18, 18)
+                .addComponent(pnlDetalhesMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+        pnlMarcacaoAulaLayout.setVerticalGroup(
+            pnlMarcacaoAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlMarcacaoAulaLayout.createSequentialGroup()
+                .addGroup(pnlMarcacaoAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlMarcacaoAulaLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(lblDadosMarcacao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlDadosMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(lblHorariosDisponiveis)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(scrHorariosMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlMarcacaoAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnMarcarAula)
+                            .addComponent(btnDesmarcarAula)))
+                    .addComponent(pnlDetalhesMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout pnlTabMarcacaoLayout = new javax.swing.GroupLayout(pnlTabMarcacao);
+        pnlTabMarcacao.setLayout(pnlTabMarcacaoLayout);
+        pnlTabMarcacaoLayout.setHorizontalGroup(
+            pnlTabMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1193, Short.MAX_VALUE)
+            .addGroup(pnlTabMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(pnlMarcacaoAula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlTabMarcacaoLayout.setVerticalGroup(
+            pnlTabMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 483, Short.MAX_VALUE)
+            .addGroup(pnlTabMarcacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(pnlMarcacaoAula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        tbpGerenciarAula.addTab("Marcação de aulas", pnlTabMarcacao);
+
+        pnlPresencaNotas.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblSelecionarData.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSelecionarData.setForeground(new java.awt.Color(0, 0, 0));
+        lblSelecionarData.setText("Selecionar data");
+
+        jCalendarPresenca.setBackground(new java.awt.Color(255, 255, 255));
+        jCalendarPresenca.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jCalendarPresenca.setDecorationBackgroundColor(new java.awt.Color(255, 255, 255));
+        jCalendarPresenca.setDecorationBackgroundVisible(false);
+        jCalendarPresenca.setMinSelectableDate(new java.util.Date(1608001259000L));
+        jCalendarPresenca.setTodayButtonVisible(true);
+        jCalendarPresenca.setWeekOfYearVisible(false);
+
+        lstAulasPresenca.setBackground(new java.awt.Color(255, 255, 255));
+        lstAulasPresenca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstAulasPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        scrListaAulasPresenca.setViewportView(lstAulasPresenca);
+
+        btnEditarPresenca.setBackground(new java.awt.Color(255, 255, 255));
+        btnEditarPresenca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnEditarPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        btnEditarPresenca.setText("Editar");
+        btnEditarPresenca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarPresencaActionPerformed(evt);
+            }
+        });
+
+        lblDetalhesAulaPresenca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDetalhesAulaPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        lblDetalhesAulaPresenca.setText("Detalhes da aula");
+
+        pnlPresencaDetalhes.setBackground(new java.awt.Color(255, 255, 255));
+        pnlPresencaDetalhes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+        pnlPresencaDetalhes.setForeground(new java.awt.Color(112, 112, 112));
+
+        lblIDPresenca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblIDPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        lblIDPresenca.setText("ID");
+
+        lblAulaPresenca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblAulaPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        lblAulaPresenca.setText("Aula");
+
+        lblConteudoPresenca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblConteudoPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        lblConteudoPresenca.setText("Conteúdo");
+
+        lblProfessorPresenca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblProfessorPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        lblProfessorPresenca.setText("Professor");
+
+        lblDataHoraPresenca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDataHoraPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        lblDataHoraPresenca.setText("Data/Hora");
+
+        lblAlunosMatriculadosPresenca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblAlunosMatriculadosPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        lblAlunosMatriculadosPresenca.setText("Alunos matriculados");
+
+        lstAlunosPresenca.setBackground(new java.awt.Color(255, 255, 255));
+        lstAlunosPresenca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstAlunosPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        lstAlunosPresenca.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        scrlListaAlunosPresenca.setViewportView(lstAlunosPresenca);
+
+        txtDataPresenca.setBackground(new java.awt.Color(204, 204, 204));
+        txtDataPresenca.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtHoraPresenca.setBackground(new java.awt.Color(204, 204, 204));
+        txtHoraPresenca.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtProfessorPresenca.setBackground(new java.awt.Color(204, 204, 204));
+        txtProfessorPresenca.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtConteudoPresenca.setBackground(new java.awt.Color(204, 204, 204));
+        txtConteudoPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        txtConteudoPresenca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtConteudoPresencaActionPerformed(evt);
+            }
+        });
+
+        txtAulaPresenca.setBackground(new java.awt.Color(204, 204, 204));
+        txtAulaPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        txtAulaPresenca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAulaPresencaActionPerformed(evt);
+            }
+        });
+
+        txtIDPresenca.setBackground(new java.awt.Color(204, 204, 204));
+        txtIDPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        txtIDPresenca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIDPresencaActionPerformed(evt);
+            }
+        });
+
+        btnSalvarPresenca.setBackground(new java.awt.Color(255, 255, 255));
+        btnSalvarPresenca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnSalvarPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        btnSalvarPresenca.setText("Salvar");
+
+        btnCancelarPresenca.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancelarPresenca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCancelarPresenca.setForeground(new java.awt.Color(0, 0, 0));
+        btnCancelarPresenca.setText("Cancelar");
+
+        javax.swing.GroupLayout pnlPresencaDetalhesLayout = new javax.swing.GroupLayout(pnlPresencaDetalhes);
+        pnlPresencaDetalhes.setLayout(pnlPresencaDetalhesLayout);
+        pnlPresencaDetalhesLayout.setHorizontalGroup(
+            pnlPresencaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPresencaDetalhesLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(pnlPresencaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlPresencaDetalhesLayout.createSequentialGroup()
+                        .addComponent(btnSalvarPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCancelarPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblAlunosMatriculadosPresenca)
+                    .addGroup(pnlPresencaDetalhesLayout.createSequentialGroup()
+                        .addGroup(pnlPresencaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlPresencaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlPresencaDetalhesLayout.createSequentialGroup()
+                                    .addComponent(lblIDPresenca)
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(lblAulaPresenca))
+                            .addComponent(lblConteudoPresenca)
+                            .addComponent(lblProfessorPresenca)
+                            .addComponent(lblDataHoraPresenca))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlPresencaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlPresencaDetalhesLayout.createSequentialGroup()
+                                .addComponent(txtDataPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtHoraPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtProfessorPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtConteudoPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAulaPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtIDPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(scrlListaAlunosPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        pnlPresencaDetalhesLayout.setVerticalGroup(
+            pnlPresencaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPresencaDetalhesLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(pnlPresencaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblIDPresenca)
+                    .addComponent(txtIDPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlPresencaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAulaPresenca)
+                    .addComponent(txtAulaPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(pnlPresencaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblConteudoPresenca)
+                    .addComponent(txtConteudoPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlPresencaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProfessorPresenca)
+                    .addComponent(txtProfessorPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addGroup(pnlPresencaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDataHoraPresenca)
+                    .addComponent(txtDataPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtHoraPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblAlunosMatriculadosPresenca)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrlListaAlunosPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlPresencaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalvarPresenca)
+                    .addComponent(btnCancelarPresenca))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout pnlPresencaNotasLayout = new javax.swing.GroupLayout(pnlPresencaNotas);
+        pnlPresencaNotas.setLayout(pnlPresencaNotasLayout);
+        pnlPresencaNotasLayout.setHorizontalGroup(
+            pnlPresencaNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPresencaNotasLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(pnlPresencaNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlPresencaNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(scrListaAulasPresenca, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblSelecionarData, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jCalendarPresenca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE))
+                    .addComponent(btnEditarPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 32, Short.MAX_VALUE)
+                .addGroup(pnlPresencaNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlPresencaDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDetalhesAulaPresenca))
+                .addGap(40, 40, 40))
+        );
+        pnlPresencaNotasLayout.setVerticalGroup(
+            pnlPresencaNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPresencaNotasLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(pnlPresencaNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSelecionarData, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblDetalhesAulaPresenca, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlPresencaNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlPresencaNotasLayout.createSequentialGroup()
+                        .addComponent(jCalendarPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(scrListaAulasPresenca, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnEditarPresenca))
+                    .addComponent(pnlPresencaDetalhes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout pnlTabPresencaLayout = new javax.swing.GroupLayout(pnlTabPresenca);
+        pnlTabPresenca.setLayout(pnlTabPresencaLayout);
+        pnlTabPresencaLayout.setHorizontalGroup(
+            pnlTabPresencaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlPresencaNotas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlTabPresencaLayout.setVerticalGroup(
+            pnlTabPresencaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlPresencaNotas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        tbpGerenciarAula.addTab("Presença e notas", pnlTabPresenca);
+
+        pnlEditarAulas.setBackground(new java.awt.Color(255, 255, 255));
+
+        lstAulas.setBackground(new java.awt.Color(255, 255, 255));
+        lstAulas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lstAulas.setForeground(new java.awt.Color(0, 0, 0));
+        scrListaAulas.setViewportView(lstAulas);
+
+        btnNovoAula.setBackground(new java.awt.Color(255, 255, 255));
+        btnNovoAula.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnNovoAula.setForeground(new java.awt.Color(0, 0, 0));
+        btnNovoAula.setText("Novo");
+        btnNovoAula.setToolTipText("");
+        btnNovoAula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoAulaActionPerformed(evt);
+            }
+        });
+
+        btnEditarAula.setBackground(new java.awt.Color(255, 255, 255));
+        btnEditarAula.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnEditarAula.setForeground(new java.awt.Color(0, 0, 0));
+        btnEditarAula.setText("Editar");
+        btnEditarAula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarAulaActionPerformed(evt);
+            }
+        });
+
+        btnExcluirAula.setBackground(new java.awt.Color(255, 255, 255));
+        btnExcluirAula.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnExcluirAula.setForeground(new java.awt.Color(0, 0, 0));
+        btnExcluirAula.setText("Excluir");
+        btnExcluirAula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirAulaActionPerformed(evt);
+            }
+        });
+
+        lblAulaDetalhes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblAulaDetalhes.setForeground(new java.awt.Color(0, 0, 0));
+        lblAulaDetalhes.setText("Detalhes da aula");
+
+        pnlDetalhesAula.setBackground(new java.awt.Color(255, 255, 255));
+        pnlDetalhesAula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+        pnlDetalhesAula.setForeground(new java.awt.Color(112, 112, 112));
+
+        lblIDEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblIDEditar.setForeground(new java.awt.Color(0, 0, 0));
+        lblIDEditar.setText("ID");
+
+        txtIDEditar.setEditable(false);
+        txtIDEditar.setBackground(new java.awt.Color(204, 204, 204));
+        txtIDEditar.setForeground(new java.awt.Color(0, 0, 0));
+        txtIDEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+
+        lblAulaEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblAulaEditar.setForeground(new java.awt.Color(0, 0, 0));
+        lblAulaEditar.setText("Aula");
+
+        txtAulaEditar.setEditable(false);
+        txtAulaEditar.setBackground(new java.awt.Color(204, 204, 204));
+        txtAulaEditar.setForeground(new java.awt.Color(0, 0, 0));
+        txtAulaEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+
+        lblConteudoEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblConteudoEditar.setForeground(new java.awt.Color(0, 0, 0));
+        lblConteudoEditar.setText("Conteúdo");
+
+        txtConteudoEditar.setEditable(false);
+        txtConteudoEditar.setBackground(new java.awt.Color(204, 204, 204));
+        txtConteudoEditar.setForeground(new java.awt.Color(0, 0, 0));
+        txtConteudoEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+
+        lblProfessorEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblProfessorEditar.setForeground(new java.awt.Color(0, 0, 0));
+        lblProfessorEditar.setText("Professor");
+
+        lblDataHoraEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDataHoraEditar.setForeground(new java.awt.Color(0, 0, 0));
+        lblDataHoraEditar.setText("Data/Hora");
+
+        txtDataEditar.setBackground(new java.awt.Color(255, 255, 255));
+        txtDataEditar.setForeground(new java.awt.Color(0, 0, 0));
+        txtDataEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+        txtDataEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDataEditarActionPerformed(evt);
+            }
+        });
+
+        txtHoraEditar.setBackground(new java.awt.Color(255, 255, 255));
+        txtHoraEditar.setForeground(new java.awt.Color(0, 0, 0));
+        txtHoraEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+        txtHoraEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtHoraEditarActionPerformed(evt);
+            }
+        });
+
+        btnSalvarAula.setBackground(new java.awt.Color(255, 255, 255));
+        btnSalvarAula.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnSalvarAula.setForeground(new java.awt.Color(0, 0, 0));
+        btnSalvarAula.setText("Salvar");
+
+        btnCancelarAula.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancelarAula.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCancelarAula.setForeground(new java.awt.Color(0, 0, 0));
+        btnCancelarAula.setText("Cancelar");
+        btnCancelarAula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarAulaActionPerformed(evt);
+            }
+        });
+
+        cbxProfessor.setBackground(new java.awt.Color(255, 255, 255));
+        cbxProfessor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cbxProfessor.setForeground(new java.awt.Color(0, 0, 0));
+        cbxProfessor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Matthew" }));
+
+        javax.swing.GroupLayout pnlDetalhesAulaLayout = new javax.swing.GroupLayout(pnlDetalhesAula);
+        pnlDetalhesAula.setLayout(pnlDetalhesAulaLayout);
+        pnlDetalhesAulaLayout.setHorizontalGroup(
+            pnlDetalhesAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDetalhesAulaLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(btnSalvarAula, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCancelarAula, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(pnlDetalhesAulaLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(pnlDetalhesAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblAulaEditar)
+                    .addComponent(lblIDEditar)
+                    .addComponent(lblConteudoEditar)
+                    .addComponent(lblProfessorEditar)
+                    .addComponent(lblDataHoraEditar))
+                .addGroup(pnlDetalhesAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDetalhesAulaLayout.createSequentialGroup()
+                        .addGroup(pnlDetalhesAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlDetalhesAulaLayout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(txtDataEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtHoraEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlDetalhesAulaLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbxProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(pnlDetalhesAulaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlDetalhesAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtAulaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtConteudoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtIDEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 47, Short.MAX_VALUE))))
+        );
+        pnlDetalhesAulaLayout.setVerticalGroup(
+            pnlDetalhesAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDetalhesAulaLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(pnlDetalhesAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblIDEditar)
+                    .addComponent(txtIDEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlDetalhesAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAulaEditar)
+                    .addComponent(txtAulaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(pnlDetalhesAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblConteudoEditar)
+                    .addComponent(txtConteudoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlDetalhesAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProfessorEditar)
+                    .addComponent(cbxProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(pnlDetalhesAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDataHoraEditar)
+                    .addComponent(txtDataEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtHoraEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlDetalhesAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalvarAula)
+                    .addComponent(btnCancelarAula))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        lblSelecionarDataEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSelecionarDataEditar.setForeground(new java.awt.Color(0, 0, 0));
+        lblSelecionarDataEditar.setText("Selecionar data");
+
+        jCalendarEditar.setBackground(new java.awt.Color(255, 255, 255));
+        jCalendarEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jCalendarEditar.setDecorationBackgroundColor(new java.awt.Color(255, 255, 255));
+        jCalendarEditar.setDecorationBackgroundVisible(false);
+        jCalendarEditar.setMinSelectableDate(new java.util.Date(1608001259000L));
+        jCalendarEditar.setTodayButtonVisible(true);
+        jCalendarEditar.setWeekOfYearVisible(false);
+
+        javax.swing.GroupLayout pnlEditarAulasLayout = new javax.swing.GroupLayout(pnlEditarAulas);
+        pnlEditarAulas.setLayout(pnlEditarAulasLayout);
+        pnlEditarAulasLayout.setHorizontalGroup(
+            pnlEditarAulasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditarAulasLayout.createSequentialGroup()
+                .addGroup(pnlEditarAulasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlEditarAulasLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnNovoAula, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEditarAula, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnExcluirAula, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlEditarAulasLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(pnlEditarAulasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(scrListaAulas)
+                            .addComponent(lblSelecionarDataEditar, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCalendarEditar, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(pnlEditarAulasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblAulaDetalhes)
+                    .addComponent(pnlDetalhesAula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16))
+        );
+        pnlEditarAulasLayout.setVerticalGroup(
+            pnlEditarAulasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditarAulasLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(pnlEditarAulasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAulaDetalhes)
+                    .addComponent(lblSelecionarDataEditar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlEditarAulasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlEditarAulasLayout.createSequentialGroup()
+                        .addComponent(jCalendarEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(scrListaAulas, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlEditarAulasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnExcluirAula)
+                            .addComponent(btnEditarAula)
+                            .addComponent(btnNovoAula)))
+                    .addComponent(pnlDetalhesAula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout pnlTabEditarLayout = new javax.swing.GroupLayout(pnlTabEditar);
+        pnlTabEditar.setLayout(pnlTabEditarLayout);
+        pnlTabEditarLayout.setHorizontalGroup(
+            pnlTabEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlEditarAulas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlTabEditarLayout.setVerticalGroup(
+            pnlTabEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlEditarAulas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        tbpGerenciarAula.addTab("Editar aulas", pnlTabEditar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(tbpGerenciarAula)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(tbpGerenciarAula, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtContratojTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContratojTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtContratojTextField1ActionPerformed
+
+    private void txtNomeAlunojTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeAlunojTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeAlunojTextField2ActionPerformed
+
+    private void txtUltimaAulajTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUltimaAulajTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUltimaAulajTextField3ActionPerformed
+
+    private void txtIDAulajTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDAulajTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDAulajTextField4ActionPerformed
+
+    private void txtNomeAulajTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeAulajTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeAulajTextField6ActionPerformed
+
+    private void txtConteudoMarcacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConteudoMarcacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtConteudoMarcacaoActionPerformed
+
+    private void txtAulaMarcacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAulaMarcacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAulaMarcacaoActionPerformed
+
+    private void txtIDMarcacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDMarcacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDMarcacaoActionPerformed
+
+    private void btnNovoAulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoAulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNovoAulaActionPerformed
+
+    private void btnEditarAulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarAulaActionPerformed
+
+    private void btnExcluirAulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirAulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExcluirAulaActionPerformed
+
+    private void txtDataEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDataEditarActionPerformed
+
+    private void txtHoraEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoraEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHoraEditarActionPerformed
+
+    private void btnCancelarAulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarAulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelarAulaActionPerformed
+
+    private void btnEditarPresencaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPresencaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarPresencaActionPerformed
+
+    private void txtConteudoPresencaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConteudoPresencaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtConteudoPresencaActionPerformed
+
+    private void txtAulaPresencaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAulaPresencaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAulaPresencaActionPerformed
+
+    private void txtIDPresencaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDPresencaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDPresencaActionPerformed
+
+    private void btnMarcarAulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarcarAulaActionPerformed
+        Avaliacao avaliacao = new Avaliacao();
+        avaliacao.setNotaParteEscrita(Integer.parseInt(txtParteEscrita.getText()));
+        avaliacao.setNotaParteOral(txtParteOral.getText());
+        avaliacao.setComentario(txtComentario.getText());
+        avaliacao.setIdDiscente(lstDiscentes.getSelectedValue().getId().intValue());
+        avaliacao.setIdDisciplina(lstDisciplinas.getSelectedValue().getId().intValue());
+                
+        Long id = new AvaliacaoDao().salvar(avaliacao);
+        
+        avaliacao.setId(id);
+        
+        lstAvaliacaoModel.addElement(avaliacao);
+        
+        limparCampos();
+    }//GEN-LAST:event_btnMarcarAulaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -97,167 +1128,92 @@ public class GerenciarAula extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSalvarCadastro1;
-    private javax.swing.JButton btnSalvarCadastro10;
-    private javax.swing.JButton btnSalvarCadastro11;
-    private javax.swing.JButton btnSalvarCadastro12;
-    private javax.swing.JButton btnSalvarCadastro13;
-    private javax.swing.JButton btnSalvarCadastro14;
-    private javax.swing.JButton btnSalvarCadastro15;
-    private javax.swing.JButton btnSalvarCadastro16;
-    private javax.swing.JButton btnSalvarCadastro17;
-    private javax.swing.JButton btnSalvarCadastro18;
-    private javax.swing.JButton btnSalvarCadastro19;
-    private javax.swing.JButton btnSalvarCadastro2;
-    private javax.swing.JButton btnSalvarCadastro20;
-    private javax.swing.JButton btnSalvarCadastro21;
-    private javax.swing.JButton btnSalvarCadastro3;
-    private javax.swing.JButton btnSalvarCadastro4;
-    private javax.swing.JButton btnSalvarCadastro5;
-    private javax.swing.JButton btnSalvarCadastro6;
-    private javax.swing.JButton btnSalvarCadastro7;
-    private javax.swing.JButton btnSalvarCadastro8;
-    private javax.swing.JButton btnSalvarCadastro9;
-    private javax.swing.JComboBox<String> cmbFiltro;
-    private javax.swing.JComboBox<String> cmbFiltro1;
-    private javax.swing.JComboBox<String> cmbFiltro10;
-    private javax.swing.JComboBox<String> cmbFiltro11;
-    private javax.swing.JComboBox<String> cmbFiltro12;
-    private javax.swing.JComboBox<String> cmbFiltro13;
-    private javax.swing.JComboBox<String> cmbFiltro14;
-    private javax.swing.JComboBox<String> cmbFiltro15;
-    private javax.swing.JComboBox<String> cmbFiltro16;
-    private javax.swing.JComboBox<String> cmbFiltro17;
-    private javax.swing.JComboBox<String> cmbFiltro18;
-    private javax.swing.JComboBox<String> cmbFiltro19;
-    private javax.swing.JComboBox<String> cmbFiltro2;
-    private javax.swing.JComboBox<String> cmbFiltro20;
-    private javax.swing.JComboBox<String> cmbFiltro3;
-    private javax.swing.JComboBox<String> cmbFiltro4;
-    private javax.swing.JComboBox<String> cmbFiltro5;
-    private javax.swing.JComboBox<String> cmbFiltro6;
-    private javax.swing.JComboBox<String> cmbFiltro7;
-    private javax.swing.JComboBox<String> cmbFiltro8;
-    private javax.swing.JComboBox<String> cmbFiltro9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTable jTable10;
-    private javax.swing.JTable jTable11;
-    private javax.swing.JTable jTable12;
-    private javax.swing.JTable jTable13;
-    private javax.swing.JTable jTable14;
-    private javax.swing.JTable jTable15;
-    private javax.swing.JTable jTable16;
-    private javax.swing.JTable jTable17;
-    private javax.swing.JTable jTable18;
-    private javax.swing.JTable jTable19;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable20;
-    private javax.swing.JTable jTable21;
-    private javax.swing.JTable jTable22;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
-    private javax.swing.JTable jTable7;
-    private javax.swing.JTable jTable8;
-    private javax.swing.JTable jTable9;
-    private javax.swing.JLabel lblPesquisa;
-    private javax.swing.JLabel lblPesquisa1;
-    private javax.swing.JLabel lblPesquisa10;
-    private javax.swing.JLabel lblPesquisa11;
-    private javax.swing.JLabel lblPesquisa12;
-    private javax.swing.JLabel lblPesquisa13;
-    private javax.swing.JLabel lblPesquisa14;
-    private javax.swing.JLabel lblPesquisa15;
-    private javax.swing.JLabel lblPesquisa16;
-    private javax.swing.JLabel lblPesquisa17;
-    private javax.swing.JLabel lblPesquisa18;
-    private javax.swing.JLabel lblPesquisa19;
-    private javax.swing.JLabel lblPesquisa2;
-    private javax.swing.JLabel lblPesquisa20;
-    private javax.swing.JLabel lblPesquisa3;
-    private javax.swing.JLabel lblPesquisa4;
-    private javax.swing.JLabel lblPesquisa5;
-    private javax.swing.JLabel lblPesquisa6;
-    private javax.swing.JLabel lblPesquisa7;
-    private javax.swing.JLabel lblPesquisa8;
-    private javax.swing.JLabel lblPesquisa9;
-    private javax.swing.JPanel pnlCadastroDiscente;
-    private javax.swing.JPanel pnlCadastroDiscente1;
-    private javax.swing.JPanel pnlCadastroDiscente10;
-    private javax.swing.JPanel pnlCadastroDiscente11;
-    private javax.swing.JPanel pnlCadastroDiscente12;
-    private javax.swing.JPanel pnlCadastroDiscente13;
-    private javax.swing.JPanel pnlCadastroDiscente2;
-    private javax.swing.JPanel pnlCadastroDiscente3;
-    private javax.swing.JPanel pnlCadastroDiscente4;
-    private javax.swing.JPanel pnlCadastroDiscente5;
-    private javax.swing.JPanel pnlCadastroDiscente6;
-    private javax.swing.JPanel pnlCadastroDiscente7;
-    private javax.swing.JPanel pnlCadastroDiscente8;
-    private javax.swing.JPanel pnlCadastroDiscente9;
-    private javax.swing.JPanel pnlPesquiusa;
-    private javax.swing.JPanel pnlPesquiusa1;
-    private javax.swing.JPanel pnlPesquiusa10;
-    private javax.swing.JPanel pnlPesquiusa11;
-    private javax.swing.JPanel pnlPesquiusa12;
-    private javax.swing.JPanel pnlPesquiusa13;
-    private javax.swing.JPanel pnlPesquiusa14;
-    private javax.swing.JPanel pnlPesquiusa15;
-    private javax.swing.JPanel pnlPesquiusa16;
-    private javax.swing.JPanel pnlPesquiusa17;
-    private javax.swing.JPanel pnlPesquiusa18;
-    private javax.swing.JPanel pnlPesquiusa19;
-    private javax.swing.JPanel pnlPesquiusa2;
-    private javax.swing.JPanel pnlPesquiusa20;
-    private javax.swing.JPanel pnlPesquiusa3;
-    private javax.swing.JPanel pnlPesquiusa4;
-    private javax.swing.JPanel pnlPesquiusa5;
-    private javax.swing.JPanel pnlPesquiusa6;
-    private javax.swing.JPanel pnlPesquiusa7;
-    private javax.swing.JPanel pnlPesquiusa8;
-    private javax.swing.JPanel pnlPesquiusa9;
-    private javax.swing.JScrollPane pnlTabelaAlunos;
-    private javax.swing.JScrollPane pnlTabelaAlunos1;
-    private javax.swing.JScrollPane pnlTabelaAlunos10;
-    private javax.swing.JScrollPane pnlTabelaAlunos11;
-    private javax.swing.JScrollPane pnlTabelaAlunos12;
-    private javax.swing.JScrollPane pnlTabelaAlunos13;
-    private javax.swing.JScrollPane pnlTabelaAlunos14;
-    private javax.swing.JScrollPane pnlTabelaAlunos15;
-    private javax.swing.JScrollPane pnlTabelaAlunos16;
-    private javax.swing.JScrollPane pnlTabelaAlunos17;
-    private javax.swing.JScrollPane pnlTabelaAlunos18;
-    private javax.swing.JScrollPane pnlTabelaAlunos19;
-    private javax.swing.JScrollPane pnlTabelaAlunos2;
-    private javax.swing.JScrollPane pnlTabelaAlunos20;
-    private javax.swing.JScrollPane pnlTabelaAlunos3;
-    private javax.swing.JScrollPane pnlTabelaAlunos4;
-    private javax.swing.JScrollPane pnlTabelaAlunos5;
-    private javax.swing.JScrollPane pnlTabelaAlunos6;
-    private javax.swing.JScrollPane pnlTabelaAlunos7;
-    private javax.swing.JScrollPane pnlTabelaAlunos8;
-    private javax.swing.JScrollPane pnlTabelaAlunos9;
-    private javax.swing.JTextField txtPesquisa;
-    private javax.swing.JTextField txtPesquisa1;
-    private javax.swing.JTextField txtPesquisa10;
-    private javax.swing.JTextField txtPesquisa11;
-    private javax.swing.JTextField txtPesquisa12;
-    private javax.swing.JTextField txtPesquisa13;
-    private javax.swing.JTextField txtPesquisa14;
-    private javax.swing.JTextField txtPesquisa15;
-    private javax.swing.JTextField txtPesquisa16;
-    private javax.swing.JTextField txtPesquisa17;
-    private javax.swing.JTextField txtPesquisa18;
-    private javax.swing.JTextField txtPesquisa19;
-    private javax.swing.JTextField txtPesquisa2;
-    private javax.swing.JTextField txtPesquisa20;
-    private javax.swing.JTextField txtPesquisa3;
-    private javax.swing.JTextField txtPesquisa4;
-    private javax.swing.JTextField txtPesquisa5;
-    private javax.swing.JTextField txtPesquisa6;
-    private javax.swing.JTextField txtPesquisa7;
-    private javax.swing.JTextField txtPesquisa8;
-    private javax.swing.JTextField txtPesquisa9;
+    private javax.swing.JButton btnCancelarAula;
+    private javax.swing.JButton btnCancelarPresenca;
+    private javax.swing.JButton btnDesmarcarAula;
+    private javax.swing.JButton btnEditarAula;
+    private javax.swing.JButton btnEditarPresenca;
+    private javax.swing.JButton btnExcluirAula;
+    private javax.swing.JButton btnMarcarAula;
+    private javax.swing.JButton btnNovoAula;
+    private javax.swing.JButton btnSalvarAula;
+    private javax.swing.JButton btnSalvarPresenca;
+    private javax.swing.JComboBox<String> cbxProfessor;
+    private com.toedter.calendar.JCalendar jCalendarEditar;
+    private com.toedter.calendar.JCalendar jCalendarPresenca;
+    private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JLabel lblAlunosMatriculados;
+    private javax.swing.JLabel lblAlunosMatriculadosPresenca;
+    private javax.swing.JLabel lblAulaDetalhes;
+    private javax.swing.JLabel lblAulaEditar;
+    private javax.swing.JLabel lblAulaMarcacao;
+    private javax.swing.JLabel lblAulaPresenca;
+    private javax.swing.JLabel lblConteudoEditar;
+    private javax.swing.JLabel lblConteudoMarcacao;
+    private javax.swing.JLabel lblConteudoPresenca;
+    private javax.swing.JLabel lblContrato;
+    private javax.swing.JLabel lblDadosMarcacao;
+    private javax.swing.JLabel lblDataHoraEditar;
+    private javax.swing.JLabel lblDataHoraMarcacao;
+    private javax.swing.JLabel lblDataHoraPresenca;
+    private javax.swing.JLabel lblDetalhesAulaMarcacao;
+    private javax.swing.JLabel lblDetalhesAulaPresenca;
+    private javax.swing.JLabel lblHorariosDisponiveis;
+    private javax.swing.JLabel lblIDAula;
+    private javax.swing.JLabel lblIDEditar;
+    private javax.swing.JLabel lblIDMarcacao;
+    private javax.swing.JLabel lblIDPresenca;
+    private javax.swing.JLabel lblNomeAluno;
+    private javax.swing.JLabel lblNomeAula;
+    private javax.swing.JLabel lblProfessorEditar;
+    private javax.swing.JLabel lblProfessorMarcacao;
+    private javax.swing.JLabel lblProfessorPresenca;
+    private javax.swing.JLabel lblSelecionarData;
+    private javax.swing.JLabel lblSelecionarDataEditar;
+    private javax.swing.JLabel lblUltimaAula;
+    private javax.swing.JList<String> lstAlunosMarcacao;
+    private javax.swing.JList<String> lstAlunosPresenca;
+    private javax.swing.JList<String> lstAulas;
+    private javax.swing.JList<String> lstAulasPresenca;
+    private javax.swing.JList<String> lstHorariosMarcacao;
+    private javax.swing.JPanel pnlDadosMarcacao;
+    private javax.swing.JPanel pnlDetalhesAula;
+    private javax.swing.JPanel pnlDetalhesMarcacao;
+    private javax.swing.JPanel pnlEditarAulas;
+    private javax.swing.JPanel pnlMarcacaoAula;
+    private javax.swing.JPanel pnlMarcacaoDetalhes;
+    private javax.swing.JPanel pnlPresencaDetalhes;
+    private javax.swing.JPanel pnlPresencaNotas;
+    private javax.swing.JPanel pnlTabEditar;
+    private javax.swing.JPanel pnlTabMarcacao;
+    private javax.swing.JPanel pnlTabPresenca;
+    private javax.swing.JScrollPane scrHorariosMarcacao;
+    private javax.swing.JScrollPane scrListaAulas;
+    private javax.swing.JScrollPane scrListaAulasPresenca;
+    private javax.swing.JScrollPane scrlListaAlunosMarcacao;
+    private javax.swing.JScrollPane scrlListaAlunosPresenca;
+    private javax.swing.JTabbedPane tbpGerenciarAula;
+    private javax.swing.JTextField txtAulaEditar;
+    private javax.swing.JTextField txtAulaMarcacao;
+    private javax.swing.JTextField txtAulaPresenca;
+    private javax.swing.JTextField txtConteudoEditar;
+    private javax.swing.JTextField txtConteudoMarcacao;
+    private javax.swing.JTextField txtConteudoPresenca;
+    private javax.swing.JTextField txtContrato;
+    private javax.swing.JTextField txtDataEditar;
+    private javax.swing.JTextField txtDataMarcacao;
+    private javax.swing.JTextField txtDataPresenca;
+    private javax.swing.JTextField txtHoraEditar;
+    private javax.swing.JTextField txtHoraMarcacao;
+    private javax.swing.JTextField txtHoraPresenca;
+    private javax.swing.JTextField txtIDAula;
+    private javax.swing.JTextField txtIDEditar;
+    private javax.swing.JTextField txtIDMarcacao;
+    private javax.swing.JTextField txtIDPresenca;
+    private javax.swing.JTextField txtNomeAluno;
+    private javax.swing.JTextField txtNomeAula;
+    private javax.swing.JTextField txtProfessorMarcacao;
+    private javax.swing.JTextField txtProfessorPresenca;
+    private javax.swing.JTextField txtUltimaAula;
     // End of variables declaration//GEN-END:variables
 }
