@@ -131,10 +131,10 @@ public class Avaliacao extends Entidade {
 
     @Override
     public String toString() {
-        return "notaParteEscrita=" + notaParteEscrita 
-                + ", notaParteOral=" + notaParteOral 
-                + ", comentario=" + comentario 
-                + ", idDiscente=" + idDiscente 
-                + ", idDisciplina=" + idDisciplina;
+        return notaParteEscrita 
+                + ", " + notaParteOral 
+                + ", " + comentario 
+                + ", " + idDiscente 
+                + ", " + idDisciplina;
     }
 }
