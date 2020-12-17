@@ -17,16 +17,24 @@ public class Disciplina extends Entidade {
 
     private String conteudo;
     
-    private int idDisponibilidadeHorario;
+    private int idProfessor;
+    
+    private String data;
+    
+    private String hora;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
     public Disciplina() {
     }
 
-    public Disciplina(Long id, String nome, String conteudo) {
+    public Disciplina(Long id, String nome, String conteudo, int idProfessor,
+            String data, String hora) {
         super(id);
         this.nome = nome;
         this.conteudo = conteudo;
+        this.idProfessor = idProfessor;
+        this.data = data;
+        this.hora = hora;
     }
 
 //</editor-fold>
@@ -48,6 +56,29 @@ public class Disciplina extends Entidade {
         this.conteudo = conteudo;
     }
 
+    public int getIdProfessor() {
+        return idProfessor;
+    }
+
+    public void setIdProfessor(int idProfessor) {
+        this.idProfessor = idProfessor;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
 //</editor-fold>
     
     //<editor-fold defaultstate="collapsed" desc="Equals/HashCode">
@@ -83,8 +114,13 @@ public class Disciplina extends Entidade {
 
     @Override
     public String toString() {
-        return "Disciplina{" + "nome=" + nome 
-                + ", conteudo=" + conteudo + '}';
+        return nome 
+                + ", " + conteudo 
+                + ", " + idProfessor 
+                + ", " + data 
+                + ", " + hora;
     }
+
+    
 
 }
