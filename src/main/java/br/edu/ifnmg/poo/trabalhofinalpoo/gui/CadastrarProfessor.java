@@ -300,6 +300,11 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         lstProfessores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lstProfessores.setForeground(new java.awt.Color(0, 0, 0));
         lstProfessores.setModel(lstProfessoresModel);
+        lstProfessores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lstProfessoresMouseReleased(evt);
+            }
+        });
         scrListaProfessores.setViewportView(lstProfessores);
 
         javax.swing.GroupLayout pnlListaProfessoresLayout = new javax.swing.GroupLayout(pnlListaProfessores);
@@ -435,6 +440,15 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         // Exclui graficamente 
         lstProfessoresModel.remove(lstProfessores.getSelectedIndex());
     }//GEN-LAST:event_mnuExcluirActionPerformed
+
+    private void lstProfessoresMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstProfessoresMouseReleased
+        if (evt.getButton() == MouseEvent.BUTTON3
+                && lstProfessores.getModel().getSize() > 0) {
+            indiceProfessorSelecionado = lstProfessores.locationToIndex(evt.getPoint());
+            lstProfessores.setSelectedIndex(indiceProfessorSelecionado);
+            popUpMenu.show(lstProfessores, evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_lstProfessoresMouseReleased
 
     /**
      * @param args the command line arguments
