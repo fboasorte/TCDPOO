@@ -27,7 +27,7 @@ public class AulaDao extends AbstractDao<Aula, Long> {
      */
     @Override
     public String getDeclaracaoInsert() {
-        return "INSERT INTO disciplina(id,nome,conteudo) VALUES (default, ?, ?);";
+        return "INSERT INTO aula(id,nome,conteudo, idProfessor, data, hora) VALUES (default, ?, ?, ?, ?, ?);";
     }
 
     /**
@@ -38,7 +38,7 @@ public class AulaDao extends AbstractDao<Aula, Long> {
      */
     @Override
     public String getDeclaracaoSelectPorId() {
-        return "SELECT * FROM disciplina WHERE id = ?";
+        return "SELECT * FROM aula WHERE id = ?";
     }
 
     /**
@@ -49,7 +49,7 @@ public class AulaDao extends AbstractDao<Aula, Long> {
      */
     @Override
     public String getDeclaracaoSelectTodos() {
-        return "SELECT * FROM disciplina";
+        return "SELECT * FROM aula";
     }
 
     /**
@@ -60,7 +60,7 @@ public class AulaDao extends AbstractDao<Aula, Long> {
      */
     @Override
     public String getDeclaracaoUpdate() {
-        return "UPDATE disciplina SET nome = ?, conteudo = ? WHERE id = ?;";
+        return "UPDATE aula SET nome = ?, conteudo = ?, idProfessor = ?, data = ?, hora = ? WHERE id = ?;";
     }
 
     /**
@@ -71,7 +71,7 @@ public class AulaDao extends AbstractDao<Aula, Long> {
      */
     @Override
     public String getDeclaracaoDelete() {
-        return "DELETE FROM disciplina WHERE id = ?";
+        return "DELETE FROM aula WHERE id = ?";
     }
 
     /**
@@ -95,19 +95,26 @@ public class AulaDao extends AbstractDao<Aula, Long> {
      * atualização de registros no banco de dados.
      *
      * @param pstmt Declaração previamente preparada.
-     * @param disciplina
+     * @param aula
      */
     @Override
-    public void montarDeclaracao(PreparedStatement pstmt, Aula disciplina) {
+    public void montarDeclaracao(PreparedStatement pstmt, Aula aula) {
         // Tenta definir valores junto à sentença SQL preparada para execução 
         // no banco de dados.
         try {
-            if (disciplina.getId() == null || disciplina.getId() == 0) {
-                pstmt.setString(1, disciplina.getNome());
-                pstmt.setString(2, disciplina.getConteudo());
+            if (aula.getId() == null || aula.getId() == 0) {
+                pstmt.setString(1, aula.getNome());
+                pstmt.setString(2, aula.getConteudo());
+                pstmt.setInt(3, aula.getIdProfessor());
+                pstmt.setString(4, aula.getData());
+                pstmt.setString(5, aula.getHora());       
             } else {
-                pstmt.setString(1, disciplina.getNome());
-                pstmt.setString(2, disciplina.getConteudo());
+                pstmt.setString(1, aula.getNome());
+                pstmt.setString(2, aula.getConteudo());
+                pstmt.setInt(3, aula.getIdProfessor());
+                pstmt.setString(4, aula.getData());
+                pstmt.setString(5, aula.getHora());  
+                pstmt.setLong(6, aula.getId());
             }
         } catch (SQLException ex) {
             Logger.getLogger(AulaDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -123,20 +130,23 @@ public class AulaDao extends AbstractDao<Aula, Long> {
     @Override
     public Aula extrairObjeto(ResultSet resultSet) {
         // Cria referência para montagem da tarefa
-        Aula disciplina = new Aula();
+        Aula aula = new Aula();
 
         // Tenta recuperar dados do registro retornado pelo banco de dados
         // e ajustar o estado da tarefa a ser mapeada
         try {
-            disciplina.setId(resultSet.getLong("id"));
-            disciplina.setNome(resultSet.getString("nome"));
-            disciplina.setConteudo(resultSet.getString("conteudo"));
+            aula.setId(resultSet.getLong("id"));
+            aula.setNome(resultSet.getString("nome"));
+            aula.setConteudo(resultSet.getString("conteudo"));
+            aula.setIdProfessor(resultSet.getInt("idProfessor"));
+            aula.setData(resultSet.getString("data"));
+            aula.setHora(resultSet.getString("hora"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         // Devolve a tarefa mapeada
-        return disciplina;
+        return aula;
     }
 
     /**
@@ -151,23 +161,26 @@ public class AulaDao extends AbstractDao<Aula, Long> {
     public List<Aula> extrairObjetos(ResultSet resultSet) {
 
         // Cria referência para inserção das tarefas a serem mapeadas
-        ArrayList<Aula> disciplinas = new ArrayList<>();
+        ArrayList<Aula> aulas = new ArrayList<>();
         
         // Tenta...
         try {
             // ... entquanto houver registros a serem processados
             while (resultSet.next()) {
                 // Cria referência para montagem da tarefa
-                Aula disciplina = new Aula();
+                Aula aula = new Aula();
 
                 // Tenta recuperar dados do registro retornado pelo banco 
                 // de dados e ajustar o estado da tarefa a ser mapeada
-                disciplina.setId(resultSet.getLong("id"));
-                disciplina.setNome(resultSet.getString("nome"));
-                disciplina.setConteudo(resultSet.getString("conteudo"));
+                aula.setId(resultSet.getLong("id"));
+                aula.setNome(resultSet.getString("nome"));
+                aula.setConteudo(resultSet.getString("conteudo"));
+                aula.setIdProfessor(resultSet.getInt("idProfessor"));
+                aula.setData(resultSet.getString("data"));
+                aula.setHora(resultSet.getString("hora"));
                 
                 // Insere a tarefa na lista de tarefas recuperadas
-                disciplinas.add(disciplina);
+                aulas.add(aula);
             }
         } catch (SQLException ex) {
             Logger.getLogger(AulaDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -175,6 +188,6 @@ public class AulaDao extends AbstractDao<Aula, Long> {
 
         // Devolve a lista de tarefas reconstituídas dos registros do banco 
         // de dados
-        return disciplinas;
+        return aulas;
     }
 }
