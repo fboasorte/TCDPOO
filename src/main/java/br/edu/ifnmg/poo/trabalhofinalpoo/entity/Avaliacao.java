@@ -21,20 +21,20 @@ public class Avaliacao extends Entidade {
     
     private int idDiscente;
     
-    private int idDisciplina;
+    private int idAula;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
     public Avaliacao() {
     }
 
     public Avaliacao(Long id, int notaParteEscrita, String notaParteOral
-            , String comentario, int idDiscente, int idDisciplina) {
+            , String comentario, int idDiscente, int idAula) {
         super(id);
         this.notaParteEscrita = notaParteEscrita;
         this.notaParteOral = notaParteOral;
         this.comentario = comentario;
         this.idDiscente = idDiscente;
-        this.idDisciplina = idDisciplina;
+        this.idAula = idAula;
     }
 
 //</editor-fold>
@@ -72,12 +72,12 @@ public class Avaliacao extends Entidade {
         this.idDiscente = idDiscente;
     }
 
-    public int getIdDisciplina() {
-        return idDisciplina;
+    public int getIdAula() {
+        return idAula;
     }
 
-    public void setIdDisciplina(int idDisciplina) {
-        this.idDisciplina = idDisciplina;
+    public void setIdAula(int idAula) {
+        this.idAula = idAula;
     }
     
 //</editor-fold>
@@ -131,10 +131,10 @@ public class Avaliacao extends Entidade {
 
     @Override
     public String toString() {
-        return "notaParteEscrita=" + notaParteEscrita 
-                + ", notaParteOral=" + notaParteOral 
-                + ", comentario=" + comentario 
-                + ", idDiscente=" + idDiscente 
-                + ", idDisciplina=" + idDisciplina;
+        return notaParteEscrita 
+                + ", " + notaParteOral 
+                + ", " + comentario 
+                + ", " + idDiscente 
+                + ", " + idAula;
     }
 }

@@ -28,7 +28,7 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
      */
     @Override
     public String getDeclaracaoInsert() {
-        return "INSERT INTO avaliacao(id,notaParteEscrita,notaParteOral,comentario, idDiscente, idDisciplina) VALUES (default,?,?, ?, ?, ?);";
+        return "INSERT INTO avaliacao(id,notaParteEscrita,notaParteOral,comentario, idDiscente, idAula) VALUES (default,?,?, ?, ?, ?);";
     }
 
     /**
@@ -61,7 +61,7 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
      */
     @Override
     public String getDeclaracaoUpdate() {
-        return "UPDATE avaliacao SET notaParteEscrita = ?, notaParteOral = ?, comentario = ?, idDiscente = ?, idDisciplina = ? WHERE id = ?;";
+        return "UPDATE avaliacao SET notaParteEscrita = ?, notaParteOral = ?, comentario = ?, idDiscente = ?, idAula = ? WHERE id = ?;";
     }
 
     /**
@@ -108,13 +108,13 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
                 pstmt.setString(2, avaliacao.getNotaParteOral());
                 pstmt.setString(3, avaliacao.getComentario());
                 pstmt.setInt(4, avaliacao.getIdDiscente());
-                pstmt.setInt(5, avaliacao.getIdDisciplina());
+                pstmt.setInt(5, avaliacao.getIdAula());
             } else {
                 pstmt.setInt(1, avaliacao.getNotaParteEscrita());
                 pstmt.setString(2, avaliacao.getNotaParteOral());
                 pstmt.setString(3, avaliacao.getComentario());
                 pstmt.setInt(4, avaliacao.getIdDiscente());
-                pstmt.setInt(5, avaliacao.getIdDisciplina());
+                pstmt.setInt(5, avaliacao.getIdAula());
                 pstmt.setLong(6, avaliacao.getId());
             }
         } catch (SQLException ex) {
@@ -141,7 +141,7 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
             avaliacao.setNotaParteOral(resultSet.getString("notaParteOral"));
             avaliacao.setComentario(resultSet.getString("comentario"));
             avaliacao.setIdDiscente(resultSet.getInt("idDiscente"));
-            avaliacao.setIdDisciplina(resultSet.getInt("idDisciplina"));
+            avaliacao.setIdAula(resultSet.getInt("idAula"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -178,7 +178,7 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
                 avaliacao.setNotaParteOral(resultSet.getString("notaParteOral"));
                 avaliacao.setComentario(resultSet.getString("comentario"));
                 avaliacao.setIdDiscente(resultSet.getInt("idDiscente"));
-                avaliacao.setIdDisciplina(resultSet.getInt("idDisciplina"));
+                avaliacao.setIdAula(resultSet.getInt("idAula"));
 
                 // Insere a tarefa na lista de tarefas recuperadas
                 avaliacoes.add(avaliacao);

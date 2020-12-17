@@ -381,7 +381,7 @@ public class EditarProva extends javax.swing.JDialog {
         provaEmEdicao.setNotaParteOral(txtParteOral.getText());
         provaEmEdicao.setComentario(txtComentario.getText());
         provaEmEdicao.setIdDiscente(lstDiscentes.getSelectedValue().getId().intValue());
-        provaEmEdicao.setIdDisciplina(lstDisciplinas.getSelectedValue().getId().intValue());
+        provaEmEdicao.setIdAula(lstDisciplinas.getSelectedValue().getId().intValue());
                 
         new AvaliacaoDao().salvar(provaEmEdicao);
         cadastroProva.atualizarModelo(provaEmEdicao);
@@ -409,7 +409,7 @@ public class EditarProva extends javax.swing.JDialog {
         txtParteOral.setText(avaliacao.getNotaParteOral());
         txtComentario.setText(avaliacao.getComentario());
         lstDiscentes.setSelectedIndex(avaliacao.getIdDiscente());
-        lstDisciplinas.setSelectedIndex(avaliacao.getIdDisciplina());
+        lstDisciplinas.setSelectedIndex(avaliacao.getIdAula());
     }
 
 

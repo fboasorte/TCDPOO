@@ -494,7 +494,7 @@ public class CadastrarProva extends javax.swing.JFrame {
         avaliacao.setNotaParteOral(txtParteOral.getText());
         avaliacao.setComentario(txtComentario.getText());
         avaliacao.setIdDiscente(lstDiscentes.getSelectedValue().getId().intValue());
-        avaliacao.setIdDisciplina(lstDisciplinas.getSelectedValue().getId().intValue());
+        avaliacao.setIdAula(lstDisciplinas.getSelectedValue().getId().intValue());
                 
         Long id = new AvaliacaoDao().salvar(avaliacao);
         
