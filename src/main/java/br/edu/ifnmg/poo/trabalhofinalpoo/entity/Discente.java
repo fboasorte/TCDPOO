@@ -23,6 +23,13 @@ public class Discente extends Entidade {
     public Discente() {
     }
 
+    /**
+     * Construtor sobrecarregado
+     * @param id Identitade do discente
+     * @param cpf cpf do discente
+     * @param nome nome do discente
+     * @param nascimento data de nascimento do discente
+     */
     public Discente(Long id, int cpf, String nome, String nascimento) {
         super(id);
         this.cpf = cpf;
@@ -93,6 +100,10 @@ public class Discente extends Entidade {
     }
 //</editor-fold>
 
+    /**
+     * Gera representação textual do objeto atual
+     * @return Texto representativo do objeto atual
+     */
     @Override
     public String toString() {
         return cpf
