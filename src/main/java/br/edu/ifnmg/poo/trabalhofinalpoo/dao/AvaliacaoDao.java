@@ -114,10 +114,10 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
                 pstmt.setInt(1, avaliacao.getNotaParteEscrita());
                 pstmt.setString(2, avaliacao.getNotaParteOral());
                 pstmt.setString(3, avaliacao.getComentario());
-                pstmt.setLong(4, avaliacao.getId());
-                pstmt.setInt(5, avaliacao.getIdDisponibilidadeHorario());
-                pstmt.setInt(6, avaliacao.getIdDiscente());
-                pstmt.setInt(7, avaliacao.getIdDisciplina());
+                pstmt.setInt(4, avaliacao.getIdDisponibilidadeHorario());
+                pstmt.setInt(5, avaliacao.getIdDiscente());
+                pstmt.setInt(6, avaliacao.getIdDisciplina());
+                pstmt.setLong(7, avaliacao.getId());
             }
         } catch (SQLException ex) {
             Logger.getLogger(AvaliacaoDao.class.getName()).log(Level.SEVERE, null, ex);
