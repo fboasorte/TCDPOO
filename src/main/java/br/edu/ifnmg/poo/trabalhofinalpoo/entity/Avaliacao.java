@@ -21,21 +21,19 @@ public class Avaliacao extends Entidade {
     
     private int idDiscente;
     
-    private int idDisponibilidadeHorario;
-    
     private int idDisciplina;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
     public Avaliacao() {
     }
 
-    public Avaliacao(Long id, int notaParteEscrita, String notaParteOral, String comentario, int idDiscente, int idDisponibilidadeHorario, int idDisciplina) {
+    public Avaliacao(Long id, int notaParteEscrita, String notaParteOral
+            , String comentario, int idDiscente, int idDisciplina) {
         super(id);
         this.notaParteEscrita = notaParteEscrita;
         this.notaParteOral = notaParteOral;
         this.comentario = comentario;
         this.idDiscente = idDiscente;
-        this.idDisponibilidadeHorario = idDisponibilidadeHorario;
         this.idDisciplina = idDisciplina;
     }
 
@@ -72,14 +70,6 @@ public class Avaliacao extends Entidade {
 
     public void setIdDiscente(int idDiscente) {
         this.idDiscente = idDiscente;
-    }
-
-    public int getIdDisponibilidadeHorario() {
-        return idDisponibilidadeHorario;
-    }
-
-    public void setIdDisponibilidadeHorario(int idDisponibilidadeHorario) {
-        this.idDisponibilidadeHorario = idDisponibilidadeHorario;
     }
 
     public int getIdDisciplina() {
@@ -145,7 +135,6 @@ public class Avaliacao extends Entidade {
                 + ", notaParteOral=" + notaParteOral 
                 + ", comentario=" + comentario 
                 + ", idDiscente=" + idDiscente 
-                + ", idDisponibilidadeHorario=" + idDisponibilidadeHorario 
                 + ", idDisciplina=" + idDisciplina + '}';
     }
 }
