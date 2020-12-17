@@ -13,20 +13,26 @@ import java.util.List;
 import javax.swing.DefaultListModel;
 
 /**
- *
+ * Janela para inclusão, exclusão e edição de discentes
  * @author Fellipe
  */
 public class CadastrarDiscente extends javax.swing.JFrame {
 
     /**
-     * Creates new form CadastrarAluno
+     * Modelo para manutenção de dados a serem apresentado na listagem da
+     * interface gráfica.
      */
-    
     private DefaultListModel<Discente> lstDiscentesModel;
     
+    /**
+     * Retém o índice da tarefa selecionada para referências de processamentos
+     * entre vários métodos.
+     */
     private int indiceDiscenteSelecionado;
     
-    
+    /**
+     * Inicializar elemntos da nova janela.
+     */
     public CadastrarDiscente() {
         
         lstDiscentesModel = new DefaultListModel<>();
@@ -34,9 +40,9 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         // Recupera todos os registros do banco de dados
         List<Discente> discentes = new DiscenteDao().localizarTodos();
 
-        // Acrescente objetos do tipo Tarefa recuperados do banco de dados
+        // Acrescente objetos do tipo Discente recuperados do banco de dados
         // ao elemento de listagem. Aqui são incluídas as referências completas
-        // aos estados de cada objeto (id, descrição e concluída)
+        // aos estados de cada objeto (id, cpf, nome, nascimento)
         lstDiscentesModel.addAll(discentes);
         
         initComponents();
@@ -324,6 +330,10 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Resposta ao clique sobre o botão "Salvar"
+     * @param evt Evento Capturado
+     */
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         Discente discente = new Discente();
         discente.setNome(txtNome.getText());
@@ -360,16 +370,24 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDataNascimentoActionPerformed
 
+    /**
+     * Resposta ao clique sobre a opção "Excluir" do menu de contexto.
+     * 
+     * @param evt Evento capturado
+     */
     private void mnuExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExcluirActionPerformed
-         // TODO add your handling code here:
-
-        // COm base no indice, devolve a tarefa
+        // Com base no indice, devolve o discente
         new DiscenteDao().excluir(lstDiscentesModel.get(indiceDiscenteSelecionado));
 
         // Exclui graficamente 
         lstDiscentesModel.remove(lstDiscentes.getSelectedIndex());
     }//GEN-LAST:event_mnuExcluirActionPerformed
 
+    /**
+     * Resposta ao clique sobre a opção "Editar" do menu de contexto.
+     * 
+     * @param evt Evento capturado
+     */
     private void mnuEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEditarActionPerformed
         EditarDiscente editarDiscente
                 = new EditarDiscente(lstDiscentes.getSelectedValue(), this, true);
@@ -382,6 +400,11 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lstDiscentesMouseClicked
 
+    /**
+     * Resposta ao clique com botão direito sobre elementos da listagem de discentes.
+     * 
+     * @param evt Evento capturado
+     */
     private void lstDiscentesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstDiscentesMouseReleased
          // Button3 = botao direito
         if (evt.getButton() == MouseEvent.BUTTON3
@@ -393,7 +416,9 @@ public class CadastrarDiscente extends javax.swing.JFrame {
     }//GEN-LAST:event_lstDiscentesMouseReleased
 
     /**
-     * @param args the command line arguments
+     * Execução do projeto.
+     * 
+     * @param args Argumentos da linha de comando
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -428,6 +453,9 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         });
     }
     
+    /**
+     * Restaura estado inicial dos campos do formulário.
+     */
     private void limparCampos() {
         // "Descrição" vazia
         txtCPF.setText(null);
@@ -438,6 +466,11 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         txtNome.requestFocus();
     }
     
+    /**
+     * Permite a atualização de um discente que foi editada em outra janela.
+     * 
+     * @param discente A ser acrescentado à listagem de discentes.
+     */
     void atualizarModelo(Discente discente) {
         lstDiscentesModel.set(indiceDiscenteSelecionado, discente);
     }
