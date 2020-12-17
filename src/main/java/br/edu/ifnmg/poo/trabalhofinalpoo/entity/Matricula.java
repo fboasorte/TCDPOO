@@ -94,9 +94,9 @@ public class Matricula extends Entidade {
 
     @Override
     public String toString() {
-        return "Matricula{" + "notaParteEscrita=" + notaParteEscrita 
-                + ", notaParteOral=" + notaParteOral 
-                + ", comentarios=" + comentario + '}';
+        return notaParteEscrita 
+                + ", " + notaParteOral 
+                + ", " + comentario;
     }
     
 }
