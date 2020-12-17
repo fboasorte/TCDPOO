@@ -80,8 +80,8 @@ public class DisponibilidadeHorario extends Entidade {
 
     @Override
     public String toString() {
-        return "DisponibilidadeHorario{" + "data=" + data
-                + ", hora=" + hora + '}';
+        return data
+                + ", " + hora;
     }
 
 }
