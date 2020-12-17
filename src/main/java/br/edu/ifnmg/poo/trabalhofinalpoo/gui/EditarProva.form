@@ -145,7 +145,7 @@
                 </Property>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Disciplina&gt;"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;br.edu.ifnmg.poo.trabalhofinalpoo.entity.Aula&gt;"/>
               </AuxValues>
             </Component>
           </SubComponents>

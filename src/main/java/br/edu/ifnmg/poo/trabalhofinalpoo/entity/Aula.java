@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author felipe
  */
-public class Disciplina extends Entidade {
+public class Aula extends Entidade {
 
     private String nome;
 
@@ -24,10 +24,10 @@ public class Disciplina extends Entidade {
     private String hora;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
-    public Disciplina() {
+    public Aula() {
     }
 
-    public Disciplina(Long id, String nome, String conteudo, int idProfessor,
+    public Aula(Long id, String nome, String conteudo, int idProfessor,
             String data, String hora) {
         super(id);
         this.nome = nome;
@@ -101,7 +101,7 @@ public class Disciplina extends Entidade {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Disciplina other = (Disciplina) obj;
+        final Aula other = (Aula) obj;
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }

@@ -5,7 +5,7 @@
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.dao;
 
-import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Disciplina;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Aula;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  *
  * @author Andre Vinicius
  */
-public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
+public class AulaDao extends AbstractDao<Aula, Long> {
     /**
      * Recupera a sentença SQL específica para a inserção da entidade no banco
      * de dados.
@@ -98,7 +98,7 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      * @param disciplina
      */
     @Override
-    public void montarDeclaracao(PreparedStatement pstmt, Disciplina disciplina) {
+    public void montarDeclaracao(PreparedStatement pstmt, Aula disciplina) {
         // Tenta definir valores junto à sentença SQL preparada para execução 
         // no banco de dados.
         try {
@@ -110,7 +110,7 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
                 pstmt.setString(2, disciplina.getConteudo());
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DisciplinaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AulaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -121,9 +121,9 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      * @return Objeto constituído.
      */
     @Override
-    public Disciplina extrairObjeto(ResultSet resultSet) {
+    public Aula extrairObjeto(ResultSet resultSet) {
         // Cria referência para montagem da tarefa
-        Disciplina disciplina = new Disciplina();
+        Aula disciplina = new Aula();
 
         // Tenta recuperar dados do registro retornado pelo banco de dados
         // e ajustar o estado da tarefa a ser mapeada
@@ -148,17 +148,17 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
      * @return Lista de objeto(s) constituído(s).
      */
     @Override
-    public List<Disciplina> extrairObjetos(ResultSet resultSet) {
+    public List<Aula> extrairObjetos(ResultSet resultSet) {
 
         // Cria referência para inserção das tarefas a serem mapeadas
-        ArrayList<Disciplina> disciplinas = new ArrayList<>();
+        ArrayList<Aula> disciplinas = new ArrayList<>();
         
         // Tenta...
         try {
             // ... entquanto houver registros a serem processados
             while (resultSet.next()) {
                 // Cria referência para montagem da tarefa
-                Disciplina disciplina = new Disciplina();
+                Aula disciplina = new Aula();
 
                 // Tenta recuperar dados do registro retornado pelo banco 
                 // de dados e ajustar o estado da tarefa a ser mapeada
@@ -170,7 +170,7 @@ public class DisciplinaDao extends AbstractDao<Disciplina, Long> {
                 disciplinas.add(disciplina);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DisciplinaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AulaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         // Devolve a lista de tarefas reconstituídas dos registros do banco 

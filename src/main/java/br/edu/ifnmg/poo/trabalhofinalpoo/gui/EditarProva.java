@@ -7,10 +7,10 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AvaliacaoDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
-import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DisciplinaDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AulaDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Avaliacao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
-import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Disciplina;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Aula;
 import java.util.List;
 import javax.swing.DefaultListModel;
 
@@ -26,7 +26,7 @@ public class EditarProva extends javax.swing.JDialog {
     
     private DefaultListModel<Discente> lstDiscentesModel;
     
-    private DefaultListModel<Disciplina> lstDisciplinasModel;
+    private DefaultListModel<Aula> lstDisciplinasModel;
 
     /**
      * Creates new form EditarAvaliacao
@@ -40,7 +40,7 @@ public class EditarProva extends javax.swing.JDialog {
         lstDiscentesModel.addAll(discentes);
         
         lstDisciplinasModel = new DefaultListModel<>();
-        List<Disciplina> disciplinas = new DisciplinaDao().localizarTodos();
+        List<Aula> disciplinas = new AulaDao().localizarTodos();
         lstDisciplinasModel.addAll(disciplinas);
         
         initComponents();
@@ -426,7 +426,7 @@ public class EditarProva extends javax.swing.JDialog {
     private javax.swing.JLabel lblParteEscrita;
     private javax.swing.JLabel lblParteOral;
     private javax.swing.JList<Discente> lstDiscentes;
-    private javax.swing.JList<Disciplina> lstDisciplinas;
+    private javax.swing.JList<Aula> lstDisciplinas;
     private javax.swing.JPanel pnlDetalhesProva;
     private javax.swing.JPanel pnlNotas;
     private javax.swing.JScrollPane scrAprovado;
