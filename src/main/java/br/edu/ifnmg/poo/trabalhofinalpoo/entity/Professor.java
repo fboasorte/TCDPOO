@@ -95,9 +95,9 @@ public class Professor extends Entidade {
 
     @Override
     public String toString() {
-        return "Professor{" + "cpf=" + cpf 
-                + ", nome=" + nome 
-                + ", nascimento=" + nascimento + '}';
+        return cpf 
+                + ", " + nome 
+                + ", " + nascimento + '}';
     }
 
 }
