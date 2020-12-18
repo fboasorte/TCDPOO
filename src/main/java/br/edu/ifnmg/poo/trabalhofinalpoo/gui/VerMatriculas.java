@@ -12,7 +12,8 @@ import java.util.List;
 import javax.swing.DefaultListModel;
 
 /**
- *
+ * Classe responsavel por exibir as matricular para poder editar e exclui-las
+ * 
  * @author Fellipe
  */
 public class VerMatriculas extends javax.swing.JDialog {
@@ -31,7 +32,10 @@ public class VerMatriculas extends javax.swing.JDialog {
     
     
     /**
-     * Creates new form VerMatriculas
+     * Inicializa os elementos da nova janela
+     * 
+     * @param tela De onde essa tela foi chamada
+     * @param modal indica se essa janela é modal ou nao
      */
     public VerMatriculas(TelaPrincipal tela, boolean modal) {
         super(tela, modal);
@@ -287,6 +291,11 @@ public class VerMatriculas extends javax.swing.JDialog {
 
     }//GEN-LAST:event_txtParteOralActionPerformed
 
+    /**
+     * Resposta ao clique com o botao direito na lista de matriculas
+     * 
+     * @param evt Evento capturado
+     */
     private void lstMatriculasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstMatriculasMouseReleased
         if (evt.getButton() == MouseEvent.BUTTON3
                 && lstMatriculas.getModel().getSize() > 0) {
@@ -296,6 +305,11 @@ public class VerMatriculas extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_lstMatriculasMouseReleased
 
+    /**
+     * Resposta ao clique sobre a opção "Excluir" do menu de contexto.
+     * 
+     * @param evt Evento capturado
+     */
     private void mnuExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExcluirActionPerformed
          new MatriculaDao().excluir(lstMatriculasModel.get(indiceMatriculaSelecionada));
 
@@ -303,6 +317,11 @@ public class VerMatriculas extends javax.swing.JDialog {
         lstMatriculasModel.remove(lstMatriculas.getSelectedIndex());
     }//GEN-LAST:event_mnuExcluirActionPerformed
 
+    /**
+     * Resposta ao clique sobre a opção "Editar" do menu de contexto.
+     * 
+     * @param evt Evento capturado
+     */
     private void mnuEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEditarActionPerformed
         EditarMatriculas editarMatricula = 
                 new EditarMatriculas(lstMatriculas.getSelectedValue(), this, true);
@@ -312,14 +331,26 @@ public class VerMatriculas extends javax.swing.JDialog {
         editarMatricula.setVisible(true);
     }//GEN-LAST:event_mnuEditarActionPerformed
 
+    /**
+     * Resposta ao clique sobre uma matricula
+     * 
+     * @param evt Evento capturado
+     */
     private void lstMatriculasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstMatriculasMouseClicked
+        // Recupera o indice da matricula clicada
         indiceMatriculaSelecionada = lstMatriculas.getSelectedIndex();
         
+        // Preenche os campos com os dados da matricula
         txtComentario.setText(lstMatriculasModel.get(indiceMatriculaSelecionada).getComentario());
         txtParteEscrita.setText(lstMatriculasModel.get(indiceMatriculaSelecionada).getNotaParteEscrita().toString());
         txtParteOral.setText(lstMatriculasModel.get(indiceMatriculaSelecionada).getNotaParteOral().toString());
     }//GEN-LAST:event_lstMatriculasMouseClicked
 
+    /**
+     * Permite a atualização de uma matricula que foi editada em outra janela.
+     * 
+     * @param matricula A ser acrescentado a listagem de matriculas
+     */
     void atualizarModelo(Matricula matricula){
         lstMatriculasModel.set(indiceMatriculaSelecionada, matricula);
     }
