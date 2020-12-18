@@ -5,17 +5,59 @@
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AulaDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Aula;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
+import java.util.List;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Fellipe
  */
 public class EditarMatriculas extends javax.swing.JDialog {
 
+     /**
+     * Modelo para manutenção da lista de aulas a serem apresentadas na listagem da
+     * interface gráfica.
+     */
+    private DefaultListModel<Aula> lstAulasModel;
+    
+    /**
+     * Modelo para manutenção da lista de discentes a serem apresentadas na listagem da
+     * interface gráfica.
+     */
+    private DefaultListModel<Discente> lstDiscentesModel;
+    
+    /**
+     * Retém o índice da aula selecionada para referências de processamentos
+     * entre vários métodos.
+     */
+    private int indiceAulaSelecionada;
+    
+    /**
+     * Retém o índice do discente selecionado para referências de processamentos
+     * entre vários métodos.
+     */
+    private int indiceDiscenteSelecionado;
+    
     /**
      * Creates new form EditarMatriculas
      */
-    public EditarMatriculas(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public EditarMatriculas(VerMatriculas verMatriculas, boolean modal) {
+        super(verMatriculas, modal);
+        
+        lstAulasModel = new DefaultListModel<>();
+        lstDiscentesModel = new DefaultListModel<>();
+        
+        List<Aula> aulas = new AulaDao().localizarTodos();
+        List<Discente> discentes = new DiscenteDao().localizarTodos();
+        
+        lstAulasModel.addAll(aulas);
+        lstDiscentesModel.addAll(discentes);
+        
         initComponents();
     }
 
@@ -231,7 +273,7 @@ public class EditarMatriculas extends javax.swing.JDialog {
 
         dispose();
 
-        JOptionPane.showConfirmDialog(null,"Marcação concluída", "Marcar aula",
+        JOptionPane.showConfirmDialog(null,"Marcação concluída", "Editar aula",
             JOptionPane.DEFAULT_OPTION);
 
     }//GEN-LAST:event_btnSalvarNotaActionPerformed
@@ -245,48 +287,6 @@ public class EditarMatriculas extends javax.swing.JDialog {
         txtDataAula.setText(lstAulasModel.get(indiceAulaSelecionada).getData());
         txtHoraAula.setText(lstAulasModel.get(indiceAulaSelecionada).getHora());
     }//GEN-LAST:event_lstAulasMouseClicked
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EditarMatriculas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EditarMatriculas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EditarMatriculas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EditarMatriculas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                EditarMatriculas dialog = new EditarMatriculas(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarNota;
