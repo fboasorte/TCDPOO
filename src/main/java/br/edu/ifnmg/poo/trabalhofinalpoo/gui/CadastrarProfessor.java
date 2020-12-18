@@ -16,7 +16,7 @@ import javax.swing.DefaultListModel;
  * 
  * @author Fellipe
  */
-public class CadastrarProfessor extends javax.swing.JFrame {
+public class CadastrarProfessor extends javax.swing.JDialog {
 
     /**
      * Modelo para manutenção de dados a serem apresentado na listagem da
@@ -33,7 +33,8 @@ public class CadastrarProfessor extends javax.swing.JFrame {
     /**
      * Iniciliza elementos da nova janela
      */
-    public CadastrarProfessor() {
+    public CadastrarProfessor(TelaPrincipal tela, boolean modal) {
+        super(tela, true);
         // Modelo padrão para elementos em listagens
         lstProfessoresModel = new DefaultListModel<>();
 
@@ -348,43 +349,6 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_lstProfessoresMouseReleased
 
-    /**
-     * Execução do projeto.
-     * 
-     * @param args Argumentos da linha de comando
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastrarProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastrarProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastrarProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastrarProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CadastrarProfessor().setVisible(true);
-            }
-        });
-    }
     
     /**
      * Restaura estado inicial dos campos do formulário.
