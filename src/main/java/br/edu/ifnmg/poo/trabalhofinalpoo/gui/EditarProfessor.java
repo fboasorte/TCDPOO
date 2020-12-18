@@ -21,7 +21,7 @@ public class EditarProfessor extends javax.swing.JDialog {
     private final CadastrarProfessor cadastroProfessor;
     
     /**
-     * Tarefa recebida para edicao.
+     * Professor recebido para edicao.
      */
     private Professor professorEmEdicao;
     
@@ -223,7 +223,7 @@ public class EditarProfessor extends javax.swing.JDialog {
         // a invocação da operação de atualização do método "salvar"
         new ProfessorDao().salvar(professorEmEdicao);
         
-        // Atualiza a tarefa que foi editada na janela "CadastroTarefa"
+        // Atualiza o professor que foi editado na janela "CadastrarProfessor"
         cadastroProfessor.atualizarModelo(professorEmEdicao);
         
         // Fecha a janela corrente
