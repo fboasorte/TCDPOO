@@ -306,6 +306,10 @@ public class VerMatriculas extends javax.swing.JDialog {
         editarMatricula.setVisible(true);
     }//GEN-LAST:event_mnuEditarActionPerformed
 
+    void atualizarModelo(Matricula matricula){
+        lstMatriculasModel.set(indiceMatriculaSelecionada, matricula);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAlunosAvaliacao;

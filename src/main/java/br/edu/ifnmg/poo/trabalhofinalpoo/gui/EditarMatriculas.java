@@ -7,6 +7,7 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AulaDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.MatriculaDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Aula;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Matricula;
@@ -277,9 +278,16 @@ public class EditarMatriculas extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalvarNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarNotaActionPerformed
-
+        matriculaEmEdicao.setNotaParteEscrita(Integer.parseInt(txtParteEscritaNota.getText()));
+        matriculaEmEdicao.setNotaParteOral(txtParteOralNota.getText());
+        matriculaEmEdicao.setComentario(txtComentariosNota.getText());
+        matriculaEmEdicao.setIdDiscente(lstDiscentes.getSelectedValue().getId().intValue());
+        matriculaEmEdicao.setIdAula(lstAulas.getSelectedValue().getId().intValue());
         
-
+        new MatriculaDao().salvar(matriculaEmEdicao);
+        verMatriculas.atualizarModelo(matriculaEmEdicao);
+        
+        dispose();
     }//GEN-LAST:event_btnSalvarNotaActionPerformed
 
     private void lstAulasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstAulasMouseClicked
