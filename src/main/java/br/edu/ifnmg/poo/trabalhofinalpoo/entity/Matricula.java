@@ -13,20 +13,45 @@ import java.util.Objects;
  */
 public class Matricula extends Entidade {
 
+    /**
+     * Nota na parte escrita na matricula da aula
+     */
     private Integer notaParteEscrita;
 
+    /**
+     * Nota na parte oral na matricula da aula
+     */
     private String notaParteOral;
 
+    /**
+     * Comentario sobre a matricula
+     */
     private String comentario;
     
+    /**
+     * Identificador do discente que fez a matricula
+     */
     private int idDiscente;
     
+    /**
+     * Identificador da aula que foi feita a matricula
+     */
     private int idAula;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
     public Matricula() {
     }
 
+    /**
+     * Construtor sobre carregado
+     * 
+     * @param id Identidade da matricula
+     * @param notaParteEscrita Nota na parte escrita na matricula da aula
+     * @param notaParteOral Nota na parte oral na matricula da aula
+     * @param comentarios Comentario sobre a matricula
+     * @param idDiscente Identificador do discente que fez a matricula
+     * @param idAula Identificador da aula que foi feita a matricula
+     */
     public Matricula(Long id, Integer notaParteEscrita, String notaParteOral, String comentarios,
             int idDiscente, int idAula) {
         super(id);
@@ -115,6 +140,11 @@ public class Matricula extends Entidade {
     }
 //</editor-fold>
 
+    /**
+     * Gera representação textual do objeto atual.
+     * 
+     * @return Texto representativo do objeto atual
+     */
     @Override
     public String toString() {
         return notaParteEscrita 
