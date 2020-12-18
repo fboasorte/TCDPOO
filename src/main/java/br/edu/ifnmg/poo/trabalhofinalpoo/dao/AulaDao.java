@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Classe para representar uma aula no banco de dados
  * @author Andre Vinicius
  */
 public class AulaDao extends AbstractDao<Aula, Long> {

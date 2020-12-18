@@ -12,20 +12,26 @@ import java.util.List;
 import javax.swing.DefaultListModel;
 
 /**
- *
+ * Classe para representar a tela do discente no sistema escolar
  * @author Fellipe
  */
 public class CadastrarDiscente extends javax.swing.JFrame {
 
     /**
-     * Creates new form CadastrarAluno
+     * Modelo para manutenção da lista de discentes a serem apresentadas na listagem da
+     * interface gráfica.
      */
-    
     private DefaultListModel<Discente> lstDiscentesModel;
     
+    /**
+     * Retém o índice da avaliação selecionada para referências de processamentos
+     * entre vários métodos.
+     */
     private int indiceDiscenteSelecionado;
     
-    
+    /**
+     * Construtor padrão de CadastrarDiscente
+     */
     public CadastrarDiscente() {
         
         lstDiscentesModel = new DefaultListModel<>();
@@ -292,6 +298,11 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Ao clicar no botão Salvar, armazena os campos preenchidos na tela 
+     * referente a discente, salva essa avaliação no bando de dados e adiciona-a na lista.
+     * @param evt Evento capturado
+     */
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         Discente discente = new Discente();
         discente.setNome(txtNome.getText());
@@ -315,14 +326,23 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         limparCampos();
     }//GEN-LAST:event_btnSalvarActionPerformed
 
+    
+    /**
+     * Ao clicar no botão cancelar, fecha a tela atual
+     * @param evt Evento capturado
+     */
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void txtDataNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataNascimentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDataNascimentoActionPerformed
 
+    /**
+     * Resposta ao clique sobre a opção "Excluir" do menu de contexto.
+     * @param evt Evento capturado  
+     */
     private void mnuExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExcluirActionPerformed
          // TODO add your handling code here:
 
@@ -333,6 +353,10 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         lstDiscentesModel.remove(lstDiscentes.getSelectedIndex());
     }//GEN-LAST:event_mnuExcluirActionPerformed
 
+    /**
+     * Resposta ao clique sobre a opção "Editar" do menu de contexto.
+     * @param evt Evento capturado  
+     */
     private void mnuEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEditarActionPerformed
         EditarDiscente editarDiscente
                 = new EditarDiscente(lstDiscentes.getSelectedValue(), this, true);
@@ -345,6 +369,11 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lstDiscentesMouseClicked
 
+    /**
+     * Verifica o indice do discente que foi clicado com o botão direito
+     * e seleciona aquele discente na lista
+     * @param evt Evento capturado
+     */
     private void lstDiscentesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstDiscentesMouseReleased
          // Button3 = botao direito
         if (evt.getButton() == MouseEvent.BUTTON3
@@ -356,51 +385,20 @@ public class CadastrarDiscente extends javax.swing.JFrame {
     }//GEN-LAST:event_lstDiscentesMouseReleased
 
     /**
-     * @param args the command line arguments
+     * Restaura o estado inicial dos campos do formulário.
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastrarDiscente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastrarDiscente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastrarDiscente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastrarDiscente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CadastrarDiscente().setVisible(true);
-            }
-        });
-    }
-    
     private void limparCampos() {
-        // "Descrição" vazia
         txtCPF.setText(null);
         txtDataNascimento.setText(null);
         txtNome.setText(null);
         
-        // Seleção da "Descrição" para nova digitação
         txtNome.requestFocus();
     }
-    
+    /**
+     * /**
+     * Permite a atualização de um discente que foi editada em outra janela.
+     * @param discente Discente que será acrescentada na listagem de discentes
+     */
     void atualizarModelo(Discente discente) {
         lstDiscentesModel.set(indiceDiscenteSelecionado, discente);
     }

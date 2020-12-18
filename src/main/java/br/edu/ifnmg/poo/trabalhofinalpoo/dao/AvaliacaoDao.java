@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Classe para representar uma avaliação no banco de dados
  * @author devin
  */
 public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
