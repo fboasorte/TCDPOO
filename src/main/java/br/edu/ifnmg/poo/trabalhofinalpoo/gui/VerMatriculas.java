@@ -77,6 +77,11 @@ public class VerMatriculas extends javax.swing.JDialog {
         popUpMenu.add(mnuEditar);
 
         mnuExcluir.setText("Excluir");
+        mnuExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuExcluirActionPerformed(evt);
+            }
+        });
         popUpMenu.add(mnuExcluir);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -279,6 +284,13 @@ public class VerMatriculas extends javax.swing.JDialog {
             popUpMenu.show(lstMatriculas, evt.getX(), evt.getY());
         }
     }//GEN-LAST:event_lstMatriculasMouseReleased
+
+    private void mnuExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExcluirActionPerformed
+         new MatriculaDao().excluir(lstMatriculasModel.get(indiceMatriculaSelecionada));
+
+        // Exclui graficamente 
+        lstMatriculasModel.remove(lstMatriculas.getSelectedIndex());
+    }//GEN-LAST:event_mnuExcluirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
