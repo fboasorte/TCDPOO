@@ -7,6 +7,7 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.MatriculaDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Matricula;
+import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.DefaultListModel;
 
@@ -51,6 +52,9 @@ public class VerMatriculas extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popUpMenu = new javax.swing.JPopupMenu();
+        mnuEditar = new javax.swing.JMenuItem();
+        mnuExcluir = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         lblAlunosAvaliacao = new javax.swing.JLabel();
         scrListaMatriculas = new javax.swing.JScrollPane();
@@ -69,6 +73,12 @@ public class VerMatriculas extends javax.swing.JDialog {
         lblObservacao1 = new javax.swing.JLabel();
         lblObservacao2 = new javax.swing.JLabel();
 
+        mnuEditar.setText("Editar");
+        popUpMenu.add(mnuEditar);
+
+        mnuExcluir.setText("Excluir");
+        popUpMenu.add(mnuExcluir);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -81,6 +91,11 @@ public class VerMatriculas extends javax.swing.JDialog {
         lstMatriculas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lstMatriculas.setForeground(new java.awt.Color(0, 0, 0));
         lstMatriculas.setModel(lstMatriculasModel);
+        lstMatriculas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lstMatriculasMouseReleased(evt);
+            }
+        });
         scrListaMatriculas.setViewportView(lstMatriculas);
 
         lblDetalhesMatricula.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -256,6 +271,15 @@ public class VerMatriculas extends javax.swing.JDialog {
 
     }//GEN-LAST:event_txtParteOralActionPerformed
 
+    private void lstMatriculasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstMatriculasMouseReleased
+        if (evt.getButton() == MouseEvent.BUTTON3
+                && lstMatriculas.getModel().getSize() > 0) {
+            indiceMatriculaSelecionada = lstMatriculas.locationToIndex(evt.getPoint());
+            lstMatriculas.setSelectedIndex(indiceMatriculaSelecionada);
+            popUpMenu.show(lstMatriculas, evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_lstMatriculasMouseReleased
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAlunosAvaliacao;
@@ -267,8 +291,11 @@ public class VerMatriculas extends javax.swing.JDialog {
     private javax.swing.JLabel lblParteEscrita;
     private javax.swing.JLabel lblParteOral;
     private javax.swing.JList<Matricula> lstMatriculas;
+    private javax.swing.JMenuItem mnuEditar;
+    private javax.swing.JMenuItem mnuExcluir;
     private javax.swing.JPanel pnlDetalhesMatricula;
     private javax.swing.JPanel pnlNotasMatricula;
+    private javax.swing.JPopupMenu popUpMenu;
     private javax.swing.JScrollPane scrComentario;
     private javax.swing.JScrollPane scrListaMatriculas;
     private javax.swing.JTextPane txtComentario;
