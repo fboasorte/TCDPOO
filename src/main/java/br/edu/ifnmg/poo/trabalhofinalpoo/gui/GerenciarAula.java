@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  * Classe para representar a tela de um gerenciamento da aula no sistema escolar
  * @author Fellipe
  */
-public class GerenciarAula extends javax.swing.JFrame {
+public class GerenciarAula extends javax.swing.JDialog {
     
     /**
      * Modelo para manutenção da lista de aulas a serem apresentadas na listagem da
@@ -55,7 +55,8 @@ public class GerenciarAula extends javax.swing.JFrame {
     /**
      * Construtor padrão
      */
-    public GerenciarAula() {
+    public GerenciarAula(TelaPrincipal tela, boolean modal) {
+        super(tela, modal);
         
         lstAulasModel = new DefaultListModel<>();
         lstDiscentesModel = new DefaultListModel<>();

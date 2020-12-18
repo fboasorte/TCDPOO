@@ -32,6 +32,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pnlMenu = new javax.swing.JPanel();
         lblTituloMenu = new javax.swing.JLabel();
         btnAulas = new javax.swing.JButton();
+        btnMatriculas = new javax.swing.JButton();
         btnProvas = new javax.swing.JButton();
         btnAlunos = new javax.swing.JButton();
         btnProfessores = new javax.swing.JButton();
@@ -68,6 +69,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnAulas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAulasActionPerformed(evt);
+            }
+        });
+
+        btnMatriculas.setFont(new java.awt.Font("Segoe UI", 0, 17)); // NOI18N
+        btnMatriculas.setForeground(new java.awt.Color(51, 51, 51));
+        btnMatriculas.setText("Matrículas");
+        btnMatriculas.setBorder(null);
+        btnMatriculas.setBorderPainted(false);
+        btnMatriculas.setContentAreaFilled(false);
+        btnMatriculas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnMatriculas.setIconTextGap(13);
+        btnMatriculas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMatriculasActionPerformed(evt);
             }
         });
 
@@ -129,7 +144,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblTituloMenu)
                             .addComponent(btnAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnProvas, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnProvas, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnMatriculas, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -142,6 +158,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(SeparatorMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAulas, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnMatriculas, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnProvas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -200,7 +218,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(lblTitulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTitulo3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(pnlMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(lblRodape)
@@ -228,7 +246,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAlunosActionPerformed
 
     private void btnAulasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAulasActionPerformed
-        new GerenciarAula().setVisible(true);
+        new GerenciarAula(this, true).setVisible(true);
     }//GEN-LAST:event_btnAulasActionPerformed
 
     private void btnProfessoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfessoresActionPerformed
@@ -238,6 +256,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void btnProvasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProvasActionPerformed
         new CadastrarAvaliacao().setVisible(true);
     }//GEN-LAST:event_btnProvasActionPerformed
+
+    private void btnMatriculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMatriculasActionPerformed
+        new VerMatriculas(this, true).setVisible(true);
+    }//GEN-LAST:event_btnMatriculasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,6 +300,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JSeparator SeparatorMenu;
     private javax.swing.JButton btnAlunos;
     private javax.swing.JButton btnAulas;
+    private javax.swing.JButton btnMatriculas;
     private javax.swing.JButton btnProfessores;
     private javax.swing.JButton btnProvas;
     private javax.swing.JLabel jLabel3;
