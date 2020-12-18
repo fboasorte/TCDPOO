@@ -286,11 +286,10 @@ public class GerenciarAula extends javax.swing.JFrame {
                         .addComponent(btnExcluirAula)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
                         .addComponent(btnMarcarAula))
-                    .addGroup(pnlMarcacaoAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lblSelecionarAluno)
-                        .addComponent(lblAulasDisponiveis)
-                        .addComponent(scrListaAulas, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
-                        .addComponent(scrListaDiscentes)))
+                    .addComponent(lblSelecionarAluno)
+                    .addComponent(lblAulasDisponiveis)
+                    .addComponent(scrListaAulas, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+                    .addComponent(scrListaDiscentes))
                 .addGap(25, 25, 25)
                 .addComponent(pnlDetalhesAula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -404,7 +403,7 @@ public class GerenciarAula extends javax.swing.JFrame {
         novoAula.setVisible(true);
         
     }//GEN-LAST:event_btnNovoAulaActionPerformed
-    
+     
     /**
      * Ao clicar no botão Marcar Aula, armazena os campos preenchidos em gerenciar aula,
      * salva essa aula no bando de dados e adiciona-a na lista.

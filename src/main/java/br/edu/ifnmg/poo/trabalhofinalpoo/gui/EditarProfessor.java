@@ -55,12 +55,9 @@ public class EditarProfessor extends javax.swing.JDialog {
         pnlEditarProfessor = new javax.swing.JPanel();
         lblDadosProfessor = new javax.swing.JLabel();
         pnlDadosEditar = new javax.swing.JPanel();
-        lblContratoEditar = new javax.swing.JLabel();
         lblNomeEditar = new javax.swing.JLabel();
         lblCPFEditar = new javax.swing.JLabel();
         lblNascimentoEditar = new javax.swing.JLabel();
-        chkAtivoEditar = new javax.swing.JCheckBox();
-        txtCodigoEditar = new javax.swing.JTextField();
         txtNomeEditar = new javax.swing.JTextField();
         txtCPFEditar = new javax.swing.JTextField();
         txtNascimentoEditar = new javax.swing.JTextField();
@@ -78,10 +75,6 @@ public class EditarProfessor extends javax.swing.JDialog {
         pnlDadosEditar.setBackground(new java.awt.Color(255, 255, 255));
         pnlDadosEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
 
-        lblContratoEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblContratoEditar.setForeground(new java.awt.Color(0, 0, 0));
-        lblContratoEditar.setText("Código");
-
         lblNomeEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblNomeEditar.setForeground(new java.awt.Color(0, 0, 0));
         lblNomeEditar.setText("Nome");
@@ -93,17 +86,6 @@ public class EditarProfessor extends javax.swing.JDialog {
         lblNascimentoEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblNascimentoEditar.setForeground(new java.awt.Color(0, 0, 0));
         lblNascimentoEditar.setText("Data de nasc.");
-
-        chkAtivoEditar.setBackground(new java.awt.Color(255, 255, 255));
-        chkAtivoEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        chkAtivoEditar.setForeground(new java.awt.Color(0, 0, 0));
-        chkAtivoEditar.setText("Ativo");
-        chkAtivoEditar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        chkAtivoEditar.setMargin(new java.awt.Insets(2, 2, 2, 4));
-
-        txtCodigoEditar.setEditable(false);
-        txtCodigoEditar.setBackground(new java.awt.Color(204, 204, 204));
-        txtCodigoEditar.setForeground(new java.awt.Color(0, 0, 0));
 
         txtNomeEditar.setBackground(new java.awt.Color(255, 255, 255));
         txtNomeEditar.setForeground(new java.awt.Color(0, 0, 0));
@@ -126,20 +108,18 @@ public class EditarProfessor extends javax.swing.JDialog {
             .addGroup(pnlDadosEditarLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNomeEditar)
-                    .addComponent(lblCPFEditar)
-                    .addComponent(lblContratoEditar))
-                .addGap(50, 50, 50)
-                .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlDadosEditarLayout.createSequentialGroup()
-                        .addComponent(txtCPFEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(lblNascimentoEditar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtNascimentoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(chkAtivoEditar)
-                    .addComponent(txtCodigoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlDadosEditarLayout.createSequentialGroup()
+                        .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNomeEditar)
+                            .addComponent(lblCPFEditar))
+                        .addGap(57, 57, 57)
+                        .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCPFEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         pnlDadosEditarLayout.setVerticalGroup(
@@ -147,21 +127,16 @@ public class EditarProfessor extends javax.swing.JDialog {
             .addGroup(pnlDadosEditarLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblContratoEditar)
-                    .addComponent(txtCodigoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNomeEditar)
                     .addComponent(txtNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblCPFEditar)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtCPFEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblNascimentoEditar)
-                        .addComponent(txtNascimentoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtCPFEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(chkAtivoEditar)
+                .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNascimentoEditar)
+                    .addComponent(txtNascimentoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -281,16 +256,13 @@ public class EditarProfessor extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarEditar;
     private javax.swing.JButton btnSalvarEditar;
-    private javax.swing.JCheckBox chkAtivoEditar;
     private javax.swing.JLabel lblCPFEditar;
-    private javax.swing.JLabel lblContratoEditar;
     private javax.swing.JLabel lblDadosProfessor;
     private javax.swing.JLabel lblNascimentoEditar;
     private javax.swing.JLabel lblNomeEditar;
     private javax.swing.JPanel pnlDadosEditar;
     private javax.swing.JPanel pnlEditarProfessor;
     private javax.swing.JTextField txtCPFEditar;
-    private javax.swing.JTextField txtCodigoEditar;
     private javax.swing.JTextField txtNascimentoEditar;
     private javax.swing.JTextField txtNomeEditar;
     // End of variables declaration//GEN-END:variables
