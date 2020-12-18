@@ -8,7 +8,7 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 import java.util.Objects;
 
 /**
- * Representa
+ * Representa a matricula de um aluno em uma aula
  * @author felipe
  */
 public class Matricula extends Entidade {
