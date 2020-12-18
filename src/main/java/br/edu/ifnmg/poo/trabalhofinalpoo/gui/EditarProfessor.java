@@ -9,15 +9,29 @@ import br.edu.ifnmg.poo.trabalhofinalpoo.dao.ProfessorDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Professor;
 
 /**
- *
+ * Dialogo modal para a edição de professor
+ * 
  * @author devin
  */
 public class EditarProfessor extends javax.swing.JDialog {
 
+    /**
+     * Referência à janela de cadastro que invocou esta janela de edição.
+     */
     private final CadastrarProfessor cadastroProfessor;
     
+    /**
+     * Tarefa recebida para edicao.
+     */
     private Professor professorEmEdicao;
     
+    /**
+     * Cria um novo formulario para edicao de professor
+     * 
+     * @param professor a ser editado
+     * @param cadastroProfessor janela de cadastrar professor
+     * @param modal booleano se a tela é modal ou nao
+     */
     public EditarProfessor(Professor professor,
         CadastrarProfessor cadastroProfessor, boolean modal) {
         super(cadastroProfessor, modal);
@@ -218,20 +232,45 @@ public class EditarProfessor extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCPFActionPerformed
 
+    /**
+     * Resposta ao clique no botão "Salvar".
+     * 
+     * @param evt Evento capturado
+     */
     private void btnSalvarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarDadosActionPerformed
+        // Recupera descrição fornecida e atualiza o objeto recebido
         professorEmEdicao.setCpf(Integer.parseInt(txtCPF.getText()));
         professorEmEdicao.setNome(txtNome.getText());
         professorEmEdicao.setNascimento(txtDataNascimento.getText());
         
+        // Salva o objeto atualizado no banco de dados.
+        // A "id" possui valor (o original)  e isso acarreta 
+        // a invocação da operação de atualização do método "salvar"
         new ProfessorDao().salvar(professorEmEdicao);
+        
+        // Atualiza a tarefa que foi editada na janela "CadastroTarefa"
         cadastroProfessor.atualizarModelo(professorEmEdicao);
+        
+        // Fecha a janela corrente
         dispose();
     }//GEN-LAST:event_btnSalvarDadosActionPerformed
 
+    /**
+     * Resposta ao clique no botão "Cancelar"
+     * 
+     * @param evt evento capturado
+     */
     private void btnCancelarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarDadosActionPerformed
+        // Fecha a janela corrente sem efetivar nenhuma operacao
         dispose();
     }//GEN-LAST:event_btnCancelarDadosActionPerformed
 
+    /**
+     * Extrai dados do professor recebido e popula os componentes da janela
+     * com seus respectivos valores.
+     * 
+     * @param professor Objeto "Professor" recebido
+     */
     public void preencherProfessor(Professor professor){
         txtCPF.setText(Integer.toString(professor.getCpf()));
         txtNome.setText(professor.getNome());
