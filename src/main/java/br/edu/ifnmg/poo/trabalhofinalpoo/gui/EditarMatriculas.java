@@ -9,6 +9,7 @@ import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AulaDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Aula;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Matricula;
 import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -18,6 +19,11 @@ import javax.swing.JOptionPane;
  * @author Fellipe
  */
 public class EditarMatriculas extends javax.swing.JDialog {
+    
+    
+    private VerMatriculas verMatriculas;
+    
+    private Matricula matriculaEmEdicao;
 
      /**
      * Modelo para manutenção da lista de aulas a serem apresentadas na listagem da
@@ -46,7 +52,8 @@ public class EditarMatriculas extends javax.swing.JDialog {
     /**
      * Creates new form EditarMatriculas
      */
-    public EditarMatriculas(VerMatriculas verMatriculas, boolean modal) {
+    public EditarMatriculas(Matricula matricula, 
+            VerMatriculas verMatriculas, boolean modal) {
         super(verMatriculas, modal);
         
         lstAulasModel = new DefaultListModel<>();
@@ -59,6 +66,11 @@ public class EditarMatriculas extends javax.swing.JDialog {
         lstDiscentesModel.addAll(discentes);
         
         initComponents();
+        
+        this.verMatriculas = verMatriculas;
+        this.matriculaEmEdicao = matricula;
+        
+        preencherMatricula(matricula);
     }
 
     /**
@@ -171,6 +183,11 @@ public class EditarMatriculas extends javax.swing.JDialog {
         btnCancelarNota.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnCancelarNota.setForeground(new java.awt.Color(0, 0, 0));
         btnCancelarNota.setText("Cancelar");
+        btnCancelarNota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarNotaActionPerformed(evt);
+            }
+        });
 
         lstDiscentes.setBackground(new java.awt.Color(255, 255, 255));
         lstDiscentes.setForeground(new java.awt.Color(0, 0, 0));
@@ -261,33 +278,27 @@ public class EditarMatriculas extends javax.swing.JDialog {
 
     private void btnSalvarNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarNotaActionPerformed
 
-        matricula.setNotaParteEscrita(Integer.parseInt(txtParteEscritaNota.getText()));
-        matricula.setNotaParteOral(txtParteOralNota.getText());
-        matricula.setComentario(txtComentariosNota.getText());
-        matricula.setIdDiscente(idDiscente);
-        matricula.setIdAula(idAula);
-
-        Long id = new MatriculaDao().salvar(matricula);
-
-        matricula.setId(id);
-
-        dispose();
-
-        JOptionPane.showConfirmDialog(null,"Marcação concluída", "Editar aula",
-            JOptionPane.DEFAULT_OPTION);
+        
 
     }//GEN-LAST:event_btnSalvarNotaActionPerformed
 
     private void lstAulasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstAulasMouseClicked
 
-        indiceAulaSelecionada = lstAulas.getSelectedIndex();
-
-        txtNomeAula.setText(lstAulasModel.get(indiceAulaSelecionada).getNome());
-        txtConteudoAula.setText(lstAulasModel.get(indiceAulaSelecionada).getConteudo());
-        txtDataAula.setText(lstAulasModel.get(indiceAulaSelecionada).getData());
-        txtHoraAula.setText(lstAulasModel.get(indiceAulaSelecionada).getHora());
     }//GEN-LAST:event_lstAulasMouseClicked
 
+    private void btnCancelarNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarNotaActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnCancelarNotaActionPerformed
+
+    private void preencherMatricula(Matricula matricula){
+        txtParteEscritaNota.setText(Integer.toString(matricula.getNotaParteEscrita()));
+        txtParteOralNota.setText(matricula.getNotaParteOral());
+        txtComentariosNota.setText(matricula.getComentario());
+        lstAulas.setSelectedIndex(matricula.getIdAula());
+        lstDiscentes.setSelectedIndex(matricula.getIdDiscente());
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarNota;
     private javax.swing.JButton btnSalvarNota;

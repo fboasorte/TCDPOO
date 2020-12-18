@@ -74,6 +74,11 @@ public class VerMatriculas extends javax.swing.JDialog {
         lblObservacao2 = new javax.swing.JLabel();
 
         mnuEditar.setText("Editar");
+        mnuEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuEditarActionPerformed(evt);
+            }
+        });
         popUpMenu.add(mnuEditar);
 
         mnuExcluir.setText("Excluir");
@@ -291,6 +296,15 @@ public class VerMatriculas extends javax.swing.JDialog {
         // Exclui graficamente 
         lstMatriculasModel.remove(lstMatriculas.getSelectedIndex());
     }//GEN-LAST:event_mnuExcluirActionPerformed
+
+    private void mnuEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEditarActionPerformed
+        EditarMatriculas editarMatricula = 
+                new EditarMatriculas(lstMatriculas.getSelectedValue(), this, true);
+        
+        // this -> referencia a janela principal
+        editarMatricula.setLocationRelativeTo(this);
+        editarMatricula.setVisible(true);
+    }//GEN-LAST:event_mnuEditarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
