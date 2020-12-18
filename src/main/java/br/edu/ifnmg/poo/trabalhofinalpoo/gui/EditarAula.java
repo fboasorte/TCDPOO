@@ -55,6 +55,7 @@ public class EditarAula extends javax.swing.JDialog {
         btnCancelarEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Editar aula");
         setResizable(false);
 
         pnlEditar.setBackground(new java.awt.Color(255, 255, 255));

@@ -7,8 +7,10 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AulaDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.ProfessorDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Aula;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Professor;
 import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -31,8 +33,9 @@ public class GerenciarAula extends javax.swing.JFrame {
      */
     private DefaultListModel<Discente> lstDiscentesModel;
     
+    
     /**
-     * Retém o índice da aaula selecionada para referências de processamentos
+     * Retém o índice da aula selecionada para referências de processamentos
      * entre vários métodos.
      */
     private int indiceAulaSelecionada;
@@ -42,6 +45,12 @@ public class GerenciarAula extends javax.swing.JFrame {
      * entre vários métodos.
      */
     private int indiceDiscenteSelecionado;
+    
+    /**
+     * Retém o índice do porofessor selecionado para referências de processamentos
+     * entre vários métodos.
+     */
+    private int indiceProfessorSelecionado;
     
     /**
      * Construtor padrão
@@ -94,6 +103,7 @@ public class GerenciarAula extends javax.swing.JFrame {
         btnExcluirAula = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Gerenciar aulas");
         setResizable(false);
 
         pnlMarcacaoAula.setBackground(new java.awt.Color(255, 255, 255));
@@ -297,11 +307,11 @@ public class GerenciarAula extends javax.swing.JFrame {
         pnlMarcacaoAulaLayout.setVerticalGroup(
             pnlMarcacaoAulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMarcacaoAulaLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(16, 16, 16)
                 .addComponent(lblSelecionarAluno)
-                .addGap(3, 3, 3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrListaDiscentes, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
+                .addGap(19, 19, 19)
                 .addComponent(lblAulasDisponiveis)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrListaAulas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -340,12 +350,19 @@ public class GerenciarAula extends javax.swing.JFrame {
         
         if(lstAulas.getModel().getSize() > 0) {
             indiceAulaSelecionada = lstAulas.getSelectedIndex();
-            EditarAula editarAula;
-            editarAula = new EditarAula(lstAulasModel.get(indiceAulaSelecionada),
-                    this, true);
-            
-            editarAula.setLocationRelativeTo(this);
-            editarAula.setVisible(true);
+            if(indiceAulaSelecionada >= 0){
+                EditarAula editarAula;
+                editarAula = new EditarAula(lstAulasModel.get(indiceAulaSelecionada),
+                        this, true);
+
+                editarAula.setLocationRelativeTo(this);
+                editarAula.setVisible(true);
+            }
+            else {
+                JOptionPane.showConfirmDialog(null,"Selecione uma aula!",
+                        "Aula não selecionada",
+                        JOptionPane.DEFAULT_OPTION);
+            }
         }
     }//GEN-LAST:event_btnEditarAulaActionPerformed
 
@@ -386,7 +403,7 @@ public class GerenciarAula extends javax.swing.JFrame {
         
         txtNomeAula.setText(lstAulasModel.get(indiceAulaSelecionada).getNome());
         txtConteudoAula.setText(lstAulasModel.get(indiceAulaSelecionada).getConteudo());
-        txtProfessorAula.setText(String.valueOf(lstAulasModel.get(indiceAulaSelecionada).getIdProfessor()));
+        txtProfessorAula.setText(lstAulasModel.get(indiceAulaSelecionada).getNome());
         txtDataAula.setText(lstAulasModel.get(indiceAulaSelecionada).getData());
         txtHoraAula.setText(lstAulasModel.get(indiceAulaSelecionada).getHora());
     }//GEN-LAST:event_lstAulasMouseClicked
@@ -397,10 +414,22 @@ public class GerenciarAula extends javax.swing.JFrame {
      * @param evt Evento capturado
      */
     private void btnNovoAulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoAulaActionPerformed
-        NovoAula novoAula = new NovoAula(this, true);
         
-        novoAula.setLocationRelativeTo(this);
-        novoAula.setVisible(true);
+       List<Professor> professores = new ProfessorDao().localizarTodos();
+       
+       if(professores.isEmpty() == false) {
+           NovoAula novoAula = new NovoAula(this, true);
+
+           novoAula.setLocationRelativeTo(this);
+           novoAula.setVisible(true);
+       }
+       else {
+            JOptionPane.showConfirmDialog(null, "Não é possível registrar pois "
+            + "não há professores cadastrados!",
+            "Erro", JOptionPane.DEFAULT_OPTION);
+       }
+        
+
         
     }//GEN-LAST:event_btnNovoAulaActionPerformed
      

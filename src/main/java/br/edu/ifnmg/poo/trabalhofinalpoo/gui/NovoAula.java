@@ -6,7 +6,12 @@
 package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AulaDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.ProfessorDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Aula;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Professor;
+import java.awt.event.WindowEvent;
+import java.util.List;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,17 +22,34 @@ public class NovoAula extends javax.swing.JDialog {
     
     private GerenciarAula gerenciarAula;
     private Aula aulaNovo;
+    
+    /**
+     * Modelo para manutenção da lista de professores a serem apresentadas na listagem da
+     * interface gráfica.
+     */
+    private DefaultListModel<Professor> lstProfessoresModel;
+    
+    /**
+     * Retém o índice do porofessor selecionado para referências de processamentos
+     * entre vários métodos.
+     */
+    private int indiceProfessorSelecionado;
 
     /**
      * Creates new form NovoAula
      */
     public NovoAula(GerenciarAula gerenciarAula, boolean modal) {
         super(gerenciarAula, modal);
-        initComponents();
         
+        lstProfessoresModel = new DefaultListModel<>();
+        List<Professor> professores = new ProfessorDao().localizarTodos();
+        lstProfessoresModel.addAll(professores);
+        
+        initComponents();
+
         this.gerenciarAula = gerenciarAula;
         this.aulaNovo = new Aula();
-        
+               
     }
 
     /**
@@ -43,18 +65,20 @@ public class NovoAula extends javax.swing.JDialog {
         pnlNovoDetalhes = new javax.swing.JPanel();
         lblAulaNovo = new javax.swing.JLabel();
         lblConteudoNovo = new javax.swing.JLabel();
-        lblProfessorNovo = new javax.swing.JLabel();
         lblDataHoraNovo = new javax.swing.JLabel();
         txtAulaNovo = new javax.swing.JTextField();
         scrConteudoNovo = new javax.swing.JScrollPane();
         txtConteudoNovo = new javax.swing.JTextPane();
-        txtProfessorNovo = new javax.swing.JTextField();
         txtDataNovo = new javax.swing.JTextField();
         txtHoraNovo = new javax.swing.JTextField();
         btnSalvarNovo = new javax.swing.JButton();
         btnCancelarNovo = new javax.swing.JButton();
+        lblSelecionarProfessor = new javax.swing.JLabel();
+        scrListaProfessores = new javax.swing.JScrollPane();
+        lstProfessores = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Criar nova aula");
         setResizable(false);
 
         pnlNovo.setBackground(new java.awt.Color(255, 255, 255));
@@ -71,10 +95,6 @@ public class NovoAula extends javax.swing.JDialog {
         lblConteudoNovo.setForeground(new java.awt.Color(0, 0, 0));
         lblConteudoNovo.setText("Conteúdo");
 
-        lblProfessorNovo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblProfessorNovo.setForeground(new java.awt.Color(0, 0, 0));
-        lblProfessorNovo.setText("Professor");
-
         lblDataHoraNovo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblDataHoraNovo.setForeground(new java.awt.Color(0, 0, 0));
         lblDataHoraNovo.setText("Data/Hora");
@@ -85,9 +105,6 @@ public class NovoAula extends javax.swing.JDialog {
         txtConteudoNovo.setBackground(new java.awt.Color(255, 255, 255));
         txtConteudoNovo.setForeground(new java.awt.Color(0, 0, 0));
         scrConteudoNovo.setViewportView(txtConteudoNovo);
-
-        txtProfessorNovo.setBackground(new java.awt.Color(255, 255, 255));
-        txtProfessorNovo.setForeground(new java.awt.Color(0, 0, 0));
 
         txtDataNovo.setBackground(new java.awt.Color(255, 255, 255));
         txtDataNovo.setForeground(new java.awt.Color(0, 0, 0));
@@ -108,13 +125,10 @@ public class NovoAula extends javax.swing.JDialog {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlNovoDetalhesLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(pnlNovoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblProfessorNovo)
-                            .addGroup(pnlNovoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblConteudoNovo, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(lblDataHoraNovo, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(lblConteudoNovo, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblDataHoraNovo, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(18, 18, 18)))
                 .addGroup(pnlNovoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtProfessorNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlNovoDetalhesLayout.createSequentialGroup()
                         .addComponent(txtDataNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -139,14 +153,10 @@ public class NovoAula extends javax.swing.JDialog {
                         .addComponent(scrConteudoNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlNovoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtProfessorNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblProfessorNovo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(pnlNovoDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDataHoraNovo)
                     .addComponent(txtDataNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtHoraNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDataHoraNovo))
-                .addGap(20, 20, 20))
+                    .addComponent(txtHoraNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         btnSalvarNovo.setBackground(new java.awt.Color(255, 255, 255));
@@ -169,12 +179,25 @@ public class NovoAula extends javax.swing.JDialog {
             }
         });
 
+        lblSelecionarProfessor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSelecionarProfessor.setForeground(new java.awt.Color(0, 0, 0));
+        lblSelecionarProfessor.setText("Selecionar professor");
+
+        lstProfessores.setBackground(new java.awt.Color(255, 255, 255));
+        lstProfessores.setForeground(new java.awt.Color(0, 0, 0));
+        lstProfessores.setModel(lstProfessoresModel);
+        scrListaProfessores.setViewportView(lstProfessores);
+
         javax.swing.GroupLayout pnlNovoLayout = new javax.swing.GroupLayout(pnlNovo);
         pnlNovo.setLayout(pnlNovoLayout);
         pnlNovoLayout.setHorizontalGroup(
             pnlNovoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlNovoLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(24, 24, 24)
+                .addGroup(pnlNovoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSelecionarProfessor)
+                    .addComponent(scrListaProfessores, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
                 .addGroup(pnlNovoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlNovoLayout.createSequentialGroup()
                         .addComponent(btnSalvarNovo)
@@ -187,11 +210,17 @@ public class NovoAula extends javax.swing.JDialog {
             pnlNovoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlNovoLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(pnlNovoDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlNovoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCancelarNovo)
-                    .addComponent(btnSalvarNovo))
+                .addGroup(pnlNovoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlNovoLayout.createSequentialGroup()
+                        .addComponent(pnlNovoDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlNovoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCancelarNovo)
+                            .addComponent(btnSalvarNovo)))
+                    .addGroup(pnlNovoLayout.createSequentialGroup()
+                        .addComponent(lblSelecionarProfessor)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(scrListaProfessores)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -211,19 +240,29 @@ public class NovoAula extends javax.swing.JDialog {
 
     private void btnSalvarNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarNovoActionPerformed
         
-        aulaNovo.setNome(txtAulaNovo.getText());
-        aulaNovo.setConteudo(txtConteudoNovo.getText());
-        aulaNovo.setIdProfessor(Integer.parseInt(txtProfessorNovo.getText()));
-        aulaNovo.setData(txtDataNovo.getText());
-        aulaNovo.setHora(txtHoraNovo.getText());
+        indiceProfessorSelecionado = lstProfessores.getSelectedIndex();
         
-        Long id = new AulaDao().salvar(aulaNovo);
+        if(lstProfessores.getModel().getSize() > 0) {
+            if (indiceProfessorSelecionado >= 0) {
+                aulaNovo.setIdProfessor(lstProfessoresModel.get(indiceProfessorSelecionado).getId().intValue());
+                aulaNovo.setNome(txtAulaNovo.getText());
+                aulaNovo.setConteudo(txtConteudoNovo.getText());
+                aulaNovo.setData(txtDataNovo.getText());
+                aulaNovo.setHora(txtHoraNovo.getText());
+
+                Long id = new AulaDao().salvar(aulaNovo);
+
+                aulaNovo.setId(id);
+
+                gerenciarAula.NovoModelo(aulaNovo);
+
+                dispose();
+            } else {
+                JOptionPane.showConfirmDialog(null, "Selecione um professor!",
+                        "Professor não selecionado", JOptionPane.DEFAULT_OPTION);
+            }
+        }
         
-        aulaNovo.setId(id);
-        
-        gerenciarAula.NovoModelo(aulaNovo);
-        
-        dispose();
     }//GEN-LAST:event_btnSalvarNovoActionPerformed
 
     private void btnCancelarNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarNovoActionPerformed
@@ -239,14 +278,15 @@ public class NovoAula extends javax.swing.JDialog {
     private javax.swing.JLabel lblAulaNovo;
     private javax.swing.JLabel lblConteudoNovo;
     private javax.swing.JLabel lblDataHoraNovo;
-    private javax.swing.JLabel lblProfessorNovo;
+    private javax.swing.JLabel lblSelecionarProfessor;
+    private javax.swing.JList<Professor> lstProfessores;
     private javax.swing.JPanel pnlNovo;
     private javax.swing.JPanel pnlNovoDetalhes;
     private javax.swing.JScrollPane scrConteudoNovo;
+    private javax.swing.JScrollPane scrListaProfessores;
     private javax.swing.JTextField txtAulaNovo;
     private javax.swing.JTextPane txtConteudoNovo;
     private javax.swing.JTextField txtDataNovo;
     private javax.swing.JTextField txtHoraNovo;
-    private javax.swing.JTextField txtProfessorNovo;
     // End of variables declaration//GEN-END:variables
 }

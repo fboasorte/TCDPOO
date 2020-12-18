@@ -58,6 +58,7 @@ public class LancarNota extends javax.swing.JDialog {
         txtComentariosNota = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Marcar aula");
 
         pnlNota.setBackground(new java.awt.Color(255, 255, 255));
         pnlNota.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));

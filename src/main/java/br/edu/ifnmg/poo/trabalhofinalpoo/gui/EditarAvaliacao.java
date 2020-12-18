@@ -106,6 +106,7 @@ public class EditarAvaliacao extends javax.swing.JDialog {
         btnCancelarAvaliacao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Editar prova");
 
         pnlEditarAvaliacao.setBackground(new java.awt.Color(255, 255, 255));
 
