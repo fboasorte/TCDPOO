@@ -11,22 +11,41 @@ import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Aula;
 import java.util.List;
 import javax.swing.DefaultListModel;
-import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Entidade;
-import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Classe para representar a tela de um gerenciamento da aula no sistema escolar
  * @author Fellipe
  */
 public class GerenciarAula extends javax.swing.JFrame {
     
+    /**
+     * Modelo para manutenção da lista de aulas a serem apresentadas na listagem da
+     * interface gráfica.
+     */
     private DefaultListModel<Aula> lstAulasModel;
+    
+    /**
+     * Modelo para manutenção da lista de discentes a serem apresentadas na listagem da
+     * interface gráfica.
+     */
     private DefaultListModel<Discente> lstDiscentesModel;
     
+    /**
+     * Retém o índice da aaula selecionada para referências de processamentos
+     * entre vários métodos.
+     */
     private int indiceAulaSelecionada;
+    
+    /**
+     * Retém o índice do discente selecionado para referências de processamentos
+     * entre vários métodos.
+     */
     private int indiceDiscenteSelecionado;
     
+    /**
+     * Construtor padrão
+     */
     public GerenciarAula() {
         
         lstAulasModel = new DefaultListModel<>();
@@ -313,6 +332,11 @@ public class GerenciarAula extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Ao clicar no botão Editar, armazena os campos preenchidos em gerenciamento de aula,
+     * salva essa aula no bando de dados e adiciona-a na lista.
+     * @param evt Evento capturado
+     */
     private void btnEditarAulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAulaActionPerformed
         
         if(lstAulas.getModel().getSize() > 0) {
@@ -326,6 +350,11 @@ public class GerenciarAula extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEditarAulaActionPerformed
 
+    /**
+     * Ao clicar no botão Excluir, armazena os campos preenchidos em gerenciar aula,
+     * exclui no bando de dados e exclui-a na lista.
+     * @param evt Evento capturado
+     */
     private void btnExcluirAulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirAulaActionPerformed
         
         if(lstAulas.getModel().getSize() > 0) {
@@ -346,7 +375,12 @@ public class GerenciarAula extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnExcluirAulaActionPerformed
-
+    
+    /**
+     * Verifica o indice da aula que foi clicada com o botão direito
+     * e seleciona aquela aula na lista
+     * @param evt Evento capturado
+     */
     private void lstAulasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstAulasMouseClicked
         
         indiceAulaSelecionada = lstAulas.getSelectedIndex();
@@ -358,6 +392,11 @@ public class GerenciarAula extends javax.swing.JFrame {
         txtHoraAula.setText(lstAulasModel.get(indiceAulaSelecionada).getHora());
     }//GEN-LAST:event_lstAulasMouseClicked
 
+    /**
+     * Ao clicar no botão Novo, armazena os campos preenchidos em gerenciar aula,
+     * salva essa aula no bando de dados e adiciona-a na lista.
+     * @param evt Evento capturado
+     */
     private void btnNovoAulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoAulaActionPerformed
         NovoAula novoAula = new NovoAula(this, true);
         
@@ -365,7 +404,12 @@ public class GerenciarAula extends javax.swing.JFrame {
         novoAula.setVisible(true);
         
     }//GEN-LAST:event_btnNovoAulaActionPerformed
-
+    
+    /**
+     * Ao clicar no botão Marcar Aula, armazena os campos preenchidos em gerenciar aula,
+     * salva essa aula no bando de dados e adiciona-a na lista.
+     * @param evt Evento capturado
+     */
     private void btnMarcarAulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarcarAulaActionPerformed
         if(lstDiscentes.getModel().getSize() > 0) {
             if(lstAulas.getModel().getSize() > 0) {
@@ -406,45 +450,18 @@ public class GerenciarAula extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMarcarAulaActionPerformed
     
     /**
-     * @param args the command line arguments
+     * Permite a atualização de uma aula que foi editada em outra janela.
+     * 
+     * @param aula Aula que será acrescentada na listagem de aulas
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GerenciarAula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GerenciarAula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GerenciarAula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GerenciarAula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GerenciarAula().setVisible(true);
-            }
-        });
-    }
-    
     void AtualizarModelo(Aula aula) {
         lstAulasModel.set(indiceAulaSelecionada, aula);
     }
     
+    /**
+     * Adiciona uma aula na lista de aulas
+     * @param aula Aula que será acrescentada na listagem de aulas
+     */
     void NovoModelo(Aula aula) {
         lstAulasModel.addElement(aula);
     }
