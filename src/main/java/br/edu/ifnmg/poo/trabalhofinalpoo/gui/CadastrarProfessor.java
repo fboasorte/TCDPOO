@@ -12,18 +12,29 @@ import java.util.List;
 import javax.swing.DefaultListModel;
 
 /**
- *
+ * Janela para inclusao, edição e exclusão de professores
+ * 
  * @author Fellipe
  */
 public class CadastrarProfessor extends javax.swing.JFrame {
 
+    /**
+     * Modelo para manutenção de dados a serem apresentado na listagem da
+     * interface gráfica.
+     */
     private DefaultListModel<Professor> lstProfessoresModel;
     
+    /**
+     * Retém o índice da tarefa selecionada para referências de processamentos
+     * entre vários métodos.
+     */
     private int indiceProfessorSelecionado;
     
-    
+    /**
+     * Iniciliza elementos da nova janela
+     */
     public CadastrarProfessor() {
-        
+        // Modelo padrão para elementos em listagens
         lstProfessoresModel = new DefaultListModel<>();
 
         // Recupera todos os registros do banco de dados
@@ -387,7 +398,12 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPesquisaActionPerformed
 
+    /**
+     * Resposta ao clique sobre o botão "Salvar"
+     * @param evt Evento capturado
+     */
     private void btnSalvarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarDadosActionPerformed
+        // Cria um objeto a partir dos dados informados pelo usuário
         Professor professor = new Professor();
         professor.setNome(txtNome.getText());
         professor.setCpf(Integer.parseInt(txtCPF.getText()));
@@ -426,6 +442,11 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCPFActionPerformed
 
+    /**
+     * Resposta ao clique sobre a opção "Editar" do menu de contexto.
+     * 
+     * @param evt Evento capturado
+     */
     private void mnuEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEditarActionPerformed
         EditarProfessor editarProfessor
                 = new EditarProfessor(lstProfessores.getSelectedValue(), this, true);
@@ -434,6 +455,11 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         editarProfessor.setVisible(true);
     }//GEN-LAST:event_mnuEditarActionPerformed
 
+    /**
+     * Resposta ao clique sobre a opção "Excluir" do menu de contexto.
+     * 
+     * @param evt Evento capturado
+     */
     private void mnuExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExcluirActionPerformed
         new ProfessorDao().excluir(lstProfessoresModel.get(indiceProfessorSelecionado));
 
@@ -441,6 +467,11 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         lstProfessoresModel.remove(lstProfessores.getSelectedIndex());
     }//GEN-LAST:event_mnuExcluirActionPerformed
 
+    /**
+     * Resposta ao clique com botão direito sobre elementos da listagem de professores.
+     * 
+     * @param evt Evento capturado
+     */
     private void lstProfessoresMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstProfessoresMouseReleased
         if (evt.getButton() == MouseEvent.BUTTON3
                 && lstProfessores.getModel().getSize() > 0) {
@@ -451,7 +482,9 @@ public class CadastrarProfessor extends javax.swing.JFrame {
     }//GEN-LAST:event_lstProfessoresMouseReleased
 
     /**
-     * @param args the command line arguments
+     * Execução do projeto.
+     * 
+     * @param args Argumentos da linha de comando
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -486,6 +519,9 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         });
     }
     
+    /**
+     * Restaura estado inicial dos campos do formulário.
+     */
     private void limparCampos() {
         // "Descrição" vazia
         txtCPF.setText(null);
@@ -496,6 +532,11 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         txtNome.requestFocus();
     }
     
+    /**
+     * Permite a atualização de um professor que foi editada em outra janela.
+     * 
+     * @param professor A ser acrescentado a listagem de tarefas
+     */
     void atualizarModelo(Professor professor) {
         lstProfessoresModel.set(indiceProfessorSelecionado, professor);
     }
