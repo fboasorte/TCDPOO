@@ -193,12 +193,10 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lblNomeAula" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lblConteudoAula" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblProfessorAula" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lblDataHoraAula" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtProfessorAula" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                               <Component id="txtConteudoAula" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                               <Component id="txtNomeAula" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
@@ -224,12 +222,7 @@
                               <Component id="lblConteudoAula" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtConteudoAula" alignment="3" min="-2" pref="125" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblProfessorAula" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtProfessorAula" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblDataHoraAula" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtDataAula" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
@@ -263,17 +256,6 @@
                     <Property name="text" type="java.lang.String" value="Conte&#xfa;do"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="lblProfessorAula">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Professor"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="lblDataHoraAula">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -296,16 +278,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtConteudoAula">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtProfessorAula">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="cc" red="cc" type="rgb"/>

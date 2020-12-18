@@ -86,11 +86,9 @@ public class GerenciarAula extends javax.swing.JFrame {
         pnlAulaDetalhes = new javax.swing.JPanel();
         lblNomeAula = new javax.swing.JLabel();
         lblConteudoAula = new javax.swing.JLabel();
-        lblProfessorAula = new javax.swing.JLabel();
         lblDataHoraAula = new javax.swing.JLabel();
         txtNomeAula = new javax.swing.JTextField();
         txtConteudoAula = new javax.swing.JTextField();
-        txtProfessorAula = new javax.swing.JTextField();
         txtDataAula = new javax.swing.JTextField();
         txtHoraAula = new javax.swing.JTextField();
         lblDetalhesAulaMarcacao = new javax.swing.JLabel();
@@ -140,10 +138,6 @@ public class GerenciarAula extends javax.swing.JFrame {
         lblConteudoAula.setForeground(new java.awt.Color(0, 0, 0));
         lblConteudoAula.setText("Conteúdo");
 
-        lblProfessorAula.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblProfessorAula.setForeground(new java.awt.Color(0, 0, 0));
-        lblProfessorAula.setText("Professor");
-
         lblDataHoraAula.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblDataHoraAula.setForeground(new java.awt.Color(0, 0, 0));
         lblDataHoraAula.setText("Data/Hora");
@@ -153,9 +147,6 @@ public class GerenciarAula extends javax.swing.JFrame {
 
         txtConteudoAula.setBackground(new java.awt.Color(204, 204, 204));
         txtConteudoAula.setForeground(new java.awt.Color(0, 0, 0));
-
-        txtProfessorAula.setBackground(new java.awt.Color(204, 204, 204));
-        txtProfessorAula.setForeground(new java.awt.Color(0, 0, 0));
 
         txtDataAula.setBackground(new java.awt.Color(204, 204, 204));
         txtDataAula.setForeground(new java.awt.Color(0, 0, 0));
@@ -172,11 +163,9 @@ public class GerenciarAula extends javax.swing.JFrame {
                 .addGroup(pnlAulaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblNomeAula)
                     .addComponent(lblConteudoAula)
-                    .addComponent(lblProfessorAula)
                     .addComponent(lblDataHoraAula))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlAulaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtProfessorAula, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtConteudoAula, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNomeAula, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlAulaDetalhesLayout.createSequentialGroup()
@@ -196,11 +185,7 @@ public class GerenciarAula extends javax.swing.JFrame {
                 .addGroup(pnlAulaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblConteudoAula)
                     .addComponent(txtConteudoAula, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlAulaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblProfessorAula)
-                    .addComponent(txtProfessorAula, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
+                .addGap(12, 12, 12)
                 .addGroup(pnlAulaDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDataHoraAula)
                     .addComponent(txtDataAula, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -403,7 +388,6 @@ public class GerenciarAula extends javax.swing.JFrame {
         
         txtNomeAula.setText(lstAulasModel.get(indiceAulaSelecionada).getNome());
         txtConteudoAula.setText(lstAulasModel.get(indiceAulaSelecionada).getConteudo());
-        txtProfessorAula.setText(lstAulasModel.get(indiceAulaSelecionada).getNome());
         txtDataAula.setText(lstAulasModel.get(indiceAulaSelecionada).getData());
         txtHoraAula.setText(lstAulasModel.get(indiceAulaSelecionada).getHora());
     }//GEN-LAST:event_lstAulasMouseClicked
@@ -504,7 +488,6 @@ public class GerenciarAula extends javax.swing.JFrame {
     private javax.swing.JLabel lblDataHoraAula;
     private javax.swing.JLabel lblDetalhesAulaMarcacao;
     private javax.swing.JLabel lblNomeAula;
-    private javax.swing.JLabel lblProfessorAula;
     private javax.swing.JLabel lblSelecionarAluno;
     private javax.swing.JList<Aula> lstAulas;
     private javax.swing.JList<Discente> lstDiscentes;
@@ -517,6 +500,5 @@ public class GerenciarAula extends javax.swing.JFrame {
     private javax.swing.JTextField txtDataAula;
     private javax.swing.JTextField txtHoraAula;
     private javax.swing.JTextField txtNomeAula;
-    private javax.swing.JTextField txtProfessorAula;
     // End of variables declaration//GEN-END:variables
 }

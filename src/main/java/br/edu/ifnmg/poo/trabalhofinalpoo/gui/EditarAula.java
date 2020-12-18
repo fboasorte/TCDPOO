@@ -6,7 +6,11 @@
 package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
 import br.edu.ifnmg.poo.trabalhofinalpoo.dao.AulaDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.ProfessorDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Aula;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Professor;
+import java.util.List;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -16,17 +20,37 @@ public class EditarAula extends javax.swing.JDialog {
     
     private GerenciarAula gerenciarAula;
     private Aula aulaEmEdicao;
+    
+    /**
+     * Modelo para manutenção da lista de professores a serem apresentadas na listagem da
+     * interface gráfica.
+     */
+    private DefaultListModel<Professor> lstProfessoresModel;
+    
+    /**
+     * Retém o índice do porofessor selecionado para referências de processamentos
+     * entre vários métodos.
+     */
+    private int indiceProfessorSelecionado;
+
 
     /**
      * Creates new form EditarAula
      */
     public EditarAula(Aula aula, GerenciarAula gerenciarAula, boolean modal) {
         super(gerenciarAula, modal);
+        
+        lstProfessoresModel = new DefaultListModel<>();
+        List<Professor> professores = new ProfessorDao().localizarTodos();
+        lstProfessoresModel.addAll(professores);
+        
+        
         initComponents();
         
         this.gerenciarAula = gerenciarAula;
         this.aulaEmEdicao = aula;
         
+        lstProfessores.setSelectedIndex(indiceProfessorSelecionado);
         preencherAula(aula);
     }
 
@@ -43,16 +67,17 @@ public class EditarAula extends javax.swing.JDialog {
         pnlEditarDetalhes = new javax.swing.JPanel();
         lblAulaEditar = new javax.swing.JLabel();
         lblConteudoEditar = new javax.swing.JLabel();
-        lblProfessorEditar = new javax.swing.JLabel();
         lblDataHoraEditar = new javax.swing.JLabel();
         txtAulaEditar = new javax.swing.JTextField();
         scrConteudoEditar = new javax.swing.JScrollPane();
         txtConteudoEditar = new javax.swing.JTextPane();
-        txtProfessorEditar = new javax.swing.JTextField();
         txtDataEditar = new javax.swing.JTextField();
         txtHoraEditar = new javax.swing.JTextField();
         btnSalvarEditar = new javax.swing.JButton();
         btnCancelarEditar = new javax.swing.JButton();
+        lblSelecionarProfessor = new javax.swing.JLabel();
+        scrListaProfessores = new javax.swing.JScrollPane();
+        lstProfessores = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Editar aula");
@@ -72,10 +97,6 @@ public class EditarAula extends javax.swing.JDialog {
         lblConteudoEditar.setForeground(new java.awt.Color(0, 0, 0));
         lblConteudoEditar.setText("Conteúdo");
 
-        lblProfessorEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblProfessorEditar.setForeground(new java.awt.Color(0, 0, 0));
-        lblProfessorEditar.setText("Professor");
-
         lblDataHoraEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblDataHoraEditar.setForeground(new java.awt.Color(0, 0, 0));
         lblDataHoraEditar.setText("Data/Hora");
@@ -86,9 +107,6 @@ public class EditarAula extends javax.swing.JDialog {
         txtConteudoEditar.setBackground(new java.awt.Color(255, 255, 255));
         txtConteudoEditar.setForeground(new java.awt.Color(0, 0, 0));
         scrConteudoEditar.setViewportView(txtConteudoEditar);
-
-        txtProfessorEditar.setBackground(new java.awt.Color(255, 255, 255));
-        txtProfessorEditar.setForeground(new java.awt.Color(0, 0, 0));
 
         txtDataEditar.setBackground(new java.awt.Color(255, 255, 255));
         txtDataEditar.setForeground(new java.awt.Color(0, 0, 0));
@@ -105,17 +123,14 @@ public class EditarAula extends javax.swing.JDialog {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditarDetalhesLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(pnlEditarDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblProfessorEditar)
-                            .addGroup(pnlEditarDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblConteudoEditar, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(lblDataHoraEditar, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(lblConteudoEditar, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblDataHoraEditar, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(18, 18, 18))
                     .addGroup(pnlEditarDetalhesLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(lblAulaEditar)
                         .addGap(55, 55, 55)))
                 .addGroup(pnlEditarDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtProfessorEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAulaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlEditarDetalhesLayout.createSequentialGroup()
                         .addComponent(txtDataEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -138,11 +153,7 @@ public class EditarAula extends javax.swing.JDialog {
                     .addGroup(pnlEditarDetalhesLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(scrConteudoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlEditarDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtProfessorEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblProfessorEditar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(pnlEditarDetalhesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDataEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtHoraEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -170,12 +181,25 @@ public class EditarAula extends javax.swing.JDialog {
             }
         });
 
+        lblSelecionarProfessor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSelecionarProfessor.setForeground(new java.awt.Color(0, 0, 0));
+        lblSelecionarProfessor.setText("Selecionar professor");
+
+        lstProfessores.setBackground(new java.awt.Color(255, 255, 255));
+        lstProfessores.setForeground(new java.awt.Color(0, 0, 0));
+        lstProfessores.setModel(lstProfessoresModel);
+        scrListaProfessores.setViewportView(lstProfessores);
+
         javax.swing.GroupLayout pnlEditarLayout = new javax.swing.GroupLayout(pnlEditar);
         pnlEditar.setLayout(pnlEditarLayout);
         pnlEditarLayout.setHorizontalGroup(
             pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEditarLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
+                .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSelecionarProfessor)
+                    .addComponent(scrListaProfessores, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
                 .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlEditarLayout.createSequentialGroup()
                         .addComponent(btnSalvarEditar)
@@ -188,12 +212,19 @@ public class EditarAula extends javax.swing.JDialog {
             pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEditarLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(pnlEditarDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCancelarEditar)
-                    .addComponent(btnSalvarEditar))
-                .addContainerGap(25, Short.MAX_VALUE))
+                    .addGroup(pnlEditarLayout.createSequentialGroup()
+                        .addComponent(lblSelecionarProfessor)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(scrListaProfessores))
+                    .addGroup(pnlEditarLayout.createSequentialGroup()
+                        .addComponent(pnlEditarDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCancelarEditar)
+                            .addComponent(btnSalvarEditar))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -211,9 +242,10 @@ public class EditarAula extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalvarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarEditarActionPerformed
+        
+        aulaEmEdicao.setIdProfessor(lstProfessoresModel.get(indiceProfessorSelecionado).getId().intValue());
         aulaEmEdicao.setNome(txtAulaEditar.getText());
         aulaEmEdicao.setConteudo(txtConteudoEditar.getText());
-        aulaEmEdicao.setIdProfessor(Integer.parseInt(txtProfessorEditar.getText()));
         aulaEmEdicao.setData(txtDataEditar.getText());
         aulaEmEdicao.setHora(txtHoraEditar.getText());
         
@@ -232,7 +264,6 @@ public class EditarAula extends javax.swing.JDialog {
     private void preencherAula(Aula aula) {
         txtAulaEditar.setText(aula.getNome());
         txtConteudoEditar.setText(aula.getConteudo());
-        txtProfessorEditar.setText(String.valueOf(aula.getIdProfessor()));
         txtDataEditar.setText(aula.getData());
         txtHoraEditar.setText(aula.getHora());
     }
@@ -244,14 +275,15 @@ public class EditarAula extends javax.swing.JDialog {
     private javax.swing.JLabel lblAulaEditar;
     private javax.swing.JLabel lblConteudoEditar;
     private javax.swing.JLabel lblDataHoraEditar;
-    private javax.swing.JLabel lblProfessorEditar;
+    private javax.swing.JLabel lblSelecionarProfessor;
+    private javax.swing.JList<Professor> lstProfessores;
     private javax.swing.JPanel pnlEditar;
     private javax.swing.JPanel pnlEditarDetalhes;
     private javax.swing.JScrollPane scrConteudoEditar;
+    private javax.swing.JScrollPane scrListaProfessores;
     private javax.swing.JTextField txtAulaEditar;
     private javax.swing.JTextPane txtConteudoEditar;
     private javax.swing.JTextField txtDataEditar;
     private javax.swing.JTextField txtHoraEditar;
-    private javax.swing.JTextField txtProfessorEditar;
     // End of variables declaration//GEN-END:variables
 }
