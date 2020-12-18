@@ -25,7 +25,7 @@ public class CadastrarProfessor extends javax.swing.JDialog {
     private DefaultListModel<Professor> lstProfessoresModel;
     
     /**
-     * Retém o índice da tarefa selecionada para referências de processamentos
+     * Retém o índice do professor selecionado para referências de processamentos
      * entre vários métodos.
      */
     private int indiceProfessorSelecionado;
@@ -41,7 +41,7 @@ public class CadastrarProfessor extends javax.swing.JDialog {
         // Recupera todos os registros do banco de dados
         List<Professor> professores = new ProfessorDao().localizarTodos();
 
-        // Acrescente objetos do tipo Tarefa recuperados do banco de dados
+        // Acrescente objetos do tipo Professor recuperados do banco de dados
         // ao elemento de listagem. Aqui são incluídas as referências completas
         // aos estados de cada objeto (id, descrição e concluída)
         lstProfessoresModel.addAll(professores);
@@ -400,7 +400,7 @@ public class CadastrarProfessor extends javax.swing.JDialog {
     /**
      * Permite a atualização de um professor que foi editada em outra janela.
      * 
-     * @param professor A ser acrescentado a listagem de tarefas
+     * @param professor A ser acrescentado a listagem de professores
      */
     void atualizarModelo(Professor professor) {
         lstProfessoresModel.set(indiceProfessorSelecionado, professor);
