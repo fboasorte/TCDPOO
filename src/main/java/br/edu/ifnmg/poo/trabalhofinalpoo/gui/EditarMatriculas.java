@@ -287,15 +287,22 @@ public class EditarMatriculas extends javax.swing.JDialog {
      * @param evt Evento capturado
      */
     private void btnSalvarNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarNotaActionPerformed
+        // Recupera descrição fornecida e atualiza o objeto recebido
         matriculaEmEdicao.setNotaParteEscrita(Integer.parseInt(txtParteEscritaNota.getText()));
         matriculaEmEdicao.setNotaParteOral(txtParteOralNota.getText());
         matriculaEmEdicao.setComentario(txtComentariosNota.getText());
         matriculaEmEdicao.setIdDiscente(lstDiscentes.getSelectedValue().getId().intValue());
         matriculaEmEdicao.setIdAula(lstAulas.getSelectedValue().getId().intValue());
         
+        // Salva o objeto atualizado no banco de dados.
+        // A "id" possui valor (o original)  e isso acarreta 
+        // a invocação da operação de atualização do método "salvar"
         new MatriculaDao().salvar(matriculaEmEdicao);
+        
+        // Atualiza o professor que foi editado na janela "VerMatriculas"
         verMatriculas.atualizarModelo(matriculaEmEdicao);
         
+        // Fecha a janela corrente
         dispose();
     }//GEN-LAST:event_btnSalvarNotaActionPerformed
 
