@@ -27,7 +27,7 @@ public class MatriculaDao extends AbstractDao<Matricula, Long> {
      */
     @Override
     public String getDeclaracaoInsert() {
-        return "INSERT INTO matricula(id,notaParteEscrita,notaParteOral,comentario) VALUES (default, ?, ?,?);";
+        return "INSERT INTO matricula(id,notaParteEscrita,notaParteOral,comentario, idDiscente, idAula) VALUES (default, ?, ?,?, ?, ?);";
     }
 
     /**
@@ -60,7 +60,7 @@ public class MatriculaDao extends AbstractDao<Matricula, Long> {
      */
     @Override
     public String getDeclaracaoUpdate() {
-        return "UPDATE matricula SET notaParteEscrita = ?, notaParteOral = ?, comentario = ? WHERE id = ?;";
+        return "UPDATE matricula SET notaParteEscrita = ?, notaParteOral = ?, comentario = ?, idDiscente = ?, idAula = ? WHERE id = ?;";
     }
 
     /**
@@ -106,11 +106,15 @@ public class MatriculaDao extends AbstractDao<Matricula, Long> {
                 pstmt.setInt(1, matricula.getNotaParteEscrita());
                 pstmt.setString(2, matricula.getNotaParteOral());
                 pstmt.setString(3, matricula.getComentario());
+                pstmt.setInt(4, matricula.getIdDiscente());
+                pstmt.setInt(5, matricula.getIdAula());
             } else {
                 pstmt.setInt(1, matricula.getNotaParteEscrita());
                 pstmt.setString(2, matricula.getNotaParteOral());
                 pstmt.setString(3, matricula.getComentario());
-                pstmt.setLong(4, matricula.getId());
+                pstmt.setInt(4, matricula.getIdDiscente());
+                pstmt.setInt(5, matricula.getIdAula());
+                pstmt.setLong(6, matricula.getId());
             }
         } catch (SQLException ex) {
             Logger.getLogger(MatriculaDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -135,6 +139,8 @@ public class MatriculaDao extends AbstractDao<Matricula, Long> {
             matricula.setNotaParteEscrita(resultSet.getInt("notaParteEscrita"));
             matricula.setNotaParteOral(resultSet.getString("notaParteOral"));
             matricula.setComentario(resultSet.getString("comentario"));
+            matricula.setIdDiscente(resultSet.getInt("idDiscente"));
+            matricula.setIdAula(resultSet.getInt("idAula"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -170,6 +176,8 @@ public class MatriculaDao extends AbstractDao<Matricula, Long> {
                 matricula.setNotaParteEscrita(resultSet.getInt("notaParteEscrita"));
                 matricula.setNotaParteOral(resultSet.getString("notaParteOral"));
                 matricula.setComentario(resultSet.getString("comentario"));
+                matricula.setIdDiscente(resultSet.getInt("idDiscente"));
+                matricula.setIdAula(resultSet.getInt("idAula"));
 
                 // Insere a tarefa na lista de tarefas recuperadas
                 matriculas.add(matricula);
