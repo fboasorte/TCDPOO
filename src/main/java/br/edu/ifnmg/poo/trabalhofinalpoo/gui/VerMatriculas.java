@@ -102,6 +102,9 @@ public class VerMatriculas extends javax.swing.JDialog {
         lstMatriculas.setForeground(new java.awt.Color(0, 0, 0));
         lstMatriculas.setModel(lstMatriculasModel);
         lstMatriculas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lstMatriculasMouseClicked(evt);
+            }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 lstMatriculasMouseReleased(evt);
             }
@@ -132,6 +135,7 @@ public class VerMatriculas extends javax.swing.JDialog {
         lblComentarios1.setForeground(new java.awt.Color(0, 0, 0));
         lblComentarios1.setText("Comentários");
 
+        txtParteEscrita.setEditable(false);
         txtParteEscrita.setBackground(new java.awt.Color(255, 255, 255));
         txtParteEscrita.setForeground(new java.awt.Color(0, 0, 0));
         txtParteEscrita.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -142,6 +146,7 @@ public class VerMatriculas extends javax.swing.JDialog {
             }
         });
 
+        txtParteOral.setEditable(false);
         txtParteOral.setBackground(new java.awt.Color(255, 255, 255));
         txtParteOral.setForeground(new java.awt.Color(0, 0, 0));
         txtParteOral.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -152,6 +157,7 @@ public class VerMatriculas extends javax.swing.JDialog {
             }
         });
 
+        txtComentario.setEditable(false);
         txtComentario.setBackground(new java.awt.Color(255, 255, 255));
         txtComentario.setForeground(new java.awt.Color(0, 0, 0));
         scrComentario.setViewportView(txtComentario);
@@ -305,6 +311,14 @@ public class VerMatriculas extends javax.swing.JDialog {
         editarMatricula.setLocationRelativeTo(this);
         editarMatricula.setVisible(true);
     }//GEN-LAST:event_mnuEditarActionPerformed
+
+    private void lstMatriculasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstMatriculasMouseClicked
+        indiceMatriculaSelecionada = lstMatriculas.getSelectedIndex();
+        
+        txtComentario.setText(lstMatriculasModel.get(indiceMatriculaSelecionada).getComentario());
+        txtParteEscrita.setText(lstMatriculasModel.get(indiceMatriculaSelecionada).getNotaParteEscrita().toString());
+        txtParteOral.setText(lstMatriculasModel.get(indiceMatriculaSelecionada).getNotaParteOral().toString());
+    }//GEN-LAST:event_lstMatriculasMouseClicked
 
     void atualizarModelo(Matricula matricula){
         lstMatriculasModel.set(indiceMatriculaSelecionada, matricula);
