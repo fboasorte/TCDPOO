@@ -16,12 +16,16 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Dialogo modal para a edição de matricula
+ * 
  * @author Fellipe
  */
 public class EditarMatriculas extends javax.swing.JDialog {
     
     
+    /**
+     * Referência à janela de cadastro que invocou esta janela de edição.
+     */
     private VerMatriculas verMatriculas;
     
     private Matricula matriculaEmEdicao;
@@ -277,6 +281,11 @@ public class EditarMatriculas extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Resposta ao clique no botão "Salvar".
+     * 
+     * @param evt Evento capturado
+     */
     private void btnSalvarNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarNotaActionPerformed
         matriculaEmEdicao.setNotaParteEscrita(Integer.parseInt(txtParteEscritaNota.getText()));
         matriculaEmEdicao.setNotaParteOral(txtParteOralNota.getText());
@@ -294,10 +303,20 @@ public class EditarMatriculas extends javax.swing.JDialog {
 
     }//GEN-LAST:event_lstAulasMouseClicked
 
+    /**
+     * Resposta ao clique no botão "Cancelar".
+     * 
+     * @param evt Evento capturado
+     */
     private void btnCancelarNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarNotaActionPerformed
         dispose();
     }//GEN-LAST:event_btnCancelarNotaActionPerformed
 
+    /**
+     * Preenche os campos com uma matricula
+     * 
+     * @param matricula a ser preenchida nos campos
+     */
     private void preencherMatricula(Matricula matricula){
         txtParteEscritaNota.setText(Integer.toString(matricula.getNotaParteEscrita()));
         txtParteOralNota.setText(matricula.getNotaParteOral());
