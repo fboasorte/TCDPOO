@@ -8,7 +8,7 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 import java.util.Objects;
 
 /**
- *
+ * Representa
  * @author felipe
  */
 public class Matricula extends Entidade {
@@ -18,16 +18,23 @@ public class Matricula extends Entidade {
     private String notaParteOral;
 
     private String comentario;
+    
+    private int idDiscente;
+    
+    private int idAula;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
     public Matricula() {
     }
 
-    public Matricula(Long id, Integer notaParteEscrita, String notaParteOral, String comentarios) {
+    public Matricula(Long id, Integer notaParteEscrita, String notaParteOral, String comentarios,
+            int idDiscente, int idAula) {
         super(id);
         this.notaParteEscrita = notaParteEscrita;
         this.notaParteOral = notaParteOral;
         this.comentario = comentarios;
+        this.idDiscente = idDiscente;
+        this.idAula = idAula;
     }
 //</editor-fold>
 
@@ -54,6 +61,22 @@ public class Matricula extends Entidade {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public int getIdDiscente() {
+        return idDiscente;
+    }
+
+    public void setIdDiscente(int idDiscente) {
+        this.idDiscente = idDiscente;
+    }
+
+    public int getIdAula() {
+        return idAula;
+    }
+
+    public void setIdAula(int idAula) {
+        this.idAula = idAula;
     }
 //</editor-fold>
 
@@ -96,7 +119,8 @@ public class Matricula extends Entidade {
     public String toString() {
         return notaParteEscrita 
                 + ", " + notaParteOral 
-                + ", " + comentario + '}';
+                + ", " + comentario 
+                + ", " + idDiscente 
+                + ", " + idAula;
     }
-    
 }
