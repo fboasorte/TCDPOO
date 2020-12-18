@@ -8,25 +8,49 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 import java.util.Objects;
 
 /**
- *
+ * Classe que representa a aula no sistema escolar.
  * @author felipe
  */
 public class Aula extends Entidade {
 
+    /**
+     * Nome para a aula
+     */
     private String nome;
 
+    /**
+     * Conteudo dado em uma aula
+     */
     private String conteudo;
     
+    /**
+     * Id do professor que ministrou aquela aula
+     */
     private int idProfessor;
     
+    /**
+     * Data da aula
+     */
     private String data;
     
+    /**
+     * Hora em que foi ministrada a aula
+     */
     private String hora;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
     public Aula() {
     }
 
+    /**
+     * Construtor sobrecarregado
+     * @param id Id da aula
+     * @param nome Nome da aula
+     * @param conteudo Conteudo dado na aula
+     * @param idProfessor Id do professor que ministrou a aula
+     * @param data Data da aula
+     * @param hora Hora da aula
+     */
     public Aula(Long id, String nome, String conteudo, int idProfessor,
             String data, String hora) {
         super(id);
@@ -112,6 +136,10 @@ public class Aula extends Entidade {
     }
 //</editor-fold>
 
+    /**
+     * Gera representação textual do objeto atual.
+     * @return Texto representativo do objeto atual 
+     */
     @Override
     public String toString() {
         return nome 

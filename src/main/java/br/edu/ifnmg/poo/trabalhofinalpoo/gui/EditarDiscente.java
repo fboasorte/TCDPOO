@@ -9,19 +9,23 @@ import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
 import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
 
 /**
- *
+ * Classe para representar a tela de edição de um discente no sistema escolar
  * @author felipe
  */
 public class EditarDiscente extends javax.swing.JDialog {
 
+    /**
+     * Referência à janela de cadastro de discente que invocou esta janela de edição.
+     */
     private final CadastrarDiscente cadastroDiscente;
     
+    /**
+     * Variável do tipo discente recebida para edicao.
+     */
     private Discente discenteEmEdicao;
     
-    
-
     /**
-     * Creates new form EditarDiscente
+     * Construtor padrão de EditarDiscente
      */
     public EditarDiscente(Discente discente,
         CadastrarDiscente cadastroDiscente, boolean modal) {
@@ -195,6 +199,11 @@ public class EditarDiscente extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDataNascimentoEditarActionPerformed
 
+    /**
+     * Ao clicar no botão Salvar, armazena os campos preenchidos na edição de discente,
+     * salva essa alteração no bando de dados e adiciona a alteração na lista.
+     * @param evt Evento capturado
+     */
     private void btnSalvarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarEditarActionPerformed
         // TODO add your handling code here:
         discenteEmEdicao.setCpf(Integer.parseInt(txtCPFEditar.getText()));
@@ -207,11 +216,19 @@ public class EditarDiscente extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_btnSalvarEditarActionPerformed
 
+    /**
+     * Ao clicar no botão cancelar, fecha a janela atual
+     * @param evt Evento capturado
+     */
     private void btnCancelarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarEditarActionPerformed
         dispose();
     }//GEN-LAST:event_btnCancelarEditarActionPerformed
 
-    
+    /**
+     * Extrai dados do discente recebido e popula os componentes da janela
+     * com seus respectivos valores.
+     * @param discente Objeto do tipo discente recebido
+     */
     public void preencherDiscente(Discente discente){
         txtCPFEditar.setText(Integer.toString(discente.getCpf()));
         txtNomeEditar.setText(discente.getNome());

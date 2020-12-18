@@ -16,21 +16,37 @@ import java.util.List;
 import javax.swing.DefaultListModel;
 
 /**
- *
+ * Classe para representar a tela de uma avaliação no sistema escolar
  * @author Fellipe
  */
 public class CadastrarAvaliacao extends javax.swing.JFrame {
     
+    /**
+     * Modelo para manutenção da lista de avaliações a serem apresentadas na listagem da
+     * interface gráfica.
+     */
     private DefaultListModel<Avaliacao> lstAvaliacaoModel;
     
+    /**
+     * Modelo para manutenção da lista de discentes a serem apresentadas na listagem da
+     * interface gráfica.
+     */
     private DefaultListModel<Discente> lstDiscentesModel;
     
+    /**
+     * Modelo para manutenção da lista de aulas a serem apresentadas na listagem da
+     * interface gráfica.
+     */
     private DefaultListModel<Aula> lstAulasModel;
     
+    /**
+     * Retém o índice da avaliação selecionada para referências de processamentos
+     * entre vários métodos.
+     */
     private int indiceAvaliacaoSelecionada;
 
     /**
-     * Creates new form CadastrarProva
+     * Construtor padrão de CadastrarAvaliação
      */
     public CadastrarAvaliacao() {
         lstAvaliacaoModel = new DefaultListModel<>();
@@ -471,10 +487,19 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHoraActionPerformed
 
+    /**
+     * Ao clicar no botão cancelar, fecha a tela atual
+     * @param evt Evento capturado
+     */
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    /**
+     * Verifica se o discente foi aprovado na parte escrita,e caso seja,
+     * coloca o campo como "APROVADO", caso contrário, "REPROVADO"
+     * @param evt Evento capturado
+     */
     private void txtParteEscritaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteEscritaActionPerformed
         if(estaAprovadoEscrita(Integer.parseInt(txtParteEscrita.getText())) && 
                 estaAprovadoOral(txtParteOral.getText())){
@@ -485,6 +510,11 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtParteEscritaActionPerformed
 
+    /**
+     * Verifica se o discente foi aprovado na parte oral,e caso seja,
+     * coloca o campo como "APROVADO", caso contrário, "REPROVADO"
+     * @param evt Evento capturado
+     */
     private void txtParteOralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteOralActionPerformed
         if(estaAprovadoEscrita(Integer.parseInt(txtParteEscrita.getText())) && 
                 estaAprovadoOral(txtParteOral.getText())){
@@ -495,6 +525,11 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtParteOralActionPerformed
 
+    /**
+     * Ao clicar no botão Salvar, armazena os campos preenchidos em avaliação,
+     * salva essa avaliação no bando de dados e adiciona-a na lista.
+     * @param evt Evento capturado
+     */
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         Avaliacao avaliacao = new Avaliacao();
         avaliacao.setNotaParteEscrita(Integer.parseInt(txtParteEscrita.getText()));
@@ -513,6 +548,11 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnSalvarActionPerformed
 
+    /**
+     * Verifica o indice da avaliação que foi clicada com o botão direito
+     * e seleciona aquela avaliação na lista
+     * @param evt Evento capturado
+     */
     private void lstAvaliacoesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstAvaliacoesMouseReleased
         if (evt.getButton() == MouseEvent.BUTTON3
                 && lstAvaliacoes.getModel().getSize() > 0) {
@@ -522,6 +562,10 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_lstAvaliacoesMouseReleased
 
+    /**
+     * Resposta ao clique sobre a opção "Excluir" do menu de contexto.
+     * @param evt Evento capturado 
+     */
     private void mnuExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExcluirActionPerformed
         new AvaliacaoDao().excluir(lstAvaliacaoModel.get(indiceAvaliacaoSelecionada));
 
@@ -529,6 +573,10 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
         lstAvaliacaoModel.remove(lstAvaliacoes.getSelectedIndex());
     }//GEN-LAST:event_mnuExcluirActionPerformed
 
+    /**
+     * Resposta ao clique sobre a opção "Editar" do menu de contexto.
+     * @param evt Evento capturado 
+     */
     private void mnuEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEditarActionPerformed
         EditarAvaliacao editarProva = new 
         EditarAvaliacao(lstAvaliacaoModel.get(indiceAvaliacaoSelecionada), this, true);
@@ -537,16 +585,23 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
         editarProva.setVisible(true);
     }//GEN-LAST:event_mnuEditarActionPerformed
 
+    /**
+     * Restaura o estado inicial dos campos do formulário.
+     */
     private void limparCampos() {
-        // "Descrição" vazia
         txtParteEscrita.setText(null);
         txtParteOral.setText(null);
         txtComentario.setText(null);
-        
-        // Seleção da "Descrição" para nova digitação
+
         txtParteEscrita.requestFocus();
     }
     
+    /**
+     * Verifica se o discente que realizou determinada avaliação
+     * foi reprovado ou aprovado na parte escrita
+     * @param parteEscrita Nota referente a parte escrita
+     * @return Se o aluno foi aprovado (true) ou reprovado (false)
+     */
     private boolean estaAprovadoEscrita(int parteEscrita){
         if(parteEscrita >= 98 && parteEscrita <= 100){
                 return true;
@@ -554,12 +609,23 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
         return false;
     }
     
+    /**
+     * Verifica se o discente que realizou determinada avaliação
+     * foi reprovado ou aprovado na parte oral
+     * @param parteOral Nota referente a parte oral
+     * @return Se o aluno foi aprovado (true) ou reprovado (false)
+     */
     private boolean estaAprovadoOral(String parteOral){
         return ("D".equals(parteOral) 
                 || "YD".equals(parteOral)
                 || "T".equals(parteOral));
     }
     
+    /**
+     * Permite a atualização de uma avaliação que foi editada em outra janela.
+     * 
+     * @param avaliacao Avaliação que será acrescentada na listagem de avaliações
+     */
     void atualizarModelo(Avaliacao avaliacao) {
         lstAvaliacaoModel.set(indiceAvaliacaoSelecionada, avaliacao);
     }

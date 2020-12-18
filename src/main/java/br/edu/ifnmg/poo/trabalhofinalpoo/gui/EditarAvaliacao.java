@@ -15,21 +15,35 @@ import java.util.List;
 import javax.swing.DefaultListModel;
 
 /**
- *
+ * Classe para representar a tela de edição de uma avaliação no sistema escolar
  * @author felipe
  */
 public class EditarAvaliacao extends javax.swing.JDialog {
     
-    private final CadastrarAvaliacao cadastroProva;
+    /**
+     * Referência à janela de cadastro de avaliação que invocou esta janela de edição.
+     */
+    private final CadastrarAvaliacao cadastroAvaliacao;
     
+    /**
+     * Variável do tipo avaliação recebida para edicao.
+     */
     private Avaliacao avaliacaoEmEdicao;
     
+    /**
+     * Modelo para manutenção da lista de discentes a serem apresentadas na listagem da
+     * interface gráfica.
+     */
     private DefaultListModel<Discente> lstDiscentesModel;
     
+    /**
+     * Modelo para manutenção da lista de aulas a serem apresentadas na listagem da
+     * interface gráfica.
+     */
     private DefaultListModel<Aula> lstAulasModel;
 
     /**
-     * Creates new form EditarAvaliacao
+     * Construtor padrão de EditarAvaliacao
      */
     public EditarAvaliacao(Avaliacao avaliacao, 
         CadastrarAvaliacao cadastroProva, boolean modal) {
@@ -45,7 +59,7 @@ public class EditarAvaliacao extends javax.swing.JDialog {
         
         initComponents();
         
-        this.cadastroProva = cadastroProva;
+        this.cadastroAvaliacao = cadastroProva;
         this.avaliacaoEmEdicao = avaliacao;
         
         preencherAvaliacao(avaliacao);
@@ -391,6 +405,11 @@ public class EditarAvaliacao extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHoraAvaliacaoActionPerformed
 
+    /**
+     * Ao clicar no botão Salvar, armazena os campos preenchidos na edição de avaliação,
+     * salva essa alteração no bando de dados e adiciona a alteração na lista.
+     * @param evt Evento capturado
+     */
     private void btnSalvarAvaliacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAvaliacaoActionPerformed
         avaliacaoEmEdicao.setNotaParteEscrita(Integer.parseInt(txtParteEscrita.getText()));
         avaliacaoEmEdicao.setNotaParteOral(txtParteOral.getText());
@@ -399,13 +418,15 @@ public class EditarAvaliacao extends javax.swing.JDialog {
         avaliacaoEmEdicao.setIdAula(lstAulas.getSelectedValue().getId().intValue());
                
         new AvaliacaoDao().salvar(avaliacaoEmEdicao);
-        cadastroProva.atualizarModelo(avaliacaoEmEdicao);
+        cadastroAvaliacao.atualizarModelo(avaliacaoEmEdicao);
 
-        dispose();
-        
-
+        dispose();     
     }//GEN-LAST:event_btnSalvarAvaliacaoActionPerformed
-
+    
+    /**
+     * Ao clicar no botão cancelar, fecha a janela atual
+     * @param evt Evento capturado
+     */
     private void btnCancelarAvaliacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarAvaliacaoActionPerformed
         dispose();
     }//GEN-LAST:event_btnCancelarAvaliacaoActionPerformed
@@ -418,7 +439,11 @@ public class EditarAvaliacao extends javax.swing.JDialog {
         
     }//GEN-LAST:event_txtParteOralActionPerformed
 
-    
+    /**
+     * Extrai dados da avaliação recebida e popula os componentes da janela
+     * com seus respectivos valores.
+     * @param avaliacao Objeto do tipo avaliação recebido
+     */
     public void preencherAvaliacao(Avaliacao avaliacao){
         txtParteEscrita.setText(Integer.toString(avaliacao.getNotaParteEscrita()));
         txtParteOral.setText(avaliacao.getNotaParteOral());

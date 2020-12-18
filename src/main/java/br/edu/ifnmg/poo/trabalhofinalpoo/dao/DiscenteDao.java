@@ -16,10 +16,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Operações de persistência com a entidade Tarefa.
- *
+ * Classe para representar um discente no banco de dados
  * @author Andre Vinicius
- * @version 0.0.1, 30/11/2020
  */
 public class DiscenteDao extends AbstractDao<Discente, Long> {
 

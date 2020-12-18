@@ -8,25 +8,55 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 import java.util.Objects;
 
 /**
- *
+ * Classe que representa uma avaliação no sistema escolar
  * @author felipe
  */
 public class Avaliacao extends Entidade {
 
+    /**
+     * Nota da parte escrita de uma avaliação
+     */
     private int notaParteEscrita;
-
+    /**
+     * Nota da parte oral de uma avaliação
+     * O resultado será um caracter:
+     * D =
+     * Y =
+     * T =
+     */
     private String notaParteOral;
 
+    /**
+     * Comentario escrito por um professor em uma avaliação
+     */
     private String comentario;
     
+    /**
+     * Id do aluno que fez a avaliação
+     */
     private int idDiscente;
     
+    /**
+     * Id da aula que aconteceu a avaliação
+     */
     private int idAula;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
+    /**
+     * Construtor padrão da classe
+     */
     public Avaliacao() {
     }
-
+    
+    /**
+     * Construtor sobrecarregado da classe 
+     * @param id Id de uma avaliação
+     * @param notaParteEscrita Nota da parte escrita de uma avaliação
+     * @param notaParteOral Nota da parte oral de uma avaliação
+     * @param comentario Comentario escrito por um professor em uma avaliação
+     * @param idDiscente Id do aluno (discente) que fez a avaliação
+     * @param idAula Id da aula que aconteceu a avaliação
+     */
     public Avaliacao(Long id, int notaParteEscrita, String notaParteOral
             , String comentario, int idDiscente, int idAula) {
         super(id);
@@ -129,6 +159,10 @@ public class Avaliacao extends Entidade {
     
 //</editor-fold>
 
+    /**
+     * Gera representação textual do objeto atual.
+     * @return Texto representativo do objeto atual 
+     */
     @Override
     public String toString() {
         return notaParteEscrita 
