@@ -5,18 +5,34 @@
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.MatriculaDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Matricula;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Fellipe
  */
 public class LancarNota extends javax.swing.JDialog {
+    
+    private GerenciarAula gerenciarAula;
+    private Matricula matricula;
+    private int idDiscente;
+    private int idAula;
 
     /**
      * Creates new form LançarNota
      */
-    public LancarNota(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public LancarNota(int idDiscente, int idAula, GerenciarAula gerenciarAula, 
+            boolean modal) {
+        super(gerenciarAula, modal);
         initComponents();
+        
+        this.gerenciarAula = gerenciarAula;
+        this.matricula = new Matricula();
+        
+        this.idDiscente = idDiscente;
+        this.idAula = idAula;
     }
 
     /**
@@ -28,232 +44,180 @@ public class LancarNota extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnlDisponibilidade = new javax.swing.JPanel();
-        btnSalvar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
-        lblNotas = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        scrComentario2 = new javax.swing.JScrollPane();
-        txtComentario2 = new javax.swing.JTextPane();
-        lblComentarios2 = new javax.swing.JLabel();
-        lblParteEscrita2 = new javax.swing.JLabel();
-        txtParteEscrita2 = new javax.swing.JTextField();
-        txtParteOral2 = new javax.swing.JTextField();
-        lblParteOral2 = new javax.swing.JLabel();
+        pnlNota = new javax.swing.JPanel();
+        btnSalvarNota = new javax.swing.JButton();
+        btnCancelarNota = new javax.swing.JButton();
+        lblNota = new javax.swing.JLabel();
+        pnlDadosNota = new javax.swing.JPanel();
+        lblComentariosNota = new javax.swing.JLabel();
+        lblParteEscritaNota = new javax.swing.JLabel();
+        lblParteOralNota = new javax.swing.JLabel();
+        txtParteEscritaNota = new javax.swing.JTextField();
+        txtParteOralNota = new javax.swing.JTextField();
+        scrComentariosNota = new javax.swing.JScrollPane();
+        txtComentariosNota = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        pnlDisponibilidade.setBackground(new java.awt.Color(255, 255, 255));
-        pnlDisponibilidade.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+        pnlNota.setBackground(new java.awt.Color(255, 255, 255));
+        pnlNota.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
 
-        btnSalvar.setBackground(new java.awt.Color(255, 255, 255));
-        btnSalvar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnSalvar.setForeground(new java.awt.Color(0, 0, 0));
-        btnSalvar.setText("Salvar");
-
-        btnCancelar.setBackground(new java.awt.Color(255, 255, 255));
-        btnCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnCancelar.setForeground(new java.awt.Color(0, 0, 0));
-        btnCancelar.setText("Cancelar");
-
-        lblNotas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblNotas.setForeground(new java.awt.Color(0, 0, 0));
-        lblNotas.setText("Notas");
-
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-
-        txtComentario2.setBackground(new java.awt.Color(255, 255, 255));
-        txtComentario2.setForeground(new java.awt.Color(0, 0, 0));
-        scrComentario2.setViewportView(txtComentario2);
-
-        lblComentarios2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblComentarios2.setForeground(new java.awt.Color(0, 0, 0));
-        lblComentarios2.setText("Comentários");
-
-        lblParteEscrita2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblParteEscrita2.setForeground(new java.awt.Color(0, 0, 0));
-        lblParteEscrita2.setText("Parte escrita");
-
-        txtParteEscrita2.setBackground(new java.awt.Color(255, 255, 255));
-        txtParteEscrita2.setForeground(new java.awt.Color(0, 0, 0));
-        txtParteEscrita2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-        txtParteEscrita2.addActionListener(new java.awt.event.ActionListener() {
+        btnSalvarNota.setBackground(new java.awt.Color(255, 255, 255));
+        btnSalvarNota.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnSalvarNota.setForeground(new java.awt.Color(0, 0, 0));
+        btnSalvarNota.setText("Salvar");
+        btnSalvarNota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtParteEscrita2ActionPerformed(evt);
+                btnSalvarNotaActionPerformed(evt);
             }
         });
 
-        txtParteOral2.setBackground(new java.awt.Color(255, 255, 255));
-        txtParteOral2.setForeground(new java.awt.Color(0, 0, 0));
-        txtParteOral2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-        txtParteOral2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtParteOral2ActionPerformed(evt);
-            }
-        });
+        btnCancelarNota.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancelarNota.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCancelarNota.setForeground(new java.awt.Color(0, 0, 0));
+        btnCancelarNota.setText("Cancelar");
 
-        lblParteOral2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblParteOral2.setForeground(new java.awt.Color(0, 0, 0));
-        lblParteOral2.setText("Parte oral");
+        lblNota.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblNota.setForeground(new java.awt.Color(0, 0, 0));
+        lblNota.setText("Notas");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        pnlDadosNota.setBackground(new java.awt.Color(255, 255, 255));
+        pnlDadosNota.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+
+        lblComentariosNota.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblComentariosNota.setForeground(new java.awt.Color(0, 0, 0));
+        lblComentariosNota.setText("Comentários");
+
+        lblParteEscritaNota.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblParteEscritaNota.setForeground(new java.awt.Color(0, 0, 0));
+        lblParteEscritaNota.setText("Parte escrita");
+
+        lblParteOralNota.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblParteOralNota.setForeground(new java.awt.Color(0, 0, 0));
+        lblParteOralNota.setText("Parte oral");
+
+        txtParteEscritaNota.setBackground(new java.awt.Color(255, 255, 255));
+        txtParteEscritaNota.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtParteOralNota.setBackground(new java.awt.Color(255, 255, 255));
+        txtParteOralNota.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtComentariosNota.setBackground(new java.awt.Color(255, 255, 255));
+        txtComentariosNota.setForeground(new java.awt.Color(0, 0, 0));
+        scrComentariosNota.setViewportView(txtComentariosNota);
+
+        javax.swing.GroupLayout pnlDadosNotaLayout = new javax.swing.GroupLayout(pnlDadosNota);
+        pnlDadosNota.setLayout(pnlDadosNotaLayout);
+        pnlDadosNotaLayout.setHorizontalGroup(
+            pnlDadosNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDadosNotaLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(lblParteEscrita2)
-                        .addGap(7, 7, 7)
-                        .addComponent(txtParteEscrita2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblParteOral2)
+                .addGroup(pnlDadosNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDadosNotaLayout.createSequentialGroup()
+                        .addComponent(lblParteEscritaNota)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtParteOral2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblComentarios2)
-                    .addComponent(scrComentario2, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtParteEscritaNota, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblParteOralNota)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtParteOralNota, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblComentariosNota)
+                    .addComponent(scrComentariosNota, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblParteEscrita2)
-                    .addComponent(txtParteEscrita2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblParteOral2)
-                    .addComponent(txtParteOral2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+        pnlDadosNotaLayout.setVerticalGroup(
+            pnlDadosNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDadosNotaLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(pnlDadosNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblParteEscritaNota)
+                    .addComponent(lblParteOralNota)
+                    .addComponent(txtParteEscritaNota, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtParteOralNota, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblComentarios2)
+                .addComponent(lblComentariosNota)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrComentario2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(scrComentariosNota, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout pnlDisponibilidadeLayout = new javax.swing.GroupLayout(pnlDisponibilidade);
-        pnlDisponibilidade.setLayout(pnlDisponibilidadeLayout);
-        pnlDisponibilidadeLayout.setHorizontalGroup(
-            pnlDisponibilidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlDisponibilidadeLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlNotaLayout = new javax.swing.GroupLayout(pnlNota);
+        pnlNota.setLayout(pnlNotaLayout);
+        pnlNotaLayout.setHorizontalGroup(
+            pnlNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlNotaLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(pnlDisponibilidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNotas)
-                    .addGroup(pnlDisponibilidadeLayout.createSequentialGroup()
-                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNota)
+                    .addGroup(pnlNotaLayout.createSequentialGroup()
+                        .addComponent(btnSalvarNota, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnCancelarNota, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlDadosNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
-        pnlDisponibilidadeLayout.setVerticalGroup(
-            pnlDisponibilidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlDisponibilidadeLayout.createSequentialGroup()
+        pnlNotaLayout.setVerticalGroup(
+            pnlNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlNotaLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(lblNotas)
+                .addComponent(lblNota)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlDadosNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlDisponibilidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalvar)
-                    .addComponent(btnCancelar))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGroup(pnlNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalvarNota)
+                    .addComponent(btnCancelarNota))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlDisponibilidade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlNota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlDisponibilidade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlNota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtParteEscrita2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteEscrita2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtParteEscrita2ActionPerformed
+    private void btnSalvarNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarNotaActionPerformed
+        
+        matricula.setNotaParteEscrita(Integer.parseInt(txtParteEscritaNota.getText()));
+        matricula.setNotaParteOral(txtParteOralNota.getText());
+        matricula.setComentario(txtComentariosNota.getText());
+        matricula.setIdDiscente(idDiscente);
+        matricula.setIdAula(idAula);
+        
+        Long id = new MatriculaDao().salvar(matricula);
+        
+        matricula.setId(id);
+                
+        dispose();
+        
+                
+        JOptionPane.showConfirmDialog(null,"Marcação concluída", "Marcar aula",
+                JOptionPane.DEFAULT_OPTION);
+        
+    }//GEN-LAST:event_btnSalvarNotaActionPerformed
 
-    private void txtParteOral2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteOral2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtParteOral2ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LancarNota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LancarNota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LancarNota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LancarNota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                LancarNota dialog = new LancarNota(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnSalvar;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JLabel lblComentarios;
-    private javax.swing.JLabel lblComentarios1;
-    private javax.swing.JLabel lblComentarios2;
-    private javax.swing.JLabel lblNotas;
-    private javax.swing.JLabel lblParteEscrita;
-    private javax.swing.JLabel lblParteEscrita1;
-    private javax.swing.JLabel lblParteEscrita2;
-    private javax.swing.JLabel lblParteOral;
-    private javax.swing.JLabel lblParteOral1;
-    private javax.swing.JLabel lblParteOral2;
-    private javax.swing.JPanel pnlDisponibilidade;
-    private javax.swing.JScrollPane scrComentario;
-    private javax.swing.JScrollPane scrComentario1;
-    private javax.swing.JScrollPane scrComentario2;
-    private javax.swing.JTextPane txtComentario;
-    private javax.swing.JTextPane txtComentario1;
-    private javax.swing.JTextPane txtComentario2;
-    private javax.swing.JTextField txtParteEscrita;
-    private javax.swing.JTextField txtParteEscrita1;
-    private javax.swing.JTextField txtParteEscrita2;
-    private javax.swing.JTextField txtParteOral;
-    private javax.swing.JTextField txtParteOral1;
-    private javax.swing.JTextField txtParteOral2;
+    private javax.swing.JButton btnCancelarNota;
+    private javax.swing.JButton btnSalvarNota;
+    private javax.swing.JLabel lblComentariosNota;
+    private javax.swing.JLabel lblNota;
+    private javax.swing.JLabel lblParteEscritaNota;
+    private javax.swing.JLabel lblParteOralNota;
+    private javax.swing.JPanel pnlDadosNota;
+    private javax.swing.JPanel pnlNota;
+    private javax.swing.JScrollPane scrComentariosNota;
+    private javax.swing.JTextPane txtComentariosNota;
+    private javax.swing.JTextField txtParteEscritaNota;
+    private javax.swing.JTextField txtParteOralNota;
     // End of variables declaration//GEN-END:variables
 }

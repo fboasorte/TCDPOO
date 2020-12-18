@@ -23,17 +23,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="pnlEditarProfessor" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="pnlEditarProfessor" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="pnlEditarProfessor">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -47,30 +47,30 @@
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblDadosProfessor" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="pnlDados" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="pnlDadosEditar" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="btnSalvarDados" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="btnSalvarEditar" min="-2" pref="90" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnCancelarDados" min="-2" pref="87" max="-2" attributes="0"/>
+                          <Component id="btnCancelarEditar" min="-2" pref="87" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Component id="lblDadosProfessor" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="pnlDados" min="-2" max="-2" attributes="0"/>
+                  <Component id="pnlDadosEditar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnCancelarDados" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnSalvarDados" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCancelarEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSalvarEditar" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -87,7 +87,7 @@
             <Property name="text" type="java.lang.String" value="Dados do professor"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JPanel" name="pnlDados">
+        <Container class="javax.swing.JPanel" name="pnlDadosEditar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -105,60 +105,60 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblNome" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblCPF" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblContrato" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNomeEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCPFEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblContratoEditar" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="txtCPF" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="txtCPFEditar" min="-2" pref="150" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="lblNascimento" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblNascimentoEditar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txtDataNascimento" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="txtNascimentoEditar" min="-2" pref="80" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="chkAtivo" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtCodigo" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="txtNome" alignment="0" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="chkAtivoEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCodigoEditar" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="txtNomeEditar" alignment="0" min="-2" pref="400" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="288" max="32767" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblContrato" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtCodigo" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="lblContratoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCodigoEditar" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblNome" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNome" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="lblNomeEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNomeEditar" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblCPF" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCPFEditar" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                              <Component id="txtCPF" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="lblNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtDataNascimento" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="txtCPFEditar" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="lblNascimentoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtNascimentoEditar" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="chkAtivo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="27" max="32767" attributes="0"/>
+                      <Component id="chkAtivoEditar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="lblContrato">
+            <Component class="javax.swing.JLabel" name="lblContratoEditar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
@@ -169,7 +169,7 @@
                 <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblNome">
+            <Component class="javax.swing.JLabel" name="lblNomeEditar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
@@ -180,7 +180,7 @@
                 <Property name="text" type="java.lang.String" value="Nome"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblCPF">
+            <Component class="javax.swing.JLabel" name="lblCPFEditar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
@@ -191,7 +191,7 @@
                 <Property name="text" type="java.lang.String" value="CPF"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblNascimento">
+            <Component class="javax.swing.JLabel" name="lblNascimentoEditar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
@@ -202,7 +202,7 @@
                 <Property name="text" type="java.lang.String" value="Data de nasc."/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chkAtivo">
+            <Component class="javax.swing.JCheckBox" name="chkAtivoEditar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -220,7 +220,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtCodigo">
+            <Component class="javax.swing.JTextField" name="txtCodigoEditar">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -231,7 +231,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNome">
+            <Component class="javax.swing.JTextField" name="txtNomeEditar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -241,7 +241,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtCPF">
+            <Component class="javax.swing.JTextField" name="txtCPFEditar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -251,10 +251,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCPFActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCPFEditarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtDataNascimento">
+            <Component class="javax.swing.JTextField" name="txtNascimentoEditar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -266,7 +266,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btnSalvarDados">
+        <Component class="javax.swing.JButton" name="btnSalvarEditar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -280,10 +280,10 @@
             <Property name="text" type="java.lang.String" value="Salvar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarDadosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarEditarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnCancelarDados">
+        <Component class="javax.swing.JButton" name="btnCancelarEditar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -297,7 +297,7 @@
             <Property name="text" type="java.lang.String" value="Cancelar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarDadosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarEditarActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

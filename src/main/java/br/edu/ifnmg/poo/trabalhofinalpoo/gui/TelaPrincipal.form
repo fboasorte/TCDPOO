@@ -57,18 +57,18 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblTitulo1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="402" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTitulo2" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTitulo3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="444" max="-2" attributes="0"/>
@@ -87,11 +87,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblTitulo1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel2" min="-2" pref="107" max="-2" attributes="0"/>
+                  <Component id="lblTitulo2" min="-2" pref="107" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" pref="113" max="-2" attributes="0"/>
+                  <Component id="lblTitulo3" min="-2" pref="113" max="-2" attributes="0"/>
                   <EmptySpace pref="49" max="32767" attributes="0"/>
                   <Component id="pnlMenu" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
@@ -116,7 +116,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="SeparatorMenu" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnMarcacao" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnAulas" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="btnProfessores" min="-2" pref="244" max="-2" attributes="0"/>
@@ -142,7 +142,7 @@
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                       <Component id="SeparatorMenu" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnMarcacao" linkSize="2" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="btnAulas" linkSize="2" min="-2" pref="24" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnProvas" linkSize="2" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -166,7 +166,7 @@
                 <Property name="text" type="java.lang.String" value="MENU"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnMarcacao">
+            <Component class="javax.swing.JButton" name="btnAulas">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="17" style="0"/>
@@ -185,7 +185,7 @@
                 <Property name="selected" type="boolean" value="true"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMarcacaoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAulasActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnProvas">
@@ -227,7 +227,6 @@
                 <Property name="iconTextGap" type="int" value="13"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="btnAlunosMouseMoved"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlunosActionPerformed"/>
               </Events>
             </Component>
@@ -261,7 +260,7 @@
             <Property name="text" type="java.lang.String" value="IFNMG &#xa9; Todos os direitos reservados."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="lblTitulo1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="36" style="0"/>
@@ -272,7 +271,7 @@
             <Property name="text" type="java.lang.String" value="Seja bem vindo ao"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="lblTitulo2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Black" size="128" style="0"/>
@@ -283,7 +282,7 @@
             <Property name="text" type="java.lang.String" value="SISTEMA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="lblTitulo3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="128" style="1"/>

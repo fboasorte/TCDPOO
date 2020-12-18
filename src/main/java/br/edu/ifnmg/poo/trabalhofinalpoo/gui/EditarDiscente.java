@@ -43,47 +43,41 @@ public class EditarDiscente extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        lblDadosCadastrais = new javax.swing.JLabel();
-        pnlDados1 = new javax.swing.JPanel();
-        lblContrato1 = new javax.swing.JLabel();
-        lblNome1 = new javax.swing.JLabel();
-        lblCPF1 = new javax.swing.JLabel();
-        lblNascimento1 = new javax.swing.JLabel();
+        pnlEditarDiscente = new javax.swing.JPanel();
+        lblDadosEditar = new javax.swing.JLabel();
+        pnlDadosEditar = new javax.swing.JPanel();
+        lblNomeEditar = new javax.swing.JLabel();
+        lblCPFEditar = new javax.swing.JLabel();
+        lblNascimentoEditar = new javax.swing.JLabel();
         txtDataNascimentoEditar = new javax.swing.JTextField();
         txtCPFEditar = new javax.swing.JTextField();
-        txtContrato1 = new javax.swing.JTextField();
         txtNomeEditar = new javax.swing.JTextField();
-        btnSalvar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
+        btnSalvarEditar = new javax.swing.JButton();
+        btnCancelarEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("EditarDiscente");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        pnlEditarDiscente.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblDadosCadastrais.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblDadosCadastrais.setForeground(new java.awt.Color(0, 0, 0));
-        lblDadosCadastrais.setText("Dados cadastrais");
+        lblDadosEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDadosEditar.setForeground(new java.awt.Color(0, 0, 0));
+        lblDadosEditar.setText("Dados cadastrais");
 
-        pnlDados1.setBackground(new java.awt.Color(255, 255, 255));
-        pnlDados1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+        pnlDadosEditar.setBackground(new java.awt.Color(255, 255, 255));
+        pnlDadosEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
 
-        lblContrato1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblContrato1.setForeground(new java.awt.Color(0, 0, 0));
-        lblContrato1.setText("Contrato");
+        lblNomeEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblNomeEditar.setForeground(new java.awt.Color(0, 0, 0));
+        lblNomeEditar.setText("Nome");
 
-        lblNome1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblNome1.setForeground(new java.awt.Color(0, 0, 0));
-        lblNome1.setText("Nome");
+        lblCPFEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCPFEditar.setForeground(new java.awt.Color(0, 0, 0));
+        lblCPFEditar.setText("CPF");
 
-        lblCPF1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblCPF1.setForeground(new java.awt.Color(0, 0, 0));
-        lblCPF1.setText("CPF");
-
-        lblNascimento1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblNascimento1.setForeground(new java.awt.Color(0, 0, 0));
-        lblNascimento1.setText("Data de nasc.");
+        lblNascimentoEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblNascimentoEditar.setForeground(new java.awt.Color(0, 0, 0));
+        lblNascimentoEditar.setText("Data de nasc.");
 
         txtDataNascimentoEditar.setBackground(new java.awt.Color(255, 255, 255));
         txtDataNascimentoEditar.setForeground(new java.awt.Color(0, 0, 0));
@@ -96,101 +90,90 @@ public class EditarDiscente extends javax.swing.JDialog {
         txtCPFEditar.setBackground(new java.awt.Color(255, 255, 255));
         txtCPFEditar.setForeground(new java.awt.Color(0, 0, 0));
 
-        txtContrato1.setEditable(false);
-        txtContrato1.setBackground(new java.awt.Color(204, 204, 204));
-        txtContrato1.setForeground(new java.awt.Color(0, 0, 0));
-
         txtNomeEditar.setBackground(new java.awt.Color(255, 255, 255));
         txtNomeEditar.setForeground(new java.awt.Color(0, 0, 0));
 
-        javax.swing.GroupLayout pnlDados1Layout = new javax.swing.GroupLayout(pnlDados1);
-        pnlDados1.setLayout(pnlDados1Layout);
-        pnlDados1Layout.setHorizontalGroup(
-            pnlDados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlDados1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(pnlDados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlDados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(lblNascimento1)
-                        .addComponent(lblNome1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblCPF1, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addComponent(lblContrato1))
+        javax.swing.GroupLayout pnlDadosEditarLayout = new javax.swing.GroupLayout(pnlDadosEditar);
+        pnlDadosEditar.setLayout(pnlDadosEditarLayout);
+        pnlDadosEditarLayout.setHorizontalGroup(
+            pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDadosEditarLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblNascimentoEditar)
+                    .addComponent(lblNomeEditar, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCPFEditar, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(12, 12, 12)
-                .addGroup(pnlDados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtContrato1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtCPFEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDataNascimentoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
-        pnlDados1Layout.setVerticalGroup(
-            pnlDados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlDados1Layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addGroup(pnlDados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblContrato1)
-                    .addComponent(txtContrato1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlDados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNome1)
+        pnlDadosEditarLayout.setVerticalGroup(
+            pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDadosEditarLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNomeEditar)
                     .addComponent(txtNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlDados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCPF1)
+                .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCPFEditar)
                     .addComponent(txtCPFEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlDados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNascimento1)
+                .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNascimentoEditar)
                     .addComponent(txtDataNascimentoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        btnSalvar.setBackground(new java.awt.Color(255, 255, 255));
-        btnSalvar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnSalvar.setForeground(new java.awt.Color(0, 0, 0));
-        btnSalvar.setText("Salvar");
-        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+        btnSalvarEditar.setBackground(new java.awt.Color(255, 255, 255));
+        btnSalvarEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnSalvarEditar.setForeground(new java.awt.Color(0, 0, 0));
+        btnSalvarEditar.setText("Salvar");
+        btnSalvarEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvarActionPerformed(evt);
+                btnSalvarEditarActionPerformed(evt);
             }
         });
 
-        btnCancelar.setBackground(new java.awt.Color(255, 255, 255));
-        btnCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnCancelar.setForeground(new java.awt.Color(0, 0, 0));
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelarEditar.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancelarEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCancelarEditar.setForeground(new java.awt.Color(0, 0, 0));
+        btnCancelarEditar.setText("Cancelar");
+        btnCancelarEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
+                btnCancelarEditarActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlEditarDiscenteLayout = new javax.swing.GroupLayout(pnlEditarDiscente);
+        pnlEditarDiscente.setLayout(pnlEditarDiscenteLayout);
+        pnlEditarDiscenteLayout.setHorizontalGroup(
+            pnlEditarDiscenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditarDiscenteLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDadosCadastrais)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlEditarDiscenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDadosEditar)
+                    .addGroup(pnlEditarDiscenteLayout.createSequentialGroup()
+                        .addComponent(btnSalvarEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(pnlDados1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnCancelarEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlDadosEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(lblDadosCadastrais)
+        pnlEditarDiscenteLayout.setVerticalGroup(
+            pnlEditarDiscenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditarDiscenteLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(lblDadosEditar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlDados1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlDadosEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar))
+                .addGroup(pnlEditarDiscenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalvarEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancelarEditar))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -198,13 +181,11 @@ public class EditarDiscente extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlEditarDiscente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(pnlEditarDiscente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -214,7 +195,7 @@ public class EditarDiscente extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDataNascimentoEditarActionPerformed
 
-    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+    private void btnSalvarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarEditarActionPerformed
         // TODO add your handling code here:
         discenteEmEdicao.setCpf(Integer.parseInt(txtCPFEditar.getText()));
         discenteEmEdicao.setNome(txtNomeEditar.getText());
@@ -224,11 +205,11 @@ public class EditarDiscente extends javax.swing.JDialog {
         cadastroDiscente.atualizarModelo(discenteEmEdicao);
         // fecha janela
         dispose();
-    }//GEN-LAST:event_btnSalvarActionPerformed
+    }//GEN-LAST:event_btnSalvarEditarActionPerformed
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+    private void btnCancelarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarEditarActionPerformed
         dispose();
-    }//GEN-LAST:event_btnCancelarActionPerformed
+    }//GEN-LAST:event_btnCancelarEditarActionPerformed
 
     
     public void preencherDiscente(Discente discente){
@@ -238,28 +219,16 @@ public class EditarDiscente extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnHistorico;
-    private javax.swing.JButton btnSalvar;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblCPF;
-    private javax.swing.JLabel lblCPF1;
-    private javax.swing.JLabel lblContrato;
-    private javax.swing.JLabel lblContrato1;
-    private javax.swing.JLabel lblDadosCadastrais;
-    private javax.swing.JLabel lblNascimento;
-    private javax.swing.JLabel lblNascimento1;
-    private javax.swing.JLabel lblNome;
-    private javax.swing.JLabel lblNome1;
-    private javax.swing.JPanel pnlDados;
-    private javax.swing.JPanel pnlDados1;
-    private javax.swing.JTextField txtCPF;
+    private javax.swing.JButton btnCancelarEditar;
+    private javax.swing.JButton btnSalvarEditar;
+    private javax.swing.JLabel lblCPFEditar;
+    private javax.swing.JLabel lblDadosEditar;
+    private javax.swing.JLabel lblNascimentoEditar;
+    private javax.swing.JLabel lblNomeEditar;
+    private javax.swing.JPanel pnlDadosEditar;
+    private javax.swing.JPanel pnlEditarDiscente;
     private javax.swing.JTextField txtCPFEditar;
-    private javax.swing.JTextField txtContrato;
-    private javax.swing.JTextField txtContrato1;
-    private javax.swing.JTextField txtDataNascimento;
     private javax.swing.JTextField txtDataNascimentoEditar;
-    private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNomeEditar;
     // End of variables declaration//GEN-END:variables
 }

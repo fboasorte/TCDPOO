@@ -61,10 +61,10 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
         popUpMenu = new javax.swing.JPopupMenu();
         mnuEditar = new javax.swing.JMenuItem();
         mnuExcluir = new javax.swing.JMenuItem();
-        pnlCadastroProva = new javax.swing.JPanel();
+        pnlCadastroAvaliacao = new javax.swing.JPanel();
         pnlPesquisaAluno = new javax.swing.JPanel();
-        pnlProva = new javax.swing.JPanel();
-        pnlDetalhesProva = new javax.swing.JPanel();
+        pnlAvaliacao = new javax.swing.JPanel();
+        pnlDetalhesAvaliacao = new javax.swing.JPanel();
         lblID = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
         lblAula = new javax.swing.JLabel();
@@ -85,15 +85,16 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
         lblParteOral = new javax.swing.JLabel();
         scrAprovado = new javax.swing.JScrollPane();
         txpAprovado = new javax.swing.JTextPane();
-        scrListaProvas = new javax.swing.JScrollPane();
+        scrListaAvaliacoes = new javax.swing.JScrollPane();
         lstAvaliacoes = new javax.swing.JList<>();
         lblListaAlunos = new javax.swing.JLabel();
-        scrListaAlunos1 = new javax.swing.JScrollPane();
+        scrListaDiscentes = new javax.swing.JScrollPane();
         lstDiscentes = new javax.swing.JList<>();
-        scrListaAlunos2 = new javax.swing.JScrollPane();
+        scrListaAulas = new javax.swing.JScrollPane();
         lstAulas = new javax.swing.JList<>();
         lblProvasAplicadas = new javax.swing.JLabel();
         lblDetalhesProva = new javax.swing.JLabel();
+        lblListaAulas = new javax.swing.JLabel();
 
         mnuEditar.setText("Editar");
         mnuEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -115,15 +116,15 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
         setTitle("Provas");
         setResizable(false);
 
-        pnlCadastroProva.setBackground(new java.awt.Color(255, 255, 255));
+        pnlCadastroAvaliacao.setBackground(new java.awt.Color(255, 255, 255));
 
         pnlPesquisaAluno.setBackground(new java.awt.Color(255, 255, 255));
 
-        pnlProva.setBackground(new java.awt.Color(255, 255, 255));
+        pnlAvaliacao.setBackground(new java.awt.Color(255, 255, 255));
 
-        pnlDetalhesProva.setBackground(new java.awt.Color(255, 255, 255));
-        pnlDetalhesProva.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-        pnlDetalhesProva.setForeground(new java.awt.Color(112, 112, 112));
+        pnlDetalhesAvaliacao.setBackground(new java.awt.Color(255, 255, 255));
+        pnlDetalhesAvaliacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
+        pnlDetalhesAvaliacao.setForeground(new java.awt.Color(112, 112, 112));
 
         lblID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblID.setForeground(new java.awt.Color(0, 0, 0));
@@ -277,62 +278,62 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
 
         pnlNotasLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {scrAprovado, txtParteOral});
 
-        javax.swing.GroupLayout pnlDetalhesProvaLayout = new javax.swing.GroupLayout(pnlDetalhesProva);
-        pnlDetalhesProva.setLayout(pnlDetalhesProvaLayout);
-        pnlDetalhesProvaLayout.setHorizontalGroup(
-            pnlDetalhesProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlDetalhesProvaLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(pnlDetalhesProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlDetalhesProvaLayout.createSequentialGroup()
-                        .addGroup(pnlDetalhesProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlDetalhesProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlDetalhesProvaLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlDetalhesAvaliacaoLayout = new javax.swing.GroupLayout(pnlDetalhesAvaliacao);
+        pnlDetalhesAvaliacao.setLayout(pnlDetalhesAvaliacaoLayout);
+        pnlDetalhesAvaliacaoLayout.setHorizontalGroup(
+            pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDetalhesAvaliacaoLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDetalhesAvaliacaoLayout.createSequentialGroup()
+                        .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlDetalhesAvaliacaoLayout.createSequentialGroup()
                                     .addComponent(lblID)
                                     .addGap(0, 0, Short.MAX_VALUE))
                                 .addComponent(lblAula))
                             .addComponent(lblDataHora)
                             .addComponent(lblNotas))
                         .addGap(27, 27, 27)
-                        .addGroup(pnlDetalhesProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtAula, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pnlDetalhesProvaLayout.createSequentialGroup()
+                            .addGroup(pnlDetalhesAvaliacaoLayout.createSequentialGroup()
                                 .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(pnlNotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(pnlDetalhesProvaLayout.createSequentialGroup()
+                    .addGroup(pnlDetalhesAvaliacaoLayout.createSequentialGroup()
                         .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 15, Short.MAX_VALUE))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
-        pnlDetalhesProvaLayout.setVerticalGroup(
-            pnlDetalhesProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlDetalhesProvaLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(pnlDetalhesProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        pnlDetalhesAvaliacaoLayout.setVerticalGroup(
+            pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDetalhesAvaliacaoLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblID)
                     .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlDetalhesProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAula)
                     .addComponent(txtAula, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlDetalhesProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDataHora))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlDetalhesProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblNotas)
                     .addComponent(pnlNotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(pnlDetalhesProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalvar)
                     .addComponent(btnCancelar))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         lstAvaliacoes.setBackground(new java.awt.Color(255, 255, 255));
@@ -344,25 +345,25 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
                 lstAvaliacoesMouseReleased(evt);
             }
         });
-        scrListaProvas.setViewportView(lstAvaliacoes);
+        scrListaAvaliacoes.setViewportView(lstAvaliacoes);
 
-        javax.swing.GroupLayout pnlProvaLayout = new javax.swing.GroupLayout(pnlProva);
-        pnlProva.setLayout(pnlProvaLayout);
-        pnlProvaLayout.setHorizontalGroup(
-            pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlProvaLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(scrListaProvas, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout pnlAvaliacaoLayout = new javax.swing.GroupLayout(pnlAvaliacao);
+        pnlAvaliacao.setLayout(pnlAvaliacaoLayout);
+        pnlAvaliacaoLayout.setHorizontalGroup(
+            pnlAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAvaliacaoLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(scrListaAvaliacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(pnlDetalhesAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
-        pnlProvaLayout.setVerticalGroup(
-            pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlProvaLayout.createSequentialGroup()
-                .addGroup(pnlProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlDetalhesProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(scrListaProvas, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+        pnlAvaliacaoLayout.setVerticalGroup(
+            pnlAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAvaliacaoLayout.createSequentialGroup()
+                .addGroup(pnlAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pnlDetalhesAvaliacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scrListaAvaliacoes))
                 .addGap(0, 6, Short.MAX_VALUE))
         );
 
@@ -374,13 +375,13 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
         lstDiscentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lstDiscentes.setForeground(new java.awt.Color(0, 0, 0));
         lstDiscentes.setModel(lstDiscentesModel);
-        scrListaAlunos1.setViewportView(lstDiscentes);
+        scrListaDiscentes.setViewportView(lstDiscentes);
 
         lstAulas.setBackground(new java.awt.Color(255, 255, 255));
         lstAulas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lstAulas.setForeground(new java.awt.Color(0, 0, 0));
         lstAulas.setModel(lstAulasModel);
-        scrListaAlunos2.setViewportView(lstAulas);
+        scrListaAulas.setViewportView(lstAulas);
 
         lblProvasAplicadas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblProvasAplicadas.setForeground(new java.awt.Color(0, 0, 0));
@@ -390,67 +391,73 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
         lblDetalhesProva.setForeground(new java.awt.Color(0, 0, 0));
         lblDetalhesProva.setText("Detalhes da prova");
 
+        lblListaAulas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblListaAulas.setForeground(new java.awt.Color(0, 0, 0));
+        lblListaAulas.setText("Lista de aulas");
+
         javax.swing.GroupLayout pnlPesquisaAlunoLayout = new javax.swing.GroupLayout(pnlPesquisaAluno);
         pnlPesquisaAluno.setLayout(pnlPesquisaAlunoLayout);
         pnlPesquisaAlunoLayout.setHorizontalGroup(
             pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlProva, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlAvaliacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
-                .addGap(0, 21, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
-                        .addComponent(scrListaAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(scrListaAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblProvasAplicadas)
+                        .addGap(216, 216, 216)
+                        .addComponent(lblDetalhesProva))
                     .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
                         .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(lblListaAlunos))
-                            .addComponent(lblProvasAplicadas))
-                        .addGap(217, 217, 217)
-                        .addComponent(lblDetalhesProva)))
-                .addGap(23, 26, Short.MAX_VALUE))
+                            .addComponent(scrListaDiscentes, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblListaAlunos))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblListaAulas)
+                            .addComponent(scrListaAulas, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlPesquisaAlunoLayout.setVerticalGroup(
             pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPesquisaAlunoLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(lblListaAlunos)
+                .addGap(15, 15, 15)
+                .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblListaAlunos)
+                    .addComponent(lblListaAulas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrListaAlunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(scrListaAlunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDetalhesProva, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblProvasAplicadas, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(scrListaDiscentes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scrListaAulas, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(pnlPesquisaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDetalhesProva)
+                    .addComponent(lblProvasAplicadas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlProva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(pnlAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        javax.swing.GroupLayout pnlCadastroProvaLayout = new javax.swing.GroupLayout(pnlCadastroProva);
-        pnlCadastroProva.setLayout(pnlCadastroProvaLayout);
-        pnlCadastroProvaLayout.setHorizontalGroup(
-            pnlCadastroProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlCadastroAvaliacaoLayout = new javax.swing.GroupLayout(pnlCadastroAvaliacao);
+        pnlCadastroAvaliacao.setLayout(pnlCadastroAvaliacaoLayout);
+        pnlCadastroAvaliacaoLayout.setHorizontalGroup(
+            pnlCadastroAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlPesquisaAluno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        pnlCadastroProvaLayout.setVerticalGroup(
-            pnlCadastroProvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCadastroProvaLayout.createSequentialGroup()
+        pnlCadastroAvaliacaoLayout.setVerticalGroup(
+            pnlCadastroAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCadastroAvaliacaoLayout.createSequentialGroup()
                 .addComponent(pnlPesquisaAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlCadastroProva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlCadastroAvaliacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlCadastroProva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlCadastroAvaliacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -566,6 +573,7 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
     private javax.swing.JLabel lblDetalhesProva;
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblListaAlunos;
+    private javax.swing.JLabel lblListaAulas;
     private javax.swing.JLabel lblNotas;
     private javax.swing.JLabel lblParteEscrita;
     private javax.swing.JLabel lblParteOral;
@@ -575,17 +583,17 @@ public class CadastrarAvaliacao extends javax.swing.JFrame {
     private javax.swing.JList<Discente> lstDiscentes;
     private javax.swing.JMenuItem mnuEditar;
     private javax.swing.JMenuItem mnuExcluir;
-    private javax.swing.JPanel pnlCadastroProva;
-    private javax.swing.JPanel pnlDetalhesProva;
+    private javax.swing.JPanel pnlAvaliacao;
+    private javax.swing.JPanel pnlCadastroAvaliacao;
+    private javax.swing.JPanel pnlDetalhesAvaliacao;
     private javax.swing.JPanel pnlNotas;
     private javax.swing.JPanel pnlPesquisaAluno;
-    private javax.swing.JPanel pnlProva;
     private javax.swing.JPopupMenu popUpMenu;
     private javax.swing.JScrollPane scrAprovado;
     private javax.swing.JScrollPane scrComentario;
-    private javax.swing.JScrollPane scrListaAlunos1;
-    private javax.swing.JScrollPane scrListaAlunos2;
-    private javax.swing.JScrollPane scrListaProvas;
+    private javax.swing.JScrollPane scrListaAulas;
+    private javax.swing.JScrollPane scrListaAvaliacoes;
+    private javax.swing.JScrollPane scrListaDiscentes;
     private javax.swing.JTextPane txpAprovado;
     private javax.swing.JTextField txtAula;
     private javax.swing.JTextPane txtComentario;

@@ -31,15 +31,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pnlPrincipal = new javax.swing.JPanel();
         pnlMenu = new javax.swing.JPanel();
         lblTituloMenu = new javax.swing.JLabel();
-        btnMarcacao = new javax.swing.JButton();
+        btnAulas = new javax.swing.JButton();
         btnProvas = new javax.swing.JButton();
         btnAlunos = new javax.swing.JButton();
         btnProfessores = new javax.swing.JButton();
         SeparatorMenu = new javax.swing.JSeparator();
         lblRodape = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblTitulo1 = new javax.swing.JLabel();
+        lblTitulo2 = new javax.swing.JLabel();
+        lblTitulo3 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -56,18 +56,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblTituloMenu.setForeground(new java.awt.Color(51, 51, 51));
         lblTituloMenu.setText("MENU");
 
-        btnMarcacao.setFont(new java.awt.Font("Segoe UI", 0, 17)); // NOI18N
-        btnMarcacao.setForeground(new java.awt.Color(51, 51, 51));
-        btnMarcacao.setText("Aulas");
-        btnMarcacao.setBorder(null);
-        btnMarcacao.setBorderPainted(false);
-        btnMarcacao.setContentAreaFilled(false);
-        btnMarcacao.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnMarcacao.setIconTextGap(13);
-        btnMarcacao.setSelected(true);
-        btnMarcacao.addActionListener(new java.awt.event.ActionListener() {
+        btnAulas.setFont(new java.awt.Font("Segoe UI", 0, 17)); // NOI18N
+        btnAulas.setForeground(new java.awt.Color(51, 51, 51));
+        btnAulas.setText("Aulas");
+        btnAulas.setBorder(null);
+        btnAulas.setBorderPainted(false);
+        btnAulas.setContentAreaFilled(false);
+        btnAulas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnAulas.setIconTextGap(13);
+        btnAulas.setSelected(true);
+        btnAulas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMarcacaoActionPerformed(evt);
+                btnAulasActionPerformed(evt);
             }
         });
 
@@ -93,11 +93,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnAlunos.setContentAreaFilled(false);
         btnAlunos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnAlunos.setIconTextGap(13);
-        btnAlunos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                btnAlunosMouseMoved(evt);
-            }
-        });
         btnAlunos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAlunosActionPerformed(evt);
@@ -126,7 +121,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SeparatorMenu)
-                    .addComponent(btnMarcacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAulas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMenuLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnProfessores, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -146,7 +141,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addComponent(SeparatorMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnMarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAulas, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnProvas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -156,21 +151,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnlMenuLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAlunos, btnMarcacao, btnProfessores, btnProvas});
+        pnlMenuLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAlunos, btnAulas, btnProfessores, btnProvas});
 
         lblRodape.setText("IFNMG © Todos os direitos reservados.");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(112, 112, 112));
-        jLabel1.setText("Seja bem vindo ao");
+        lblTitulo1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblTitulo1.setForeground(new java.awt.Color(112, 112, 112));
+        lblTitulo1.setText("Seja bem vindo ao");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 128)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(237, 179, 74));
-        jLabel2.setText("SISTEMA");
+        lblTitulo2.setFont(new java.awt.Font("Segoe UI Black", 0, 128)); // NOI18N
+        lblTitulo2.setForeground(new java.awt.Color(237, 179, 74));
+        lblTitulo2.setText("SISTEMA");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 128)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(76, 196, 212));
-        jLabel4.setText("EDUCACIONAL");
+        lblTitulo3.setFont(new java.awt.Font("Segoe UI", 1, 128)); // NOI18N
+        lblTitulo3.setForeground(new java.awt.Color(76, 196, 212));
+        lblTitulo3.setText("EDUCACIONAL");
 
         javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
         pnlPrincipal.setLayout(pnlPrincipalLayout);
@@ -178,16 +173,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
             pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(lblTitulo1)
                 .addGap(402, 402, 402))
             .addGroup(pnlPrincipalLayout.createSequentialGroup()
                 .addGroup(pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlPrincipalLayout.createSequentialGroup()
                         .addGap(56, 56, 56)
-                        .addComponent(jLabel2))
+                        .addComponent(lblTitulo2))
                     .addGroup(pnlPrincipalLayout.createSequentialGroup()
                         .addGap(144, 144, 144)
-                        .addComponent(jLabel4))
+                        .addComponent(lblTitulo3))
                     .addGroup(pnlPrincipalLayout.createSequentialGroup()
                         .addGap(444, 444, 444)
                         .addComponent(lblRodape))
@@ -200,11 +195,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
             pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalLayout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addComponent(jLabel1)
+                .addComponent(lblTitulo1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTitulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTitulo3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(pnlMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
@@ -232,13 +227,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         new CadastrarDiscente().setVisible(true);
     }//GEN-LAST:event_btnAlunosActionPerformed
 
-    private void btnMarcacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarcacaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMarcacaoActionPerformed
-
-    private void btnAlunosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAlunosMouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAlunosMouseMoved
+    private void btnAulasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAulasActionPerformed
+        new GerenciarAula().setVisible(true);
+    }//GEN-LAST:event_btnAulasActionPerformed
 
     private void btnProfessoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfessoresActionPerformed
         new CadastrarProfessor().setVisible(true);
@@ -286,14 +277,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSeparator SeparatorMenu;
     private javax.swing.JButton btnAlunos;
-    private javax.swing.JButton btnMarcacao;
+    private javax.swing.JButton btnAulas;
     private javax.swing.JButton btnProfessores;
     private javax.swing.JButton btnProvas;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblRodape;
+    private javax.swing.JLabel lblTitulo1;
+    private javax.swing.JLabel lblTitulo2;
+    private javax.swing.JLabel lblTitulo3;
     private javax.swing.JLabel lblTituloMenu;
     private javax.swing.JPanel pnlMenu;
     private javax.swing.JPanel pnlPrincipal;
