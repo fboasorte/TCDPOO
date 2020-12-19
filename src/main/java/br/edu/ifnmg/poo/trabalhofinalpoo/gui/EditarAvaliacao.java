@@ -88,13 +88,6 @@ public class EditarAvaliacao extends javax.swing.JDialog {
         lstAulas = new javax.swing.JList<>();
         lblDetalhesAvaliacao = new javax.swing.JLabel();
         pnlDetalhesAvaliacao = new javax.swing.JPanel();
-        lblIDAvaliacao = new javax.swing.JLabel();
-        txtIDAvaliacao = new javax.swing.JTextField();
-        lblAulaAvaliacao = new javax.swing.JLabel();
-        txtAulaAvaliacao = new javax.swing.JTextField();
-        lblDataHoraAvaliacao = new javax.swing.JLabel();
-        txtDataAvaliacao = new javax.swing.JTextField();
-        txtHoraAvaliacao = new javax.swing.JTextField();
         lblNotasAvaliacao = new javax.swing.JLabel();
         pnlNotas = new javax.swing.JPanel();
         scrComentario = new javax.swing.JScrollPane();
@@ -141,48 +134,6 @@ public class EditarAvaliacao extends javax.swing.JDialog {
         pnlDetalhesAvaliacao.setBackground(new java.awt.Color(255, 255, 255));
         pnlDetalhesAvaliacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
         pnlDetalhesAvaliacao.setForeground(new java.awt.Color(112, 112, 112));
-
-        lblIDAvaliacao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblIDAvaliacao.setForeground(new java.awt.Color(0, 0, 0));
-        lblIDAvaliacao.setText("ID");
-
-        txtIDAvaliacao.setEditable(false);
-        txtIDAvaliacao.setBackground(new java.awt.Color(255, 255, 255));
-        txtIDAvaliacao.setForeground(new java.awt.Color(0, 0, 0));
-        txtIDAvaliacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-
-        lblAulaAvaliacao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblAulaAvaliacao.setForeground(new java.awt.Color(0, 0, 0));
-        lblAulaAvaliacao.setText("Prova");
-
-        txtAulaAvaliacao.setEditable(false);
-        txtAulaAvaliacao.setBackground(new java.awt.Color(255, 255, 255));
-        txtAulaAvaliacao.setForeground(new java.awt.Color(0, 0, 0));
-        txtAulaAvaliacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-
-        lblDataHoraAvaliacao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblDataHoraAvaliacao.setForeground(new java.awt.Color(0, 0, 0));
-        lblDataHoraAvaliacao.setText("Data/Hora");
-
-        txtDataAvaliacao.setEditable(false);
-        txtDataAvaliacao.setBackground(new java.awt.Color(255, 255, 255));
-        txtDataAvaliacao.setForeground(new java.awt.Color(0, 0, 0));
-        txtDataAvaliacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-        txtDataAvaliacao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDataAvaliacaoActionPerformed(evt);
-            }
-        });
-
-        txtHoraAvaliacao.setEditable(false);
-        txtHoraAvaliacao.setBackground(new java.awt.Color(255, 255, 255));
-        txtHoraAvaliacao.setForeground(new java.awt.Color(0, 0, 0));
-        txtHoraAvaliacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-        txtHoraAvaliacao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHoraAvaliacaoActionPerformed(evt);
-            }
-        });
 
         lblNotasAvaliacao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblNotasAvaliacao.setForeground(new java.awt.Color(0, 0, 0));
@@ -299,23 +250,9 @@ public class EditarAvaliacao extends javax.swing.JDialog {
                 .addGap(20, 20, 20)
                 .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlDetalhesAvaliacaoLayout.createSequentialGroup()
-                        .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlDetalhesAvaliacaoLayout.createSequentialGroup()
-                                    .addComponent(lblIDAvaliacao)
-                                    .addGap(0, 0, Short.MAX_VALUE))
-                                .addComponent(lblAulaAvaliacao))
-                            .addComponent(lblDataHoraAvaliacao)
-                            .addComponent(lblNotasAvaliacao))
-                        .addGap(27, 27, 27)
-                        .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAulaAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtIDAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pnlDetalhesAvaliacaoLayout.createSequentialGroup()
-                                .addComponent(txtDataAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtHoraAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(pnlNotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblNotasAvaliacao)
+                        .addGap(55, 55, 55)
+                        .addComponent(pnlNotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlDetalhesAvaliacaoLayout.createSequentialGroup()
                         .addComponent(btnSalvarAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -326,19 +263,6 @@ public class EditarAvaliacao extends javax.swing.JDialog {
             pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDetalhesAvaliacaoLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblIDAvaliacao)
-                    .addComponent(txtIDAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAulaAvaliacao)
-                    .addComponent(txtAulaAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDataAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtHoraAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDataHoraAvaliacao))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlDetalhesAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblNotasAvaliacao)
                     .addComponent(pnlNotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -377,11 +301,11 @@ public class EditarAvaliacao extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlEditarAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(pnlEditarAvaliacaoLayout.createSequentialGroup()
-                        .addComponent(scrListaDiscentes)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(scrListaDiscentes, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblAulasAvaliacao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(scrListaAulas, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(scrListaAulas, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(pnlDetalhesAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
@@ -402,14 +326,6 @@ public class EditarAvaliacao extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtDataAvaliacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataAvaliacaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataAvaliacaoActionPerformed
-
-    private void txtHoraAvaliacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoraAvaliacaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtHoraAvaliacaoActionPerformed
 
     /**
      * Ao clicar no botão Salvar, armazena os campos preenchidos na edição de avaliação,
@@ -442,7 +358,13 @@ public class EditarAvaliacao extends javax.swing.JDialog {
     }//GEN-LAST:event_txtParteEscritaActionPerformed
 
     private void txtParteOralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteOralActionPerformed
-        
+        if(estaAprovadoEscrita(Integer.parseInt(txtParteEscrita.getText())) && 
+                estaAprovadoOral(txtParteOral.getText())){
+            txpAprovado.setText("APROVADO");
+        }
+        else {
+            txpAprovado.setText("REPROVADO");
+        }        
     }//GEN-LAST:event_txtParteOralActionPerformed
 
     /**
@@ -457,18 +379,40 @@ public class EditarAvaliacao extends javax.swing.JDialog {
         lstDiscentes.setSelectedIndex(avaliacao.getIdDiscente());
         lstAulas.setSelectedIndex(avaliacao.getIdAula());
     }
+    
+        /**
+     * Verifica se o discente que realizou determinada avaliação
+     * foi reprovado ou aprovado na parte escrita
+     * @param parteEscrita Nota referente a parte escrita
+     * @return Se o aluno foi aprovado (true) ou reprovado (false)
+     */
+    private boolean estaAprovadoEscrita(int parteEscrita){
+        if(parteEscrita >= 98 && parteEscrita <= 100){
+                return true;
+        }
+        return false;
+    }
+    
+    /**
+     * Verifica se o discente que realizou determinada avaliação
+     * foi reprovado ou aprovado na parte oral
+     * @param parteOral Nota referente a parte oral
+     * @return Se o aluno foi aprovado (true) ou reprovado (false)
+     */
+    private boolean estaAprovadoOral(String parteOral){
+        return ("D".equals(parteOral) 
+                || "YD".equals(parteOral)
+                || "T".equals(parteOral));
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarAvaliacao;
     private javax.swing.JButton btnSalvarAvaliacao;
     private javax.swing.JLabel lblAlunosAvaliacao;
-    private javax.swing.JLabel lblAulaAvaliacao;
     private javax.swing.JLabel lblAulasAvaliacao;
     private javax.swing.JLabel lblComentarios;
-    private javax.swing.JLabel lblDataHoraAvaliacao;
     private javax.swing.JLabel lblDetalhesAvaliacao;
-    private javax.swing.JLabel lblIDAvaliacao;
     private javax.swing.JLabel lblNotasAvaliacao;
     private javax.swing.JLabel lblParteEscrita;
     private javax.swing.JLabel lblParteOral;
@@ -482,11 +426,7 @@ public class EditarAvaliacao extends javax.swing.JDialog {
     private javax.swing.JScrollPane scrListaAulas;
     private javax.swing.JScrollPane scrListaDiscentes;
     private javax.swing.JTextPane txpAprovado;
-    private javax.swing.JTextField txtAulaAvaliacao;
     private javax.swing.JTextPane txtComentario;
-    private javax.swing.JTextField txtDataAvaliacao;
-    private javax.swing.JTextField txtHoraAvaliacao;
-    private javax.swing.JTextField txtIDAvaliacao;
     private javax.swing.JTextField txtParteEscrita;
     private javax.swing.JTextField txtParteOral;
     // End of variables declaration//GEN-END:variables
