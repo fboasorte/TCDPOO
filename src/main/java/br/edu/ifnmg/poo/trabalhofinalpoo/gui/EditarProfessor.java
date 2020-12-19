@@ -5,41 +5,45 @@
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
-import br.edu.ifnmg.poo.trabalhofinalpoo.dao.DiscenteDao;
-import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
+import br.edu.ifnmg.poo.trabalhofinalpoo.dao.ProfessorDao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Professor;
 
 /**
- * Classe para representar a tela de edição de um discente no sistema escolar
+ * Dialogo modal para a edição de professor
  * 
  * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
  * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
  * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
  * @version 0.1.0, 18/12/2020
  */
-public class EditarDiscente extends javax.swing.JDialog {
+public class EditarProfessor extends javax.swing.JDialog {
 
     /**
-     * Referência à janela de cadastro de discente que invocou esta janela de edição.
+     * Referência à janela de cadastro que invocou esta janela de edição.
      */
-    private final CadastrarDiscente cadastroDiscente;
+    private final CadastrarProfessor cadastroProfessor;
     
     /**
-     * Variável do tipo discente recebida para edicao.
+     * Professor recebido para edicao.
      */
-    private Discente discenteEmEdicao;
+    private Professor professorEmEdicao;
     
     /**
-     * Construtor padrão de EditarDiscente
+     * Cria um novo formulario para edicao de professor
+     * 
+     * @param professor a ser editado
+     * @param cadastroProfessor janela de cadastrar professor
+     * @param modal booleano se a tela é modal ou nao
      */
-    public EditarDiscente(Discente discente,
-        CadastrarDiscente cadastroDiscente, boolean modal) {
-        super(cadastroDiscente, modal);
+    public EditarProfessor(Professor professor,
+        CadastrarProfessor cadastroProfessor, boolean modal) {
+        super(cadastroProfessor, modal);
         initComponents();
         
-        this.cadastroDiscente = cadastroDiscente;
-        this.discenteEmEdicao = discente;
+        this.cadastroProfessor = cadastroProfessor;
+        this.professorEmEdicao = professor;
         
-        preencherDiscente(discente);
+        preencherProfessor(professor);
     }
 
     /**
@@ -51,26 +55,26 @@ public class EditarDiscente extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnlEditarDiscente = new javax.swing.JPanel();
-        lblDadosEditar = new javax.swing.JLabel();
+        pnlEditarProfessor = new javax.swing.JPanel();
+        lblDadosProfessor = new javax.swing.JLabel();
         pnlDadosEditar = new javax.swing.JPanel();
         lblNomeEditar = new javax.swing.JLabel();
         lblCPFEditar = new javax.swing.JLabel();
         lblNascimentoEditar = new javax.swing.JLabel();
-        txtDataNascimentoEditar = new javax.swing.JTextField();
-        txtCPFEditar = new javax.swing.JTextField();
         txtNomeEditar = new javax.swing.JTextField();
+        txtCPFEditar = new javax.swing.JTextField();
+        txtNascimentoEditar = new javax.swing.JTextField();
         btnSalvarEditar = new javax.swing.JButton();
         btnCancelarEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Editar Discente");
+        setTitle("Editar instrutor");
 
-        pnlEditarDiscente.setBackground(new java.awt.Color(255, 255, 255));
+        pnlEditarProfessor.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblDadosEditar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblDadosEditar.setForeground(new java.awt.Color(0, 0, 0));
-        lblDadosEditar.setText("Dados cadastrais");
+        lblDadosProfessor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDadosProfessor.setForeground(new java.awt.Color(0, 0, 0));
+        lblDadosProfessor.setText("Dados do professor");
 
         pnlDadosEditar.setBackground(new java.awt.Color(255, 255, 255));
         pnlDadosEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
@@ -87,19 +91,19 @@ public class EditarDiscente extends javax.swing.JDialog {
         lblNascimentoEditar.setForeground(new java.awt.Color(0, 0, 0));
         lblNascimentoEditar.setText("Data de nasc.");
 
-        txtDataNascimentoEditar.setBackground(new java.awt.Color(255, 255, 255));
-        txtDataNascimentoEditar.setForeground(new java.awt.Color(0, 0, 0));
-        txtDataNascimentoEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDataNascimentoEditarActionPerformed(evt);
-            }
-        });
+        txtNomeEditar.setBackground(new java.awt.Color(255, 255, 255));
+        txtNomeEditar.setForeground(new java.awt.Color(0, 0, 0));
 
         txtCPFEditar.setBackground(new java.awt.Color(255, 255, 255));
         txtCPFEditar.setForeground(new java.awt.Color(0, 0, 0));
+        txtCPFEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCPFEditarActionPerformed(evt);
+            }
+        });
 
-        txtNomeEditar.setBackground(new java.awt.Color(255, 255, 255));
-        txtNomeEditar.setForeground(new java.awt.Color(0, 0, 0));
+        txtNascimentoEditar.setBackground(new java.awt.Color(255, 255, 255));
+        txtNascimentoEditar.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout pnlDadosEditarLayout = new javax.swing.GroupLayout(pnlDadosEditar);
         pnlDadosEditar.setLayout(pnlDadosEditarLayout);
@@ -107,15 +111,19 @@ public class EditarDiscente extends javax.swing.JDialog {
             pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDadosEditarLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblNascimentoEditar)
-                    .addComponent(lblNomeEditar, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblCPFEditar, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(12, 12, 12)
                 .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCPFEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDataNascimentoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlDadosEditarLayout.createSequentialGroup()
+                        .addComponent(lblNascimentoEditar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtNascimentoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlDadosEditarLayout.createSequentialGroup()
+                        .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNomeEditar)
+                            .addComponent(lblCPFEditar))
+                        .addGap(57, 57, 57)
+                        .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCPFEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         pnlDadosEditarLayout.setVerticalGroup(
@@ -126,13 +134,13 @@ public class EditarDiscente extends javax.swing.JDialog {
                     .addComponent(lblNomeEditar)
                     .addComponent(txtNomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblCPFEditar)
-                    .addComponent(txtCPFEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCPFEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlDadosEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNascimentoEditar)
-                    .addComponent(txtDataNascimentoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNascimentoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -156,32 +164,32 @@ public class EditarDiscente extends javax.swing.JDialog {
             }
         });
 
-        javax.swing.GroupLayout pnlEditarDiscenteLayout = new javax.swing.GroupLayout(pnlEditarDiscente);
-        pnlEditarDiscente.setLayout(pnlEditarDiscenteLayout);
-        pnlEditarDiscenteLayout.setHorizontalGroup(
-            pnlEditarDiscenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlEditarDiscenteLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlEditarProfessorLayout = new javax.swing.GroupLayout(pnlEditarProfessor);
+        pnlEditarProfessor.setLayout(pnlEditarProfessorLayout);
+        pnlEditarProfessorLayout.setHorizontalGroup(
+            pnlEditarProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditarProfessorLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(pnlEditarDiscenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDadosEditar)
-                    .addGroup(pnlEditarDiscenteLayout.createSequentialGroup()
+                .addGroup(pnlEditarProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDadosProfessor)
+                    .addComponent(pnlDadosEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlEditarProfessorLayout.createSequentialGroup()
                         .addComponent(btnSalvarEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCancelarEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(pnlDadosEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnCancelarEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
-        pnlEditarDiscenteLayout.setVerticalGroup(
-            pnlEditarDiscenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlEditarDiscenteLayout.createSequentialGroup()
+        pnlEditarProfessorLayout.setVerticalGroup(
+            pnlEditarProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditarProfessorLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(lblDadosEditar)
+                .addComponent(lblDadosProfessor)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlDadosEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlEditarDiscenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalvarEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelarEditar))
+                .addGroup(pnlEditarProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCancelarEditar)
+                    .addComponent(btnSalvarEditar))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -189,68 +197,78 @@ public class EditarDiscente extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlEditarDiscente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlEditarProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlEditarDiscente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlEditarProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtDataNascimentoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataNascimentoEditarActionPerformed
+    private void txtCPFEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFEditarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataNascimentoEditarActionPerformed
+    }//GEN-LAST:event_txtCPFEditarActionPerformed
 
     /**
-     * Ao clicar no botão Salvar, armazena os campos preenchidos na edição de discente,
-     * salva essa alteração no bando de dados e adiciona a alteração na lista.
+     * Resposta ao clique no botão "Salvar".
+     * 
      * @param evt Evento capturado
      */
     private void btnSalvarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarEditarActionPerformed
-        // TODO add your handling code here:
-        discenteEmEdicao.setCpf(Integer.parseInt(txtCPFEditar.getText()));
-        discenteEmEdicao.setNome(txtNomeEditar.getText());
-        discenteEmEdicao.setNascimento(txtDataNascimentoEditar.getText());
+        // Recupera descrição fornecida e atualiza o objeto recebido
+        professorEmEdicao.setCpf(Integer.parseInt(txtCPFEditar.getText()));
+        professorEmEdicao.setNome(txtNomeEditar.getText());
+        professorEmEdicao.setNascimento(txtNascimentoEditar.getText());
         
-        new DiscenteDao().salvar(discenteEmEdicao);
-        cadastroDiscente.atualizarModelo(discenteEmEdicao);
-        // fecha janela
+        // Salva o objeto atualizado no banco de dados.
+        // A "id" possui valor (o original)  e isso acarreta 
+        // a invocação da operação de atualização do método "salvar"
+        new ProfessorDao().salvar(professorEmEdicao);
+        
+        // Atualiza o professor que foi editado na janela "CadastrarProfessor"
+        cadastroProfessor.atualizarModelo(professorEmEdicao);
+        
+        // Fecha a janela corrente
         dispose();
     }//GEN-LAST:event_btnSalvarEditarActionPerformed
 
     /**
-     * Ao clicar no botão cancelar, fecha a janela atual
-     * @param evt Evento capturado
+     * Resposta ao clique no botão "Cancelar"
+     * 
+     * @param evt evento capturado
      */
     private void btnCancelarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarEditarActionPerformed
+        // Fecha a janela corrente sem efetivar nenhuma operacao
         dispose();
     }//GEN-LAST:event_btnCancelarEditarActionPerformed
 
     /**
-     * Extrai dados do discente recebido e popula os componentes da janela
+     * Extrai dados do professor recebido e popula os componentes da janela
      * com seus respectivos valores.
-     * @param discente Objeto do tipo discente recebido
+     * 
+     * @param professor Objeto "Professor" recebido
      */
-    public void preencherDiscente(Discente discente){
-        txtCPFEditar.setText(Integer.toString(discente.getCpf()));
-        txtNomeEditar.setText(discente.getNome());
-        txtDataNascimentoEditar.setText(discente.getNascimento());
+    public void preencherProfessor(Professor professor){
+        txtCPFEditar.setText(Integer.toString(professor.getCpf()));
+        txtNomeEditar.setText(professor.getNome());
+        txtNascimentoEditar.setText(professor.getNascimento());
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarEditar;
     private javax.swing.JButton btnSalvarEditar;
     private javax.swing.JLabel lblCPFEditar;
-    private javax.swing.JLabel lblDadosEditar;
+    private javax.swing.JLabel lblDadosProfessor;
     private javax.swing.JLabel lblNascimentoEditar;
     private javax.swing.JLabel lblNomeEditar;
     private javax.swing.JPanel pnlDadosEditar;
-    private javax.swing.JPanel pnlEditarDiscente;
+    private javax.swing.JPanel pnlEditarProfessor;
     private javax.swing.JTextField txtCPFEditar;
-    private javax.swing.JTextField txtDataNascimentoEditar;
+    private javax.swing.JTextField txtNascimentoEditar;
     private javax.swing.JTextField txtNomeEditar;
     // End of variables declaration//GEN-END:variables
 }

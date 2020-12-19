@@ -8,21 +8,42 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 import java.util.Objects;
 
 /**
- *
- * @author felipe
+ * Repesenta a entidade Professor num sistema escolar.
+ * 
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class Professor extends Entidade {
 
+    /**
+     * CPF do professor
+     */
     private int cpf;
 
+    /**
+     * Nome do professor
+     */
     private String nome;
 
+    /**
+     * Data de nascimento do professor
+     */
     private String nascimento;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
     public Professor() {
     }
 
+    /**
+     * Construtor sobrecarregado
+     * 
+     * @param id Identidade do professor
+     * @param cpf CPF do professor
+     * @param nome Nome do professor
+     * @param nascimento Data de nascimento do professor
+     */
     public Professor(Long id, int cpf, String nome, String nascimento) {
         super(id);
         this.cpf = cpf;
@@ -93,11 +114,16 @@ public class Professor extends Entidade {
     }
 //</editor-fold>
 
+    /**
+     * Gera representação textual do objeto atual.
+     * 
+     * @return Texto representativo do objeto atual
+     */
     @Override
     public String toString() {
-        return "Professor{" + "cpf=" + cpf 
-                + ", nome=" + nome 
-                + ", nascimento=" + nascimento + '}';
+        return cpf 
+                + ", " + nome 
+                + ", " + nascimento + '}';
     }
 
 }

@@ -8,21 +8,45 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 import java.util.Objects;
 
 /**
- *
- * @author felipe
+ * Classe para representação de um discente no sistema escolar
+ * 
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class Discente extends Entidade {
 
+    /**
+     * CPF do discente
+     */
     private int cpf;
 
+    /** 
+     * Nome do discente
+     */
     private String nome;
 
+    /**
+     * Data de nascimento do discente
+     * Formato "01/01/2000"
+     */
     private String nascimento;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
+    /**
+     * Construtor padrão da classe
+     */
     public Discente() {
     }
 
+    /**
+     * Construtor sobrecarregado da classe
+     * @param id Id do discente (gerado automaricamente)
+     * @param cpf CPF do discente
+     * @param nome Nome do discente
+     * @param nascimento Data de nascimento do discente
+     */
     public Discente(Long id, int cpf, String nome, String nascimento) {
         super(id);
         this.cpf = cpf;
@@ -93,6 +117,10 @@ public class Discente extends Entidade {
     }
 //</editor-fold>
 
+    /**
+     * Gera representação textual do objeto atual.
+     * @return Texto representativo do objeto atual 
+     */
     @Override
     public String toString() {
         return cpf

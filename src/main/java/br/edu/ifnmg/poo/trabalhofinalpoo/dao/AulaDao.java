@@ -5,7 +5,7 @@
  */
 package br.edu.ifnmg.poo.trabalhofinalpoo.dao;
 
-import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Avaliacao;
+import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Aula;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,15 +15,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Classe com os métodos para manipular a entidade Avaliacao no banco de dados
+ * Classe com os métodos para manipular a entidade Aula no banco de dados
  * 
  * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
  * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
  * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
  * @version 0.1.0, 18/12/2020
  */
-public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
-
+public class AulaDao extends AbstractDao<Aula, Long> {
     /**
      * Recupera a sentença SQL específica para a inserção da entidade no banco
      * de dados.
@@ -32,7 +31,7 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
      */
     @Override
     public String getDeclaracaoInsert() {
-        return "INSERT INTO avaliacao(id,notaParteEscrita,notaParteOral,comentario, idDiscente, idAula) VALUES (default,?,?, ?, ?, ?);";
+        return "INSERT INTO aula(id,nome,conteudo, idProfessor, data, hora) VALUES (default, ?, ?, ?, ?, ?);";
     }
 
     /**
@@ -43,7 +42,7 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
      */
     @Override
     public String getDeclaracaoSelectPorId() {
-        return "SELECT * FROM avaliacao WHERE id = ?";
+        return "SELECT * FROM aula WHERE id = ?";
     }
 
     /**
@@ -54,7 +53,7 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
      */
     @Override
     public String getDeclaracaoSelectTodos() {
-        return "SELECT * FROM avaliacao";
+        return "SELECT * FROM aula";
     }
 
     /**
@@ -65,7 +64,7 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
      */
     @Override
     public String getDeclaracaoUpdate() {
-        return "UPDATE avaliacao SET notaParteEscrita = ?, notaParteOral = ?, comentario = ?, idDiscente = ?, idAula = ? WHERE id = ?;";
+        return "UPDATE aula SET nome = ?, conteudo = ?, idProfessor = ?, data = ?, hora = ? WHERE id = ?;";
     }
 
     /**
@@ -76,7 +75,7 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
      */
     @Override
     public String getDeclaracaoDelete() {
-        return "DELETE FROM avaliacao WHERE id = ?";
+        return "DELETE FROM aula WHERE id = ?";
     }
 
     /**
@@ -100,29 +99,29 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
      * atualização de registros no banco de dados.
      *
      * @param pstmt Declaração previamente preparada.
-     * @param avaliacao
+     * @param aula
      */
     @Override
-    public void montarDeclaracao(PreparedStatement pstmt, Avaliacao avaliacao) {
+    public void montarDeclaracao(PreparedStatement pstmt, Aula aula) {
         // Tenta definir valores junto à sentença SQL preparada para execução 
         // no banco de dados.
         try {
-            if (avaliacao.getId() == null || avaliacao.getId() == 0) {
-                pstmt.setInt(1, avaliacao.getNotaParteEscrita());
-                pstmt.setString(2, avaliacao.getNotaParteOral());
-                pstmt.setString(3, avaliacao.getComentario());
-                pstmt.setInt(4, avaliacao.getIdDiscente());
-                pstmt.setInt(5, avaliacao.getIdAula());
+            if (aula.getId() == null || aula.getId() == 0) {
+                pstmt.setString(1, aula.getNome());
+                pstmt.setString(2, aula.getConteudo());
+                pstmt.setInt(3, aula.getIdProfessor());
+                pstmt.setString(4, aula.getData());
+                pstmt.setString(5, aula.getHora());       
             } else {
-                pstmt.setInt(1, avaliacao.getNotaParteEscrita());
-                pstmt.setString(2, avaliacao.getNotaParteOral());
-                pstmt.setString(3, avaliacao.getComentario());
-                pstmt.setInt(4, avaliacao.getIdDiscente());
-                pstmt.setInt(5, avaliacao.getIdAula());
-                pstmt.setLong(6, avaliacao.getId());
+                pstmt.setString(1, aula.getNome());
+                pstmt.setString(2, aula.getConteudo());
+                pstmt.setInt(3, aula.getIdProfessor());
+                pstmt.setString(4, aula.getData());
+                pstmt.setString(5, aula.getHora());  
+                pstmt.setLong(6, aula.getId());
             }
         } catch (SQLException ex) {
-            Logger.getLogger(AvaliacaoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AulaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -133,25 +132,25 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
      * @return Objeto constituído.
      */
     @Override
-    public Avaliacao extrairObjeto(ResultSet resultSet) {
+    public Aula extrairObjeto(ResultSet resultSet) {
         // Cria referência para montagem da tarefa
-        Avaliacao avaliacao = new Avaliacao();
+        Aula aula = new Aula();
 
         // Tenta recuperar dados do registro retornado pelo banco de dados
         // e ajustar o estado da tarefa a ser mapeada
         try {
-            avaliacao.setId(resultSet.getLong("id"));
-            avaliacao.setNotaParteEscrita(resultSet.getInt("notaParteEscrita"));
-            avaliacao.setNotaParteOral(resultSet.getString("notaParteOral"));
-            avaliacao.setComentario(resultSet.getString("comentario"));
-            avaliacao.setIdDiscente(resultSet.getInt("idDiscente"));
-            avaliacao.setIdAula(resultSet.getInt("idAula"));
+            aula.setId(resultSet.getLong("id"));
+            aula.setNome(resultSet.getString("nome"));
+            aula.setConteudo(resultSet.getString("conteudo"));
+            aula.setIdProfessor(resultSet.getInt("idProfessor"));
+            aula.setData(resultSet.getString("data"));
+            aula.setHora(resultSet.getString("hora"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         // Devolve a tarefa mapeada
-        return avaliacao;
+        return aula;
     }
 
     /**
@@ -163,36 +162,36 @@ public class AvaliacaoDao extends AbstractDao<Avaliacao, Long> {
      * @return Lista de objeto(s) constituído(s).
      */
     @Override
-    public List<Avaliacao> extrairObjetos(ResultSet resultSet) {
+    public List<Aula> extrairObjetos(ResultSet resultSet) {
 
         // Cria referência para inserção das tarefas a serem mapeadas
-        ArrayList<Avaliacao> avaliacoes = new ArrayList<>();
-
+        ArrayList<Aula> aulas = new ArrayList<>();
+        
         // Tenta...
         try {
             // ... entquanto houver registros a serem processados
             while (resultSet.next()) {
                 // Cria referência para montagem da tarefa
-                Avaliacao avaliacao = new Avaliacao();
+                Aula aula = new Aula();
 
                 // Tenta recuperar dados do registro retornado pelo banco 
                 // de dados e ajustar o estado da tarefa a ser mapeada
-                avaliacao.setId(resultSet.getLong("id"));
-                avaliacao.setNotaParteEscrita(resultSet.getInt("notaParteEscrita"));
-                avaliacao.setNotaParteOral(resultSet.getString("notaParteOral"));
-                avaliacao.setComentario(resultSet.getString("comentario"));
-                avaliacao.setIdDiscente(resultSet.getInt("idDiscente"));
-                avaliacao.setIdAula(resultSet.getInt("idAula"));
-
+                aula.setId(resultSet.getLong("id"));
+                aula.setNome(resultSet.getString("nome"));
+                aula.setConteudo(resultSet.getString("conteudo"));
+                aula.setIdProfessor(resultSet.getInt("idProfessor"));
+                aula.setData(resultSet.getString("data"));
+                aula.setHora(resultSet.getString("hora"));
+                
                 // Insere a tarefa na lista de tarefas recuperadas
-                avaliacoes.add(avaliacao);
+                aulas.add(aula);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(AvaliacaoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AulaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         // Devolve a lista de tarefas reconstituídas dos registros do banco 
         // de dados
-        return avaliacoes;
+        return aulas;
     }
 }

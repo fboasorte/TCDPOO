@@ -8,26 +8,62 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 import java.util.Objects;
 
 /**
- *
- * @author felipe
+ * Representa a matricula de um aluno em uma aula
+
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class Matricula extends Entidade {
 
+    /**
+     * Nota na parte escrita na matricula da aula
+     */
     private Integer notaParteEscrita;
 
+    /**
+     * Nota na parte oral na matricula da aula
+     */
     private String notaParteOral;
 
+    /**
+     * Comentario sobre a matricula
+     */
     private String comentario;
+    
+    /**
+     * Identificador do discente que fez a matricula
+     */
+    private int idDiscente;
+    
+    /**
+     * Identificador da aula que foi feita a matricula
+     */
+    private int idAula;
 
     //<editor-fold defaultstate="collapsed" desc="Construtores">
     public Matricula() {
     }
 
-    public Matricula(Long id, Integer notaParteEscrita, String notaParteOral, String comentarios) {
+    /**
+     * Construtor sobre carregado
+     * 
+     * @param id Identidade da matricula
+     * @param notaParteEscrita Nota na parte escrita na matricula da aula
+     * @param notaParteOral Nota na parte oral na matricula da aula
+     * @param comentarios Comentario sobre a matricula
+     * @param idDiscente Identificador do discente que fez a matricula
+     * @param idAula Identificador da aula que foi feita a matricula
+     */
+    public Matricula(Long id, Integer notaParteEscrita, String notaParteOral, String comentarios,
+            int idDiscente, int idAula) {
         super(id);
         this.notaParteEscrita = notaParteEscrita;
         this.notaParteOral = notaParteOral;
         this.comentario = comentarios;
+        this.idDiscente = idDiscente;
+        this.idAula = idAula;
     }
 //</editor-fold>
 
@@ -54,6 +90,22 @@ public class Matricula extends Entidade {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public int getIdDiscente() {
+        return idDiscente;
+    }
+
+    public void setIdDiscente(int idDiscente) {
+        this.idDiscente = idDiscente;
+    }
+
+    public int getIdAula() {
+        return idAula;
+    }
+
+    public void setIdAula(int idAula) {
+        this.idAula = idAula;
     }
 //</editor-fold>
 
@@ -92,11 +144,17 @@ public class Matricula extends Entidade {
     }
 //</editor-fold>
 
+    /**
+     * Gera representação textual do objeto atual.
+     * 
+     * @return Texto representativo do objeto atual
+     */
     @Override
     public String toString() {
-        return "Matricula{" + "notaParteEscrita=" + notaParteEscrita 
-                + ", notaParteOral=" + notaParteOral 
-                + ", comentarios=" + comentario + '}';
+        return notaParteEscrita 
+                + ", " + notaParteOral 
+                + ", " + comentario 
+                + ", " + idDiscente 
+                + ", " + idAula;
     }
-    
 }
