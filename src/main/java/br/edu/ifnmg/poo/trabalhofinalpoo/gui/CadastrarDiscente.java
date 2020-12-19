@@ -13,7 +13,11 @@ import javax.swing.DefaultListModel;
 
 /**
  * Classe para representar a tela do discente no sistema escolar
- * @author Fellipe
+ * 
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class CadastrarDiscente extends javax.swing.JFrame {
 
@@ -208,7 +212,7 @@ public class CadastrarDiscente extends javax.swing.JFrame {
 
         lblDadosCadastrais.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblDadosCadastrais.setForeground(new java.awt.Color(0, 0, 0));
-        lblDadosCadastrais.setText("Dados cadastrais");
+        lblDadosCadastrais.setText("Cadastrar novo discente");
 
         javax.swing.GroupLayout pnlAreaDadosLayout = new javax.swing.GroupLayout(pnlAreaDados);
         pnlAreaDados.setLayout(pnlAreaDadosLayout);
@@ -288,11 +292,12 @@ public class CadastrarDiscente extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
      * Ao clicar no botão Salvar, armazena os campos preenchidos na tela 
-     * referente a discente, salva essa avaliação no bando de dados e adiciona-a na lista.
+     * referente a discente, salva essa avaliação no banco de dados e adiciona-a na lista.
      * @param evt Evento capturado
      */
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed

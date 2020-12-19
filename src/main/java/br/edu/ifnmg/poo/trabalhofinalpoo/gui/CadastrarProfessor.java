@@ -14,7 +14,10 @@ import javax.swing.DefaultListModel;
 /**
  * Janela para inclusao, edição e exclusão de professores
  * 
- * @author Fellipe
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class CadastrarProfessor extends javax.swing.JDialog {
 
@@ -175,7 +178,7 @@ public class CadastrarProfessor extends javax.swing.JDialog {
 
         lblDadosProfessor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblDadosProfessor.setForeground(new java.awt.Color(0, 0, 0));
-        lblDadosProfessor.setText("Cadastrar novo professor");
+        lblDadosProfessor.setText("Cadastrar novo instrutor");
 
         btnSalvarDados.setBackground(new java.awt.Color(255, 255, 255));
         btnSalvarDados.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -231,7 +234,7 @@ public class CadastrarProfessor extends javax.swing.JDialog {
 
         lblListaProfessores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblListaProfessores.setForeground(new java.awt.Color(0, 0, 0));
-        lblListaProfessores.setText("Lista de professores");
+        lblListaProfessores.setText("Lista de instrutores");
 
         lstProfessores.setBackground(new java.awt.Color(255, 255, 255));
         lstProfessores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -307,6 +310,7 @@ public class CadastrarProfessor extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

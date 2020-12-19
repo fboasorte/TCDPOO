@@ -8,8 +8,12 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 import java.util.Objects;
 
 /**
- *
- * @author felipe
+ * Repesenta a entidade Professor num sistema escolar.
+ * 
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class Professor extends Entidade {
 

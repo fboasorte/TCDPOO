@@ -16,7 +16,11 @@ import javax.swing.DefaultListModel;
 
 /**
  * Classe para representar a tela de edição de uma avaliação no sistema escolar
- * @author felipe
+ * 
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class EditarAvaliacao extends javax.swing.JDialog {
     
@@ -396,6 +400,7 @@ public class EditarAvaliacao extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtDataAvaliacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataAvaliacaoActionPerformed

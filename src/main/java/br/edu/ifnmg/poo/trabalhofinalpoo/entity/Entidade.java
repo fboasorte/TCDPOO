@@ -8,8 +8,7 @@ package br.edu.ifnmg.poo.trabalhofinalpoo.entity;
 
 /**
  * Modelo geral para entidades.
- * Alteração
- * Alteracao 2
+ * 
  * @author Luis Guisso <luis dot guisso at ifnmg dot edu dot br>
  * @version 0.0.1, 29/11/2020
  */

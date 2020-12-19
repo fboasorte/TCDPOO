@@ -16,8 +16,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Classe para representar um discente no banco de dados
- * @author Andre Vinicius
+ * Classe com os métodos para manipular a entidade Discente no banco de dados
+ * 
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class DiscenteDao extends AbstractDao<Discente, Long> {
 

@@ -6,13 +6,18 @@
 package br.edu.ifnmg.poo.trabalhofinalpoo.gui;
 
 /**
- *
- * @author Fellipe
+ * Classe para representar uma tela principal que dá acesso a todas as outras 
+ * telas no sistema.
+ * 
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaPrincipal
+     * Construtor padrão de TelaPrincipal
      */
     public TelaPrincipal() {
         initComponents();
@@ -240,29 +245,56 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Ao clicar no botão Alunos, convoca a tela CadastrarDiscente, onde se pode
+     * cadastrar, editar, visualizar e excluir discentes.
+     * @param evt Evento capturado.
+     */
     private void btnAlunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlunosActionPerformed
         // TODO add your handling code here:
         new CadastrarDiscente().setVisible(true);
     }//GEN-LAST:event_btnAlunosActionPerformed
 
+    /**
+     * Ao clicar no botão Aulas, convoca a tela GerenciarAula, onde se faz a
+     * matrícula e onde as aulas podem ser criadas, editadas, excluídas e 
+     * visualizadas.
+     * @param evt Evento capturado.
+     */
     private void btnAulasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAulasActionPerformed
         new GerenciarAula(this, true).setVisible(true);
     }//GEN-LAST:event_btnAulasActionPerformed
 
+    /**
+     * Ao clicar no botão Professores, convoca a tela CadastrarProfessor, onde
+     * se pode cadastrar, editar, visualizar e excluir professores. 
+     * @param evt Evento capturado.
+     */
     private void btnProfessoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfessoresActionPerformed
         new CadastrarProfessor(this, true).setVisible(true);
     }//GEN-LAST:event_btnProfessoresActionPerformed
 
+    /**
+     * Ao clicar no botão Provas, convoca a tela CadastrarAvaliacao, onde se 
+     * pode onde se pode cadastrar, editar, visualizar e excluir avaliações.
+     * @param evt Evento capturado.
+     */
     private void btnProvasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProvasActionPerformed
         new CadastrarAvaliacao().setVisible(true);
     }//GEN-LAST:event_btnProvasActionPerformed
 
+    /**
+     * Ao clicar no botão Matrículas, convoca a tela VerMatrículas, onde se pode
+     * cadastrar, editar, visualizar e excluir as matrículas.
+     * @param evt 
+     */
     private void btnMatriculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMatriculasActionPerformed
         new VerMatriculas(this, true).setVisible(true);
     }//GEN-LAST:event_btnMatriculasActionPerformed
 
     /**
-     * @param args the command line arguments
+     * Executa o arquivo, que convoca TelaPrincipal.
+     * @param args Argumentos da linha de comando.
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

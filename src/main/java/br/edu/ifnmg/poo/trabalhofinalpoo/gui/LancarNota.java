@@ -10,8 +10,13 @@ import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Matricula;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Fellipe
+ * Classe para representar a tela de lançar notas ao fazer a matrícula em uma
+ * aula num sistema escolar. 
+ * 
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class LancarNota extends javax.swing.JDialog {
     
@@ -21,7 +26,7 @@ public class LancarNota extends javax.swing.JDialog {
     private int idAula;
 
     /**
-     * Creates new form LançarNota
+     * Construtor padrão de LancarNota.
      */
     public LancarNota(int idDiscente, int idAula, GerenciarAula gerenciarAula, 
             boolean modal) {
@@ -77,6 +82,11 @@ public class LancarNota extends javax.swing.JDialog {
         btnCancelarNota.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnCancelarNota.setForeground(new java.awt.Color(0, 0, 0));
         btnCancelarNota.setText("Cancelar");
+        btnCancelarNota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarNotaActionPerformed(evt);
+            }
+        });
 
         lblNota.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblNota.setForeground(new java.awt.Color(0, 0, 0));
@@ -183,8 +193,15 @@ public class LancarNota extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Ao clicar no botão Salvar, armazena os campos preenchidos na tela 
+     * referente a Matrícula, salva essa avaliação no banco de dados e a 
+     * adiciona na lista presente em VerMatriculas.
+     * @param evt Evento capturado.
+     */
     private void btnSalvarNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarNotaActionPerformed
         
         matricula.setNotaParteEscrita(Integer.parseInt(txtParteEscritaNota.getText()));
@@ -193,19 +210,29 @@ public class LancarNota extends javax.swing.JDialog {
         matricula.setIdDiscente(idDiscente);
         matricula.setIdAula(idAula);
         
+        // Executa o salvamento do estado do objeto no banco de dados
         Long id = new MatriculaDao().salvar(matricula);
         
+        // Importante! Se o objeto criado não for atrelado a seu id no banco
+        // de dados, o objeto fica desconexo e as futuras alterações de seu
+        // estado gerarão um novo registro
         matricula.setId(id);
                 
         dispose();
         
-                
+        // Exibe uma caixa de diálogo confirmando a marcação.        
         JOptionPane.showConfirmDialog(null,"Marcação concluída", "Marcar aula",
                 JOptionPane.DEFAULT_OPTION);
         
     }//GEN-LAST:event_btnSalvarNotaActionPerformed
 
-
+    /**
+     * Ao clicar no botão Cancelar, fecha a tela atual. 
+     * @param evt Evento capturado
+     */
+    private void btnCancelarNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarNotaActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnCancelarNotaActionPerformed
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarNota;

@@ -11,7 +11,10 @@ import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Professor;
 /**
  * Dialogo modal para a edição de professor
  * 
- * @author devin
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class EditarProfessor extends javax.swing.JDialog {
 
@@ -65,6 +68,7 @@ public class EditarProfessor extends javax.swing.JDialog {
         btnCancelarEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Editar instrutor");
 
         pnlEditarProfessor.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -201,6 +205,7 @@ public class EditarProfessor extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCPFEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFEditarActionPerformed

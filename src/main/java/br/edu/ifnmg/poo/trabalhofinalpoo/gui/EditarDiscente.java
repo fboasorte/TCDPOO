@@ -10,7 +10,11 @@ import br.edu.ifnmg.poo.trabalhofinalpoo.entity.Discente;
 
 /**
  * Classe para representar a tela de edição de um discente no sistema escolar
- * @author felipe
+ * 
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class EditarDiscente extends javax.swing.JDialog {
 
@@ -60,7 +64,7 @@ public class EditarDiscente extends javax.swing.JDialog {
         btnCancelarEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("EditarDiscente");
+        setTitle("Editar Discente");
 
         pnlEditarDiscente.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -193,6 +197,7 @@ public class EditarDiscente extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtDataNascimentoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataNascimentoEditarActionPerformed

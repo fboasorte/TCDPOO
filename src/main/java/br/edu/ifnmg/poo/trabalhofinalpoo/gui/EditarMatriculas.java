@@ -18,7 +18,10 @@ import javax.swing.JOptionPane;
 /**
  * Dialogo modal para a edição de matricula
  * 
- * @author Fellipe
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class EditarMatriculas extends javax.swing.JDialog {
     
@@ -107,6 +110,7 @@ public class EditarMatriculas extends javax.swing.JDialog {
         lstAulas = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Editar matrícula");
 
         pnlEditarMatriculas.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -279,6 +283,7 @@ public class EditarMatriculas extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

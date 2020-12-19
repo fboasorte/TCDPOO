@@ -15,8 +15,12 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Fellipe
+ * Classe para representar a tela de Cadastrar Aula no sistema escolar.
+ * 
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class NovoAula extends javax.swing.JDialog {
     
@@ -36,7 +40,7 @@ public class NovoAula extends javax.swing.JDialog {
     private int indiceProfessorSelecionado;
 
     /**
-     * Creates new form NovoAula
+     * Construtor padrão de NovoAula.
      */
     public NovoAula(GerenciarAula gerenciarAula, boolean modal) {
         super(gerenciarAula, modal);
@@ -236,8 +240,14 @@ public class NovoAula extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Ao clicar no botão Salvar, armazena os campos preenchidos na tela
+     * referente a Nova Aula, a salva no banco de dados e a adiciona à lista.
+     * @param evt Evento capturado.
+     */
     private void btnSalvarNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarNovoActionPerformed
         
         indiceProfessorSelecionado = lstProfessores.getSelectedIndex();
@@ -250,14 +260,24 @@ public class NovoAula extends javax.swing.JDialog {
                 aulaNovo.setData(txtDataNovo.getText());
                 aulaNovo.setHora(txtHoraNovo.getText());
 
+                // Executa o salvamento do estado do objeto no banco de dados.
                 Long id = new AulaDao().salvar(aulaNovo);
 
+                // Importante! Se o objeto criado não for atrelado a seu id no banco
+                // de dados, o objeto fica desconexo e as futuras alterações de seu
+                // estado gerarão um novo registro.
                 aulaNovo.setId(id);
 
+                // Atualiza a listagem por meio da inserção direta do elemento recém-criado.
+                // Poderia ser uma nova consulta ao banco de dados para recuperar todos
+                // os registros. (!!!) Isto seria útil em um sistema multiusuário.
                 gerenciarAula.NovoModelo(aulaNovo);
 
                 dispose();
+                
             } else {
+                
+                // Caso não seja selecionado um professor, é mostrada uma tela de aviso.
                 JOptionPane.showConfirmDialog(null, "Selecione um professor!",
                         "Professor não selecionado", JOptionPane.DEFAULT_OPTION);
             }
@@ -265,6 +285,10 @@ public class NovoAula extends javax.swing.JDialog {
         
     }//GEN-LAST:event_btnSalvarNovoActionPerformed
 
+    /**
+     * Ao clica no botão Cancelar, fecha a tela atual.
+     * @param evt Evento capturado.
+     */
     private void btnCancelarNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarNovoActionPerformed
         
         dispose();

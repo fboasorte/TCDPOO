@@ -14,7 +14,10 @@ import javax.swing.DefaultListModel;
 /**
  * Classe responsavel por exibir as matricular para poder editar e exclui-las
  * 
- * @author Fellipe
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  */
 public class VerMatriculas extends javax.swing.JDialog {
 
@@ -94,6 +97,7 @@ public class VerMatriculas extends javax.swing.JDialog {
         popUpMenu.add(mnuExcluir);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Gerenciar matrículas");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -144,22 +148,12 @@ public class VerMatriculas extends javax.swing.JDialog {
         txtParteEscrita.setForeground(new java.awt.Color(0, 0, 0));
         txtParteEscrita.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtParteEscrita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-        txtParteEscrita.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtParteEscritaActionPerformed(evt);
-            }
-        });
 
         txtParteOral.setEditable(false);
         txtParteOral.setBackground(new java.awt.Color(255, 255, 255));
         txtParteOral.setForeground(new java.awt.Color(0, 0, 0));
         txtParteOral.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtParteOral.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112)));
-        txtParteOral.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtParteOralActionPerformed(evt);
-            }
-        });
 
         txtComentario.setEditable(false);
         txtComentario.setBackground(new java.awt.Color(255, 255, 255));
@@ -237,17 +231,17 @@ public class VerMatriculas extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblAlunosAvaliacao)
+                    .addComponent(scrListaMatriculas, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblAlunosAvaliacao)
-                            .addComponent(scrListaMatriculas, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblDetalhesMatricula)
-                            .addComponent(pnlDetalhesMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(2, 2, 2)
+                        .addComponent(lblObservacao1)))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDetalhesMatricula)
+                    .addComponent(pnlDetalhesMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblObservacao1)
-                        .addGap(39, 39, 39)
+                        .addGap(16, 16, 16)
                         .addComponent(lblObservacao2)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
@@ -281,15 +275,8 @@ public class VerMatriculas extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtParteEscritaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteEscritaActionPerformed
-
-    }//GEN-LAST:event_txtParteEscritaActionPerformed
-
-    private void txtParteOralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParteOralActionPerformed
-
-    }//GEN-LAST:event_txtParteOralActionPerformed
 
     /**
      * Resposta ao clique com o botao direito na lista de matriculas

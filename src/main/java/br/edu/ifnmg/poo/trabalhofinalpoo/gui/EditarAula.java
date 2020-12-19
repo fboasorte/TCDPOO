@@ -13,7 +13,12 @@ import java.util.List;
 import javax.swing.DefaultListModel;
 
 /**
- *
+ * Classe para representar a tela de edição de aulas em um sistema escolar
+ * 
+ * @author Mateus Felipe Mendes <mfdjm at aluno dot ifnmg dot edu dot br>
+ * @author Felipe Rocha Boa-Sorte <frb at aluno dot ifnmg dot edu dot br>
+ * @author André Vinicius Mendes Barros <avmb at aluno dot ifnmg dot edu dot br>
+ * @version 0.1.0, 18/12/2020
  * @author Fellipe
  */
 public class EditarAula extends javax.swing.JDialog {
@@ -50,7 +55,6 @@ public class EditarAula extends javax.swing.JDialog {
         this.gerenciarAula = gerenciarAula;
         this.aulaEmEdicao = aula;
         
-        lstProfessores.setSelectedIndex(indiceProfessorSelecionado);
         preencherAula(aula);
     }
 
@@ -239,9 +243,12 @@ public class EditarAula extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalvarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarEditarActionPerformed
+        
+        indiceProfessorSelecionado = lstProfessores.getSelectedIndex();
         
         aulaEmEdicao.setIdProfessor(lstProfessoresModel.get(indiceProfessorSelecionado).getId().intValue());
         aulaEmEdicao.setNome(txtAulaEditar.getText());
